@@ -38,4 +38,23 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Installed for Devise emails
+  config.action_mailer.default_url_options = { host: "http://localhost:3000" }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :letter_opener
+
+  # Bullet configuration
+  config.after_initialize do
+    Bullet.enable = true
+    # Bullet.alert = true  #enable this for javascript alerts
+    Bullet.bullet_logger = true
+    Bullet.console = true
+    Bullet.rails_logger = true
+    # Bullet.add_footer = true  #enable this for notifications in the footer
+  end
+
+  config.active_record.raise_in_transactional_callbacks = true
+  config.time_zone = "UTC"
+  config.active_record.default_timezone = :utc
 end

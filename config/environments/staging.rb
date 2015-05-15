@@ -80,7 +80,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Installed for Devise emails
-  config.action_mailer.default_url_options = { host: "https://www.events-server.org" }
+  config.action_mailer.default_url_options = { host: "http://staging.events-server.org" }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: "smtp.mandrillapp.com",
@@ -89,7 +89,7 @@ Rails.application.configure do
     user_name: ENV["MANDRILL_USERNAME"],
     password: ENV["MANDRILL_APIKEY"],
     authentication: "login",
-    domain: "www.events-server.org",
+    domain: "staging.events-server.org",
   }
 
   config.active_record.raise_in_transactional_callbacks = true
