@@ -1,0 +1,18 @@
+AllCops:
+  Includes:
+    - '**/*.gemspec'
+    - '**/Rakefile'
+  Excludes:
+    - db/schema.rb
+    - db/migrate/*
+    - db/seeds.rb
+  RunRailsCops: true
+
+StringLiterals:
+  EnforcedStyle: double_quotes
+
+LineLength:
+  Max: 150
+
+Documentation:
+  Enabled: false
