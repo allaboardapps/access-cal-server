@@ -1,0 +1,17 @@
+!!!
+%html{ lang: "en" }
+  %head
+    %meta{ charset: "utf-8" }
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1" }
+    %title
+      = content_for?(:title) ? yield(:title) : "Events"
+    %meta{ content: "Events to choose from", name: "description" }
+    %meta{ content: "Events, happenings, tours, festivals", name: "keywords" }
+    = stylesheet_link_tag "application", media: "all"
+    = favicon_link_tag "favicon.ico"
+    = favicon_link_tag "apple-touch-icon.png", rel: "apple-touch-icon", type: "image/png"
+    = csrf_meta_tags
+  %body{ class: "#{params[:controller]} #{params[:action]} #{@activity_role}" }
+    = yield
+    = javascript_include_tag "application"
+    = render "shared/google_analytics_script"
