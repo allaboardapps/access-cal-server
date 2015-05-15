@@ -12,7 +12,7 @@ after_fork do |server, worker|
   ActiveRecord::Base.establish_connection
   Rails.logger.info("Connected to ActiveRecord")
   Sidekiq.configure_client do |config|
-    config.redis = { url: ENV["REDIS_PROVIDER"] }
+    config.redis = { url: ENV["REDIS_URL"] }
   end
   Rails.logger.info("Sidekiq client configured")
 end

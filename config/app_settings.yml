@@ -11,7 +11,7 @@ defaults: &defaults
   errors_email: "errors@events.com"
   feedback_email: "feedback@events.com"
   transactions_email: "transactions@events.com"
-  redis_url: ENV["REDIS_PROVIDER"]
+  redis_url: ENV["REDIS_URL"]
 
 test:
   <<: *defaults
