@@ -34,7 +34,7 @@ class DeviseSetup < ActiveRecord::Migration
       t.string "first_name"
       t.string "last_name"
       t.string "zipcode"
-      t.string "notes"
+      t.string "admin_notes"
       t.boolean "archived", default: false
       t.boolean "test", default: false
       t.text  "roles", array: true, default: []
@@ -45,7 +45,7 @@ class DeviseSetup < ActiveRecord::Migration
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
 
-    # add_index :users, :confirmation_token,   unique: true
-    # add_index :users, :unlock_token,         unique: true
+    add_index :users, :confirmation_token,   unique: true
+    add_index :users, :unlock_token,         unique: true
   end
 end

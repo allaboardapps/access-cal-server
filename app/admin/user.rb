@@ -6,7 +6,7 @@ ActiveAdmin.register User do
   permit_params :email,
   :first_name,
   :last_name,
-  :notes,
+  :admin_notes,
   :archived,
   :roles,
   :zipcode,
@@ -45,7 +45,7 @@ ActiveAdmin.register User do
       f.input :first_name
       f.input :last_name
       f.input :email
-      f.input :notes
+      f.input :admin_notes
       f.input :zipcode
       f.input :archived
       f.input :test
@@ -65,6 +65,7 @@ ActiveAdmin.register User do
       row :email do |user|
         mail_to user.email, user.email
       end
+      row :admin_notes
       row :archived
       row :test
       row :created_at
