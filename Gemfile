@@ -4,7 +4,7 @@ ruby "2.2.2"
 gem "rails", "4.2.1"
 
 gem "active_model_serializers", "0.9.3"
-gem "activeadmin", github: "activeadmin/activeadmin", branch: "master"
+gem "activeadmin", "1.0.0.pre1"
 gem "aws-sdk", "2.0.43"
 gem "browser", "0.8.0"
 gem "devise", "3.4.1"

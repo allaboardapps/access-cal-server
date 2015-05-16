@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   default_scope { order("LOWER(last_name) ASC, LOWER(first_name) ASC") }
   scope :with_one_of_roles, ->(*roles) { where.overlap(roles: roles) }
   scope :admins, -> { where("'#{Roles::ADMIN}' = ANY (roles)").order(last_name: :asc) }
+  scope :users, -> { where("'#{Roles::USER}' = ANY (roles)").order(last_name: :asc) }
+  scope :clients, -> { where("'#{Roles::CLIENT}' = ANY (roles)").order(last_name: :asc) }
   scope :active, -> { where(archived: false, test: false) }
   scope :archived, -> { where(archived: true) }
   scope :test, -> { where(test: true) }
