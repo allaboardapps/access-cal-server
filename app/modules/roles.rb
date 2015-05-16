@@ -1,7 +1,7 @@
 module Roles
-  USER = "user"
+  CUSTOMER = "customer"
   ADMIN = "admin"
-  CLIENT = "staff"
+  CLIENT = "client"
 
   def self.system_roles
     [Roles::ADMIN]
@@ -11,15 +11,15 @@ module Roles
     [Roles::CLIENT]
   end
 
-  def self.user_roles
-    [Roles::USER]
+  def self.customer_roles
+    [Roles::CUSTOMER]
   end
 
   def self.active_admin_roles
     [Roles::ADMIN]
   end
 
-  def self.all_roles
-    self.system_roles.concat(self.support_roles).concat(self.client_roles).concat(self.tutor_roles).concat(self.active_admin_roles).sort
+  def self.all
+    self.system_roles.concat(self.client_roles).concat(self.customer_roles).concat(self.active_admin_roles).sort
   end
 end

@@ -9,4 +9,11 @@ Rails.application.routes.draw do
   end
 
   root to: "static#home"
+
+  namespace :api, defaults: { format: "json" } do
+    namespace :v1 do
+      post "sign_in" => "sessions#create"
+      get "users/:id" => "users#show"
+    end
+  end
 end

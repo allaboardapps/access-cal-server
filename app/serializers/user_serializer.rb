@@ -3,9 +3,10 @@ class UserSerializer < ActiveModel::Serializer
     :id,
     :first_name,
     :last_name,
-    :role,
+    :roles,
     :archived,
     :test,
+    :token,
     :updated_at,
     :created_at
   )

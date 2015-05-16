@@ -14,7 +14,7 @@ ActiveAdmin.register User do
   :password
 
   scope :active, default: true
-  scope :users
+  scope :customers
   scope :clients
   scope :admins
   scope :archived
@@ -34,7 +34,7 @@ ActiveAdmin.register User do
       mail_to user.email, user.email
     end
     column :roles do |user|
-      user.roles.join(", ").capitalize
+      user.roles_presented
     end
     column :updated_at
     actions
@@ -59,7 +59,9 @@ ActiveAdmin.register User do
       row :id
       row :first_name
       row :last_name
-      row :roles
+      row :roles do |user|
+        user.roles_presented
+      end
       row :email do |user|
         mail_to user.email, user.email
       end

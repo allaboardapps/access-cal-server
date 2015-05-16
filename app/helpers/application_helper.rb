@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def copyright_notice
-    "&copy; ".html_safe + Time.new.strftime("%Y") + " Events. All Rights Reserved"
+    "&copy; ".html_safe + Time.new.strftime("%Y") + " Events Server. All Rights Reserved"
   end
 
   def number_with_leading(integer)

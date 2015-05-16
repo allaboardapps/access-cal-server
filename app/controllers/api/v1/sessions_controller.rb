@@ -8,7 +8,7 @@ class Api::V1::SessionsController < Api::V1::ApiController
     respond_to do |format|
       if user && user.valid_password?(params[:password])
         user.generate_token! unless user.token
-        format.json { render json: user, each_serializer: UsersSerializer }
+        format.json { render json: user, each_serializer: UserSerializer }
       else
         format.json{ head :forbidden }
       end

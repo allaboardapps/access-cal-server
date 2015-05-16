@@ -1,14 +1,14 @@
 class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :omniauthable, :timeoutable
+  # :omniauthable, :timeoutable
   devise :database_authenticatable, :recoverable, :rememberable, :registerable,
-         :trackable, :validatable, :async
+         :trackable, :validatable, :async, :confirmable, :lockable
 
   default_scope { order("LOWER(last_name) ASC, LOWER(first_name) ASC") }
   scope :with_one_of_roles, ->(*roles) { where.overlap(roles: roles) }
   scope :admins, -> { where("'#{Roles::ADMIN}' = ANY (roles)").order(last_name: :asc) }
-  scope :users, -> { where("'#{Roles::USER}' = ANY (roles)").order(last_name: :asc) }
+  scope :customers, -> { where("'#{Roles::CUSTOMER}' = ANY (roles)").order(last_name: :asc) }
   scope :clients, -> { where("'#{Roles::CLIENT}' = ANY (roles)").order(last_name: :asc) }
   scope :active, -> { where(archived: false, test: false) }
   scope :archived, -> { where(archived: true) }
@@ -72,12 +72,12 @@ class User < ActiveRecord::Base
     is? Roles::ADMIN
   end
 
-  def user?
-    is? Roles::USER
+  def customer?
+    is? Roles::CUSTOMER
   end
 
   def client?
-    is? Roles::USER
+    is? Roles::CLIENT
   end
 
   def archived?
@@ -94,5 +94,9 @@ class User < ActiveRecord::Base
 
   def unarchive
     update_attribute(:archived, false)
+  end
+
+  def roles_presented
+    roles.join(", ")
   end
 end
