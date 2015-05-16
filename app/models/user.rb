@@ -15,6 +15,11 @@ class User < ActiveRecord::Base
   scope :test, -> { where(test: true) }
   scope :autocomplete, -> (user_query) { active.where("first_name ilike ? or last_name ilike ?", "#{user_query}%", "#{user_query}%").order(last_name: :asc, first_name: :asc) }
 
+  has_many :favorites
+  has_many :events
+  belongs_to :location
+  has_one :region, through: :location
+
   after_create :set_default_role
 
   def generate_token!
@@ -65,7 +70,7 @@ class User < ActiveRecord::Base
   end
 
   def set_default_role
-    update_attribute :roles, ["user"] if roles.empty?
+    update_attribute :roles, [Roles::CUSTOMER] if roles.empty?
   end
 
   def admin?

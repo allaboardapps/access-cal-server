@@ -190,6 +190,6 @@ describe User, type: :model do
     end
   end
 
-  xit { is_expected.to have_many :favorites }
-  xit { is_expected.to have_many :events }
+  it { is_expected.to have_many :favorites }
+  it { is_expected.to have_many :events }
 end

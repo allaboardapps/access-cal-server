@@ -3,5 +3,7 @@ class Event < ActiveRecord::Base
   validates :abbreviation, presence: true
 
   belongs_to :location
-  has_one :region, through: :loca
+  has_one :region, through: :location
+  has_many :favorites
+  has_many :users, through: :favorites
 end

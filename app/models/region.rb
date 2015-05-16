@@ -3,4 +3,5 @@ class Region < ActiveRecord::Base
   validates :abbreviation, presence: true
 
   has_many :locations
+  has_many :events, through: :locations
 end

@@ -10,6 +10,14 @@ class InitialSetup < ActiveRecord::Migration
       t.timestamps
     end
 
+    create_table "favorites", force: true do |t|
+      t.integer "user_id"
+      t.integer "event_id"
+      t.boolean "archived", default: false
+      t.boolean "test", default: false
+      t.timestamps
+    end
+
     create_table "regions", force: true do |t|
       t.string "name"
       t.string "abbreviation"

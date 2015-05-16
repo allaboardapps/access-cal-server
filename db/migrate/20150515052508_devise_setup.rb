@@ -35,6 +35,7 @@ class DeviseSetup < ActiveRecord::Migration
       t.string "last_name"
       t.string "zipcode"
       t.string "admin_notes"
+      t.integer "location_id"
       t.boolean "archived", default: false
       t.boolean "test", default: false
       t.text  "roles", array: true, default: []
