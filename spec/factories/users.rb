@@ -6,6 +6,7 @@ FactoryGirl.define do
     password { "12345678" }
     password_confirmation { "12345678" }
     confirmed_at Date.today
+    admin_notes { Faker::Lorem.sentences(1) }
     archived { false }
     test { false }
     roles { [Roles::CUSTOMER] }

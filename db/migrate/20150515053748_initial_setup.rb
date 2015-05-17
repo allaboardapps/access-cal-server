@@ -1,9 +1,24 @@
 class InitialSetup < ActiveRecord::Migration
   def change
     create_table "events", force: true do |t|
+      t.integer "user_id"
+      t.integer "location_id"
       t.string "name"
       t.string "abbreviation"
+      t.datetime "starts_at"
+      t.datetime "ends_at"
+      t.string "description"
+      t.string "street_address"
+      t.string "secondary_address"
+      t.string "city"
+      t.string "state"
+      t.string "country"
+      t.string "zip_code"
       t.string "timezone"
+      t.decimal "latitude"
+      t.decimal "longitude"
+      t.datetime "starts_at"
+      t.datetime "ends_at"
       t.string "admin_notes"
       t.boolean "archived", default: false
       t.boolean "test", default: false
