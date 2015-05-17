@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :location do
+  factory :region do
     name { Faker::Address.city }
     abbreviation { Faker::Address.city }
     timezone { Faker::Address.time_zone }

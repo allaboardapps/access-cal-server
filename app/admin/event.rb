@@ -3,9 +3,24 @@ ActiveAdmin.register Event do
 
   actions :all
 
-  permit_params :name,
-    :abbreviation,
+  permit_params :location_id,
+    :client_id,
     :location_id,
+    :name,
+    :abbreviation,
+    :description,
+    :street_address,
+    :secondary_address,
+    :city,
+    :state,
+    :country,
+    :zip_code,
+    :timezone,
+    :latitude,
+    :longitude,
+    :starts_at,
+    :ends_at,
+    :admin_notes,
     :archived,
     :test
 
@@ -27,9 +42,13 @@ ActiveAdmin.register Event do
     column "Location" do |event|
       link_to event.location.name, admin_location_path(event.location)
     end
-    column "Region" do |region|
+    column "Region" do |event|
       link_to event.region.name, admin_region_path(event.region)
     end
+    column "Client" do |event|
+      link_to event.client.full_name, admin_user_path(event.client)
+    end
+    column :starts_at
     column :updated_at
     column :created_at
     actions
@@ -40,7 +59,20 @@ ActiveAdmin.register Event do
       f.input :name
       f.input :abbreviation
       f.input :location
-      f.input :admin_note
+      f.input :client
+      f.input :starts_at
+      f.input :ends_at
+      f.input :description
+      f.input :street_address
+      f.input :secondary_address
+      f.input :city
+      f.input :state
+      f.input :country
+      f.input :zip_code
+      f.input :timezone
+      f.input :latitude
+      f.input :longitude
+      f.input :admin_notes
       f.input :archived
       f.input :test
     end
@@ -58,7 +90,22 @@ ActiveAdmin.register Event do
       row "Region" do |region|
         link_to event.region.name, admin_region_path(event.region)
       end
-      row :admin_note
+      row "User" do |event|
+        link_to event.client.full_name, admin_user_path(event.client)
+      end
+      row :starts_at
+      row :ends_at
+      row :description
+      row :street_address
+      row :secondary_address
+      row :city
+      row :state
+      row :country
+      row :zip_code
+      row :timezone
+      row :latitude
+      row :longitude
+      row :admin_notes
       row :archived
       row :test
       row :created_at

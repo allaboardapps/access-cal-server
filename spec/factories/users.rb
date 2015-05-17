@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :user, aliases: [:admin, :customer, :client] do
+  factory :user, aliases: [:admin, :customer, :client, :basic, :pro, :premium] do
     first_name { Faker::Name.first_name }
     last_name { Faker::Name.last_name }
     email { Faker::Internet.email }
@@ -10,6 +10,7 @@ FactoryGirl.define do
     archived { false }
     test { false }
     roles { [Roles::CUSTOMER] }
+    statuses { [Statuses::BASIC] }
 
     trait :admin do
       roles { [Roles::ADMIN] }
@@ -21,6 +22,18 @@ FactoryGirl.define do
 
     trait :client do
       roles { [Roles::CLIENT] }
+    end
+
+    trait :basic do
+      statuses { [Statuses::BASIC] }
+    end
+
+    trait :pro do
+      statuses { [Statuses::PRO] }
+    end
+
+    trait :premium do
+      statuses { [Statuses::PREMIUM] }
     end
   end
 end

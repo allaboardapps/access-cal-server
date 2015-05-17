@@ -125,6 +125,52 @@ describe User, type: :model do
       end
     end
 
+    describe "#basic?" do
+      it "returns true if user has status of basic" do
+        user = create :user, :customer, :basic
+        expect(user.basic?).to be_truthy
+      end
+
+      it "returns true if user has status of premium" do
+        user = create :user, :customer, :premium
+        expect(user.basic?).to be_truthy
+      end
+    end
+
+    describe "#pro?" do
+      it "returns false if user has status of basic" do
+        user = create :user, :customer, :basic
+        expect(user.pro?).to be_falsey
+      end
+
+      it "returns true if user has status of premium" do
+        user = create :user, :customer, :premium
+        expect(user.pro?).to be_truthy
+      end
+
+      it "returns true if user has status of pro" do
+        user = create :user, :customer, :pro
+        expect(user.pro?).to be_truthy
+      end
+    end
+
+    describe "#premium?" do
+      it "returns false if user has status of basic" do
+        user = create :user, :customer, :basic
+        expect(user.premium?).to be_falsey
+      end
+
+      it "returns false if user has status of pro" do
+        user = create :user, :customer, :pro
+        expect(user.premium?).to be_falsey
+      end
+
+      it "returns true if user has status of premium" do
+        user = create :user, :customer, :premium
+        expect(user.premium?).to be_truthy
+      end
+    end
+
     describe "#active_admin_access?" do
       it "returns true if user has a role qualified for Active Admin access" do
         user = create :user, :admin

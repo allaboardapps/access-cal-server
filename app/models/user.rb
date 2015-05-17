@@ -85,6 +85,26 @@ class User < ActiveRecord::Base
     is? Roles::CLIENT
   end
 
+  def status_is?(role)
+    statuses.include? role
+  end
+
+  def status_is_not?(role)
+    !statuses.include? role
+  end
+
+  def basic?
+    status_is?(Statuses::BASIC) || status_is?(Statuses::PRO) || status_is?(Statuses::PREMIUM)
+  end
+
+  def pro?
+    status_is?(Statuses::PRO) || status_is?(Statuses::PREMIUM)
+  end
+
+  def premium?
+    status_is?(Statuses::PREMIUM)
+  end
+
   def archived?
     archived
   end

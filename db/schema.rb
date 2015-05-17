@@ -17,8 +17,55 @@ ActiveRecord::Schema.define(version: 20150515053748) do
   enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "location_id"
     t.string   "name"
     t.string   "abbreviation"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.string   "description"
+    t.string   "street_address"
+    t.string   "secondary_address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "zip_code"
+    t.string   "timezone"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.string   "admin_notes"
+    t.boolean  "archived",          default: false
+    t.boolean  "test",              default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.boolean  "archived",   default: false
+    t.boolean  "test",       default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.integer  "region_id"
+    t.string   "name"
+    t.string   "abbreviation"
+    t.string   "timezone"
+    t.string   "admin_notes"
+    t.boolean  "archived",     default: false
+    t.boolean  "test",         default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.string   "name"
+    t.string   "abbreviation"
+    t.string   "timezone"
+    t.string   "admin_notes"
     t.boolean  "archived",     default: false
     t.boolean  "test",         default: false
     t.datetime "created_at"
@@ -45,16 +92,20 @@ ActiveRecord::Schema.define(version: 20150515053748) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "zipcode"
-    t.string   "notes"
+    t.string   "admin_notes"
+    t.integer  "location_id"
     t.boolean  "archived",               default: false
     t.boolean  "test",                   default: false
     t.text     "roles",                  default: [],                 array: true
+    t.text     "statuses",               default: [],                 array: true
     t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
 end

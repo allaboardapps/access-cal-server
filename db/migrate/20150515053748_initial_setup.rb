@@ -1,7 +1,7 @@
 class InitialSetup < ActiveRecord::Migration
   def change
     create_table "events", force: true do |t|
-      t.integer "user_id"
+      t.integer "client_id"
       t.integer "location_id"
       t.string "name"
       t.string "abbreviation"

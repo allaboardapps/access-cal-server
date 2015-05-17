@@ -39,6 +39,7 @@ class DeviseSetup < ActiveRecord::Migration
       t.boolean "archived", default: false
       t.boolean "test", default: false
       t.text  "roles", array: true, default: []
+      t.text  "statuses", array: true, default: []
       t.string "token"
       t.timestamps
     end
