@@ -3,7 +3,7 @@ ActiveAdmin.register Location do
 
   actions :all
 
-  permit_params :name, :archived, :test
+  permit_params :region_id, :name, :abbreviation, :time_zone, :archived, :test, :time_zone
 
   scope :active, default: true
   scope :archived

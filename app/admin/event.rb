@@ -5,9 +5,10 @@ ActiveAdmin.register Event do
 
   permit_params :location_id,
     :client_id,
-    :location_id,
     :name,
     :abbreviation,
+    :primary_category,
+    :categories,
     :description,
     :street_address,
     :secondary_address,
@@ -15,7 +16,7 @@ ActiveAdmin.register Event do
     :state,
     :country,
     :zip_code,
-    :timezone,
+    :time_zone,
     :latitude,
     :longitude,
     :starts_at,
@@ -39,6 +40,7 @@ ActiveAdmin.register Event do
     id_column
     column :name
     column :abbreviation
+    column :primary_category
     column "Location" do |event|
       link_to event.location.name, admin_location_path(event.location)
     end
@@ -58,6 +60,8 @@ ActiveAdmin.register Event do
     f.inputs "Event" do
       f.input :name
       f.input :abbreviation
+      f.input :primary_category
+      f.input :categories
       f.input :location
       f.input :client
       f.input :starts_at
@@ -69,7 +73,7 @@ ActiveAdmin.register Event do
       f.input :state
       f.input :country
       f.input :zip_code
-      f.input :timezone
+      f.input :time_zone
       f.input :latitude
       f.input :longitude
       f.input :admin_notes
@@ -84,8 +88,10 @@ ActiveAdmin.register Event do
       row :id
       row :name
       row :abbreviation
+      row :primary_category
+      row :categories
       row "Location" do |event|
-        link_to event.location.name, admin_location_path(region)
+        link_to event.location.name, admin_location_path(event.region)
       end
       row "Region" do |region|
         link_to event.region.name, admin_region_path(event.region)
@@ -102,7 +108,7 @@ ActiveAdmin.register Event do
       row :state
       row :country
       row :zip_code
-      row :timezone
+      row :time_zone
       row :latitude
       row :longitude
       row :admin_notes

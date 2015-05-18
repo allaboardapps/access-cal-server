@@ -23,7 +23,7 @@ class DeviseSetup < ActiveRecord::Migration
       t.string   :confirmation_token
       t.datetime :confirmed_at
       t.datetime :confirmation_sent_at
-      # t.string   :unconfirmed_email # Only if using reconfirmable
+      t.string   :unconfirmed_email # Only if using reconfirmable
 
       ## Lockable
       t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
@@ -33,7 +33,8 @@ class DeviseSetup < ActiveRecord::Migration
       ## Profile
       t.string "first_name"
       t.string "last_name"
-      t.string "zipcode"
+      t.string "zip_code"
+      t.string "time_zone"
       t.string "admin_notes"
       t.integer "location_id"
       t.boolean "archived", default: false

@@ -15,8 +15,8 @@ class User < ActiveRecord::Base
   scope :test, -> { where(test: true) }
   scope :autocomplete, -> (user_query) { active.where("first_name ilike ? or last_name ilike ?", "#{user_query}%", "#{user_query}%").order(last_name: :asc, first_name: :asc) }
 
-  has_many :favorites
-  has_many :events
+  has_many :favorited_events, class_name: "Favorite"
+  has_many :owned_events, class_name: "Event", foreign_key: :client_id
   belongs_to :location
   has_one :region, through: :location
 

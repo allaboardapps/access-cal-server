@@ -9,7 +9,8 @@ ActiveAdmin.register User do
   :admin_notes,
   :archived,
   :roles,
-  :zipcode,
+  :zip_code,
+  :time_zone,
   :test,
   :password
 
@@ -24,6 +25,7 @@ ActiveAdmin.register User do
 
   filter :first_name
   filter :last_name
+  filter :email
 
   index do
     selectable_column
@@ -46,7 +48,7 @@ ActiveAdmin.register User do
       f.input :last_name
       f.input :email
       f.input :admin_notes
-      f.input :zipcode
+      f.input :zip_code
       f.input :archived
       f.input :test
       # f.input :password, hint: "8 alphanumeric characters required"

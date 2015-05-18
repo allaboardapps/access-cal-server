@@ -13,6 +13,10 @@ describe Event, type: :model do
     expect(build :event, abbreviation: nil).to_not be_valid
   end
 
+  it "is invalid without a primary category" do
+    expect(build :event, primary_category: nil).to_not be_valid
+  end
+
   it { is_expected.to belong_to :client }
   it { is_expected.to belong_to :location }
   it { is_expected.to have_one :region }

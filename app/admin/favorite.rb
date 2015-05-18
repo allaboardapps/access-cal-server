@@ -3,10 +3,7 @@ ActiveAdmin.register Favorite do
 
   actions :all
 
-  permit_params :user_id,
-    :event_id,
-    :archived,
-    :test
+  permit_params :user_id, :event_id, :archived, :test
 
   scope :active, default: true
   scope :archived

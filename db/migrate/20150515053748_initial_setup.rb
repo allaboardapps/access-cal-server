@@ -5,6 +5,8 @@ class InitialSetup < ActiveRecord::Migration
       t.integer "location_id"
       t.string "name"
       t.string "abbreviation"
+      t.string "primary_category"
+      t.text "categories", array: true, default: []
       t.datetime "starts_at"
       t.datetime "ends_at"
       t.string "description"
@@ -14,7 +16,7 @@ class InitialSetup < ActiveRecord::Migration
       t.string "state"
       t.string "country"
       t.string "zip_code"
-      t.string "timezone"
+      t.string "time_zone"
       t.decimal "latitude"
       t.decimal "longitude"
       t.datetime "starts_at"
@@ -36,7 +38,7 @@ class InitialSetup < ActiveRecord::Migration
     create_table "regions", force: true do |t|
       t.string "name"
       t.string "abbreviation"
-      t.string "timezone"
+      t.string "time_zone"
       t.string "admin_notes"
       t.boolean "archived", default: false
       t.boolean "test", default: false
@@ -47,7 +49,7 @@ class InitialSetup < ActiveRecord::Migration
       t.integer "region_id"
       t.string "name"
       t.string "abbreviation"
-      t.string "timezone"
+      t.string "time_zone"
       t.string "admin_notes"
       t.boolean "archived", default: false
       t.boolean "test", default: false

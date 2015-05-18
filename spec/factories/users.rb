@@ -9,6 +9,8 @@ FactoryGirl.define do
     admin_notes { Faker::Lorem.sentences(1) }
     archived { false }
     test { false }
+    zip_code { Faker::Address.zip_code }
+    time_zone { Faker::Address.time_zone }
     roles { [Roles::CUSTOMER] }
     statuses { [Statuses::BASIC] }
 

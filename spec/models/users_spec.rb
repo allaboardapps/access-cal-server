@@ -236,6 +236,8 @@ describe User, type: :model do
     end
   end
 
-  it { is_expected.to have_many :favorites }
-  it { is_expected.to have_many :events }
+  it { is_expected.to have_many :favorited_events }
+  it { is_expected.to have_many :owned_events }
+  it { is_expected.to belong_to :location }
+  it { is_expected.to have_one :region }
 end

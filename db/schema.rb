@@ -17,10 +17,12 @@ ActiveRecord::Schema.define(version: 20150515053748) do
   enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "client_id"
     t.integer  "location_id"
     t.string   "name"
     t.string   "abbreviation"
+    t.string   "primary_category"
+    t.text     "categories",        default: [],    array: true
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.string   "description"
@@ -30,7 +32,7 @@ ActiveRecord::Schema.define(version: 20150515053748) do
     t.string   "state"
     t.string   "country"
     t.string   "zip_code"
-    t.string   "timezone"
+    t.string   "time_zone"
     t.decimal  "latitude"
     t.decimal  "longitude"
     t.string   "admin_notes"
@@ -53,7 +55,7 @@ ActiveRecord::Schema.define(version: 20150515053748) do
     t.integer  "region_id"
     t.string   "name"
     t.string   "abbreviation"
-    t.string   "timezone"
+    t.string   "time_zone"
     t.string   "admin_notes"
     t.boolean  "archived",     default: false
     t.boolean  "test",         default: false
@@ -64,7 +66,7 @@ ActiveRecord::Schema.define(version: 20150515053748) do
   create_table "regions", force: :cascade do |t|
     t.string   "name"
     t.string   "abbreviation"
-    t.string   "timezone"
+    t.string   "time_zone"
     t.string   "admin_notes"
     t.boolean  "archived",     default: false
     t.boolean  "test",         default: false
@@ -86,12 +88,14 @@ ActiveRecord::Schema.define(version: 20150515053748) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
     t.integer  "failed_attempts",        default: 0,     null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "zipcode"
+    t.string   "zip_code"
+    t.string   "time_zone"
     t.string   "admin_notes"
     t.integer  "location_id"
     t.boolean  "archived",               default: false
