@@ -16,7 +16,7 @@ module Categories
   MUSLIM = "muslim"
   OPENINGS = "openings"
   READINGS = "readings"
-  SINGLE = "single"
+  SINGLES = "singles"
   SPORTS = "sports"
   THEATRE = "theatre"
   TOURS = "tours"
@@ -40,7 +40,7 @@ module Categories
     Categories::MUSLIM,
     Categories::OPENINGS,
     Categories::READINGS,
-    Categories::SINGLE,
+    Categories::SINGLES,
     Categories::SPORTS,
     Categories::THEATRE,
     Categories::TOURS,

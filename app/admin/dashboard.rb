@@ -28,5 +28,13 @@ ActiveAdmin.register_page "Dashboard" do
         end
       end
     end
+
+    if Rails.env.development?
+      panel "Mailer Testers" do
+        ul do
+          li link_to "Test Form Submission Email", staff_view_form_submission_mailer_path
+        end
+      end
+    end
   end
 end
