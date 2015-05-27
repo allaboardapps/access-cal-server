@@ -5,15 +5,15 @@ gem "rails", "4.2.1"
 
 gem "active_model_serializers", "0.9.3"
 gem "activeadmin", "1.0.0.pre1"
-gem "aws-sdk", "2.0.43"
+gem "aws-sdk", "2.0.46"
 gem "browser", "0.8.0"
-gem "devise", "3.4.1"
-gem "devise-async", "0.9.0"
+gem "devise", "3.5.1"
+gem "devise-async", "0.10.1"
 gem "factory_girl_rails", "4.5.0"
 gem "faker", "1.4.3"
 gem "figaro", "1.1.1"
 gem "haml-rails", "0.9.0"
-gem "httparty", "0.13.4"
+gem "httparty", "0.13.5"
 gem "jquery-rails", "4.0.3"
 gem "kaminari", "0.16.3"
 gem "pg", "0.18.2"
@@ -37,14 +37,15 @@ group :development do
   gem "better_errors", "2.1.1"
   gem "binding_of_caller", "0.7.2"
   gem "bullet", "4.14.7"
-  gem "letter_opener", "1.4.0"
-  gem "rb-fsevent", "0.9.4", require: false
+  gem "letter_opener", "1.4.1"
+  gem "rb-fsevent", "0.9.5", require: false
   gem "spring", "1.3.6"
   gem "spring-commands-rspec", "1.0.4"
 end
 
 group :development, :test do
-  gem "byebug", "4.0.5"
+  gem "airborne", "0.1.15"
+  gem "byebug", "5.0.0"
   gem "capybara", "2.4.4"
   gem "codeclimate-test-reporter", "0.4.7", require: nil
   gem "database_cleaner", "1.4.1"
