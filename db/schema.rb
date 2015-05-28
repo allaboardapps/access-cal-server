@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 20150521034236) do
     t.string   "country"
     t.string   "zip_code"
     t.string   "time_zone"
-    t.decimal  "latitude"
-    t.decimal  "longitude"
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "admin_notes"
     t.boolean  "archived",          default: false
     t.boolean  "test",              default: false

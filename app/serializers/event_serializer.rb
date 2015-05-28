@@ -1,5 +1,6 @@
 class EventSerializer < ActiveModel::Serializer
   attributes(
+    :id,
     :location_id,
     :name,
     :abbreviation,

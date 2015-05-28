@@ -17,10 +17,8 @@ class InitialSetup < ActiveRecord::Migration
       t.string "country"
       t.string "zip_code"
       t.string "time_zone"
-      t.decimal "latitude"
-      t.decimal "longitude"
-      t.datetime "starts_at"
-      t.datetime "ends_at"
+      t.float "latitude"
+      t.float "longitude"
       t.string "admin_notes"
       t.boolean "archived", default: false
       t.boolean "test", default: false
