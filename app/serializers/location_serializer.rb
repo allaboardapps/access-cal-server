@@ -1,5 +1,6 @@
 class LocationSerializer < ActiveModel::Serializer
   attributes(
+    :id,
     :region_id,
     :name,
     :abbreviation,

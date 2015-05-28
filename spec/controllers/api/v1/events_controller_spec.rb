@@ -34,7 +34,7 @@ describe Api::V1::EventsController, type: :controller do
       end
 
       describe "#create" do
-        it "returns a user name" do
+        it "creates and returns an event instance" do
           post :create, client_id: @event.client_id, location_id: @event.location_id, name: @event.name,
             abbreviation: @event.abbreviation, primary_category: @event.primary_category, categories: @event.categories,
             starts_at: @event.starts_at, ends_at: @event.ends_at, description: @event.description,
@@ -87,7 +87,6 @@ describe Api::V1::EventsController, type: :controller do
         end
 
         it "creates a new instance" do
-          @event.save
           expect { post :create, client_id: @event.client_id, location_id: @event.location_id, name: @event.name,
             abbreviation: @event.abbreviation, primary_category: @event.primary_category, categories: @event.categories,
             starts_at: @event.starts_at, ends_at: @event.ends_at, description: @event.description,
@@ -100,7 +99,7 @@ describe Api::V1::EventsController, type: :controller do
       end
 
       describe "#show" do
-        it "returns an event name" do
+        it "returns an event instance" do
           @event.save
           get :show, id: @event.id
           expect_json("event", { name: @event.name, description: @event.description })
@@ -204,7 +203,7 @@ describe Api::V1::EventsController, type: :controller do
       end
 
       describe "#delete" do
-        it "returns a user name" do
+        it "returns empty json" do
           @event.save
           delete :destroy, id: @event.id
           expect_json_sizes 0

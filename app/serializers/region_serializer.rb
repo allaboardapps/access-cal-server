@@ -1,5 +1,6 @@
 class RegionSerializer < ActiveModel::Serializer
   attributes(
+    :id,
     :name,
     :abbreviation,
     :time_zone,
