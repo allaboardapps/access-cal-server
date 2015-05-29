@@ -57,6 +57,19 @@ describe Api::V1::FavoritesController, type: :controller do
             post :create, user_id: @favorite.user_id, event_id: @favorite.event_id
           }.to change(Favorite, :count).by(1)
         end
+
+        it "does not create a duplicate instance, but does return the matching instance" do
+          @favorite.save
+          post :create, user_id: @favorite.user_id, event_id: @favorite.event_id
+          expect_json("favorite", { id: @favorite.id, event_id: @favorite.event_id })
+        end
+
+        it "does not create duplicates" do
+          @favorite.save
+          expect {
+            post :create, user_id: @favorite.user_id, event_id: @favorite.event_id
+          }.to change(Favorite, :count).by(0)
+        end
       end
 
       describe "#show" do

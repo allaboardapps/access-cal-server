@@ -1,6 +1,6 @@
 class Api::V1::FavoritesController < Api::V1::ApiController
   def create
-    favorite = Favorite.create(create_params)
+    favorite = Favorite.create_with(create_params).find_or_create_by(user_id: params[:user_id], event_id: params[:event_id])
     render json: favorite, each_serializer: FavoriteSerializer, status: :created
   end
 
