@@ -98,7 +98,7 @@ describe Api::V1::RegionsController, type: :controller do
           @region_2 = FactoryGirl.create :region
           @region_3 = FactoryGirl.create :region
           get :index
-          expect_json_sizes("regions", 3)
+          expect_json_sizes("regions", 4)
         end
 
         it "includes at least one of the instances" do

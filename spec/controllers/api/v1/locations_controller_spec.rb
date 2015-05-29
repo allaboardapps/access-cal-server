@@ -100,7 +100,7 @@ describe Api::V1::LocationsController, type: :controller do
           @location_2 = FactoryGirl.create :location
           @location_3 = FactoryGirl.create :location
           get :index
-          expect_json_sizes("locations", 3)
+          expect_json_sizes("locations", 4)
         end
 
         it "includes at least one of the instances" do

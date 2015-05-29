@@ -1,26 +1,38 @@
 class Api::V1::FavoritesController < Api::V1::ApiController
   def create
-
+    favorite = Favorite.create(create_params)
+    render json: favorite, each_serializer: FavoriteSerializer, status: :created
   end
 
   def index
-
+    favorites = Favorite.all
+    render json: favorites, each_serializer: FavoriteSerializer, status: :ok
   end
 
   def show
-
+    favorite = Favorite.find params[:id]
+    render json: favorite, each_serializer: FavoriteSerializer, status: :ok
   end
 
   def update
-
+    favorite = Favorite.find params[:id]
+    favorite.update_attributes(update_params)
+    render json: favorite, each_serializer: FavoriteSerializer, status: :accepted
   end
 
-  def delete
-
+  def destroy
+    favorite = Favorite.find params[:id]
+    favorite.destroy
+    render json: {}, status: :accepted
   end
 
-  def archive
+  private
 
+  def update_params
+    params.permit(:user_id, :event_id, :archived, :test)
   end
 
+  def create_params
+    params.permit(:user_id, :event_id)
+  end
 end
