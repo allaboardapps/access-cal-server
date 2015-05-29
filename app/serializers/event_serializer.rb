@@ -5,6 +5,8 @@ class EventSerializer < ActiveModel::Serializer
     :name,
     :abbreviation,
     :description,
+    :primary_category,
+    :categories,
     :street_address,
     :secondary_address,
     :city,
