@@ -41,25 +41,25 @@ group :development do
   gem "rb-fsevent", "0.9.6", require: false
   gem "spring", "1.4.0"
   gem "spring-commands-rspec", "1.0.4"
+  gem "web-console", "2.2.1"
 end
 
 group :development, :test do
   gem "airborne", "0.1.19"
   gem "byebug", "6.0.2"
   gem "capybara", "2.5.0"
-  gem "codeclimate-test-reporter", "0.4.8", require: nil
   gem "database_cleaner", "1.5.0"
   gem "hakiri", "0.7.2"
   gem "pry-rails", "0.3.4"
   gem "pry-remote", "0.1.8"
   gem "rspec-json_expectations", "1.2.0"
   gem "rspec-rails", "3.3.3"
-  gem "rspec-sidekiq", "2.1.0"
   gem "rubocop", "0.34.1"
   gem "shoulda-matchers", "2.8.0"
-  gem "web-console", "2.2.1"
 end
 
 group :test do
+  gem "rails-controller-testing", "0.0.3"
   gem "test_after_commit", "0.4.1"
+  gem "rspec-sidekiq", "2.1.0"
 end
