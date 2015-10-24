@@ -45,7 +45,7 @@ describe Api::V1::LocationsController, type: :controller do
             abbreviation: @location.abbreviation, time_zone: @location.time_zone,
             admin_notes: @location.admin_notes
           expect_json_types("location", { id: :string })
-          expect_json_types("location", { region_id: :integer })
+          expect_json_types("location", { region_id: :string })
           expect_json_types("location", { name: :string })
           expect_json_types("location", { abbreviation: :string })
           expect_json_types("location", { time_zone: :string })
@@ -79,7 +79,7 @@ describe Api::V1::LocationsController, type: :controller do
           @location.save
           get :show, id: @location.id
           expect_json_types("location", { id: :string })
-          expect_json_types("location", { region_id: :integer })
+          expect_json_types("location", { region_id: :string })
           expect_json_types("location", { name: :string })
           expect_json_types("location", { abbreviation: :string })
           expect_json_types("location", { time_zone: :string })
@@ -131,7 +131,7 @@ describe Api::V1::LocationsController, type: :controller do
           @location.save
           put :update, id: @location.id, name: "New name"
           expect_json_types("location", { id: :string })
-          expect_json_types("location", { region_id: :integer })
+          expect_json_types("location", { region_id: :string })
           expect_json_types("location", { name: :string })
           expect_json_types("location", { abbreviation: :string })
           expect_json_types("location", { time_zone: :string })

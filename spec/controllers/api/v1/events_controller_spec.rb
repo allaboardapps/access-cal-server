@@ -54,7 +54,7 @@ describe Api::V1::EventsController, type: :controller do
             time_zone: @event.time_zone, latitude: @event.latitude, longitude: @event.longitude,
             admin_notes: @event.admin_notes
           expect_json_types("event", { id: :string })
-          expect_json_types("event", { location_id: :integer })
+          expect_json_types("event", { location_id: :string })
           expect_json_types("event", { name: :string })
           expect_json_types("event", { abbreviation: :string })
           expect_json_types("event", { description: :string })
@@ -111,7 +111,7 @@ describe Api::V1::EventsController, type: :controller do
           @event.save
           get :show, id: @event.id
           expect_json_types("event", { id: :string })
-          expect_json_types("event", { location_id: :integer })
+          expect_json_types("event", { location_id: :string })
           expect_json_types("event", { name: :string })
           expect_json_types("event", { abbreviation: :string })
           expect_json_types("event", { description: :string })
@@ -178,7 +178,7 @@ describe Api::V1::EventsController, type: :controller do
           @event.save
           put :update, id: @event.id, name: "New name"
           expect_json_types("event", { id: :string })
-          expect_json_types("event", { location_id: :integer })
+          expect_json_types("event", { location_id: :string })
           expect_json_types("event", { name: :string })
           expect_json_types("event", { abbreviation: :string })
           expect_json_types("event", { description: :string })

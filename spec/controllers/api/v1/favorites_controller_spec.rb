@@ -41,8 +41,8 @@ describe Api::V1::FavoritesController, type: :controller do
         it "validates json attribute types" do
           post :create, user_id: @favorite.user_id, event_id: @favorite.event_id
           expect_json_types("favorite", { id: :string })
-          expect_json_types("favorite", { user_id: :integer })
-          expect_json_types("favorite", { event_id: :integer })
+          expect_json_types("favorite", { user_id: :string })
+          expect_json_types("favorite", { event_id: :string })
           expect_json_types("favorite", { archived: :boolean })
           expect_json_types("favorite", { test: :boolean })
         end
@@ -83,8 +83,8 @@ describe Api::V1::FavoritesController, type: :controller do
           @favorite.save
           get :show, id: @favorite.id
           expect_json_types("favorite", { id: :string })
-          expect_json_types("favorite", { user_id: :integer })
-          expect_json_types("favorite", { event_id: :integer })
+          expect_json_types("favorite", { user_id: :string })
+          expect_json_types("favorite", { event_id: :string })
           expect_json_types("favorite", { archived: :boolean })
           expect_json_types("favorite", { test: :boolean })
         end
@@ -133,8 +133,8 @@ describe Api::V1::FavoritesController, type: :controller do
           @favorite.save
           put :update, id: @favorite.id, archived: true
           expect_json_types("favorite", { id: :string })
-          expect_json_types("favorite", { user_id: :integer })
-          expect_json_types("favorite", { event_id: :integer })
+          expect_json_types("favorite", { user_id: :string })
+          expect_json_types("favorite", { event_id: :string })
           expect_json_types("favorite", { archived: :boolean })
           expect_json_types("favorite", { test: :boolean })
         end

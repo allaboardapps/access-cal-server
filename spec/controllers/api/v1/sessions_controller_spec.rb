@@ -47,7 +47,7 @@ describe Api::V1::SessionsController, type: :controller do
         expect_json_types("user", { email: :string })
         expect_json_types("user", { zip_code: :string })
         expect_json_types("user", { time_zone: :string })
-        expect_json_types("user", { location_id: :integer })
+        expect_json_types("user", { location_id: :string })
         expect_json_types("user", { roles: :array })
         expect_json_types("user", { statuses: :array })
         expect_json_types("user", { archived: :boolean })
