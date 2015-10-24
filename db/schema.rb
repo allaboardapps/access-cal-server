@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 20150521034236) do
   enable_extension "uuid-ossp"
 
   create_table "events", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
-    t.integer  "client_id"
-    t.integer  "location_id"
+    t.uuid     "client_id"
+    t.uuid     "location_id"
     t.string   "name"
     t.string   "abbreviation"
     t.string   "primary_category"
@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 20150521034236) do
   end
 
   create_table "favorites", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "event_id"
+    t.uuid     "user_id"
+    t.uuid     "event_id"
     t.boolean  "archived",   default: false
     t.boolean  "test",       default: false
     t.datetime "created_at"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20150521034236) do
   end
 
   create_table "locations", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
-    t.integer  "region_id"
+    t.uuid     "region_id"
     t.string   "name"
     t.string   "abbreviation"
     t.string   "time_zone"
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 20150521034236) do
     t.string   "zip_code"
     t.string   "time_zone"
     t.string   "admin_notes"
-    t.integer  "location_id"
+    t.uuid     "location_id"
     t.boolean  "archived",               default: false
     t.boolean  "test",                   default: false
     t.text     "roles",                  default: [],                 array: true

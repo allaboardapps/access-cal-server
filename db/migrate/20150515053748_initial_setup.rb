@@ -1,8 +1,8 @@
 class InitialSetup < ActiveRecord::Migration
   def change
     create_table :events, id: :uuid, force: true do |t|
-      t.integer "client_id"
-      t.integer "location_id"
+      t.uuid "client_id"
+      t.uuid "location_id"
       t.string "name"
       t.string "abbreviation"
       t.string "primary_category"
@@ -26,8 +26,8 @@ class InitialSetup < ActiveRecord::Migration
     end
 
     create_table :favorites, id: :uuid, force: true do |t|
-      t.integer "user_id"
-      t.integer "event_id"
+      t.uuid "user_id"
+      t.uuid "event_id"
       t.boolean "archived", default: false
       t.boolean "test", default: false
       t.timestamps
@@ -44,7 +44,7 @@ class InitialSetup < ActiveRecord::Migration
     end
 
     create_table :locations, id: :uuid, force: true do |t|
-      t.integer "region_id"
+      t.uuid "region_id"
       t.string "name"
       t.string "abbreviation"
       t.string "time_zone"

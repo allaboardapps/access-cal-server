@@ -36,7 +36,7 @@ class DeviseSetup < ActiveRecord::Migration
       t.string "zip_code"
       t.string "time_zone"
       t.string "admin_notes"
-      t.integer "location_id"
+      t.uuid "location_id"
       t.boolean "archived", default: false
       t.boolean "test", default: false
       t.text  "roles", array: true, default: []
