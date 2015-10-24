@@ -15,8 +15,9 @@ ActiveRecord::Schema.define(version: 20150521034236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
 
-  create_table "events", force: :cascade do |t|
+  create_table "events", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.integer  "client_id"
     t.integer  "location_id"
     t.string   "name"
@@ -42,7 +43,7 @@ ActiveRecord::Schema.define(version: 20150521034236) do
     t.datetime "updated_at"
   end
 
-  create_table "favorites", force: :cascade do |t|
+  create_table "favorites", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "event_id"
     t.boolean  "archived",   default: false
@@ -51,7 +52,7 @@ ActiveRecord::Schema.define(version: 20150521034236) do
     t.datetime "updated_at"
   end
 
-  create_table "locations", force: :cascade do |t|
+  create_table "locations", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.integer  "region_id"
     t.string   "name"
     t.string   "abbreviation"
@@ -63,7 +64,7 @@ ActiveRecord::Schema.define(version: 20150521034236) do
     t.datetime "updated_at"
   end
 
-  create_table "regions", force: :cascade do |t|
+  create_table "regions", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
     t.string   "abbreviation"
     t.string   "time_zone"
@@ -74,7 +75,7 @@ ActiveRecord::Schema.define(version: 20150521034236) do
     t.datetime "updated_at"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"

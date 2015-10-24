@@ -44,7 +44,7 @@ describe Api::V1::RegionsController, type: :controller do
           post :create, name: @region.name,
             abbreviation: @region.abbreviation, time_zone: @region.time_zone,
             admin_notes: @region.admin_notes
-          expect_json_types("region", { id: :integer })
+          expect_json_types("region", { id: :string })
           expect_json_types("region", { name: :string })
           expect_json_types("region", { abbreviation: :string })
           expect_json_types("region", { time_zone: :string })
@@ -77,7 +77,7 @@ describe Api::V1::RegionsController, type: :controller do
         it "validates json attribute types" do
           @region.save
           get :show, id: @region.id
-          expect_json_types("region", { id: :integer })
+          expect_json_types("region", { id: :string })
           expect_json_types("region", { name: :string })
           expect_json_types("region", { abbreviation: :string })
           expect_json_types("region", { time_zone: :string })
@@ -128,7 +128,7 @@ describe Api::V1::RegionsController, type: :controller do
         it "validates the json attribute types" do
           @region.save
           put :update, id: @region.id, name: "New name"
-          expect_json_types("region", { id: :integer })
+          expect_json_types("region", { id: :string })
           expect_json_types("region", { name: :string })
           expect_json_types("region", { abbreviation: :string })
           expect_json_types("region", { time_zone: :string })

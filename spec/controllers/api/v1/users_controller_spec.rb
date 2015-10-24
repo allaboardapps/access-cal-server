@@ -66,7 +66,7 @@ describe Api::V1::UsersController, type: :controller do
           @user.save
           get :show, id: @user.id
           expect_json_types("user", { token: :string_or_null })
-          expect_json_types("user", { id: :integer })
+          expect_json_types("user", { id: :string })
           expect_json_types("user", { first_name: :string })
           expect_json_types("user", { last_name: :string })
           expect_json_types("user", { email: :string })
@@ -125,7 +125,7 @@ describe Api::V1::UsersController, type: :controller do
           @user.save
           put :update, id: @user.id, last_name: "New name"
           expect_json_types("user", { token: :string_or_null })
-          expect_json_types("user", { id: :integer })
+          expect_json_types("user", { id: :string })
           expect_json_types("user", { first_name: :string })
           expect_json_types("user", { last_name: :string })
           expect_json_types("user", { email: :string })

@@ -53,7 +53,7 @@ describe Api::V1::EventsController, type: :controller do
             city: @event.city, state: @event.state, country: @event.country, zip_code: @event.zip_code,
             time_zone: @event.time_zone, latitude: @event.latitude, longitude: @event.longitude,
             admin_notes: @event.admin_notes
-          expect_json_types("event", { id: :integer })
+          expect_json_types("event", { id: :string })
           expect_json_types("event", { location_id: :integer })
           expect_json_types("event", { name: :string })
           expect_json_types("event", { abbreviation: :string })
@@ -110,7 +110,7 @@ describe Api::V1::EventsController, type: :controller do
         it "validates json attribute types" do
           @event.save
           get :show, id: @event.id
-          expect_json_types("event", { id: :integer })
+          expect_json_types("event", { id: :string })
           expect_json_types("event", { location_id: :integer })
           expect_json_types("event", { name: :string })
           expect_json_types("event", { abbreviation: :string })
@@ -177,7 +177,7 @@ describe Api::V1::EventsController, type: :controller do
         it "validates the json attribute types" do
           @event.save
           put :update, id: @event.id, name: "New name"
-          expect_json_types("event", { id: :integer })
+          expect_json_types("event", { id: :string })
           expect_json_types("event", { location_id: :integer })
           expect_json_types("event", { name: :string })
           expect_json_types("event", { abbreviation: :string })

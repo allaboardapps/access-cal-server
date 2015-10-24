@@ -1,6 +1,6 @@
 class InitialSetup < ActiveRecord::Migration
   def change
-    create_table "events", force: true do |t|
+    create_table :events, id: :uuid, force: true do |t|
       t.integer "client_id"
       t.integer "location_id"
       t.string "name"
@@ -25,7 +25,7 @@ class InitialSetup < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table "favorites", force: true do |t|
+    create_table :favorites, id: :uuid, force: true do |t|
       t.integer "user_id"
       t.integer "event_id"
       t.boolean "archived", default: false
@@ -33,7 +33,7 @@ class InitialSetup < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table "regions", force: true do |t|
+    create_table :regions, id: :uuid, force: true do |t|
       t.string "name"
       t.string "abbreviation"
       t.string "time_zone"
@@ -43,7 +43,7 @@ class InitialSetup < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table "locations", force: true do |t|
+    create_table :locations, id: :uuid, force: true do |t|
       t.integer "region_id"
       t.string "name"
       t.string "abbreviation"

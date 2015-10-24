@@ -41,7 +41,7 @@ describe Api::V1::SessionsController, type: :controller do
         user.update_attribute(:token, nil)
         post :create, email: user.email, password: user.password
         expect_json_types("user", { token: :string })
-        expect_json_types("user", { id: :integer })
+        expect_json_types("user", { id: :string })
         expect_json_types("user", { first_name: :string })
         expect_json_types("user", { last_name: :string })
         expect_json_types("user", { email: :string })
