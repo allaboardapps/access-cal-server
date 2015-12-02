@@ -11,7 +11,6 @@ ActiveAdmin.register_page "Dashboard" do
             li "link"
             li "link"
             li "link"
-            li "link"
           end
         end
       end
@@ -30,8 +29,10 @@ ActiveAdmin.register_page "Dashboard" do
     end
 
     if Rails.env.development?
-      panel "Mailer Testers" do
+      panel "Development" do
         ul do
+          li link_to "Database Viewer", "/rails/db"
+          li link_to "Sidekiq", "/sidekiq"
           # li link_to "Test Form Submission Email", staff_view_form_submission_mailer_path
         end
       end
