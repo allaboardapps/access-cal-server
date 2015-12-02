@@ -1,4 +1,4 @@
-# events-server
+# Events Server
 
 ## Security Checks
 
