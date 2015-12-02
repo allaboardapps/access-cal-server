@@ -33,3 +33,5 @@ Procfile.development
 latest.dump
 erd.pdf
 FALSE
+manifest.json
+/spec/support/captured_images/
