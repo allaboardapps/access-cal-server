@@ -37,12 +37,12 @@ end
 group :development do
   gem "better_errors", "2.1.1"
   gem "binding_of_caller", "0.7.2"
-  gem "brakeman", "3.1.2", require: false
+  gem "brakeman", "3.1.3", require: false
   gem "bundler-audit", "0.4.0", require: false
   gem "bullet", "4.14.10"
   gem "letter_opener", "1.4.1"
   gem "hakiri", "0.7.2", require: false
-  gem "rails_db", "0.9.9"
+  gem "rails_db", "1.0.0"
   gem "rb-fsevent", "0.9.6", require: false
   gem "spring", "1.5.0"
   gem "spring-commands-rspec", "1.0.4"
