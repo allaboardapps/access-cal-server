@@ -6,7 +6,7 @@ gem "rails", "4.2.5"
 gem "active_model_serializers", "0.9.3"
 gem "activeadmin", "1.0.0.pre2"
 gem "aws-sdk", "2.2.8"
-gem "browser", "1.0.1"
+gem "browser", "1.1.0"
 gem "devise", "3.5.3"
 gem "devise-async", "0.10.1"
 gem "factory_girl_rails", "4.5.0"
@@ -42,8 +42,8 @@ group :development do
   gem "bullet", "4.14.10"
   gem "letter_opener", "1.4.1"
   gem "hakiri", "0.7.2", require: false
-  gem "rails_db", "1.0.0"
-  gem "rb-fsevent", "0.9.6", require: false
+  gem "rails_db", "1.1.0"
+  gem "rb-fsevent", "0.9.7", require: false
   gem "spring", "1.6.1"
   gem "spring-commands-rspec", "1.0.4"
   gem "web-console", "3.0.0"
