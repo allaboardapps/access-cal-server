@@ -5,9 +5,9 @@ gem "rails", "4.2.5"
 
 gem "active_model_serializers", "0.9.4"
 gem "activeadmin", "1.0.0.pre2"
-gem "aws-sdk", "2.2.11"
+gem "aws-sdk", "2.2.13"
 gem "browser", "1.1.0"
-gem "devise", "3.5.3"
+gem "devise", "3.5.5"
 gem "devise-async", "0.10.1"
 gem "factory_girl_rails", "4.5.0"
 gem "faker", "1.6.1"
@@ -26,7 +26,7 @@ gem "sass-rails", "5.0.4"
 gem "settingslogic", "2.0.9"
 gem "sidekiq", "4.0.2"
 gem "simple_form", "3.2.1"
-gem "sinatra", "1.4.6", require: nil
+gem "sinatra", "1.4.7", require: nil
 gem "uglifier", "2.7.2"
 
 group :production, :staging do
@@ -52,11 +52,11 @@ end
 group :development, :test do
   gem "airborne", "0.2.2"
   gem "byebug", "8.2.1"
-  gem "capybara", "2.5.0"
+  gem "capybara", "2.6.0"
   gem "database_cleaner", "1.5.1"
   gem "pry-rails", "0.3.4"
   gem "pry-remote", "0.1.8"
-  gem "rspec-json_expectations", "1.2.0"
+  gem "rspec-json_expectations", "1.2.1"
   gem "rspec-rails", "3.4.0"
   gem "rubocop", "0.36.0"
   gem "shoulda-matchers", "3.1.0"
