@@ -31,7 +31,7 @@ gem "uglifier", "2.7.2"
 
 group :production, :staging do
   gem "rails_12factor", "0.0.3"
-  gem "unicorn", "5.0.1"
+  gem "puma", "2.15.3"
 end
 
 group :development do

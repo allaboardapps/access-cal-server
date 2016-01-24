@@ -1,4 +1,4 @@
-development:
+development: &default
   adapter: postgresql
   host: localhost
   username: postgres
@@ -7,6 +7,15 @@ development:
   timeout: 5000
 
 test:
+  <<: *default
   adapter: postgresql
   username: postgres
   database: events-server_test
+
+staging:
+  url:  <%= ENV["DATABASE_URL"] %>
+  pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
+
+production:
+  url:  <%= ENV["DATABASE_URL"] %>
+  pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
