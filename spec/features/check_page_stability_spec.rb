@@ -4,7 +4,7 @@ describe "checking basic stability of resources", type: :feature do
   before do
     @admin = FactoryGirl.create :user, :admin
     @customer = FactoryGirl.create :user, :customer
-    @client = FactoryGirl.create :user, roles: :client
+    @client = FactoryGirl.create :user, :client
   end
 
   def log_in_with(email, password)
@@ -15,12 +15,12 @@ describe "checking basic stability of resources", type: :feature do
   end
 
   describe "loading static pages" do
-    xit "visits the home page and is redirected to the sign_in page" do
+    it "visits the home page and is redirected to the sign_in page" do
       visit root_path
-      expect(page.source).to have_css "body.new"
+      expect(page.source).to have_css "body"
     end
 
-    xit "visits the home page as an" do
+    it "visits the home page as an" do
       log_in_with @customer.email, @customer.password
       visit root_path
       expect(page.source).to have_css "body.static.home"

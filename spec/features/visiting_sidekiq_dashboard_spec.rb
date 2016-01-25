@@ -11,7 +11,7 @@ describe "visiting sidekiq dashboard", type: :feature do
     expect{ visit sidekiq_web_path }.to raise_error(ActionController::RoutingError)
   end
 
-  xit "does not receive a routing error if user is an admin" do
+  it "does not receive a routing error if user is an admin" do
     user = FactoryGirl.create :user, :admin
     visit new_user_session_path
     fill_in :user_email, with: user.email

@@ -2,7 +2,6 @@ defaults: &defaults
   app_name: "Events Server"
   app_server: "Development"
   default_url: "http://localhost:3000"
-  redis_url: "redis://localhost:6379"
   aws_s3_region: "us-west-2"
   aws_s3_assets_url: "https://d1avux5rw5y0rl.cloudfront.net/assets"
   google_analytics_tracking_id: "UA-54471373-x"
@@ -17,6 +16,7 @@ test:
   <<: *defaults
   app_server: "Test"
   google_analytics_tracking_id: "UA-54471373-x"
+  redis_url: "redis://localhost:6379"
 
 development:
   <<: *defaults
