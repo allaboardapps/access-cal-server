@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 ruby "2.3.0"
-gem "rails", "4.2.5"
+gem "rails", "4.2.5.1"
 
 gem "active_model_serializers", "0.9.4"
 gem "activeadmin", "1.0.0.pre2"
@@ -57,7 +57,7 @@ group :development, :test do
   gem "pry-rails", "0.3.4"
   gem "pry-remote", "0.1.8"
   gem "rspec-json_expectations", "1.2.1"
-  gem "rspec-rails", "3.4.0"
+  gem "rspec-rails", "3.4.1"
   gem "rubocop", "0.36.0"
   gem "shoulda-matchers", "3.1.0"
 end
