@@ -115,7 +115,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
-    commander (4.3.5)
+    commander (4.3.6)
       highline (~> 1.7.2)
     concurrent-ruby (1.0.0)
     connection_pool (2.2.0)
@@ -263,7 +263,7 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
-    rails-html-sanitizer (1.0.2)
+    rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
     rails_12factor (0.0.3)
       rails_serve_static_assets
