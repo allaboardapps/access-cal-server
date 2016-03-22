@@ -3,7 +3,7 @@ test:
     - bundle exec rspec --format RspecJunitFormatter --out $CIRCLE_TEST_REPORTS/rspec.xml:
         parallel: true
         files:
-          - spec/**/*.rb
+          - spec/**/*_spec.rb
 deployment:
   staging:
     branch: master
