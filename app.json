@@ -1,0 +1,54 @@
+{
+  "name": "access-cal-server",
+  "scripts": {
+  },
+  "env": {
+    "APP_SECRET_KEY_BASE": {
+      "required": true
+    },
+    "DB_POOL": {
+      "required": true
+    },
+    "DEVISE_SECRET_KEY": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
+    "MAX_THREADS": {
+      "required": true
+    },
+    "MIN_THREADS": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "required": true
+    },
+    "SECRET_TOKEN": {
+      "required": true
+    }
+  },
+  "addons": [
+    "autobus",
+    "papertrail",
+    "heroku-postgresql",
+    "postmark",
+    "heroku-redis",
+    "rollbar",
+    "searchbox"
+  ],
+  "buildpacks": [
+    {
+      "url": "urn:buildpack:heroku/ruby"
+    }
+  ]
+}
