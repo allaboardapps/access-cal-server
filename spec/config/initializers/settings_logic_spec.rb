@@ -2,7 +2,7 @@ require_relative "../../rails_helper"
 
 describe AppSettings, type: :class do
   it "should retrieve app name" do
-    expect(AppSettings.app_name).to eq("Events Server")
+    expect(AppSettings.app_name).to eq("Access Cal Server")
   end
 
   it "should not retrieve wrong app name" do

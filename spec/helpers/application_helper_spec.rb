@@ -4,7 +4,7 @@ describe ApplicationHelper, type: :helper do
   describe "#copyright_notice" do
     it "renders the current year in the Copyright notice" do
       current_year = Time.new.strftime "%Y"
-      expect(copyright_notice).to eq "&copy; #{current_year} Events Server. All Rights Reserved"
+      expect(copyright_notice).to eq "&copy; 2016 Access Cal"
     end
   end
 
