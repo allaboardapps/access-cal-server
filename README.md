@@ -15,6 +15,7 @@
 * CalendarUser
 * Event
 * EventUser
+* Favorite
 * Location
 * Tag
 * Transaction
