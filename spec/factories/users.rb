@@ -12,19 +12,19 @@ FactoryGirl.define do
     location
     zip_code { Faker::Address.zip_code }
     time_zone { Faker::Address.time_zone }
-    roles { [Roles::CUSTOMER] }
+    roles { [UserRoles::CUSTOMER] }
     statuses { [Statuses::BASIC] }
 
     trait :admin do
-      roles { [Roles::ADMIN] }
+      roles { [UserRoles::ADMIN] }
     end
 
     trait :customer do
-      roles { [Roles::CUSTOMER] }
+      roles { [UserRoles::CUSTOMER] }
     end
 
     trait :client do
-      roles { [Roles::CLIENT] }
+      roles { [UserRoles::CLIENT] }
     end
 
     trait :basic do

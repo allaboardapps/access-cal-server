@@ -1,22 +1,22 @@
-module Roles
+module UserRoles
   CUSTOMER = "customer"
   ADMIN = "admin"
   CLIENT = "client"
 
   def self.system_roles
-    [Roles::ADMIN]
+    [UserRoles::ADMIN]
   end
 
   def self.client_roles
-    [Roles::CLIENT]
+    [UserRoles::CLIENT]
   end
 
   def self.customer_roles
-    [Roles::CUSTOMER]
+    [UserRoles::CUSTOMER]
   end
 
   def self.active_admin_roles
-    [Roles::ADMIN]
+    [UserRoles::ADMIN]
   end
 
   def self.all

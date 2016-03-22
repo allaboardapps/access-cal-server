@@ -231,8 +231,8 @@ describe User, type: :model do
 
   describe "#roles_presented" do
     it "sets the archived flag to false" do
-      user = create :user, roles: [Roles::CUSTOMER, Roles::CLIENT]
-      expect(user.roles_presented).to eq "#{Roles::CUSTOMER}, #{Roles::CLIENT}"
+      user = create :user, roles: [UserRoles::CUSTOMER, UserRoles::CLIENT]
+      expect(user.roles_presented).to eq "#{UserRoles::CUSTOMER}, #{UserRoles::CLIENT}"
     end
   end
 

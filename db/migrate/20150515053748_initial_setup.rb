@@ -1,5 +1,19 @@
 class InitialSetup < ActiveRecord::Migration
   def change
+    create_table :calendars, id: :uuid, force: true do |t|
+      t.string "name"
+      t.boolean "archived"
+      t.boolean "test"
+      t.timestamps
+    end
+
+    create_table :calendar_users, id: :uuid, force: true do |t|
+      t.uuid "calendar_id"
+      t.uuid "user_id"
+      t.string "role"
+      t.timestamps
+    end
+
     create_table :events, id: :uuid, force: true do |t|
       t.uuid "client_id"
       t.uuid "location_id"

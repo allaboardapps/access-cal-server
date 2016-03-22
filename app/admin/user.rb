@@ -75,7 +75,7 @@ ActiveAdmin.register User do
     end
 
     panel "Favorites" do
-      # if user.is?(Roles::TUTOR)
+      # if user.is?(UserRoles::TUTOR)
       #   table_for user.favorites.includes(:events) do |t|
       #     t.column "ID" do |tutor_assignment|
       #       tutor_assignment.id

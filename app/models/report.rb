@@ -136,7 +136,7 @@ class Report < ActiveRecord::Base
   #     { entity: "district", id: params[:district_id] }
   #   when current_user.staff?
   #     { entity: "any" }
-  #   when current_user.is?(Roles::STUDENT)
+  #   when current_user.is?(UserRoles::STUDENT)
   #     { entity: "none" }
   #   else
   #     current_user.highest_permission

@@ -65,6 +65,7 @@ end
 
 group :test do
   gem "rails-controller-testing", "0.0.3"
+  gem "rspec_junit_formatter", "0.2.3"
   gem "rspec-sidekiq", "2.2.0"
   gem "test_after_commit", "1.0.0"
 end

@@ -77,7 +77,7 @@ describe Report, type: :model do
   #   end
 
   #   it "returns the properly formatted filter hash" do
-  #     user = FactoryGirl.create :user, roles: [Roles::STAFF]
+  #     user = FactoryGirl.create :user, roles: [UserRoles::STAFF]
   #     test_setup = [
   #       { name: "organization", entity: "any", id: @organization.id, object: @organization, params: { organization_id: @organization.id } },
   #       { name: "tutor_group", entity: "any", id: @tutor_group.id, object: @tutor_group, params: { tutor_group_id: @tutor_group.id } },
@@ -95,8 +95,8 @@ describe Report, type: :model do
   #   end
 
   #   it "returns the filter hash for a student" do
-  #     user = FactoryGirl.create :user, roles: [Roles::STUDENT]
-  #     FactoryGirl.create :classroom_user, user: user, classroom: @classroom, role: ClassroomRoles::STUDENT
+  #     user = FactoryGirl.create :user, roles: [UserRoles::STUDENT]
+  #     FactoryGirl.create :classroom_user, user: user, classroom: @classroom, role: ClassroomUserRoles::STUDENT
   #     test_setup = [
   #       { name: "organization", entity: "none", id: nil, object: @organization, params: { organization_id: @organization.id } },
   #       { name: "tutor_group", entity: "none", id: nil, object: @tutor_group, params: { tutor_group_id: @tutor_group.id } },
@@ -114,8 +114,8 @@ describe Report, type: :model do
   #   end
 
   #   it "returns the filter hash for a tutor without a role" do
-  #     user = FactoryGirl.create :user, roles: [Roles::TUTOR]
-  #     FactoryGirl.create :tutor_group_user, user: user, tutor_group: @tutor_group, role: TutorGroupRoles::TUTOR
+  #     user = FactoryGirl.create :user, roles: [UserRoles::TUTOR]
+  #     FactoryGirl.create :tutor_group_user, user: user, tutor_group: @tutor_group, role: TutorGroupUserRoles::TUTOR
   #     test_setup = [
   #       { name: "organization", entity: "none", id: nil, object: @organization, params: { organization_id: @organization.id } },
   #       { name: "tutor_group", entity: "none", id: nil, object: @tutor_group, params: { tutor_group_id: @tutor_group.id } },
@@ -132,8 +132,8 @@ describe Report, type: :model do
   #   end
 
   #   it "returns the filter hash for a tutor" do
-  #     user = FactoryGirl.create :user, roles: [Roles::TUTOR]
-  #     FactoryGirl.create :tutor_group_user, user: user, tutor_group: @tutor_group, role: TutorGroupRoles::COORDINATOR
+  #     user = FactoryGirl.create :user, roles: [UserRoles::TUTOR]
+  #     FactoryGirl.create :tutor_group_user, user: user, tutor_group: @tutor_group, role: TutorGroupUserRoles::COORDINATOR
   #     test_setup = [
   #       { name: "organization", entity: "none", id: nil, object: @organization, params: { organization_id: @organization.id } },
   #       { name: "tutor_group", entity: "tutor_group", id: @tutor_group.id, object: @tutor_group, params: { tutor_group_id: @tutor_group.id } },
@@ -150,8 +150,8 @@ describe Report, type: :model do
   #   end
 
   #   it "returns the filter hash for a teacher" do
-  #     user = FactoryGirl.create :user, roles: [Roles::TEACHER]
-  #     FactoryGirl.create :classroom_user, user: user, classroom: @classroom, role: ClassroomRoles::PRIMARY_TEACHER
+  #     user = FactoryGirl.create :user, roles: [UserRoles::TEACHER]
+  #     FactoryGirl.create :classroom_user, user: user, classroom: @classroom, role: ClassroomUserRoles::PRIMARY_TEACHER
   #     UserUpdatePermissionsWorker.drain
   #     test_setup = [
   #       { name: "organization", entity: "none", id: nil, object: @organization, params: { organization_id: @organization.id } },

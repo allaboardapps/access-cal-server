@@ -7,17 +7,19 @@ class User < ActiveRecord::Base
 
   default_scope { order("LOWER(last_name) ASC, LOWER(first_name) ASC") }
   scope :with_one_of_roles, ->(*roles) { where.overlap(roles: roles) }
-  scope :admins, -> { where("'#{Roles::ADMIN}' = ANY (roles)").order(last_name: :asc) }
-  scope :customers, -> { where("'#{Roles::CUSTOMER}' = ANY (roles)").order(last_name: :asc) }
-  scope :clients, -> { where("'#{Roles::CLIENT}' = ANY (roles)").order(last_name: :asc) }
+  scope :admins, -> { where("'#{UserRoles::ADMIN}' = ANY (roles)").order(last_name: :asc) }
+  scope :customers, -> { where("'#{UserRoles::CUSTOMER}' = ANY (roles)").order(last_name: :asc) }
+  scope :clients, -> { where("'#{UserRoles::CLIENT}' = ANY (roles)").order(last_name: :asc) }
   scope :active, -> { where(archived: false, test: false) }
   scope :archived, -> { where(archived: true) }
   scope :test, -> { where(test: true) }
   scope :autocomplete, -> (user_query) { active.where("first_name ilike ? or last_name ilike ?", "#{user_query}%", "#{user_query}%").order(last_name: :asc, first_name: :asc) }
 
+  belongs_to :location
+  has_many :calendar_users
+  has_many :calendars, through: :calendar_users
   has_many :favorited_events, class_name: "Favorite"
   has_many :owned_events, class_name: "Event", foreign_key: :client_id
-  belongs_to :location
   has_one :region, through: :location
 
   after_create :set_default_role
@@ -70,19 +72,19 @@ class User < ActiveRecord::Base
   end
 
   def set_default_role
-    update_attribute :roles, [Roles::CUSTOMER] if roles.empty?
+    update_attribute :roles, [UserRoles::CUSTOMER] if roles.empty?
   end
 
   def admin?
-    is? Roles::ADMIN
+    is? UserRoles::ADMIN
   end
 
   def customer?
-    is? Roles::CUSTOMER
+    is? UserRoles::CUSTOMER
   end
 
   def client?
-    is? Roles::CLIENT
+    is? UserRoles::CLIENT
   end
 
   def status_is?(role)
@@ -110,15 +112,15 @@ class User < ActiveRecord::Base
   end
 
   def active_admin_access?
-    roles.any? { |role| Roles.active_admin_roles.include?(role) }
+    roles.any? { |role| UserRoles.active_admin_roles.include?(role) }
   end
 
   def archive
-    update_attribute(:archived, true)
+    update(archived: true)
   end
 
   def unarchive
-    update_attribute(:archived, false)
+    update(archived: false)
   end
 
   def roles_presented

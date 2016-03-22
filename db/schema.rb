@@ -11,11 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150521034236) do
+ActiveRecord::Schema.define(version: 20150515053748) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
+
+  create_table "calendar_users", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "calendar_id"
+    t.uuid     "user_id"
+    t.string   "role"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "calendars", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "archived"
+    t.boolean  "test"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "events", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.uuid     "client_id"
