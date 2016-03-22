@@ -2,10 +2,10 @@ deployment:
   production:
     branch: production
     commands:
-      - git push git@heroku.com:events-server-production.git $CIRCLE_SHA1:master
-      - heroku run rake db:migrate --app events-server-production
+      - git push git@heroku.com:access-cal-server-production.git $CIRCLE_SHA1:master
+      - heroku run rake db:migrate --app access-cal-server-production
   staging:
     branch: master
     commands:
-      - git push git@heroku.com:events-server-staging.git $CIRCLE_SHA1:master
-      - heroku run rake db:migrate --app events-server-staging
+      - git push git@heroku.com:access-cal-server-staging.git $CIRCLE_SHA1:master
+      - heroku run rake db:migrate --app access-cal-server-staging

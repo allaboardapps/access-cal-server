@@ -79,18 +79,9 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # Installed for Devise emails
-  config.action_mailer.default_url_options = { host: "http://staging.events-server.org" }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address: "smtp.mandrillapp.com",
-    port: 2525,
-    enable_starttls_auto: true,
-    user_name: ENV["MANDRILL_USERNAME"],
-    password: ENV["MANDRILL_APIKEY"],
-    authentication: "login",
-    domain: "staging.events-server.org",
-  }
+  config.action_mailer.delivery_method = :postmark
+  config.action_mailer.postmark_settings = { api_key: ENV["POSTMARK_API_KEY"] }
+  config.action_mailer.default_url_options = { host: "access-cal-staging.herokuapp.com" }
 
   config.active_record.raise_in_transactional_callbacks = true
 end

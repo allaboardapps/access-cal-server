@@ -1,3 +1,3 @@
-EventsServer::Application.configure do
+AccessCalServer::Application.configure do
   config.lograge.enabled = true
 end
