@@ -23,37 +23,25 @@ describe ActivityLog, type: :model do
 
     it "creates an activity log entry for change on a User instance" do
       loggable = FactoryGirl.create :user, :customer
-      ActivityLog.create @creator, loggable, @action, @description
+      ActivityLog.execute @creator, loggable, @action
       expect(ActivityLog.first.loggable).to eq loggable
     end
 
     it "creates an activity log entry for change on a Event instance" do
       loggable = FactoryGirl.create :event
-      ActivityLog.create @creator, loggable, @action, @description
+      ActivityLog.execute @creator, loggable, @action
       expect(ActivityLog.first.loggable).to eq loggable
     end
 
     it "requires a user to log" do
       loggable = FactoryGirl.create :admin
-      ActivityLog.create nil, loggable, @action, @description
+      ActivityLog.execute nil, loggable, @action
       expect(ActivityLog.count).to eq 0
     end
 
     it "requires a loggable model to log" do
-      ActivityLog.create @creator, nil, @action, @description
+      ActivityLog.execute @creator, nil, @action
       expect(ActivityLog.count).to eq 0
-    end
-  end
-
-  describe "#explanation" do
-    it "builds an explanation of the activity with notes" do
-      activity_log = FactoryGirl.create :activity_log
-      expect(activity_log.explanation).to eq "#{activity_log.creator.name} executed a(n) #{activity_log.activity_action_type.upcase} action on #{activity_log.loggable_type}: #{activity_log.loggable.name}, Notes: #{activity_log.description}"
-    end
-
-    it "builds an explanation of the activity without notes" do
-      activity_log = FactoryGirl.create :activity_log, description: nil
-      expect(activity_log.explanation).to eq "#{activity_log.creator.name} executed a(n) #{activity_log.activity_action_type.upcase} action on #{activity_log.loggable_type}: #{activity_log.loggable.name}, Notes: none"
     end
   end
 

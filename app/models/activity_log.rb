@@ -11,17 +11,12 @@ class ActivityLog < ActiveRecord::Base
   scope :unarchives, -> { where(activity_action_type: ActivityActionTypes::UNARCHIVE) }
   scope :deletes, -> { where(activity_action_type: ActivityActionTypes::DELETE) }
 
-  def self.create(creator, loggable, action, desc = nil)
-    ActivityLog.create(
+  def self.execute(creator, loggable, action)
+    log = create(
       creator: creator,
       loggable: loggable,
-      activity_action_type: action,
-      description: desc
+      activity_action_type: action
     )
-  end
-
-  def explanation
-    notes = description || "none"
-    "#{creator.name} executed a(n) #{activity_action_type.upcase} action on #{loggable_type}: #{loggable.name}, Notes: #{notes}"
+    log.save
   end
 end

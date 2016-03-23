@@ -1,10 +1,10 @@
 class InitialSetup < ActiveRecord::Migration
   def change
     create_table :activity_logs do |t|
-      t.integer    :creator_id
-      t.references :loggable, polymorphic: true, index: true
-      t.string     :activity_action_type
-      t.string     :description
+      t.uuid :creator_id
+      t.uuid :loggable_id
+      t.string :loggable_type
+      t.string :activity_action_type
       t.timestamps null: false
     end
 
@@ -12,7 +12,7 @@ class InitialSetup < ActiveRecord::Migration
       t.string "name"
       t.boolean "archived", default: false
       t.boolean "test", default: false
-      t.timestamps
+      t.timestamps null: false
     end
 
     create_table :calendar_users, id: :uuid, force: true do |t|
@@ -21,7 +21,7 @@ class InitialSetup < ActiveRecord::Migration
       t.string "role"
       t.boolean "archived", default: false
       t.boolean "test", default: false
-      t.timestamps
+      t.timestamps null: false
     end
 
     create_table :groups, id: :uuid, force: true do |t|
@@ -30,7 +30,7 @@ class InitialSetup < ActiveRecord::Migration
       t.string "group_type"
       t.boolean "archived", default: false
       t.boolean "test", default: false
-      t.timestamps
+      t.timestamps null: false
     end
 
     create_table :group_users, id: :uuid, force: true do |t|
@@ -39,14 +39,14 @@ class InitialSetup < ActiveRecord::Migration
       t.string "role"
       t.boolean "archived", default: false
       t.boolean "test", default: false
-      t.timestamps
+      t.timestamps null: false
     end
 
     create_table :organizations, id: :uuid, force: true do |t|
       t.string "name"
       t.boolean "archived", default: false
       t.boolean "test", default: false
-      t.timestamps
+      t.timestamps null: false
     end
 
     create_table :organization_users, id: :uuid, force: true do |t|
@@ -55,7 +55,7 @@ class InitialSetup < ActiveRecord::Migration
       t.string "role"
       t.boolean "archived", default: false
       t.boolean "test", default: false
-      t.timestamps
+      t.timestamps null: false
     end
 
     create_table :events, id: :uuid, force: true do |t|
@@ -80,7 +80,7 @@ class InitialSetup < ActiveRecord::Migration
       t.string "admin_notes"
       t.boolean "archived", default: false
       t.boolean "test", default: false
-      t.timestamps
+      t.timestamps null: false
     end
 
     create_table :favorites, id: :uuid, force: true do |t|
@@ -88,7 +88,7 @@ class InitialSetup < ActiveRecord::Migration
       t.uuid "event_id"
       t.boolean "archived", default: false
       t.boolean "test", default: false
-      t.timestamps
+      t.timestamps null: false
     end
 
     create_table :regions, id: :uuid, force: true do |t|
@@ -98,7 +98,7 @@ class InitialSetup < ActiveRecord::Migration
       t.string "admin_notes"
       t.boolean "archived", default: false
       t.boolean "test", default: false
-      t.timestamps
+      t.timestamps null: false
     end
 
     create_table :locations, id: :uuid, force: true do |t|
@@ -109,7 +109,7 @@ class InitialSetup < ActiveRecord::Migration
       t.string "admin_notes"
       t.boolean "archived", default: false
       t.boolean "test", default: false
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
