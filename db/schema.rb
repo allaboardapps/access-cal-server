@@ -17,6 +17,18 @@ ActiveRecord::Schema.define(version: 20150515053748) do
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
 
+  create_table "activity_logs", force: :cascade do |t|
+    t.integer  "creator_id"
+    t.integer  "loggable_id"
+    t.string   "loggable_type"
+    t.string   "activity_action_type"
+    t.string   "description"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "activity_logs", ["loggable_type", "loggable_id"], name: "index_activity_logs_on_loggable_type_and_loggable_id", using: :btree
+
   create_table "calendar_users", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.uuid     "calendar_id"
     t.uuid     "user_id"

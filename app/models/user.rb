@@ -5,25 +5,25 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :recoverable, :rememberable, :registerable,
          :trackable, :validatable, :async, :confirmable, :lockable
 
-  default_scope { order("LOWER(last_name) ASC, LOWER(first_name) ASC") }
-  scope :with_one_of_roles, ->(*roles) { where.overlap(roles: roles) }
-  scope :admins, -> { where("'#{UserRoles::ADMIN}' = ANY (roles)").order(last_name: :asc) }
-  scope :customers, -> { where("'#{UserRoles::CUSTOMER}' = ANY (roles)").order(last_name: :asc) }
-  scope :authors, -> { where("'#{UserRoles::AUTHOR}' = ANY (roles)").order(last_name: :asc) }
   scope :active, -> { where(archived: false, test: false) }
+  scope :admins, -> { where("'#{UserRoles::ADMIN}' = ANY (roles)").order(last_name: :asc) }
   scope :archived, -> { where(archived: true) }
-  scope :test, -> { where(test: true) }
+  scope :authors, -> { where("'#{UserRoles::AUTHOR}' = ANY (roles)").order(last_name: :asc) }
   scope :autocomplete, -> (user_query) { active.where("first_name ilike ? or last_name ilike ?", "#{user_query}%", "#{user_query}%").order(last_name: :asc, first_name: :asc) }
+  scope :customers, -> { where("'#{UserRoles::CUSTOMER}' = ANY (roles)").order(last_name: :asc) }
+  scope :test, -> { where(test: true) }
+  scope :with_one_of_roles, ->(*roles) { where.overlap(roles: roles) }
 
   belongs_to :location
+  has_many :activity_logs, as: :loggable
+  has_many :authored_events, class_name: "Event", foreign_key: :author_id
   has_many :calendar_users
   has_many :calendars, through: :calendar_users
-  has_many :organization_users
-  has_many :organizations, through: :organization_users
+  has_many :favorited_events, class_name: "Favorite"
   has_many :group_users
   has_many :groups, through: :group_users
-  has_many :favorited_events, class_name: "Favorite"
-  has_many :authored_events, class_name: "Event", foreign_key: :author_id
+  has_many :organization_users
+  has_many :organizations, through: :organization_users
   has_one :region, through: :location
 
   after_create :set_default_role

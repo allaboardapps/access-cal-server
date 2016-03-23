@@ -1,5 +1,13 @@
 class InitialSetup < ActiveRecord::Migration
   def change
+    create_table :activity_logs do |t|
+      t.integer    :creator_id
+      t.references :loggable, polymorphic: true, index: true
+      t.string     :activity_action_type
+      t.string     :description
+      t.timestamps null: false
+    end
+
     create_table :calendars, id: :uuid, force: true do |t|
       t.string "name"
       t.boolean "archived", default: false

@@ -5,9 +5,10 @@ class Event < ActiveRecord::Base
 
   belongs_to :author, class_name: "User", foreign_key: :author_id
   belongs_to :location
-  has_one :region, through: :location
+  has_many :activity_logs, as: :loggable
   has_many :favorites
   has_many :users, through: :favorites
+  has_one :region, through: :location
 
   scope :active, -> { where(archived: false, test: false) }
   scope :archived, -> { where(archived: true) }
