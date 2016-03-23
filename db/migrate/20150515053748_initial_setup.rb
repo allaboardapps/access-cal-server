@@ -14,6 +14,20 @@ class InitialSetup < ActiveRecord::Migration
       t.timestamps
     end
 
+    create_table :organizations, id: :uuid, force: true do |t|
+      t.string "name"
+      t.boolean "archived"
+      t.boolean "test"
+      t.timestamps
+    end
+
+    create_table :organization_users, id: :uuid, force: true do |t|
+      t.uuid "organization_id"
+      t.uuid "user_id"
+      t.string "role"
+      t.timestamps
+    end
+
     create_table :events, id: :uuid, force: true do |t|
       t.uuid "client_id"
       t.uuid "location_id"

@@ -9,5 +9,6 @@ describe Calendar, type: :model do
     expect(build :calendar, name: nil).to_not be_valid
   end
 
+  it { is_expected.to have_many :calendar_users }
   it { is_expected.to have_many :users }
 end

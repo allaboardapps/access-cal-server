@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   belongs_to :location
   has_many :calendar_users
   has_many :calendars, through: :calendar_users
+  has_many :organization_users
+  has_many :organizations, through: :organization_users
   has_many :favorited_events, class_name: "Favorite"
   has_many :owned_events, class_name: "Event", foreign_key: :client_id
   has_one :region, through: :location
