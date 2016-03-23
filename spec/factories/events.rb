@@ -2,7 +2,7 @@ FactoryGirl.define do
   starts_at = Faker::Time.forward(21)
 
   factory :event do
-    client
+    author
     location
     name { Faker::Company.catch_phrase }
     abbreviation { Faker::Company.name }

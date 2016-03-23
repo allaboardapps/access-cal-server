@@ -4,7 +4,7 @@ ActiveAdmin.register Event do
   actions :all
 
   permit_params :location_id,
-    :client_id,
+    :author_id,
     :name,
     :abbreviation,
     :primary_category,

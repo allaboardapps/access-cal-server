@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   scope :with_one_of_roles, ->(*roles) { where.overlap(roles: roles) }
   scope :admins, -> { where("'#{UserRoles::ADMIN}' = ANY (roles)").order(last_name: :asc) }
   scope :customers, -> { where("'#{UserRoles::CUSTOMER}' = ANY (roles)").order(last_name: :asc) }
-  scope :clients, -> { where("'#{UserRoles::CLIENT}' = ANY (roles)").order(last_name: :asc) }
+  scope :authors, -> { where("'#{UserRoles::AUTHOR}' = ANY (roles)").order(last_name: :asc) }
   scope :active, -> { where(archived: false, test: false) }
   scope :archived, -> { where(archived: true) }
   scope :test, -> { where(test: true) }
@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   has_many :organization_users
   has_many :organizations, through: :organization_users
   has_many :favorited_events, class_name: "Favorite"
-  has_many :owned_events, class_name: "Event", foreign_key: :client_id
+  has_many :authored_events, class_name: "Event", foreign_key: :author_id
   has_one :region, through: :location
 
   after_create :set_default_role

@@ -29,7 +29,7 @@ class Api::V1::EventsController < Api::V1::ApiController
   private
 
   def update_params
-    params.permit(:client_id, :location_id, :name, :abbreviation, :primary_category,
+    params.permit(:author_id, :location_id, :name, :abbreviation, :primary_category,
       :starts_at, :ends_at, :description, :street_address, :secondary_address,
       :city, :state, :country, :zip_code, :time_zone, :latitude, :longitude, :admin_notes,
       :archived, :test, :categories => []
@@ -37,7 +37,7 @@ class Api::V1::EventsController < Api::V1::ApiController
   end
 
   def create_params
-    params.permit(:client_id, :location_id, :name, :abbreviation, :primary_category,
+    params.permit(:author_id, :location_id, :name, :abbreviation, :primary_category,
       :starts_at, :ends_at, :description, :street_address, :secondary_address,
       :city, :state, :country, :zip_code, :time_zone, :latitude, :longitude, :admin_notes,
       :archived, :test, :categories => []

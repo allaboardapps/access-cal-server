@@ -35,7 +35,7 @@ describe Api::V1::EventsController, type: :controller do
 
       describe "#create" do
         it "creates and returns an event instance" do
-          post :create, client_id: @event.client_id, location_id: @event.location_id, name: @event.name,
+          post :create, author_id: @event.author_id, location_id: @event.location_id, name: @event.name,
             abbreviation: @event.abbreviation, primary_category: @event.primary_category, categories: @event.categories,
             starts_at: @event.starts_at, ends_at: @event.ends_at, description: @event.description,
             street_address: @event.street_address, secondary_address: @event.secondary_address,
@@ -46,7 +46,7 @@ describe Api::V1::EventsController, type: :controller do
         end
 
         it "validates json attribute types" do
-          post :create, client_id: @event.client_id, location_id: @event.location_id, name: @event.name,
+          post :create, author_id: @event.author_id, location_id: @event.location_id, name: @event.name,
             abbreviation: @event.abbreviation, primary_category: @event.primary_category, categories: @event.categories,
             starts_at: @event.starts_at, ends_at: @event.ends_at, description: @event.description,
             street_address: @event.street_address, secondary_address: @event.secondary_address,
@@ -78,7 +78,7 @@ describe Api::V1::EventsController, type: :controller do
         end
 
         it "returns a status of 201" do
-          post :create, client_id: @event.client_id, location_id: @event.location_id, name: @event.name,
+          post :create, author_id: @event.author_id, location_id: @event.location_id, name: @event.name,
             abbreviation: @event.abbreviation, primary_category: @event.primary_category, categories: @event.categories,
             starts_at: @event.starts_at, ends_at: @event.ends_at, description: @event.description,
             street_address: @event.street_address, secondary_address: @event.secondary_address,
@@ -89,7 +89,7 @@ describe Api::V1::EventsController, type: :controller do
         end
 
         it "creates a new instance" do
-          expect { post :create, client_id: @event.client_id, location_id: @event.location_id, name: @event.name,
+          expect { post :create, author_id: @event.author_id, location_id: @event.location_id, name: @event.name,
             abbreviation: @event.abbreviation, primary_category: @event.primary_category, categories: @event.categories,
             starts_at: @event.starts_at, ends_at: @event.ends_at, description: @event.description,
             street_address: @event.street_address, secondary_address: @event.secondary_address,

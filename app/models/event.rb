@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
   validates :abbreviation, presence: true
   validates :primary_category, presence: true
 
-  belongs_to :client, class_name: "User", foreign_key: :client_id
+  belongs_to :author, class_name: "User", foreign_key: :author_id
   belongs_to :location
   has_one :region, through: :location
   has_many :favorites

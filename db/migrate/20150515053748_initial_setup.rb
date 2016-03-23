@@ -29,7 +29,7 @@ class InitialSetup < ActiveRecord::Migration
     end
 
     create_table :events, id: :uuid, force: true do |t|
-      t.uuid "client_id"
+      t.uuid "author_id"
       t.uuid "location_id"
       t.string "name"
       t.string "abbreviation"
