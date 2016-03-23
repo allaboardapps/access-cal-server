@@ -5,7 +5,7 @@ gem "rails", "4.2.6"
 
 gem "active_model_serializers", "0.9.4"
 gem "activeadmin", "1.0.0.pre2"
-gem "aws-sdk", "2.2.28"
+gem "aws-sdk", "2.2.29"
 gem "browser", "2.0.2"
 gem "devise", "3.5.6"
 gem "devise-async", "0.10.1"
@@ -23,12 +23,13 @@ gem "rack-cors", "0.4.0", require: "rack/cors"
 gem "raygun4ruby", "1.1.9"
 gem "redcarpet", "3.3.4"
 gem "redis-rails", "4.0.0"
+gem "rollbar", "2.8.3"
 gem "sass-rails", "5.0.4"
 gem "settingslogic", "2.0.9"
 gem "sidekiq", "4.1.1"
 gem "simple_form", "3.2.1"
 gem "sinatra", "1.4.7", require: nil
-gem "uglifier", "2.7.2"
+gem "uglifier", "3.0.0"
 
 group :production, :staging do
   gem "rails_12factor", "0.0.3"
