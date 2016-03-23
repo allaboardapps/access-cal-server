@@ -7,6 +7,7 @@
 * User
 * Organization
 * OrganizationUser
+* OrganizationGroup
 * Group
 * GroupUser
 * Calendar

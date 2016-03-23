@@ -9,6 +9,7 @@ describe Organization, type: :model do
     expect(build :organization, name: nil).to_not be_valid
   end
 
+  it { is_expected.to have_many :groups }
   it { is_expected.to have_many :organization_users }
   it { is_expected.to have_many :users }
 end

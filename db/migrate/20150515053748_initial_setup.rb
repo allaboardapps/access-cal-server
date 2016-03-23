@@ -2,8 +2,8 @@ class InitialSetup < ActiveRecord::Migration
   def change
     create_table :calendars, id: :uuid, force: true do |t|
       t.string "name"
-      t.boolean "archived"
-      t.boolean "test"
+      t.boolean "archived", default: false
+      t.boolean "test", default: false
       t.timestamps
     end
 
@@ -11,13 +11,33 @@ class InitialSetup < ActiveRecord::Migration
       t.uuid "calendar_id"
       t.uuid "user_id"
       t.string "role"
+      t.boolean "archived", default: false
+      t.boolean "test", default: false
+      t.timestamps
+    end
+
+    create_table :groups, id: :uuid, force: true do |t|
+      t.uuid "organization_id"
+      t.string "name"
+      t.string "group_type"
+      t.boolean "archived", default: false
+      t.boolean "test", default: false
+      t.timestamps
+    end
+
+    create_table :group_users, id: :uuid, force: true do |t|
+      t.uuid "group_id"
+      t.uuid "user_id"
+      t.string "role"
+      t.boolean "archived", default: false
+      t.boolean "test", default: false
       t.timestamps
     end
 
     create_table :organizations, id: :uuid, force: true do |t|
       t.string "name"
-      t.boolean "archived"
-      t.boolean "test"
+      t.boolean "archived", default: false
+      t.boolean "test", default: false
       t.timestamps
     end
 
@@ -25,6 +45,8 @@ class InitialSetup < ActiveRecord::Migration
       t.uuid "organization_id"
       t.uuid "user_id"
       t.string "role"
+      t.boolean "archived", default: false
+      t.boolean "test", default: false
       t.timestamps
     end
 

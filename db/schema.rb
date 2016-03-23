@@ -21,14 +21,16 @@ ActiveRecord::Schema.define(version: 20150515053748) do
     t.uuid     "calendar_id"
     t.uuid     "user_id"
     t.string   "role"
+    t.boolean  "archived",    default: false
+    t.boolean  "test",        default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "calendars", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
-    t.boolean  "archived"
-    t.boolean  "test"
+    t.boolean  "archived",   default: false
+    t.boolean  "test",       default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -68,6 +70,26 @@ ActiveRecord::Schema.define(version: 20150515053748) do
     t.datetime "updated_at"
   end
 
+  create_table "group_users", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "group_id"
+    t.uuid     "user_id"
+    t.string   "role"
+    t.boolean  "archived",   default: false
+    t.boolean  "test",       default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "organization_id"
+    t.string   "name"
+    t.string   "group_type"
+    t.boolean  "archived",        default: false
+    t.boolean  "test",            default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "locations", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.uuid     "region_id"
     t.string   "name"
@@ -84,14 +106,16 @@ ActiveRecord::Schema.define(version: 20150515053748) do
     t.uuid     "organization_id"
     t.uuid     "user_id"
     t.string   "role"
+    t.boolean  "archived",        default: false
+    t.boolean  "test",            default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "organizations", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
-    t.boolean  "archived"
-    t.boolean  "test"
+    t.boolean  "archived",   default: false
+    t.boolean  "test",       default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

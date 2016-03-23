@@ -1,9 +1,9 @@
-class Organization < ActiveRecord::Base
+class Group < ActiveRecord::Base
   validates :name, presence: true
 
-  has_many :groups
-  has_many :organization_users
-  has_many :users, through: :organization_users
+  has_many :group_users
+  has_many :users, through: :group_users
+  belongs_to :organization
 
   scope :active, -> { where(archived: false, test: false) }
   scope :archived, -> { where(archived: true) }

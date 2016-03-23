@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
   has_many :calendars, through: :calendar_users
   has_many :organization_users
   has_many :organizations, through: :organization_users
+  has_many :group_users
+  has_many :groups, through: :group_users
   has_many :favorited_events, class_name: "Favorite"
   has_many :authored_events, class_name: "Event", foreign_key: :author_id
   has_one :region, through: :location
