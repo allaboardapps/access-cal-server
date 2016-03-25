@@ -17,11 +17,12 @@ ActiveRecord::Schema.define(version: 20150515053748) do
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
 
-  create_table "activity_logs", force: :cascade do |t|
+  create_table "activities", force: :cascade do |t|
     t.uuid     "creator_id"
     t.uuid     "loggable_id"
     t.string   "loggable_type"
     t.string   "activity_action_type"
+    t.string   "description"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end

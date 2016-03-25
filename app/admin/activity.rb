@@ -1,4 +1,4 @@
-ActiveAdmin.register ActivityLog do
+ActiveAdmin.register Activity do
   menu parent: "Reports", priority: 5
 
   actions :all, except: [:edit, :destroy]

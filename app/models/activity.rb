@@ -1,4 +1,4 @@
-class ActivityLog < ActiveRecord::Base
+class Activity < ActiveRecord::Base
   validates :creator_id, presence: true
   validates :loggable, presence: true
 
@@ -11,12 +11,12 @@ class ActivityLog < ActiveRecord::Base
   scope :unarchives, -> { where(activity_action_type: ActivityActionTypes::UNARCHIVE) }
   scope :deletes, -> { where(activity_action_type: ActivityActionTypes::DELETE) }
 
-  def self.execute(creator, loggable, action)
-    log = create(
+  def self.log(creator, loggable, action, description = nil)
+    create(
       creator: creator,
       loggable: loggable,
-      activity_action_type: action
+      activity_action_type: action,
+      description: description
     )
-    log.save
   end
 end

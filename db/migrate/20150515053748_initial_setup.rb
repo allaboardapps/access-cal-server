@@ -1,10 +1,11 @@
 class InitialSetup < ActiveRecord::Migration
   def change
-    create_table :activity_logs do |t|
+    create_table :activities do |t|
       t.uuid :creator_id
       t.uuid :loggable_id
       t.string :loggable_type
       t.string :activity_action_type
+      t.string :description
       t.timestamps null: false
     end
 

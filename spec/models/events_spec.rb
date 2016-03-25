@@ -19,7 +19,7 @@ describe Event, type: :model do
 
   it { is_expected.to belong_to :author }
   it { is_expected.to belong_to :location }
-  it { is_expected.to have_many :activity_logs }
+  it { is_expected.to have_many :activities }
   it { is_expected.to have_many :favorites }
   it { is_expected.to have_many :users }
   it { is_expected.to have_one :region }

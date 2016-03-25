@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   scope :with_one_of_roles, ->(*roles) { where.overlap(roles: roles) }
 
   belongs_to :location
-  has_many :activity_logs, as: :loggable
+  has_many :activities, as: :loggable
   has_many :authored_events, class_name: "Event", foreign_key: :author_id
   has_many :calendar_users
   has_many :calendars, through: :calendar_users
