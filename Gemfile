@@ -5,7 +5,7 @@ gem "rails", "4.2.6"
 
 gem "active_model_serializers", "0.9.4"
 gem "activeadmin", "1.0.0.pre2"
-gem "aws-sdk", "2.2.29"
+gem "aws-sdk", "2.2.30"
 gem "browser", "2.0.2"
 gem "devise", "3.5.6"
 gem "devise-async", "0.10.1"
@@ -65,7 +65,6 @@ group :development, :test do
 end
 
 group :test do
-  gem "rails-controller-testing", "0.0.3"
   gem "rspec_junit_formatter", "0.2.3"
   gem "rspec-sidekiq", "2.2.0"
   gem "test_after_commit", "1.0.0"

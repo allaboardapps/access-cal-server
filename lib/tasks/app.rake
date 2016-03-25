@@ -30,6 +30,11 @@ namespace :app do
     end
   end
 
+  desc "Post-deployment and promotion processes"
+  task release: :environment do
+    Rake::Task["db:migrate"].execute
+  end
+
   desc "set fastly cors headers to fix chrome/firefox font loading issues"
   task allow_cors: :environment do
     require "yajl"
