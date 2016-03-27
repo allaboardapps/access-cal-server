@@ -60,7 +60,7 @@ group :development, :test do
   gem "pry-remote", "0.1.8"
   gem "rspec-json_expectations", "1.3.0"
   gem "rspec-rails", "3.4.2"
-  gem "rubocop", "0.38.0"
+  gem "rubocop", "0.39.0"
   gem "shoulda-matchers", "3.1.1"
 end
 
