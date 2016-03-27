@@ -2,6 +2,14 @@
 
 * An accessible calendar system focused on inclusive events
 
+## Deployment
+
+1. GitHub
+1. CircleCi
+1. Application is hosted on a Heroku Pipeline named [access-cal-server](https://dashboard.heroku.com/pipelines/a3d041fe-dcf6-41b1-9cb4-7849b6f09202)
+1. Promotion via access-cal-server-staging >> access-cal-server-production via `heroku pipelines:promote -r staging`
+1. Post-deploy scripts are in `Procfile` after the `release:` instruction
+
 ## Models
 
 * User
