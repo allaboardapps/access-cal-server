@@ -9,4 +9,3 @@ deployment:
     branch: master
     commands:
       - git push git@heroku.com:access-cal-server-staging.git $CIRCLE_SHA1:master
-      - heroku run rake db:migrate --app access-cal-server-staging
