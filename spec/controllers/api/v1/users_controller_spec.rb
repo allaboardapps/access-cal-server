@@ -7,7 +7,7 @@ describe Api::V1::UsersController, type: :controller do
         request.env["HTTP_AUTHORIZATION"] = ActionController::HttpAuthentication::Token.encode_credentials("1234")
       end
 
-      it "returns an forbidden status code" do
+      it "returns a forbidden status code" do
         get :show, id: 1
         expect_status :forbidden
       end
