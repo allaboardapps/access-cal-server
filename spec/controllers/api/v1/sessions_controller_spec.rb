@@ -6,7 +6,7 @@ describe Api::V1::SessionsController, type: :controller do
 
     context "invalid credentials" do
       before do
-        request.accept = "application/json"
+        request.accept = "application/vnd.api+json"
       end
 
       it "returns 'Not Authorized' message" do
@@ -22,7 +22,7 @@ describe Api::V1::SessionsController, type: :controller do
 
     context "valid credentials" do
       before do
-        request.accept = "application/json"
+        request.accept = "application/vnd.api+json"
       end
 
       it "returns a user token that already exists on model" do
