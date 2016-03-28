@@ -1,35 +1,24 @@
 require "rails_helper"
 
 describe Api::V1::RegionsController, type: :controller do
-  describe "handling AccessDenied exceptions" do
-    let(:user) { FactoryGirl.create :user }
-
-    before do
-      user.generate_token!
-    end
-
-    context "incorrect token" do
+  describe "accepting requests" do
+    context "with incorrect token" do
       before do
         request.env["HTTP_AUTHORIZATION"] = ActionController::HttpAuthentication::Token.encode_credentials("1234")
       end
 
-      it "returns 'Not Authorized' message" do
-        region = FactoryGirl.create :region
-        get :show, id: region.id
-        expect(response.body).to match /Not Authorized/
-      end
-
-      it "returns an unauthorized status code" do
-        region = FactoryGirl.create :region
-        get :show, id: region.id
+      it "returns an forbidden status code" do
+        get :show, id: 1
         expect_status :forbidden
       end
     end
 
-    context "correct token" do
+    context "with correct token" do
       before do
-        request.env["HTTP_AUTHORIZATION"] = ActionController::HttpAuthentication::Token.encode_credentials(user.token, { email: user.email })
-        @region = FactoryGirl.build :region
+        @region = FactoryGirl.create :region, name: "Test1"
+        location = FactoryGirl.create :location, region: @region
+        @user = FactoryGirl.create :user, location: location
+        authenticate_for_specs(@user)
       end
 
       describe "#create" do
@@ -37,19 +26,19 @@ describe Api::V1::RegionsController, type: :controller do
           post :create, name: @region.name,
             abbreviation: @region.abbreviation, time_zone: @region.time_zone,
             admin_notes: @region.admin_notes
-          expect_json("region", { name: @region.name, abbreviation: @region.abbreviation })
+          expect_json("data", attributes: { name: @region.name, abbreviation: @region.abbreviation })
         end
 
         it "validates json attribute types" do
           post :create, name: @region.name,
             abbreviation: @region.abbreviation, time_zone: @region.time_zone,
             admin_notes: @region.admin_notes
-          expect_json_types("region", { id: :string })
-          expect_json_types("region", { name: :string })
-          expect_json_types("region", { abbreviation: :string })
-          expect_json_types("region", { time_zone: :string })
-          expect_json_types("region", { archived: :boolean })
-          expect_json_types("region", { test: :boolean })
+          expect_json_types("data", id: :string)
+          expect_json_types("data", attributes: { name: :string })
+          expect_json_types("data", attributes: { abbreviation: :string })
+          expect_json_types("data", attributes: { time_zone: :string })
+          expect_json_types("data", attributes: { archived: :boolean })
+          expect_json_types("data", attributes: { test: :boolean })
         end
 
         it "returns a status of 201" do
@@ -69,24 +58,21 @@ describe Api::V1::RegionsController, type: :controller do
 
       describe "#show" do
         it "returns a region instance" do
-          @region.save
           get :show, id: @region.id
-          expect_json("region", { name: @region.name, abbreviation: @region.abbreviation })
+          expect_json("data", attributes: { name: @region.name, abbreviation: @region.abbreviation })
         end
 
         it "validates json attribute types" do
-          @region.save
           get :show, id: @region.id
-          expect_json_types("region", { id: :string })
-          expect_json_types("region", { name: :string })
-          expect_json_types("region", { abbreviation: :string })
-          expect_json_types("region", { time_zone: :string })
-          expect_json_types("region", { archived: :boolean })
-          expect_json_types("region", { test: :boolean })
+          expect_json_types("data", id: :string)
+          expect_json_types("data", attributes: { name: :string })
+          expect_json_types("data", attributes: { abbreviation: :string })
+          expect_json_types("data", attributes: { time_zone: :string })
+          expect_json_types("data", attributes: { archived: :boolean })
+          expect_json_types("data", attributes: { test: :boolean })
         end
 
         it "returns a status of 200" do
-          @region.save
           get :show, id: @region.id
           expect_status :ok
         end
@@ -94,23 +80,20 @@ describe Api::V1::RegionsController, type: :controller do
 
       describe "#index" do
         it "returns a collection of regions" do
-          @region.save
           @region_2 = FactoryGirl.create :region
           @region_3 = FactoryGirl.create :region
           get :index
-          expect_json_sizes("regions", 4)
+          expect_json_sizes("data", 3)
         end
 
         it "includes at least one of the instances" do
-          @region.save
           @region_2 = FactoryGirl.create :region
           @region_3 = FactoryGirl.create :region
           get :index
-          expect_json("regions.?", { name: @region_2.name, abbreviation: @region_2.abbreviation })
+          expect_json("data.?", attributes: { name: @region_2.name, abbreviation: @region_2.abbreviation })
         end
 
         it "returns a status of 200" do
-          @region.save
           @region_2 = FactoryGirl.create :region
           @region_3 = FactoryGirl.create :region
           get :index
@@ -120,24 +103,21 @@ describe Api::V1::RegionsController, type: :controller do
 
       describe "#update" do
         it "updates the region" do
-          @region.save
           put :update, id: @region.id, name: "New name"
-          expect_json("region", { name: "New name", abbreviation: @region.abbreviation })
+          expect_json("data", attributes: { name: "New name", abbreviation: @region.abbreviation })
         end
 
         it "validates the json attribute types" do
-          @region.save
           put :update, id: @region.id, name: "New name"
-          expect_json_types("region", { id: :string })
-          expect_json_types("region", { name: :string })
-          expect_json_types("region", { abbreviation: :string })
-          expect_json_types("region", { time_zone: :string })
-          expect_json_types("region", { archived: :boolean })
-          expect_json_types("region", { test: :boolean })
+          expect_json_types("data", id: :string)
+          expect_json_types("data", attributes: { name: :string })
+          expect_json_types("data", attributes: { abbreviation: :string })
+          expect_json_types("data", attributes: { time_zone: :string })
+          expect_json_types("data", attributes: { archived: :boolean })
+          expect_json_types("data", attributes: { test: :boolean })
         end
 
         it "returns a status of accepted (202)" do
-          @region.save
           put :update, id: @region.id, name: "New name"
           expect_status :accepted
         end
@@ -145,19 +125,16 @@ describe Api::V1::RegionsController, type: :controller do
 
       describe "#delete" do
         it "returns empty json" do
-          @region.save
           delete :destroy, id: @region.id
           expect_json_sizes 0
         end
 
         it "returns a status of accepted (202)" do
-          @region.save
           delete :destroy, id: @region.id
           expect_status :accepted
         end
 
         it "deletes the specified instance" do
-          @region.save
           expect { delete :destroy, id: @region.id }.to change(Region, :count).by(-1)
         end
       end

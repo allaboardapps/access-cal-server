@@ -1,35 +1,23 @@
 require "rails_helper"
 
 describe Api::V1::LocationsController, type: :controller do
-  describe "handling AccessDenied exceptions" do
-    let(:user) { FactoryGirl.create :user }
-
-    before do
-      user.generate_token!
-    end
-
-    context "incorrect token" do
+  describe "accepting requests" do
+    context "with incorrect token" do
       before do
         request.env["HTTP_AUTHORIZATION"] = ActionController::HttpAuthentication::Token.encode_credentials("1234")
       end
 
-      it "returns 'Not Authorized' message" do
-        location = FactoryGirl.create :location
-        get :show, id: location.id
-        expect(response.body).to match /Not Authorized/
-      end
-
-      it "returns an unauthorized status code" do
-        location = FactoryGirl.create :location
-        get :show, id: location.id
+      it "returns an forbidden status code" do
+        get :show, id: 1
         expect_status :forbidden
       end
     end
 
-    context "correct token" do
+    context "with correct token" do
       before do
-        request.env["HTTP_AUTHORIZATION"] = ActionController::HttpAuthentication::Token.encode_credentials(user.token, { email: user.email })
-        @location = FactoryGirl.build :location
+        @location = FactoryGirl.create :location
+        @user = FactoryGirl.create :user, location: @location
+        authenticate_for_specs(@user)
       end
 
       describe "#create" do
@@ -37,20 +25,20 @@ describe Api::V1::LocationsController, type: :controller do
           post :create, region_id: @location.region.id, name: @location.name,
             abbreviation: @location.abbreviation, time_zone: @location.time_zone,
             admin_notes: @location.admin_notes
-          expect_json("location", { name: @location.name, abbreviation: @location.abbreviation })
+          expect_json("data", attributes: { name: @location.name, abbreviation: @location.abbreviation })
         end
 
         it "validates json attribute types" do
           post :create, region_id: @location.region.id, name: @location.name,
             abbreviation: @location.abbreviation, time_zone: @location.time_zone,
             admin_notes: @location.admin_notes
-          expect_json_types("location", { id: :string })
-          expect_json_types("location", { region_id: :string })
-          expect_json_types("location", { name: :string })
-          expect_json_types("location", { abbreviation: :string })
-          expect_json_types("location", { time_zone: :string })
-          expect_json_types("location", { archived: :boolean })
-          expect_json_types("location", { test: :boolean })
+          expect_json_types("data", { id: :string } )
+          expect_json_types("data", attributes: { region_id: :string })
+          expect_json_types("data", attributes: { name: :string })
+          expect_json_types("data", attributes: { abbreviation: :string })
+          expect_json_types("data", attributes: { time_zone: :string })
+          expect_json_types("data", attributes: { archived: :boolean })
+          expect_json_types("data", attributes: { test: :boolean })
         end
 
         it "returns a status of 201" do
@@ -72,19 +60,19 @@ describe Api::V1::LocationsController, type: :controller do
         it "returns a location instance" do
           @location.save
           get :show, id: @location.id
-          expect_json("location", { name: @location.name, abbreviation: @location.abbreviation })
+          expect_json("data", attributes: { name: @location.name, abbreviation: @location.abbreviation })
         end
 
         it "validates json attribute types" do
           @location.save
           get :show, id: @location.id
-          expect_json_types("location", { id: :string })
-          expect_json_types("location", { region_id: :string })
-          expect_json_types("location", { name: :string })
-          expect_json_types("location", { abbreviation: :string })
-          expect_json_types("location", { time_zone: :string })
-          expect_json_types("location", { archived: :boolean })
-          expect_json_types("location", { test: :boolean })
+          expect_json_types("data", { id: :string } )
+          expect_json_types("data", attributes: { region_id: :string })
+          expect_json_types("data", attributes: { name: :string })
+          expect_json_types("data", attributes: { abbreviation: :string })
+          expect_json_types("data", attributes: { time_zone: :string })
+          expect_json_types("data", attributes: { archived: :boolean })
+          expect_json_types("data", attributes: { test: :boolean })
         end
 
         it "returns a status of 200" do
@@ -100,7 +88,7 @@ describe Api::V1::LocationsController, type: :controller do
           @location_2 = FactoryGirl.create :location
           @location_3 = FactoryGirl.create :location
           get :index
-          expect_json_sizes("locations", 4)
+          expect_json_sizes("data", 3)
         end
 
         it "includes at least one of the instances" do
@@ -108,7 +96,7 @@ describe Api::V1::LocationsController, type: :controller do
           @location_2 = FactoryGirl.create :location
           @location_3 = FactoryGirl.create :location
           get :index
-          expect_json("locations.?", { name: @location_2.name, abbreviation: @location_2.abbreviation })
+          expect_json("data.?", attributes: { name: @location_2.name, abbreviation: @location_2.abbreviation })
         end
 
         it "returns a status of 200" do
@@ -124,19 +112,19 @@ describe Api::V1::LocationsController, type: :controller do
         it "updates the location" do
           @location.save
           put :update, id: @location.id, name: "New name"
-          expect_json("location", { name: "New name", abbreviation: @location.abbreviation })
+          expect_json("data", attributes: { name: "New name", abbreviation: @location.abbreviation })
         end
 
         it "validates the json attribute types" do
           @location.save
           put :update, id: @location.id, name: "New name"
-          expect_json_types("location", { id: :string })
-          expect_json_types("location", { region_id: :string })
-          expect_json_types("location", { name: :string })
-          expect_json_types("location", { abbreviation: :string })
-          expect_json_types("location", { time_zone: :string })
-          expect_json_types("location", { archived: :boolean })
-          expect_json_types("location", { test: :boolean })
+          expect_json_types("data", { id: :string } )
+          expect_json_types("data", attributes: { region_id: :string })
+          expect_json_types("data", attributes: { name: :string })
+          expect_json_types("data", attributes: { abbreviation: :string })
+          expect_json_types("data", attributes: { time_zone: :string })
+          expect_json_types("data", attributes: { archived: :boolean })
+          expect_json_types("data", attributes: { test: :boolean })
         end
 
         it "returns a status of accepted (202)" do

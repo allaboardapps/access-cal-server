@@ -1,23 +1,10 @@
 require "rails_helper"
 
 describe Api::V1::EventsController, type: :controller do
-
-  describe "handling AccessDenied exceptions" do
-    let(:user) { FactoryGirl.create :user }
-
-    before do
-      user.generate_token!
-    end
-
-    context "incorrect token" do
+  describe "accepting requests" do
+    context "with incorrect token" do
       before do
         request.env["HTTP_AUTHORIZATION"] = ActionController::HttpAuthentication::Token.encode_credentials("1234")
-      end
-
-      it "returns 'Not Authorized' message" do
-        event = FactoryGirl.create :event
-        get :show, id: event.id
-        expect(response.body).to match /Not Authorized/
       end
 
       it "returns an unauthorized status code" do
@@ -27,10 +14,11 @@ describe Api::V1::EventsController, type: :controller do
       end
     end
 
-    context "correct token" do
+    context "with correct token" do
       before do
-        request.env["HTTP_AUTHORIZATION"] = ActionController::HttpAuthentication::Token.encode_credentials(user.token, { email: user.email })
-        @event = FactoryGirl.build :event
+        @event = FactoryGirl.create :event
+        @user = FactoryGirl.create :user
+        authenticate_for_specs(@user)
       end
 
       describe "#create" do
@@ -42,7 +30,7 @@ describe Api::V1::EventsController, type: :controller do
             city: @event.city, state: @event.state, country: @event.country, zip_code: @event.zip_code,
             time_zone: @event.time_zone, latitude: @event.latitude, longitude: @event.longitude,
             admin_notes: @event.admin_notes
-          expect_json("event", { name: @event.name, description: @event.description })
+          expect_json("data", attributes: { name: @event.name, description: @event.description })
         end
 
         it "validates json attribute types" do
@@ -53,28 +41,28 @@ describe Api::V1::EventsController, type: :controller do
             city: @event.city, state: @event.state, country: @event.country, zip_code: @event.zip_code,
             time_zone: @event.time_zone, latitude: @event.latitude, longitude: @event.longitude,
             admin_notes: @event.admin_notes
-          expect_json_types("event", { id: :string })
-          expect_json_types("event", { location_id: :string })
-          expect_json_types("event", { name: :string })
-          expect_json_types("event", { abbreviation: :string })
-          expect_json_types("event", { description: :string })
-          expect_json_types("event", { street_address: :string })
-          expect_json_types("event", { secondary_address: :string_or_null })
-          expect_json_types("event", { primary_category: :string })
-          expect_json_types("event", { categories: :array_or_null })
-          expect_json_types("event", { city: :string })
-          expect_json_types("event", { state: :string })
-          expect_json_types("event", { country: :string })
-          expect_json_types("event", { zip_code: :string })
-          expect_json_types("event", { time_zone: :string })
-          expect_json_types("event", { latitude: :float })
-          expect_json_types("event", { longitude: :float })
-          expect_json_types("event", { starts_at: :date })
-          expect_json_types("event", { ends_at: :date })
-          expect_json_types("event", { archived: :boolean })
-          expect_json_types("event", { test: :boolean })
-          expect_json_types("event", { created_at: :date })
-          expect_json_types("event", { updated_at: :date })
+          expect_json_types("data", { id: :string })
+          expect_json_types("data", attributes: { location_id: :string })
+          expect_json_types("data", attributes: { name: :string })
+          expect_json_types("data", attributes: { abbreviation: :string })
+          expect_json_types("data", attributes: { description: :string })
+          expect_json_types("data", attributes: { street_address: :string })
+          expect_json_types("data", attributes: { secondary_address: :string_or_null })
+          expect_json_types("data", attributes: { primary_category: :string })
+          expect_json_types("data", attributes: { categories: :array_or_null })
+          expect_json_types("data", attributes: { city: :string })
+          expect_json_types("data", attributes: { state: :string })
+          expect_json_types("data", attributes: { country: :string })
+          expect_json_types("data", attributes: { zip_code: :string })
+          expect_json_types("data", attributes: { time_zone: :string })
+          expect_json_types("data", attributes: { latitude: :float })
+          expect_json_types("data", attributes: { longitude: :float })
+          expect_json_types("data", attributes: { starts_at: :date })
+          expect_json_types("data", attributes: { ends_at: :date })
+          expect_json_types("data", attributes: { archived: :boolean })
+          expect_json_types("data", attributes: { test: :boolean })
+          expect_json_types("data", attributes: { created_at: :date })
+          expect_json_types("data", attributes: { updated_at: :date })
         end
 
         it "returns a status of 201" do
@@ -102,40 +90,37 @@ describe Api::V1::EventsController, type: :controller do
 
       describe "#show" do
         it "returns an event instance" do
-          @event.save
           get :show, id: @event.id
-          expect_json("event", { name: @event.name, description: @event.description })
+          expect_json("data", attributes: { name: @event.name, description: @event.description })
         end
 
         it "validates json attribute types" do
-          @event.save
           get :show, id: @event.id
-          expect_json_types("event", { id: :string })
-          expect_json_types("event", { location_id: :string })
-          expect_json_types("event", { name: :string })
-          expect_json_types("event", { abbreviation: :string })
-          expect_json_types("event", { description: :string })
-          expect_json_types("event", { primary_category: :string })
-          expect_json_types("event", { categories: :array_or_null })
-          expect_json_types("event", { street_address: :string })
-          expect_json_types("event", { secondary_address: :string_or_null })
-          expect_json_types("event", { city: :string })
-          expect_json_types("event", { state: :string })
-          expect_json_types("event", { country: :string })
-          expect_json_types("event", { zip_code: :string })
-          expect_json_types("event", { time_zone: :string })
-          expect_json_types("event", { latitude: :float })
-          expect_json_types("event", { longitude: :float })
-          expect_json_types("event", { starts_at: :date })
-          expect_json_types("event", { ends_at: :date })
-          expect_json_types("event", { archived: :boolean })
-          expect_json_types("event", { test: :boolean })
-          expect_json_types("event", { created_at: :date })
-          expect_json_types("event", { updated_at: :date })
+          expect_json_types("data", { id: :string })
+          expect_json_types("data", attributes: { location_id: :string })
+          expect_json_types("data", attributes: { name: :string })
+          expect_json_types("data", attributes: { abbreviation: :string })
+          expect_json_types("data", attributes: { description: :string })
+          expect_json_types("data", attributes: { primary_category: :string })
+          expect_json_types("data", attributes: { categories: :array_or_null })
+          expect_json_types("data", attributes: { street_address: :string })
+          expect_json_types("data", attributes: { secondary_address: :string_or_null })
+          expect_json_types("data", attributes: { city: :string })
+          expect_json_types("data", attributes: { state: :string })
+          expect_json_types("data", attributes: { country: :string })
+          expect_json_types("data", attributes: { zip_code: :string })
+          expect_json_types("data", attributes: { time_zone: :string })
+          expect_json_types("data", attributes: { latitude: :float })
+          expect_json_types("data", attributes: { longitude: :float })
+          expect_json_types("data", attributes: { starts_at: :date })
+          expect_json_types("data", attributes: { ends_at: :date })
+          expect_json_types("data", attributes: { archived: :boolean })
+          expect_json_types("data", attributes: { test: :boolean })
+          expect_json_types("data", attributes: { created_at: :date })
+          expect_json_types("data", attributes: { updated_at: :date })
         end
 
         it "returns a status of 200" do
-          @event.save
           get :show, id: @event.id
           expect_status :ok
         end
@@ -143,23 +128,20 @@ describe Api::V1::EventsController, type: :controller do
 
       describe "#index" do
         it "returns a collection of events" do
-          @event.save
           @event_2 = FactoryGirl.create :event
           @event_3 = FactoryGirl.create :event
           get :index
-          expect_json_sizes("events", 3)
+          expect_json_sizes("data", 3)
         end
 
         it "includes at least one of the instances" do
-          @event.save
           @event_2 = FactoryGirl.create :event
           @event_3 = FactoryGirl.create :event
           get :index
-          expect_json("events.?", { name: @event_2.name, description: @event_2.description })
+          expect_json("data.?", attributes: { name: @event_2.name, description: @event_2.description })
         end
 
         it "returns a status of 200" do
-          @event.save
           @event_2 = FactoryGirl.create :event
           @event_3 = FactoryGirl.create :event
           get :index
@@ -169,40 +151,37 @@ describe Api::V1::EventsController, type: :controller do
 
       describe "#update" do
         it "updates the event" do
-          @event.save
           put :update, id: @event.id, name: "New name"
-          expect_json("event", { name: "New name", description: @event.description })
+          expect_json("data", attributes: { name: "New name", description: @event.description })
         end
 
         it "validates the json attribute types" do
-          @event.save
           put :update, id: @event.id, name: "New name"
-          expect_json_types("event", { id: :string })
-          expect_json_types("event", { location_id: :string })
-          expect_json_types("event", { name: :string })
-          expect_json_types("event", { abbreviation: :string })
-          expect_json_types("event", { description: :string })
-          expect_json_types("event", { primary_category: :string })
-          expect_json_types("event", { categories: :array_or_null })
-          expect_json_types("event", { street_address: :string })
-          expect_json_types("event", { secondary_address: :string_or_null })
-          expect_json_types("event", { city: :string })
-          expect_json_types("event", { state: :string })
-          expect_json_types("event", { country: :string })
-          expect_json_types("event", { zip_code: :string })
-          expect_json_types("event", { time_zone: :string })
-          expect_json_types("event", { latitude: :float })
-          expect_json_types("event", { longitude: :float })
-          expect_json_types("event", { starts_at: :date })
-          expect_json_types("event", { ends_at: :date })
-          expect_json_types("event", { archived: :boolean })
-          expect_json_types("event", { test: :boolean })
-          expect_json_types("event", { created_at: :date })
-          expect_json_types("event", { updated_at: :date })
+          expect_json_types("data", { id: :string })
+          expect_json_types("data", attributes: { location_id: :string })
+          expect_json_types("data", attributes: { name: :string })
+          expect_json_types("data", attributes: { abbreviation: :string })
+          expect_json_types("data", attributes: { description: :string })
+          expect_json_types("data", attributes: { primary_category: :string })
+          expect_json_types("data", attributes: { categories: :array_or_null })
+          expect_json_types("data", attributes: { street_address: :string })
+          expect_json_types("data", attributes: { secondary_address: :string_or_null })
+          expect_json_types("data", attributes: { city: :string })
+          expect_json_types("data", attributes: { state: :string })
+          expect_json_types("data", attributes: { country: :string })
+          expect_json_types("data", attributes: { zip_code: :string })
+          expect_json_types("data", attributes: { time_zone: :string })
+          expect_json_types("data", attributes: { latitude: :float })
+          expect_json_types("data", attributes: { longitude: :float })
+          expect_json_types("data", attributes: { starts_at: :date })
+          expect_json_types("data", attributes: { ends_at: :date })
+          expect_json_types("data", attributes: { archived: :boolean })
+          expect_json_types("data", attributes: { test: :boolean })
+          expect_json_types("data", attributes: { created_at: :date })
+          expect_json_types("data", attributes: { updated_at: :date })
         end
 
         it "returns a status of accepted (202)" do
-          @event.save
           put :update, id: @event.id, name: "New name"
           expect_status :accepted
         end
@@ -210,19 +189,16 @@ describe Api::V1::EventsController, type: :controller do
 
       describe "#delete" do
         it "returns empty json" do
-          @event.save
           delete :destroy, id: @event.id
           expect_json_sizes 0
         end
 
         it "returns a status of accepted (202)" do
-          @event.save
           delete :destroy, id: @event.id
           expect_status :accepted
         end
 
         it "deletes the specified instance" do
-          @event.save
           expect { delete :destroy, id: @event.id }.to change(Event, :count).by(-1)
         end
       end

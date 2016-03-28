@@ -85,3 +85,8 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+def authenticate_for_specs(user)
+  user.generate_token!
+  request.env["HTTP_AUTHORIZATION"] = ActionController::HttpAuthentication::Token.encode_credentials(user.token, { email: user.email })
+end
