@@ -7,4 +7,12 @@ class Calendar < ActiveRecord::Base
   scope :active, -> { where(archived: false, test: false) }
   scope :archived, -> { where(archived: true) }
   scope :test, -> { where(test: true) }
+
+  def archive
+    update(archived: true)
+  end
+
+  def unarchive
+    update(archived: false)
+  end
 end

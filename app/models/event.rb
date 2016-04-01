@@ -22,8 +22,4 @@ class Event < ActiveRecord::Base
   def unarchive
     update(archived: false)
   end
-
-  def is_archived?
-    archive
-  end
 end
