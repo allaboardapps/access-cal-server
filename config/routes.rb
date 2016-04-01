@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
   root to: "static#home"
 
+  resources :calendars
+  resources :events
+
   namespace :api, defaults: { format: "json" } do
     namespace :v1 do
       post "sign_in" => "sessions#create"

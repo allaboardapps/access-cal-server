@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
   validates :name, presence: true
-  validates :abbreviation, presence: true
-  validates :primary_category, presence: true
+  # validates :abbreviation, presence: true
+  # validates :primary_category, presence: true
 
   belongs_to :author, class_name: "User", foreign_key: :author_id
   belongs_to :location
@@ -14,4 +14,16 @@ class Event < ActiveRecord::Base
   scope :archived, -> { where(archived: true) }
   scope :test, -> { where(test: true) }
   scope :autocomplete, -> (query) { active.where("name ilike ? or abbreviation ilike ?", "#{query}%", "#{query}%").order(name: :asc, abbreviation: :asc) }
+
+  def archive
+    update(archived: true)
+  end
+
+  def unarchive
+    update(archived: false)
+  end
+
+  def is_archived?
+    archive
+  end
 end
