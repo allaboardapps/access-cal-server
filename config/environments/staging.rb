@@ -84,4 +84,6 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: "access-cal-staging.herokuapp.com" }
 
   config.active_record.raise_in_transactional_callbacks = true
+
+  config.time_zone = "UTC"
 end

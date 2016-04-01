@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  validates :email, presence: true
+  validates :time_zone, presence: true
 
   # Include default devise modules. Others available are:
   # :omniauthable, :timeoutable
@@ -109,10 +111,6 @@ class User < ActiveRecord::Base
 
   def premium?
     status_is?(Statuses::PREMIUM)
-  end
-
-  def archived?
-    archived
   end
 
   def active_admin_access?

@@ -11,7 +11,7 @@ FactoryGirl.define do
     test { false }
     location
     zip_code { Faker::Address.zip_code }
-    time_zone { Faker::Address.time_zone }
+    time_zone { AllowedTimeZones.all.sample }
     roles { [UserRoles::CUSTOMER] }
     statuses { [Statuses::BASIC] }
 

@@ -34,7 +34,7 @@ class DeviseSetup < ActiveRecord::Migration
       t.string "first_name"
       t.string "last_name"
       t.string "zip_code"
-      t.string "time_zone"
+      t.string "time_zone", default: AllowedTimeZones::CENTRAL
       t.string "admin_notes"
       t.uuid "location_id"
       t.boolean "archived", default: false

@@ -17,6 +17,10 @@ describe User, type: :model do
     expect(build :user, password: "1234567").to_not be_valid
   end
 
+  it "is invalid without a time zone" do
+    expect(build :user, time_zone: nil).to_not be_valid
+  end
+
   describe "#full_name" do
     it "renders the user first and last name separated by a space" do
       user = create(:user, first_name: "Bubba", last_name: "Jones")
