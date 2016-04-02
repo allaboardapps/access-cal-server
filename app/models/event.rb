@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
   validates :name, presence: true
+  validates :time_zone, presence: true
   # validates :abbreviation, presence: true
   # validates :primary_category, presence: true
 

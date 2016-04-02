@@ -22,6 +22,6 @@ FactoryGirl.define do
     longitude { Faker::Address.longitude }
     starts_at { starts_at }
     ends_at { starts_at + 2.hours  }
-    time_zone { Faker::Address.time_zone }
+    time_zone { AllowedTimeZones.all.sample }
   end
 end

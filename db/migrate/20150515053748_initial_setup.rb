@@ -11,6 +11,7 @@ class InitialSetup < ActiveRecord::Migration
 
     create_table :calendars, id: :uuid, force: true do |t|
       t.string "name"
+      t.string "time_zone", default: AllowedTimeZones::CENTRAL
       t.boolean "archived", default: false
       t.boolean "test", default: false
       t.timestamps null: false
@@ -75,7 +76,7 @@ class InitialSetup < ActiveRecord::Migration
       t.string "state"
       t.string "country"
       t.string "zip_code"
-      t.string "time_zone"
+      t.string "time_zone", default: AllowedTimeZones::CENTRAL
       t.float "latitude"
       t.float "longitude"
       t.string "admin_notes"
@@ -95,7 +96,7 @@ class InitialSetup < ActiveRecord::Migration
     create_table :regions, id: :uuid, force: true do |t|
       t.string "name"
       t.string "abbreviation"
-      t.string "time_zone"
+      t.string "time_zone", default: AllowedTimeZones::CENTRAL
       t.string "admin_notes"
       t.boolean "archived", default: false
       t.boolean "test", default: false
@@ -106,7 +107,7 @@ class InitialSetup < ActiveRecord::Migration
       t.uuid "region_id"
       t.string "name"
       t.string "abbreviation"
-      t.string "time_zone"
+      t.string "time_zone", default: AllowedTimeZones::CENTRAL
       t.string "admin_notes"
       t.boolean "archived", default: false
       t.boolean "test", default: false

@@ -11,6 +11,10 @@ describe Calendar, type: :model do
     expect(build :calendar, name: nil).to_not be_valid
   end
 
+  it "is invalid without a time_zone" do
+    expect(build :calendar, time_zone: nil).to_not be_valid
+  end
+
   describe "#archive" do
     it "updates the archived attribute to true" do
       calendar.update(archived: false)

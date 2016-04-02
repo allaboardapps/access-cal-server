@@ -11,6 +11,10 @@ describe Event, type: :model do
     expect(build :event, name: nil).to_not be_valid
   end
 
+  it "is invalid without a time_zone" do
+    expect(build :event, time_zone: nil).to_not be_valid
+  end
+
   xit "is invalid without an abbreviation" do
     expect(build :event, abbreviation: nil).to_not be_valid
   end
