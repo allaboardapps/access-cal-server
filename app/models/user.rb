@@ -78,15 +78,15 @@ class User < ActiveRecord::Base
   end
 
   def set_default_role
-    update_attribute :roles, [UserRoles::CUSTOMER] if roles.empty?
+    update_attribute :roles, [UserRoles::CONSUMER] if roles.empty?
   end
 
   def admin?
     is? UserRoles::ADMIN
   end
 
-  def customer?
-    is? UserRoles::CUSTOMER
+  def consumer?
+    is? UserRoles::CONSUMER
   end
 
   def client?

@@ -1,10 +1,18 @@
 class InitialSetup < ActiveRecord::Migration
   def change
-    create_table :activities do |t|
+    create_table :activities, id: :uuid, force: true do |t|
       t.uuid :creator_id
       t.uuid :loggable_id
       t.string :loggable_type
       t.string :activity_action_type
+      t.string :description
+      t.timestamps null: false
+    end
+
+    create_table :tags, id: :uuid, force: true do |t|
+      t.uuid :taggable_id
+      t.string :taggable_type
+      t.string :name
       t.string :description
       t.timestamps null: false
     end

@@ -13,8 +13,8 @@ describe UserRoles, type: :module do
     expect(UserRoles.client_roles).to include "client"
   end
 
-  it "returns a list of customer roles" do
-    expect(UserRoles.customer_roles).to include "customer"
+  it "returns a list of consumer roles" do
+    expect(UserRoles.consumer_roles).to include "consumer"
   end
 
   it "returns a list of active_admin roles" do
@@ -22,6 +22,6 @@ describe UserRoles, type: :module do
   end
 
   it "returns a list of all roles" do
-    expect(UserRoles.all).to include "admin", "customer", "client"
+    expect(UserRoles.all).to include "admin", "consumer", "client"
   end
 end
