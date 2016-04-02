@@ -13,7 +13,7 @@ class CalendarsController < ApplicationController
 
   def create
     calendar = Calendar.create(create_params)
-    redirect_to edit_event_path(calendar)
+    redirect_to edit_calendar_path(calendar)
   end
 
   def edit
@@ -23,7 +23,7 @@ class CalendarsController < ApplicationController
   def update
     @calendar = Calendar.find_by(show_params)
     @calendar.update(update_params)
-    redirect_to event_path(@calendar)
+    redirect_to calendar_path(@calendar)
   end
 
   def destroy
