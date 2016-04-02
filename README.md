@@ -10,6 +10,13 @@
 1. Promotion via access-cal-server-staging >> access-cal-server-production via `heroku pipelines:promote -r staging`
 1. Post-deploy scripts are in `Procfile` after the `release:` instruction
 
+## User Roles
+
+* admin (Matt, Randy)
+* staff
+* client
+* consumer
+
 ## Models
 
 * User
