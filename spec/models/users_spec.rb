@@ -100,7 +100,7 @@ describe User, type: :model do
       end
 
       it "returns false if user has any role other than admin" do
-        user = create :user, :customer
+        user = create :user, :consumer
         expect(user.admin?).to be_falsey
       end
     end
@@ -117,60 +117,60 @@ describe User, type: :model do
       end
     end
 
-    describe "#customer?" do
-      it "returns true if user has role of customer" do
-        user = create :user, :customer
-        expect(user.customer?).to be_truthy
+    describe "#consumer?" do
+      it "returns true if user has role of consumer" do
+        user = create :user, :consumer
+        expect(user.consumer?).to be_truthy
       end
 
-      it "returns false if user has any role other than customer" do
+      it "returns false if user has any role other than consumer" do
         user = create :user, :admin
-        expect(user.customer?).to be_falsey
+        expect(user.consumer?).to be_falsey
       end
     end
 
     describe "#basic?" do
       it "returns true if user has status of basic" do
-        user = create :user, :customer, :basic
+        user = create :user, :client_basic
         expect(user.basic?).to be_truthy
       end
 
       it "returns true if user has status of premium" do
-        user = create :user, :customer, :premium
+        user = create :user, :client_premium
         expect(user.basic?).to be_truthy
       end
     end
 
     describe "#pro?" do
       it "returns false if user has status of basic" do
-        user = create :user, :customer, :basic
+        user = create :user, :client_basic
         expect(user.pro?).to be_falsey
       end
 
       it "returns true if user has status of premium" do
-        user = create :user, :customer, :premium
+        user = create :user, :client_premium
         expect(user.pro?).to be_truthy
       end
 
       it "returns true if user has status of pro" do
-        user = create :user, :customer, :pro
+        user = create :user, :client_pro
         expect(user.pro?).to be_truthy
       end
     end
 
     describe "#premium?" do
       it "returns false if user has status of basic" do
-        user = create :user, :customer, :basic
+        user = create :user, :client_basic
         expect(user.premium?).to be_falsey
       end
 
       it "returns false if user has status of pro" do
-        user = create :user, :customer, :pro
+        user = create :user, :client_pro
         expect(user.premium?).to be_falsey
       end
 
       it "returns true if user has status of premium" do
-        user = create :user, :customer, :premium
+        user = create :user, :client_premium
         expect(user.premium?).to be_truthy
       end
     end
@@ -187,7 +187,7 @@ describe User, type: :model do
       end
 
       it "returns false if user has no role qualified for Active Admin access" do
-        user_1 = create :user, :customer
+        user_1 = create :user, :consumer
         user_2 = create :user, :client
         expect(user_1.active_admin_access?).to be_falsey
         expect(user_2.active_admin_access?).to be_falsey
@@ -235,8 +235,8 @@ describe User, type: :model do
 
   describe "#roles_presented" do
     it "sets the archived flag to false" do
-      user = create :user, roles: [UserRoles::CUSTOMER, UserRoles::CLIENT]
-      expect(user.roles_presented).to eq "#{UserRoles::CUSTOMER}, #{UserRoles::CLIENT}"
+      user = create :user, roles: [UserRoles::CONSUMER, UserRoles::CLIENT]
+      expect(user.roles_presented).to eq "#{UserRoles::CONSUMER}, #{UserRoles::CLIENT}"
     end
   end
 

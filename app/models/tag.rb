@@ -1,5 +1,7 @@
 class Tag < ActiveRecord::Base
-  validates :taggable, presence: true
+  validates :name, presence: true
+  validates :tag_type, presence: true
 
-  belongs_to :taggable, polymorphic: true
+  has_many :event_tags
+  has_many :events, through: :event_tags
 end

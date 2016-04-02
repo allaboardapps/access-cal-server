@@ -22,7 +22,7 @@ describe Activity, type: :model do
     end
 
     it "creates an activity log entry for change on a User instance" do
-      loggable = FactoryGirl.create :user, :customer
+      loggable = FactoryGirl.create :user, :consumer
       Activity.log @creator, loggable, @action
       expect(Activity.first.loggable).to eq loggable
     end

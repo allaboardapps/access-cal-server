@@ -102,15 +102,15 @@ class User < ActiveRecord::Base
   end
 
   def basic?
-    status_is?(Statuses::BASIC) || status_is?(Statuses::PRO) || status_is?(Statuses::PREMIUM)
+    status_is?(UserStatuses::BASIC) || status_is?(UserStatuses::PRO) || status_is?(UserStatuses::PREMIUM)
   end
 
   def pro?
-    status_is?(Statuses::PRO) || status_is?(Statuses::PREMIUM)
+    status_is?(UserStatuses::PRO) || status_is?(UserStatuses::PREMIUM)
   end
 
   def premium?
-    status_is?(Statuses::PREMIUM)
+    status_is?(UserStatuses::PREMIUM)
   end
 
   def active_admin_access?

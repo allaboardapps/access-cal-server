@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20160327201109) do
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
 
-  create_table "activities", force: :cascade do |t|
+  create_table "activities", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.uuid     "creator_id"
     t.uuid     "loggable_id"
     t.string   "loggable_type"
@@ -44,6 +44,13 @@ ActiveRecord::Schema.define(version: 20160327201109) do
     t.boolean  "test",       default: false
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
+  end
+
+  create_table "event_tags", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.string   "event_id"
+    t.string   "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "events", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
@@ -140,6 +147,14 @@ ActiveRecord::Schema.define(version: 20160327201109) do
     t.boolean  "test",         default: false
     t.datetime "created_at",                                          null: false
     t.datetime "updated_at",                                          null: false
+  end
+
+  create_table "tags", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "tag_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|

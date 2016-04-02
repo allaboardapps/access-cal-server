@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :calendar do
-    name { Faker::Company.name }
+    name { Faker::Superhero.name }
     time_zone { AllowedTimeZones.all.sample }
   end
 end

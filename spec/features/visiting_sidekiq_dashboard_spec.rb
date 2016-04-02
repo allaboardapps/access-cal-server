@@ -3,7 +3,7 @@ require "rails_helper"
 describe "visiting sidekiq dashboard", type: :feature do
 
   it "receives a routing error if user is not an admin" do
-    user = FactoryGirl.create :user, :customer
+    user = FactoryGirl.create :user, :consumer
     visit new_user_session_path
     fill_in :user_email, with: user.email
     fill_in :user_password, with: user.password

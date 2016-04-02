@@ -1,19 +1,11 @@
 class InitialSetup < ActiveRecord::Migration
   def change
     create_table :activities, id: :uuid, force: true do |t|
-      t.uuid :creator_id
-      t.uuid :loggable_id
-      t.string :loggable_type
-      t.string :activity_action_type
-      t.string :description
-      t.timestamps null: false
-    end
-
-    create_table :tags, id: :uuid, force: true do |t|
-      t.uuid :taggable_id
-      t.string :taggable_type
-      t.string :name
-      t.string :description
+      t.uuid "creator_id"
+      t.uuid "loggable_id"
+      t.string "loggable_type"
+      t.string "activity_action_type"
+      t.string "description"
       t.timestamps null: false
     end
 
@@ -90,6 +82,19 @@ class InitialSetup < ActiveRecord::Migration
       t.string "admin_notes"
       t.boolean "archived", default: false
       t.boolean "test", default: false
+      t.timestamps null: false
+    end
+
+    create_table :event_tags, id: :uuid, force: true do |t|
+      t.string "event_id"
+      t.string "tag_id"
+      t.timestamps null: false
+    end
+
+    create_table :tags, id: :uuid, force: true do |t|
+      t.string "name"
+      t.string "description"
+      t.string "tag_type"
       t.timestamps null: false
     end
 
