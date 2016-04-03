@@ -51,6 +51,21 @@ describe Event, type: :model do
     end
   end
 
+  describe "Searching for an event", elasticsearch: true do
+    context "elastic search test", elasticsearch: true, commit: true do
+      before do
+        @event = FactoryGirl.create(:event)
+      end
+
+      it "should search" do
+        sleep 1
+        puts "Name: #{@event.name}"
+        response = Event.search_for(@event.name)
+        expect(response.results.total).to eq 1
+      end
+    end
+  end
+
   it { is_expected.to belong_to :author }
   it { is_expected.to belong_to :location }
   it { is_expected.to have_many :activities }

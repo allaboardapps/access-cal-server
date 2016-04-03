@@ -1,5 +1,6 @@
 defaults: &defaults
   app_name: "Access Cal Server"
+  app_repo_name: "access-cal-server"
   app_server: "Development"
   default_url: "http://localhost:3000"
   aws_s3_region: "us-east-2"

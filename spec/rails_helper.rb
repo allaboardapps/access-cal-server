@@ -1,13 +1,17 @@
 ENV["RAILS_ENV"] ||= "test"
+require "rake"
 require File.expand_path("../../config/environment", __FILE__)
 require "rspec/rails"
 require "rspec/json_expectations"
 require "sidekiq/testing"
 require "airborne"
+require "elasticsearch/extensions/test/cluster/tasks"
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+
+ENV["TEST_CLUSTER_NODES"] = "2" # need to set so we trigger correct ES defaults
 
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
@@ -55,7 +59,20 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.include Devise::TestHelpers, type: :controller
+
   config.include FactoryGirl::Syntax::Methods
 
   config.include Rails.application.routes.url_helpers
+
+  config.before :each, elasticsearch: true do
+    [Event].each do |model|
+      model.__elasticsearch__.create_index!(force: true)
+    end
+  end
+
+  config.after :each, elasticsearch: true do
+    [Event].each do |model|
+      model.__elasticsearch__.client.indices.delete index: Event.index_name
+    end
+  end
 end

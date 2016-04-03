@@ -4,6 +4,10 @@ class Event < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
+  # prevents elastic namespace conflicts between envs
+  # https://blog.pivotal.io/labs/labs/rspec-elasticsearchruby-elasticsearchmodel
+  index_name [AppSettings.app_repo_name, Rails.env, self.base_class.to_s.pluralize.underscore].join('_')
+
   validates :name, presence: true
   validates :time_zone, presence: true
 
@@ -21,16 +25,15 @@ class Event < ActiveRecord::Base
   scope :test, -> { where(test: true) }
   scope :autocomplete, -> (query) { active.where("name ilike ? or abbreviation ilike ?", "#{query}%", "#{query}%").order(name: :asc, abbreviation: :asc) }
 
-  mappings dynamic: 'false' do
-    indexes :name, analyzer: 'english'
+  mappings dynamic: "false" do
+    indexes :name, analyzer: "english"
   end
 
-  def self.elastic_search(*args)
-    __elasticsearch__.search(*args)
+  def self.search_for(*args, &block)
+    __elasticsearch__.search(*args, &block)
   end
 
   def archive
-    binding.pry
     update(archived: true)
   end
 
