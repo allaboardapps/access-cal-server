@@ -59,6 +59,7 @@ GEM
       rack-test (~> 0.6, >= 0.6.2)
       rest-client (~> 1.7, >= 1.7.3)
       rspec (~> 3.1, >= 3.1.0)
+    ansi (1.5.0)
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (6.0.3)
@@ -138,6 +139,9 @@ GEM
       elasticsearch-transport (= 1.0.15)
     elasticsearch-api (1.0.15)
       multi_json
+    elasticsearch-extensions (0.0.20)
+      ansi
+      ruby-prof
     elasticsearch-model (0.1.8)
       activesupport (> 3)
       elasticsearch (> 0.4)
@@ -204,7 +208,7 @@ GEM
       has_scope (~> 0.6.0.rc)
       railties (>= 3.2, < 5)
       responders
-    jmespath (1.2.2)
+    jmespath (1.2.3)
       json_pure (>= 1.8.1)
     jquery-rails (4.1.1)
       rails-dom-testing (>= 1, < 3)
@@ -382,6 +386,7 @@ GEM
       rainbow (>= 1.99.1, < 3.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
+    ruby-prof (0.15.9)
     ruby-progressbar (1.7.5)
     ruby2ruby (2.3.0)
       ruby_parser (~> 3.1)
@@ -469,6 +474,7 @@ DEPENDENCIES
   database_cleaner (= 1.5.1)
   devise (= 3.5.6)
   devise-async (= 0.10.1)
+  elasticsearch-extensions (= 0.0.20)
   elasticsearch-model (= 0.1.8)
   elasticsearch-rails (= 0.1.8)
   factory_girl_rails (= 4.6.0)

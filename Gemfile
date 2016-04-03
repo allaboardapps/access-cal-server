@@ -67,6 +67,7 @@ group :development, :test do
 end
 
 group :test do
+  gem "elasticsearch-extensions", "0.0.20"
   gem "rspec_junit_formatter", "0.2.3"
   gem "rspec-sidekiq", "2.2.0"
   gem "test_after_commit", "1.0.0"

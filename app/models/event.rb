@@ -19,6 +19,10 @@ class Event < ActiveRecord::Base
   scope :test, -> { where(test: true) }
   scope :autocomplete, -> (query) { active.where("name ilike ? or abbreviation ilike ?", "#{query}%", "#{query}%").order(name: :asc, abbreviation: :asc) }
 
+  mappings dynamic: 'false' do
+    indexes :name, analyzer: 'english'
+  end
+
   def archive
     update(archived: true)
   end
@@ -27,3 +31,5 @@ class Event < ActiveRecord::Base
     update(archived: false)
   end
 end
+
+Event.import
