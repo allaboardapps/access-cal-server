@@ -1,0 +1,3 @@
+redis: redis-server
+elasticsearch: elasticsearch
+default_worker: bundle exec sidekiq -q default -q devise_email

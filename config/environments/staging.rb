@@ -1,3 +1,5 @@
+Elasticsearch::Model.client = Elasticsearch::Client.new host: ENV["SEARCHBOX_SSL_URL"]
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 

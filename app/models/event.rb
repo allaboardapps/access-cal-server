@@ -1,3 +1,5 @@
+require "elasticsearch/model"
+
 class Event < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
@@ -23,7 +25,12 @@ class Event < ActiveRecord::Base
     indexes :name, analyzer: 'english'
   end
 
+  def self.elastic_search(*args)
+    __elasticsearch__.search(*args)
+  end
+
   def archive
+    binding.pry
     update(archived: true)
   end
 
@@ -31,5 +38,3 @@ class Event < ActiveRecord::Base
     update(archived: false)
   end
 end
-
-Event.import
