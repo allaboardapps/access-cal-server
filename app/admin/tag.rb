@@ -8,8 +8,8 @@ ActiveAdmin.register Tag do
   config.sort_order = "lower(name) asc"
 
   filter :name
-  filter :tag_type
-  filter :tag_category
+  filter :tag_type, as: :select, collection: TagTypes.all
+  filter :tag_category, as: :select, collection: TagCategories.all
 
   index do
     column :name

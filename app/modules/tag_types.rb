@@ -16,6 +16,6 @@ module TagTypes
   end
 
   def self.all
-    self.system.concat(self.system).concat(self.client).concat(self.consumer).sort
+    self.system.concat(self.client).concat(self.consumer).sort
   end
 end
