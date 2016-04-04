@@ -58,7 +58,7 @@ describe Event, type: :model do
       end
 
       it "should search" do
-        sleep 1
+        sleep 4
         puts "Name: #{@event.name}"
         response = Event.search_for(@event.name)
         expect(response.results.total).to eq 1
