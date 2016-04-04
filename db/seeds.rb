@@ -67,3 +67,7 @@ Favorite.destroy_all
   FactoryGirl.create :favorite, user: consumer, event: Event.limit(1).order("RANDOM()").first
 end
 puts "END:   Adding Favorites"
+
+puts "BEGIN: Adding Tags"
+  Rake::Task["app:load_default_tags"].execute
+puts "END:   Adding Tags"

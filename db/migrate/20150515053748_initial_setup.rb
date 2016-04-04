@@ -86,8 +86,8 @@ class InitialSetup < ActiveRecord::Migration
     end
 
     create_table :event_tags, id: :uuid, force: true do |t|
-      t.string "event_id"
-      t.string "tag_id"
+      t.uuid "event_id"
+      t.uuid "tag_id"
       t.timestamps null: false
     end
 
@@ -95,6 +95,7 @@ class InitialSetup < ActiveRecord::Migration
       t.string "name"
       t.string "description"
       t.string "tag_type"
+      t.string "tag_category"
       t.timestamps null: false
     end
 

@@ -35,6 +35,72 @@ namespace :app do
     Rake::Task["db:migrate"].execute
   end
 
+  desc "load default tags"
+  task load_default_tags: :environment do
+    Tag.create name: "accessible entrances", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "accessible parking", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "accessible pathways", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "accessible restroom", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "air-conditioned", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "asl interpretation", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "assistive listening systems", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "audio description", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "audio version and taping", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "autism-friendly", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "braille material", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "closed captioning", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "communication access in real time", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "dietary options", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "large print", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "open captioning", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "reserved seating", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "service animal accomodations", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "touch tour", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "wheelchair or scooter accessible", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "wheelchair or scooter available", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ACCESSIBILITY
+    Tag.create name: "banquet", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ASSEMBLY
+    Tag.create name: "board meeting", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ASSEMBLY
+    Tag.create name: "celebration", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ASSEMBLY
+    Tag.create name: "colloquium", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ASSEMBLY
+    Tag.create name: "conclave", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ASSEMBLY
+    Tag.create name: "conference", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ASSEMBLY
+    Tag.create name: "congress", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ASSEMBLY
+    Tag.create name: "convention", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ASSEMBLY
+    Tag.create name: "gala", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ASSEMBLY
+    Tag.create name: "meeting", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ASSEMBLY
+    Tag.create name: "performance", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ASSEMBLY
+    Tag.create name: "seminar", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ASSEMBLY
+    Tag.create name: "symposium", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ASSEMBLY
+    Tag.create name: "trade show", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ASSEMBLY
+    Tag.create name: "training", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ASSEMBLY
+    Tag.create name: "workshop", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::ASSEMBLY
+    Tag.create name: "art", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "athletics", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "awards", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "comedy", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "concert", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "dance", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "education or class", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "fair or festival", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "film", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "food or drink", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "fundraiser", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "gallery or museum", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "holiday", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "kids or family", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "lecture", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "literature", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "music", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "networking", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "political", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "religious", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "shopping", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "social good", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "team building", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "theater", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+    Tag.create name: "tour", tag_type: TagTypes::DEFAULT, tag_categories: TagCategories::CONTENT
+  end
+
   desc "set fastly cors headers to fix chrome/firefox font loading issues"
   task allow_cors: :environment do
     require "yajl"
