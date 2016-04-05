@@ -55,7 +55,7 @@ describe Event, type: :model do
     context "using elasticsearch", elasticsearch: true, commit: true do
       before do
         @event = FactoryGirl.create(:event)
-        sleep 2
+        sleep 3
       end
 
       it "should complete a search using the event name attribute" do
