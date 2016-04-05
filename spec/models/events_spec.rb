@@ -51,17 +51,23 @@ describe Event, type: :model do
     end
   end
 
-  describe "Searching for an event", elasticsearch: true do
-    context "elastic search test", elasticsearch: true, commit: true do
+  describe "Searching for an event" do
+    context "using elasticsearch", elasticsearch: true, commit: true do
       before do
         @event = FactoryGirl.create(:event)
+        sleep 2
       end
 
-      it "should search" do
-        sleep 4
-        puts "Name: #{@event.name}"
+      it "should complete a search using the event name attribute" do
         response = Event.search_for(@event.name)
         expect(response.results.total).to eq 1
+      end
+
+      it "should not complete a search using the event tag association (yet)" do
+        tag = FactoryGirl.create :tag
+        FactoryGirl.create :event_tag, tag: tag, event: @event
+        response = Event.search_for(@event.tags.first.name)
+        expect(response.results.total).to eq 0
       end
     end
   end
