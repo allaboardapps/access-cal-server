@@ -66,8 +66,9 @@ describe Event, type: :model do
       it "should not complete a search using the event tag association (yet)" do
         tag = FactoryGirl.create :tag
         FactoryGirl.create :event_tag, tag: tag, event: @event
-        response = Event.search_for(@event.tags.first.name)
-        expect(response.results.total).to eq 0
+        binding.pry
+        response = Event.search_for(@event.reload.tags.first.name)
+        expect(response.results.total).to eq 1
       end
     end
   end

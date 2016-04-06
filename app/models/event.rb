@@ -16,7 +16,7 @@ class Event < ActiveRecord::Base
   has_many :activities, as: :loggable
   has_many :event_tags
   has_many :favorites
-  has_many :tags, through: :event_tags
+  has_many :tags, through: :event_tags, after_add: :index_tags, after_remove: :index_tags
   has_many :users, through: :favorites
   has_one :region, through: :location
 
@@ -27,6 +27,12 @@ class Event < ActiveRecord::Base
 
   mappings dynamic: "false" do
     indexes :name, analyzer: "english"
+  end
+
+  def as_indexed_json(options={})
+    self.as_json(
+      include: { tags: { only: :name } }
+    )
   end
 
   def self.search_for(*args, &block)

@@ -4,4 +4,12 @@ class EventTag < ActiveRecord::Base
 
   belongs_to :tag
   belongs_to :event
+
+  after_save :index_event
+
+  private
+
+  def index_event
+    self.event.reload.__elasticsearch__.index_document
+  end
 end

@@ -6,8 +6,6 @@ FactoryGirl.define do
     location
     name { Faker::Company.catch_phrase }
     abbreviation { Faker::Company.name }
-    primary_category { Categories.all.sample }
-    categories { [Categories.all.sample(2)] }
     description { Faker::Lorem.sentences(1)[0] }
     admin_notes { Faker::Lorem.sentences(1)[0] }
     archived { false }
@@ -21,7 +19,7 @@ FactoryGirl.define do
     latitude { Faker::Address.latitude }
     longitude { Faker::Address.longitude }
     starts_at { starts_at }
-    ends_at { starts_at + 2.hours  }
+    ends_at { starts_at + [1, 2, 3].sample.hours }
     time_zone { AllowedTimeZones.all.sample }
   end
 end
