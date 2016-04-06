@@ -6,6 +6,7 @@ class EventTag < ActiveRecord::Base
   belongs_to :event
 
   after_save :index_event
+  after_destroy :index_event
 
   private
 

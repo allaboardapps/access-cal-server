@@ -58,17 +58,31 @@ describe Event, type: :model do
         sleep 3
       end
 
-      it "should complete a search using the event name attribute" do
+      it "should complete a search by event name" do
         response = Event.search_for(@event.name)
         expect(response.results.total).to eq 1
       end
 
-      it "should not complete a search using the event tag association (yet)" do
+      it "should complete a search by event abbreviation" do
+        response = Event.search_for(@event.abbreviation)
+        expect(response.results.total).to eq 1
+      end
+
+      it "should complete a search by tag name after an event tag association is created" do
         tag = FactoryGirl.create :tag
         FactoryGirl.create :event_tag, tag: tag, event: @event
-        binding.pry
-        response = Event.search_for(@event.reload.tags.first.name)
+        sleep 3
+        response = Event.search_for(tag.name)
         expect(response.results.total).to eq 1
+      end
+
+      it "should not complete a search by tag name after an event tag association is deleted" do
+        tag = FactoryGirl.create :tag
+        event_tag = FactoryGirl.create :event_tag, tag: tag, event: @event
+        event_tag.destroy
+        sleep 3
+        response = Event.search_for(tag.name)
+        expect(response.results.total).to eq 0
       end
     end
   end

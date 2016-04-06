@@ -26,7 +26,12 @@ class Event < ActiveRecord::Base
   scope :autocomplete, -> (query) { active.where("name ilike ? or abbreviation ilike ?", "#{query}%", "#{query}%").order(name: :asc, abbreviation: :asc) }
 
   mappings dynamic: "false" do
-    indexes :name, analyzer: "english"
+    indexes :name, analyzer: "snowball"
+    indexes :abbreviation, analyzer: "snowball"
+
+    indexes :tags do
+      indexes :name, analyzer: "snowball"
+    end
   end
 
   def as_indexed_json(options={})
