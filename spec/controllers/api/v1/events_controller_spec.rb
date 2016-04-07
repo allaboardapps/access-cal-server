@@ -23,25 +23,31 @@ describe Api::V1::EventsController, type: :controller do
 
       describe "#create" do
         it "creates and returns an event instance" do
-          post :create, author_id: @event.author_id, location_id: @event.location_id, name: @event.name,
+          post(
+            :create,
+            author_id: @event.author_id, location_id: @event.location_id, name: @event.name,
             abbreviation: @event.abbreviation, primary_category: @event.primary_category, categories: @event.categories,
             starts_at: @event.starts_at, ends_at: @event.ends_at, description: @event.description,
             street_address: @event.street_address, secondary_address: @event.secondary_address,
             city: @event.city, state: @event.state, country: @event.country, zip_code: @event.zip_code,
             time_zone: @event.time_zone, latitude: @event.latitude, longitude: @event.longitude,
             admin_notes: @event.admin_notes
+          )
           expect_json("data", attributes: { name: @event.name, description: @event.description })
         end
 
         it "validates json attribute types" do
-          post :create, author_id: @event.author_id, location_id: @event.location_id, name: @event.name,
+          post(
+            :create,
+            author_id: @event.author_id, location_id: @event.location_id, name: @event.name,
             abbreviation: @event.abbreviation, primary_category: @event.primary_category, categories: @event.categories,
             starts_at: @event.starts_at, ends_at: @event.ends_at, description: @event.description,
             street_address: @event.street_address, secondary_address: @event.secondary_address,
             city: @event.city, state: @event.state, country: @event.country, zip_code: @event.zip_code,
             time_zone: @event.time_zone, latitude: @event.latitude, longitude: @event.longitude,
             admin_notes: @event.admin_notes
-          expect_json_types("data", { id: :string })
+          )
+          expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { location_id: :string })
           expect_json_types("data", attributes: { name: :string })
           expect_json_types("data", attributes: { abbreviation: :string })
@@ -64,25 +70,32 @@ describe Api::V1::EventsController, type: :controller do
         end
 
         it "returns a status of 201" do
-          post :create, author_id: @event.author_id, location_id: @event.location_id, name: @event.name,
+          post(
+            :create,
+            author_id: @event.author_id, location_id: @event.location_id, name: @event.name,
             abbreviation: @event.abbreviation, primary_category: @event.primary_category, categories: @event.categories,
             starts_at: @event.starts_at, ends_at: @event.ends_at, description: @event.description,
             street_address: @event.street_address, secondary_address: @event.secondary_address,
             city: @event.city, state: @event.state, country: @event.country, zip_code: @event.zip_code,
             time_zone: @event.time_zone, latitude: @event.latitude, longitude: @event.longitude,
             admin_notes: @event.admin_notes
+          )
           expect_status :created
         end
 
         it "creates a new instance" do
-          expect { post :create, author_id: @event.author_id, location_id: @event.location_id, name: @event.name,
-            abbreviation: @event.abbreviation, primary_category: @event.primary_category, categories: @event.categories,
-            starts_at: @event.starts_at, ends_at: @event.ends_at, description: @event.description,
-            street_address: @event.street_address, secondary_address: @event.secondary_address,
-            city: @event.city, state: @event.state, country: @event.country, zip_code: @event.zip_code,
-            time_zone: @event.time_zone, latitude: @event.latitude, longitude: @event.longitude,
-            admin_notes: @event.admin_notes
-          }.to change(Event, :count).by(1)
+          expect do
+            post(
+              :create,
+              author_id: @event.author_id, location_id: @event.location_id, name: @event.name,
+              abbreviation: @event.abbreviation, primary_category: @event.primary_category, categories: @event.categories,
+              starts_at: @event.starts_at, ends_at: @event.ends_at, description: @event.description,
+              street_address: @event.street_address, secondary_address: @event.secondary_address,
+              city: @event.city, state: @event.state, country: @event.country, zip_code: @event.zip_code,
+              time_zone: @event.time_zone, latitude: @event.latitude, longitude: @event.longitude,
+              admin_notes: @event.admin_notes
+            )
+          end.to change(Event, :count).by(1)
         end
       end
 
@@ -94,7 +107,7 @@ describe Api::V1::EventsController, type: :controller do
 
         it "validates json attribute types" do
           get :show, id: @event.id
-          expect_json_types("data", { id: :string })
+          expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { location_id: :string })
           expect_json_types("data", attributes: { name: :string })
           expect_json_types("data", attributes: { abbreviation: :string })
@@ -153,7 +166,7 @@ describe Api::V1::EventsController, type: :controller do
 
         it "validates the json attribute types" do
           put :update, id: @event.id, name: "New name"
-          expect_json_types("data", { id: :string })
+          expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { location_id: :string })
           expect_json_types("data", attributes: { name: :string })
           expect_json_types("data", attributes: { abbreviation: :string })
