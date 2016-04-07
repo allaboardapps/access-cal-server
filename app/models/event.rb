@@ -6,7 +6,7 @@ class Event < ActiveRecord::Base
 
   # prevents elastic namespace conflicts between envs
   # https://blog.pivotal.io/labs/labs/rspec-elasticsearchruby-elasticsearchmodel
-  index_name [AppSettings.app_repo_name, Rails.env, self.base_class.to_s.pluralize.underscore].join('_')
+  index_name [AppSettings.app_repo_name, Rails.env, self.base_class.to_s.pluralize.underscore].join("_")
 
   validates :name, presence: true
   validates :time_zone, presence: true
@@ -35,7 +35,7 @@ class Event < ActiveRecord::Base
   end
 
   def as_indexed_json(options={})
-    self.as_json(
+    as_json(
       include: { tags: { only: :name } }
     )
   end

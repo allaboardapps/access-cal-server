@@ -21,6 +21,6 @@ module UserRoles
   end
 
   def self.all
-    self.system_roles.concat(self.client_roles).concat(self.consumer_roles).concat(self.active_admin_roles).sort
+    system_roles.concat(client_roles).concat(consumer_roles).concat(active_admin_roles).sort
   end
 end

@@ -43,7 +43,7 @@ module Categories
     Categories::SINGLES,
     Categories::SPORTS,
     Categories::THEATRE,
-    Categories::TOURS,
+    Categories::TOURS
   ].sort
   end
 end

@@ -19,7 +19,7 @@ describe EventsController, type: :controller do
     it "renders a list of objects" do
       event.save
       get :index
-      expect(response.body).to match /#{event.name}/
+      expect(response.body).to match(/#{event.name}/)
     end
   end
 
@@ -38,7 +38,7 @@ describe EventsController, type: :controller do
 
     it "renders a single object page" do
       get :show, id: event.id
-      expect(response.body).to match /#{event.name}/
+      expect(response.body).to match(/#{event.name}/)
     end
   end
 
@@ -57,7 +57,7 @@ describe EventsController, type: :controller do
 
     it "renders the selected object form" do
       get :new
-      expect(response.body).to match /Event Name/
+      expect(response.body).to match(/Event Name/
     end
   end
 
@@ -97,7 +97,7 @@ describe EventsController, type: :controller do
 
     it "renders the selected object form" do
       get :edit, id: event.id
-      expect(response.body).to match /#{event.name}/
+      expect(response.body).to match(/#{event.name}/)
     end
   end
 

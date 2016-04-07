@@ -10,7 +10,7 @@ class Api::V1::SessionsController < Api::V1::ApiController
         user.generate_token! unless user.token
         format.json { render json: user, each_serializer: UserSerializer }
       else
-        format.json{ head :forbidden }
+        format.json { head :forbidden }
       end
     end
   end

@@ -16,9 +16,7 @@ describe Tag, type: :model do
   end
 
   it "requires tag names to be unique" do
-    expect{
-      FactoryGirl.create :tag, name: tag.name
-    }.to raise_error ActiveRecord::RecordInvalid
+    expect { FactoryGirl.create :tag, name: tag.name }.to raise_error ActiveRecord::RecordInvalid
   end
 
   it { is_expected.to have_many :events }

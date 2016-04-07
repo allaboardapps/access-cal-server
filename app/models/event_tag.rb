@@ -11,6 +11,6 @@ class EventTag < ActiveRecord::Base
   private
 
   def index_event
-    self.event.reload.__elasticsearch__.index_document
+    event.reload.__elasticsearch__.index_document
   end
 end
