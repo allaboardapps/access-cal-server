@@ -34,23 +34,23 @@ describe User, type: :model do
 
     it "capitalizes the user first name and trims any pre-fixed space" do
       user = FactoryGirl.create(:user, first_name: "bubba", last_name: "")
-      expect(user.full_name).to eq "#{user.first_name.capitalize}"
+      expect(user.full_name).to eq user.first_name.capitalize
     end
 
     it "capitalizes the user last name and trims any post-fixed space" do
       user = FactoryGirl.create(:user, first_name: "", last_name: "jones")
-      expect(user.full_name).to eq "#{user.last_name.capitalize}"
+      expect(user.full_name).to eq user.last_name.capitalize
     end
 
     context "nil names" do
       it "capitalizes the user last name and trims any post-fixed space" do
         user = FactoryGirl.create(:user, first_name: nil, last_name: "jones")
-        expect(user.full_name).to eq "#{user.last_name.capitalize}"
+        expect(user.full_name).to eq user.last_name.capitalize
       end
 
       it "capitalizes the user first name and trims any post-fixed space" do
         user = FactoryGirl.create(:user, first_name: "bubba", last_name: nil)
-        expect(user.full_name).to eq "#{user.first_name.capitalize}"
+        expect(user.full_name).to eq user.first_name.capitalize
       end
 
       it "returns a blank" do
