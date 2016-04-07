@@ -22,17 +22,23 @@ describe Api::V1::LocationsController, type: :controller do
 
       describe "#create" do
         it "creates and returns a location instance" do
-          post :create, region_id: @location.region.id, name: @location.name,
+          post(
+            :create,
+            region_id: @location.region.id, name: @location.name,
             abbreviation: @location.abbreviation, time_zone: @location.time_zone,
             admin_notes: @location.admin_notes
+          )
           expect_json("data", attributes: { name: @location.name, abbreviation: @location.abbreviation })
         end
 
         it "validates json attribute types" do
-          post :create, region_id: @location.region.id, name: @location.name,
+          post(
+            :create,
+            region_id: @location.region.id, name: @location.name,
             abbreviation: @location.abbreviation, time_zone: @location.time_zone,
             admin_notes: @location.admin_notes
-          expect_json_types("data", { id: :string })
+          )
+          expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { region_id: :string })
           expect_json_types("data", attributes: { name: :string })
           expect_json_types("data", attributes: { abbreviation: :string })
@@ -42,17 +48,24 @@ describe Api::V1::LocationsController, type: :controller do
         end
 
         it "returns a status of 201" do
-          post :create, region_id: @location.region.id, name: @location.name,
+          post(
+            :create,
+            region_id: @location.region.id, name: @location.name,
             abbreviation: @location.abbreviation, time_zone: @location.time_zone,
             admin_notes: @location.admin_notes
+          )
           expect_status :created
         end
 
         it "creates a new instance" do
-          expect { post :create, region_id: @location.region.id, name: @location.name,
-            abbreviation: @location.abbreviation, time_zone: @location.time_zone,
-            admin_notes: @location.admin_notes
-          }.to change(Location, :count).by(1)
+          expect do
+            post(
+              :create,
+              region_id: @location.region.id, name: @location.name,
+              abbreviation: @location.abbreviation, time_zone: @location.time_zone,
+              admin_notes: @location.admin_notes
+            )
+          end.to change(Location, :count).by(1)
         end
       end
 
@@ -66,7 +79,7 @@ describe Api::V1::LocationsController, type: :controller do
         it "validates json attribute types" do
           @location.save
           get :show, id: @location.id
-          expect_json_types("data", { id: :string })
+          expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { region_id: :string })
           expect_json_types("data", attributes: { name: :string })
           expect_json_types("data", attributes: { abbreviation: :string })
@@ -118,7 +131,7 @@ describe Api::V1::LocationsController, type: :controller do
         it "validates the json attribute types" do
           @location.save
           put :update, id: @location.id, name: "New name"
-          expect_json_types("data", { id: :string })
+          expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { region_id: :string })
           expect_json_types("data", attributes: { name: :string })
           expect_json_types("data", attributes: { abbreviation: :string })
