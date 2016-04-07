@@ -8,11 +8,11 @@ describe Tag, type: :model do
   end
 
   it "is invalid without a name" do
-    expect(FactoryGirl.build(:tag, name: nil)).to_not be_valid
+    expect(FactoryGirl.build(:tag, name: nil)).not_to be_valid
   end
 
   it "is invalid without a type" do
-    expect(FactoryGirl.build(:tag, tag_type: nil)).to_not be_valid
+    expect(FactoryGirl.build(:tag, tag_type: nil)).not_to be_valid
   end
 
   it "requires tag names to be unique" do

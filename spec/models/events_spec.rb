@@ -8,11 +8,11 @@ describe Event, type: :model do
   end
 
   it "is invalid without a name" do
-    expect(FactoryGirl.build(:event, name: nil)).to_not be_valid
+    expect(FactoryGirl.build(:event, name: nil)).not_to be_valid
   end
 
   it "is invalid without a time_zone" do
-    expect(FactoryGirl.build(:event, time_zone: nil)).to_not be_valid
+    expect(FactoryGirl.build(:event, time_zone: nil)).not_to be_valid
   end
 
   describe "#archive" do
@@ -46,34 +46,34 @@ describe Event, type: :model do
   describe "Searching for an event" do
     context "using elasticsearch", elasticsearch: true, commit: true do
       before do
-        @event = FactoryGirl.create(:event)
+        event.touch
         sleep 3
       end
 
-      it "should complete a search by event name" do
-        response = Event.search_for(@event.name)
+      it "will complete a search by event name" do
+        response = described_class.search_for(event.name)
         expect(response.results.total).to eq 1
       end
 
-      it "should complete a search by event abbreviation" do
-        response = Event.search_for(@event.abbreviation)
+      it "will complete a search by event abbreviation" do
+        response = described_class.search_for(event.abbreviation)
         expect(response.results.total).to eq 1
       end
 
-      it "should complete a search by tag name after an event tag association is created" do
+      it "will complete a search by tag name after an event tag association is created" do
         tag = FactoryGirl.create :tag
-        FactoryGirl.create :event_tag, tag: tag, event: @event
+        FactoryGirl.create :event_tag, tag: tag, event: event
         sleep 3
-        response = Event.search_for(tag.name)
+        response = described_class.search_for(tag.name)
         expect(response.results.total).to eq 1
       end
 
-      it "should not complete a search by tag name after an event tag association is deleted" do
+      it "will not complete a search by tag name after an event tag association is deleted" do
         tag = FactoryGirl.create :tag
-        event_tag = FactoryGirl.create :event_tag, tag: tag, event: @event
+        event_tag = FactoryGirl.create :event_tag, tag: tag, event: event
         event_tag.destroy
         sleep 3
-        response = Event.search_for(tag.name)
+        response = described_class.search_for(tag.name)
         expect(response.results.total).to eq 0
       end
     end

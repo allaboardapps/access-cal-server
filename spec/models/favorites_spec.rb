@@ -6,11 +6,11 @@ describe Favorite, type: :model do
   end
 
   it "is invalid without a user" do
-    expect(FactoryGirl.build(:favorite, user_id: nil)).to_not be_valid
+    expect(FactoryGirl.build(:favorite, user_id: nil)).not_to be_valid
   end
 
   it "is invalid without an event" do
-    expect(FactoryGirl.build(:favorite, event: nil)).to_not be_valid
+    expect(FactoryGirl.build(:favorite, event: nil)).not_to be_valid
   end
 
   it { is_expected.to belong_to :event }

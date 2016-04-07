@@ -6,19 +6,19 @@ describe User, type: :model do
   end
 
   it "is invalid without an email address" do
-    expect(FactoryGirl.build(:user, password: nil)).to_not be_valid
+    expect(FactoryGirl.build(:user, password: nil)).not_to be_valid
   end
 
   it "is invalid without a password" do
-    expect(FactoryGirl.build(:user, email: nil)).to_not be_valid
+    expect(FactoryGirl.build(:user, email: nil)).not_to be_valid
   end
 
   it "is invalid without a sufficient password" do
-    expect(FactoryGirl.build(:user, password: "1234567")).to_not be_valid
+    expect(FactoryGirl.build(:user, password: "1234567")).not_to be_valid
   end
 
   it "is invalid without a time zone" do
-    expect(FactoryGirl.build(:user, time_zone: nil)).to_not be_valid
+    expect(FactoryGirl.build(:user, time_zone: nil)).not_to be_valid
   end
 
   describe "#full_name" do
