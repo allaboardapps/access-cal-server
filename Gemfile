@@ -3,9 +3,9 @@ source "https://rubygems.org"
 ruby "2.3.0"
 gem "rails", "4.2.6"
 
-gem "active_model_serializers", "0.10.0.rc4"
+gem "active_model_serializers", "0.10.0.rc5"
 gem "activeadmin", "1.0.0.pre2"
-gem "aws-sdk", "2.2.31"
+gem "aws-sdk", "2.2.32"
 gem "browser", "2.0.3"
 gem "devise", "3.5.6"
 gem "devise-async", "0.10.1"
@@ -35,7 +35,7 @@ gem "uglifier", "3.0.0"
 
 group :production, :staging do
   gem "rails_12factor", "0.0.3"
-  gem "puma", "3.2.0"
+  gem "puma", "3.3.0"
 end
 
 group :development do
@@ -55,8 +55,8 @@ end
 
 group :development, :test do
   gem "airborne", "0.2.3"
-  gem "byebug", "8.2.2"
-  gem "capybara", "2.6.2"
+  gem "byebug", "8.2.3"
+  gem "capybara", "2.7.0"
   gem "database_cleaner", "1.5.1"
   gem "pry-rails", "0.3.4"
   gem "pry-remote", "0.1.8"
