@@ -29,7 +29,7 @@ describe Api::V1::FavoritesController, type: :controller do
 
         it "validates json attribute types" do
           post :create, user_id: @favorite.user_id, event_id: @favorite.event_id
-          expect_json_types("data", { id: :string })
+          expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { user_id: :string })
           expect_json_types("data", attributes: { event_id: :string })
           expect_json_types("data", attributes: { archived: :boolean })
@@ -42,9 +42,7 @@ describe Api::V1::FavoritesController, type: :controller do
         end
 
         it "creates a new instance for a different user" do
-          expect {
-            post :create, user_id: @user.id, event_id: @favorite.event_id
-          }.to change(Favorite, :count).by(1)
+          expect { post :create, user_id: @user.id, event_id: @favorite.event_id }.to change(Favorite, :count).by(1)
         end
 
         it "does not create a duplicate instance, but does return the matching instance" do
@@ -53,9 +51,7 @@ describe Api::V1::FavoritesController, type: :controller do
         end
 
         it "does not create duplicates" do
-          expect {
-            post :create, user_id: @favorite.user_id, event_id: @favorite.event_id
-          }.to change(Favorite, :count).by(0)
+          expect { post :create, user_id: @favorite.user_id, event_id: @favorite.event_id }.to change(Favorite, :count).by(0)
         end
       end
 
@@ -67,7 +63,7 @@ describe Api::V1::FavoritesController, type: :controller do
 
         it "validates json attribute types" do
           get :show, id: @favorite.id
-          expect_json_types("data", { id: :string })
+          expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { user_id: :string })
           expect_json_types("data", attributes: { event_id: :string })
           expect_json_types("data", attributes: { archived: :boolean })
@@ -111,7 +107,7 @@ describe Api::V1::FavoritesController, type: :controller do
 
         it "validates the json attribute types" do
           put :update, id: @favorite.id, archived: true
-          expect_json_types("data", { id: :string })
+          expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { user_id: :string })
           expect_json_types("data", attributes: { event_id: :string })
           expect_json_types("data", attributes: { archived: :boolean })

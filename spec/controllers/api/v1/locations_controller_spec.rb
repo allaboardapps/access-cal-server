@@ -32,7 +32,7 @@ describe Api::V1::LocationsController, type: :controller do
           post :create, region_id: @location.region.id, name: @location.name,
             abbreviation: @location.abbreviation, time_zone: @location.time_zone,
             admin_notes: @location.admin_notes
-          expect_json_types("data", { id: :string } )
+          expect_json_types("data", { id: :string })
           expect_json_types("data", attributes: { region_id: :string })
           expect_json_types("data", attributes: { name: :string })
           expect_json_types("data", attributes: { abbreviation: :string })
@@ -66,7 +66,7 @@ describe Api::V1::LocationsController, type: :controller do
         it "validates json attribute types" do
           @location.save
           get :show, id: @location.id
-          expect_json_types("data", { id: :string } )
+          expect_json_types("data", { id: :string })
           expect_json_types("data", attributes: { region_id: :string })
           expect_json_types("data", attributes: { name: :string })
           expect_json_types("data", attributes: { abbreviation: :string })
@@ -118,7 +118,7 @@ describe Api::V1::LocationsController, type: :controller do
         it "validates the json attribute types" do
           @location.save
           put :update, id: @location.id, name: "New name"
-          expect_json_types("data", { id: :string } )
+          expect_json_types("data", { id: :string })
           expect_json_types("data", attributes: { region_id: :string })
           expect_json_types("data", attributes: { name: :string })
           expect_json_types("data", attributes: { abbreviation: :string })
