@@ -2,22 +2,22 @@ require "rails_helper"
 
 describe TagTypes, type: :module do
   it "renders a system type" do
-    expect(TagTypes::DEFAULT).to eq "default"
+    expect(described_class::DEFAULT).to eq "default"
   end
 
   it "returns a list of system types" do
-    expect(TagTypes.system).to include "default"
+    expect(described_class.system).to include "default"
   end
 
   it "returns a list of consumer types" do
-    expect(TagTypes.consumer).to include "consumer"
+    expect(described_class.consumer).to include "consumer"
   end
 
   it "returns a list of client types" do
-    expect(TagTypes.client).to include "client"
+    expect(described_class.client).to include "client"
   end
 
   it "returns a list of all types" do
-    expect(TagTypes.all).to include "default", "consumer", "client"
+    expect(described_class.all).to include "default", "consumer", "client"
   end
 end
