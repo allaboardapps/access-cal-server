@@ -85,13 +85,15 @@ describe Api::V1::UsersController, type: :controller do
 
       describe "#index" do
         it "returns a collection of users" do
-          user_2 = FactoryGirl.create :user
-          user_3 = FactoryGirl.create :user
+          user.touch
+          FactoryGirl.create :user
+          FactoryGirl.create :user
           get :index
           expect_json_sizes("data", 3)
         end
 
         it "includes at least one of the instances" do
+          user.touch
           user_2 = FactoryGirl.create :user
           user_3 = FactoryGirl.create :user
           get :index
@@ -99,8 +101,8 @@ describe Api::V1::UsersController, type: :controller do
         end
 
         it "returns a status of 200" do
-          user_2 = FactoryGirl.create :user
-          user_3 = FactoryGirl.create :user
+          FactoryGirl.create :user
+          FactoryGirl.create :user
           get :index
           expect_status :ok
         end
