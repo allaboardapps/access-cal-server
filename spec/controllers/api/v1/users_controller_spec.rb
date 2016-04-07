@@ -21,37 +21,46 @@ describe Api::V1::UsersController, type: :controller do
 
       describe "#create" do
         it "creates and returns an user instance" do
-          post :create, first_name: @user.first_name, last_name: @user.last_name, email: Faker::Internet.email, zip_code: @user.zip_code,
+          post(
+            :create,
+            first_name: @user.first_name, last_name: @user.last_name, email: Faker::Internet.email, zip_code: @user.zip_code,
             time_zone: @user.time_zone, location_id: @user.location_id, roles: @user.roles,
             statuses: @user.statuses, admin_notes: @user.admin_notes, password: "xxxxxxxxxxxxx"
+          )
           expect_json_sizes 0
         end
 
         it "returns a status of 201" do
-          post :create, first_name: @user.first_name, last_name: @user.last_name, email: Faker::Internet.email, zip_code: @user.zip_code,
+          post(
+            :create,
+            first_name: @user.first_name, last_name: @user.last_name, email: Faker::Internet.email, zip_code: @user.zip_code,
             time_zone: @user.time_zone, location_id: @user.location_id, roles: @user.roles,
             statuses: @user.statuses, admin_notes: @user.admin_notes, password: "xxxxxxxxxxxxx"
+          )
           expect_status :created
         end
 
         it "does not create a new instance with duplicate email" do
-          expect {
-            post :create, first_name: @user.first_name, last_name: @user.last_name, email: @user.email, zip_code: @user.zip_code,
+          expect do
+            post(
+              :create,
+              first_name: @user.first_name, last_name: @user.last_name, email: @user.email, zip_code: @user.zip_code,
               time_zone: @user.time_zone, location_id: @user.location_id, roles: @user.roles,
               statuses: @user.statuses, admin_notes: @user.admin_notes, password: "xxxxxxxxxxxxx"
-          }.to raise_error(ActiveRecord::RecordNotUnique)
+            )
+          end.to raise_error(ActiveRecord::RecordNotUnique)
         end
       end
 
       describe "#show" do
         it "returns an user instance" do
           get :show, id: @user.id
-          expect_json("data", { attributes: { first_name: @user.first_name, email: @user.email } })
+          expect_json("data", attributes: { first_name: @user.first_name, email: @user.email })
         end
 
         it "validates json attribute types" do
           get :show, id: @user.id
-          expect_json_types("data", id: :string )
+          expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { token: :string_or_null })
           expect_json_types("data", attributes: { first_name: :string })
           expect_json_types("data", attributes: { last_name: :string })
