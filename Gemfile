@@ -63,6 +63,7 @@ group :development, :test do
   gem "rspec-json_expectations", "1.3.0"
   gem "rspec-rails", "3.4.2"
   gem "rubocop", "0.39.0"
+  gem "rubocop-rspec", "1.4.1"
   gem "shoulda-matchers", "3.1.1"
 end
 
