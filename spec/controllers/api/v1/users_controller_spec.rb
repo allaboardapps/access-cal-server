@@ -93,9 +93,7 @@ describe Api::V1::UsersController, type: :controller do
         end
 
         it "includes at least one of the instances" do
-          user.touch
           user_2 = FactoryGirl.create :user
-          user_3 = FactoryGirl.create :user
           get :index
           expect_json("data.?", attributes: { first_name: user_2.first_name, email: user_2.email })
         end
