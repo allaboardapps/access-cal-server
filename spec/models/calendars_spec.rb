@@ -8,11 +8,11 @@ describe Calendar, type: :model do
   end
 
   it "is invalid without a name" do
-    expect(FactoryGirl.build(:calendar, name: nil)).to_not be_valid
+    expect(FactoryGirl.build(:calendar, name: nil)).not_to be_valid
   end
 
   it "is invalid without a time_zone" do
-    expect(FactoryGirl.build(:calendar, time_zone: nil)).to_not be_valid
+    expect(FactoryGirl.build(:calendar, time_zone: nil)).not_to be_valid
   end
 
   describe "#archive" do

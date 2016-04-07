@@ -6,15 +6,15 @@ describe Location, type: :model do
   end
 
   it "is invalid without a name" do
-    expect(FactoryGirl.build(:location, name: nil)).to_not be_valid
+    expect(FactoryGirl.build(:location, name: nil)).not_to be_valid
   end
 
   it "is invalid without an abbreviation" do
-    expect(FactoryGirl.build(:location, abbreviation: nil)).to_not be_valid
+    expect(FactoryGirl.build(:location, abbreviation: nil)).not_to be_valid
   end
 
   it "is invalid without a region" do
-    expect(FactoryGirl.build(:location, region_id: nil)).to_not be_valid
+    expect(FactoryGirl.build(:location, region_id: nil)).not_to be_valid
   end
 
   it { is_expected.to belong_to :region }

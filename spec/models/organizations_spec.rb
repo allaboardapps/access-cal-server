@@ -6,7 +6,7 @@ describe Organization, type: :model do
   end
 
   it "is invalid without a name" do
-    expect(FactoryGirl.build(:organization, name: nil)).to_not be_valid
+    expect(FactoryGirl.build(:organization, name: nil)).not_to be_valid
   end
 
   it { is_expected.to have_many :groups }

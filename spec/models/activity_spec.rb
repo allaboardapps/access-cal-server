@@ -6,54 +6,52 @@ describe Activity, type: :model do
   end
 
   it "is invalid without a loggable" do
-    expect(FactoryGirl.build(:activity, loggable: nil)).to_not be_valid
+    expect(FactoryGirl.build(:activity, loggable: nil)).not_to be_valid
   end
 
   it "is invalid without a creator" do
-    expect(FactoryGirl.build(:activity, creator: nil)).to_not be_valid
+    expect(FactoryGirl.build(:activity, creator: nil)).not_to be_valid
   end
 
   describe ".create" do
-    before do
-      @creator = FactoryGirl.create :user, :admin
-      @action = ActivityActionTypes.all.sample
-      @description = Faker::Lorem.sentence(10)
-    end
+    let(:creator) { FactoryGirl.create :user, :admin }
+    let(:action) { ActivityActionTypes.all.sample }
+    let(:description) { Faker::Lorem.sentence(10) }
 
     it "creates an activity log entry for change on a User instance" do
       loggable = FactoryGirl.create :user, :consumer
-      Activity.log @creator, loggable, @action
-      expect(Activity.first.loggable).to eq loggable
+      described_class.log creator, loggable, action
+      expect(described_class.first.loggable).to eq loggable
     end
 
     it "creates an activity log entry for change on a Event instance" do
       loggable = FactoryGirl.create :event
-      Activity.log @creator, loggable, @action
-      expect(Activity.first.loggable).to eq loggable
+      described_class.log creator, loggable, action
+      expect(described_class.first.loggable).to eq loggable
     end
 
     it "updates description to 'none' if description left blank" do
       loggable = FactoryGirl.create :event
-      Activity.log @creator, loggable, @action
-      expect(Activity.first.description).to be_nil
+      described_class.log creator, loggable, action
+      expect(described_class.first.description).to be_nil
     end
 
     it "updates description if provided" do
       loggable = FactoryGirl.create :event
       description = "somethin' somethin'"
-      Activity.log @creator, loggable, @action, description
-      expect(Activity.first.description).to eq description
+      described_class.log creator, loggable, action, description
+      expect(described_class.first.description).to eq description
     end
 
     it "requires a user to log" do
       loggable = FactoryGirl.create :admin
-      Activity.log nil, loggable, @action
-      expect(Activity.count).to eq 0
+      described_class.log nil, loggable, action
+      expect(described_class.count).to eq 0
     end
 
     it "requires a loggable model to log" do
-      Activity.log @creator, nil, @action
-      expect(Activity.count).to eq 0
+      described_class.log creator, nil, action
+      expect(described_class.count).to eq 0
     end
   end
 

@@ -14,29 +14,30 @@ describe Api::V1::LocationsController, type: :controller do
     end
 
     context "with correct token" do
+      let(:location) { FactoryGirl.create :location }
+      let(:user) { FactoryGirl.create :user, location: location }
+
       before do
-        @location = FactoryGirl.create :location
-        @user = FactoryGirl.create :user, location: @location
-        authenticate_for_specs(@user)
+        authenticate_for_specs(user)
       end
 
       describe "#create" do
         it "creates and returns a location instance" do
           post(
             :create,
-            region_id: @location.region.id, name: @location.name,
-            abbreviation: @location.abbreviation, time_zone: @location.time_zone,
-            admin_notes: @location.admin_notes
+            region_id: location.region.id, name: location.name,
+            abbreviation: location.abbreviation, time_zone: location.time_zone,
+            admin_notes: location.admin_notes
           )
-          expect_json("data", attributes: { name: @location.name, abbreviation: @location.abbreviation })
+          expect_json("data", attributes: { name: location.name, abbreviation: location.abbreviation })
         end
 
         it "validates json attribute types" do
           post(
             :create,
-            region_id: @location.region.id, name: @location.name,
-            abbreviation: @location.abbreviation, time_zone: @location.time_zone,
-            admin_notes: @location.admin_notes
+            region_id: location.region.id, name: location.name,
+            abbreviation: location.abbreviation, time_zone: location.time_zone,
+            admin_notes: location.admin_notes
           )
           expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { region_id: :string })
@@ -50,9 +51,9 @@ describe Api::V1::LocationsController, type: :controller do
         it "returns a status of 201" do
           post(
             :create,
-            region_id: @location.region.id, name: @location.name,
-            abbreviation: @location.abbreviation, time_zone: @location.time_zone,
-            admin_notes: @location.admin_notes
+            region_id: location.region.id, name: location.name,
+            abbreviation: location.abbreviation, time_zone: location.time_zone,
+            admin_notes: location.admin_notes
           )
           expect_status :created
         end
@@ -61,9 +62,9 @@ describe Api::V1::LocationsController, type: :controller do
           expect do
             post(
               :create,
-              region_id: @location.region.id, name: @location.name,
-              abbreviation: @location.abbreviation, time_zone: @location.time_zone,
-              admin_notes: @location.admin_notes
+              region_id: location.region.id, name: location.name,
+              abbreviation: location.abbreviation, time_zone: location.time_zone,
+              admin_notes: location.admin_notes
             )
           end.to change(Location, :count).by(1)
         end
@@ -71,14 +72,12 @@ describe Api::V1::LocationsController, type: :controller do
 
       describe "#show" do
         it "returns a location instance" do
-          @location.save
-          get :show, id: @location.id
-          expect_json("data", attributes: { name: @location.name, abbreviation: @location.abbreviation })
+          get :show, id: location.id
+          expect_json("data", attributes: { name: location.name, abbreviation: location.abbreviation })
         end
 
         it "validates json attribute types" do
-          @location.save
-          get :show, id: @location.id
+          get :show, id: location.id
           expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { region_id: :string })
           expect_json_types("data", attributes: { name: :string })
@@ -89,33 +88,28 @@ describe Api::V1::LocationsController, type: :controller do
         end
 
         it "returns a status of 200" do
-          @location.save
-          get :show, id: @location.id
+          get :show, id: location.id
           expect_status :ok
         end
       end
 
       describe "#index" do
         it "returns a collection of locations" do
-          @location.save
-          @location_2 = FactoryGirl.create :location
-          @location_3 = FactoryGirl.create :location
+          location.touch
+          FactoryGirl.create :location
+          FactoryGirl.create :location
           get :index
           expect_json_sizes("data", 3)
         end
 
         it "includes at least one of the instances" do
-          @location.save
-          @location_2 = FactoryGirl.create :location
-          @location_3 = FactoryGirl.create :location
+          location_2 = FactoryGirl.create :location
           get :index
-          expect_json("data.?", attributes: { name: @location_2.name, abbreviation: @location_2.abbreviation })
+          expect_json("data.?", attributes: { name: location_2.name, abbreviation: location_2.abbreviation })
         end
 
         it "returns a status of 200" do
-          @location.save
-          @location_2 = FactoryGirl.create :location
-          @location_3 = FactoryGirl.create :location
+          location.touch
           get :index
           expect_status :ok
         end
@@ -123,14 +117,12 @@ describe Api::V1::LocationsController, type: :controller do
 
       describe "#update" do
         it "updates the location" do
-          @location.save
-          put :update, id: @location.id, name: "New name"
-          expect_json("data", attributes: { name: "New name", abbreviation: @location.abbreviation })
+          put :update, id: location.id, name: "New name"
+          expect_json("data", attributes: { name: "New name", abbreviation: location.abbreviation })
         end
 
         it "validates the json attribute types" do
-          @location.save
-          put :update, id: @location.id, name: "New name"
+          put :update, id: location.id, name: "New name"
           expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { region_id: :string })
           expect_json_types("data", attributes: { name: :string })
@@ -141,28 +133,24 @@ describe Api::V1::LocationsController, type: :controller do
         end
 
         it "returns a status of accepted (202)" do
-          @location.save
-          put :update, id: @location.id, name: "New name"
+          put :update, id: location.id, name: "New name"
           expect_status :accepted
         end
       end
 
       describe "#delete" do
         it "returns empty json" do
-          @location.save
-          delete :destroy, id: @location.id
+          delete :destroy, id: location.id
           expect_json_sizes 0
         end
 
         it "returns a status of accepted (202)" do
-          @location.save
-          delete :destroy, id: @location.id
+          delete :destroy, id: location.id
           expect_status :accepted
         end
 
         it "deletes the specified instance" do
-          @location.save
-          expect { delete :destroy, id: @location.id }.to change(Location, :count).by(-1)
+          expect { delete :destroy, id: location.id }.to change(Location, :count).by(-1)
         end
       end
     end

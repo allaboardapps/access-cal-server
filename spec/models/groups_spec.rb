@@ -6,7 +6,7 @@ describe Group, type: :model do
   end
 
   it "is invalid without a name" do
-    expect(FactoryGirl.build(:group, name: nil)).to_not be_valid
+    expect(FactoryGirl.build(:group, name: nil)).not_to be_valid
   end
 
   it { is_expected.to have_many :group_users }
