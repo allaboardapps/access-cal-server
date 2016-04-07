@@ -2,11 +2,11 @@ require "rails_helper"
 
 describe Group, type: :model do
   it "has a valid factory" do
-    expect(create :group).to be_valid
+    expect(FactoryGirl.create(:group)).to be_valid
   end
 
   it "is invalid without a name" do
-    expect(build :group, name: nil).to_not be_valid
+    expect(FactoryGirl.build(:group, name: nil)).to_not be_valid
   end
 
   it { is_expected.to have_many :group_users }

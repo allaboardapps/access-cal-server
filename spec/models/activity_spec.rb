@@ -3,15 +3,15 @@ require "rails_helper"
 describe Activity, type: :model do
 
   it "has a valid factory" do
-    expect(FactoryGirl.create :activity).to be_valid
+    expect(FactoryGirl.create(:activity)).to be_valid
   end
 
   it "is invalid without a loggable" do
-    expect(FactoryGirl.build :activity, loggable: nil).to_not be_valid
+    expect(FactoryGirl.build(:activity, loggable: nil)).to_not be_valid
   end
 
   it "is invalid without a creator" do
-    expect(FactoryGirl.build :activity, creator: nil).to_not be_valid
+    expect(FactoryGirl.build(:activity, creator: nil)).to_not be_valid
   end
 
   describe ".create" do

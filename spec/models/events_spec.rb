@@ -4,23 +4,15 @@ describe Event, type: :model do
   let(:event) { FactoryGirl.create :event }
 
   it "has a valid factory" do
-    expect(create :event).to be_valid
+    expect(FactoryGirl.create(:event)).to be_valid
   end
 
   it "is invalid without a name" do
-    expect(build :event, name: nil).to_not be_valid
+    expect(FactoryGirl.build(:event, name: nil)).to_not be_valid
   end
 
   it "is invalid without a time_zone" do
-    expect(build :event, time_zone: nil).to_not be_valid
-  end
-
-  xit "is invalid without an abbreviation" do
-    expect(build :event, abbreviation: nil).to_not be_valid
-  end
-
-  xit "is invalid without a primary category" do
-    expect(build :event, primary_category: nil).to_not be_valid
+    expect(FactoryGirl.build(:event, time_zone: nil)).to_not be_valid
   end
 
   describe "#archive" do
