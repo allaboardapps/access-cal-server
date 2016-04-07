@@ -23,16 +23,12 @@ describe Api::V1::RegionsController, type: :controller do
 
       describe "#create" do
         it "creates and returns a region instance" do
-          post :create, name: @region.name,
-            abbreviation: @region.abbreviation, time_zone: @region.time_zone,
-            admin_notes: @region.admin_notes
+          post :create, name: @region.name, abbreviation: @region.abbreviation, time_zone: @region.time_zone, admin_notes: @region.admin_notes
           expect_json("data", attributes: { name: @region.name, abbreviation: @region.abbreviation })
         end
 
         it "validates json attribute types" do
-          post :create, name: @region.name,
-            abbreviation: @region.abbreviation, time_zone: @region.time_zone,
-            admin_notes: @region.admin_notes
+          post :create, name: @region.name, abbreviation: @region.abbreviation, time_zone: @region.time_zone, admin_notes: @region.admin_notes
           expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { name: :string })
           expect_json_types("data", attributes: { abbreviation: :string })
@@ -42,17 +38,14 @@ describe Api::V1::RegionsController, type: :controller do
         end
 
         it "returns a status of 201" do
-          post :create, name: @region.name,
-            abbreviation: @region.abbreviation, time_zone: @region.time_zone,
-            admin_notes: @region.admin_notes
+          post :create, name: @region.name, abbreviation: @region.abbreviation, time_zone: @region.time_zone, admin_notes: @region.admin_notes
           expect_status :created
         end
 
         it "creates a new instance" do
-          expect { post :create, name: @region.name,
-            abbreviation: @region.abbreviation, time_zone: @region.time_zone,
-            admin_notes: @region.admin_notes
-          }.to change(Region, :count).by(1)
+          expect do
+            post :create, name: @region.name, abbreviation: @region.abbreviation, time_zone: @region.time_zone, admin_notes: @region.admin_notes
+          end.to change(Region, :count).by(1)
         end
       end
 
