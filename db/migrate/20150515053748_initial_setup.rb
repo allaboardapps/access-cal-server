@@ -65,8 +65,6 @@ class InitialSetup < ActiveRecord::Migration
       t.uuid "location_id"
       t.string "name"
       t.string "abbreviation"
-      t.string "primary_category"
-      t.text "categories", array: true, default: []
       t.datetime "starts_at"
       t.datetime "ends_at"
       t.string "description"

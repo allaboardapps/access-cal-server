@@ -7,9 +7,7 @@ class CalendarsController < ApplicationController
     @calendar = Calendar.find_by(show_params)
   end
 
-  def new
-
-  end
+  def new; end
 
   def create
     calendar = Calendar.create(create_params)

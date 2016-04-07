@@ -3,7 +3,8 @@ ActiveAdmin.register Event do
 
   actions :all
 
-  permit_params :location_id,
+  permit_params(
+    :location_id,
     :author_id,
     :name,
     :abbreviation,
@@ -24,6 +25,7 @@ ActiveAdmin.register Event do
     :admin_notes,
     :archived,
     :test
+  )
 
   scope :active, default: true
   scope :archived
@@ -83,20 +85,20 @@ ActiveAdmin.register Event do
     f.actions
   end
 
-  show do |location|
+  show do |event|
     attributes_table do
       row :id
       row :name
       row :abbreviation
       row :primary_category
       row :categories
-      row "Location" do |event|
+      row "Location" do
         link_to event.location.name, admin_location_path(event.region)
       end
-      row "Region" do |region|
+      row "Region" do
         link_to event.region.name, admin_region_path(event.region)
       end
-      row "User" do |event|
+      row "User" do
         link_to event.client.full_name, admin_user_path(event.client)
       end
       row :starts_at

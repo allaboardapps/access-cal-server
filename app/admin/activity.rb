@@ -29,13 +29,13 @@ ActiveAdmin.register Activity do
     attributes_table do
       row :id
       row :creator
-      row "Loggable" do |activity_log|
+      row "Loggable" do
         loggable if activity_log.loggable.present?
       end
       row :loggable_type
       row :activity_action_type
       row :description
-      row "Explanation" do |activity_log|
+      row "Explanation" do
         activity_log.explanation if activity_log.loggable.present?
       end
       row :updated_at

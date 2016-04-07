@@ -33,7 +33,7 @@ ActiveAdmin.register Region do
     f.actions
   end
 
-  show do |user|
+  show do
     attributes_table do
       row :id
       row :name

@@ -5,7 +5,7 @@ FactoryGirl.define do
     email { Faker::Internet.email }
     password { "12345678" }
     password_confirmation { "12345678" }
-    confirmed_at Date.today
+    confirmed_at Time.current
     admin_notes { Faker::Lorem.sentences(1)[0] }
     archived { false }
     test { false }

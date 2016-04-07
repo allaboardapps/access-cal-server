@@ -1,5 +1,4 @@
 class FormSubmissionMailer < ActionMailer::Base
-
   def support(params)
     # mail(
     #   from: "no-reply@eventserver.com", # params[:form_submission][:email],

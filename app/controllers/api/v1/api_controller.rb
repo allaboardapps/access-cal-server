@@ -1,6 +1,6 @@
 class Api::V1::ApiController < ApplicationController
-  before_filter :authenticate_user_from_token!
-  before_filter :authenticate_user!
+  before_action :authenticate_user_from_token!
+  before_action :authenticate_user!
   respond_to :json
 
   private
@@ -12,7 +12,7 @@ class Api::V1::ApiController < ApplicationController
     if user && Devise.secure_compare(user.token, token)
       sign_in(user, store: false)
     else
-      render text: "Error: Not Authorized", status: 403 and return
+      render text: "Error: Not Authorized", status: 403
     end
   end
 end

@@ -8,6 +8,6 @@ module ApplicationHelper
   end
 
   def number_with_leading(integer)
-    "%.2d" % integer
+    integer.to_s.rjust(2, "0")
   end
 end

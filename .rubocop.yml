@@ -1,17 +1,36 @@
+Rails:
+  Enabled: true
+
 AllCops:
-  Includes:
-    - '**/*.gemspec'
-    - '**/Rakefile'
-  Excludes:
-    - db/schema.rb
-    - db/migrate/*
-    - db/seeds.rb
+  Include:
+    - "**/*.gemspec"
+    - "**/Rakefile"
+  Exclude:
+    - "db/**/*"
+    - "config/**/*"
+    - "script/**/*"
 
 StringLiterals:
   EnforcedStyle: double_quotes
 
+PerlBackrefs:
+  Enabled: false
+
+SymbolProc:
+  Exclude:
+    - "app/admin/**/*"
+
+AssignmentInCondition:
+  Exclude:
+    - "bin/spring"
+
+HandleExceptions:
+  Exclude:
+    - "bin/rails"
+    - "bin/rake"
+
 LineLength:
-  Max: 150
+  Max: 200
 
 Documentation:
   Enabled: false

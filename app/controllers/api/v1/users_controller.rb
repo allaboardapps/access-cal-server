@@ -37,4 +37,3 @@ class Api::V1::UsersController < Api::V1::ApiController
     params.permit(:first_name, :last_name, :email, :zip_code, :time_zone, :location_id, :roles, :statuses, :archived, :test, :admin_notes, :password, :password_confirmation)
   end
 end
-

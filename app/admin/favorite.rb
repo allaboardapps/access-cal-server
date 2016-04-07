@@ -34,7 +34,7 @@ ActiveAdmin.register Favorite do
     f.actions
   end
 
-  show do |favorite|
+  show do
     attributes_table do
       row :id
       row :user

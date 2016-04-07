@@ -1,7 +1,5 @@
 class StaticController < ApplicationController
-
-  def home
-  end
+  def home; end
 
   def robots
     robots = File.read(Rails.root + "config/robots.#{Rails.env}.txt")

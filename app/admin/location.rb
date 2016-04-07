@@ -37,13 +37,13 @@ ActiveAdmin.register Location do
     f.actions
   end
 
-  show do |location|
+  show do
     attributes_table do
       row :id
       row :name
       row :abbreviation
-      row "Region" do |region|
-        link_to region.name, admin_region_path(region)
+      row "Region" do |location|
+        link_to location.region.name, admin_region_path(location.region)
       end
       row :archived
       row :test

@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Activity, type: :model do
-
   it "has a valid factory" do
     expect(FactoryGirl.create(:activity)).to be_valid
   end

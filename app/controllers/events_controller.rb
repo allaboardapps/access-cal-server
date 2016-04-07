@@ -7,9 +7,7 @@ class EventsController < ApplicationController
     @event = Event.find_by(show_params)
   end
 
-  def new
-
-  end
+  def new; end
 
   def create
     event = Event.create(create_params)

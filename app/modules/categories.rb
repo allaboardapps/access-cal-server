@@ -22,28 +22,12 @@ module Categories
   TOURS = "tours".freeze
 
   def self.all
-  [
-    Categories::CHRISTIAN,
-    Categories::COMEDY,
-    Categories::CONCERT,
-    Categories::CONFERENCES,
-    Categories::COUPLES,
-    Categories::DANCE,
-    Categories::EXHIBITS,
-    Categories::FAMILY,
-    Categories::FESTIVALS,
-    Categories::GALLERIES,
-    Categories::JEWISH,
-    Categories::LATE_NIGHT,
-    Categories::LGBT,
-    Categories::MARKETS,
-    Categories::MUSLIM,
-    Categories::OPENINGS,
-    Categories::READINGS,
-    Categories::SINGLES,
-    Categories::SPORTS,
-    Categories::THEATRE,
-    Categories::TOURS
-  ].sort
+    [
+      Categories::CHRISTIAN, Categories::COMEDY, Categories::CONCERT, Categories::CONFERENCES,
+      Categories::COUPLES, Categories::DANCE, Categories::EXHIBITS, Categories::FAMILY,
+      Categories::FESTIVALS, Categories::GALLERIES, Categories::JEWISH, Categories::LATE_NIGHT,
+      Categories::LGBT, Categories::MARKETS, Categories::MUSLIM, Categories::OPENINGS,
+      Categories::READINGS, Categories::SINGLES, Categories::SPORTS, Categories::THEATRE, Categories::TOURS
+    ].sort
   end
 end

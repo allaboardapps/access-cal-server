@@ -57,7 +57,7 @@ describe EventsController, type: :controller do
 
     it "renders the selected object form" do
       get :new
-      expect(response.body).to match(/Event Name/
+      expect(response.body).to match(/Event Name/)
     end
   end
 

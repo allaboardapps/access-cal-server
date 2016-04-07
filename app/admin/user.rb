@@ -3,16 +3,18 @@ ActiveAdmin.register User do
 
   actions :all
 
-  permit_params :email,
-  :first_name,
-  :last_name,
-  :admin_notes,
-  :archived,
-  :roles,
-  :zip_code,
-  :time_zone,
-  :test,
-  :password
+  permit_params(
+    :email,
+    :first_name,
+    :last_name,
+    :admin_notes,
+    :archived,
+    :roles,
+    :zip_code,
+    :time_zone,
+    :test,
+    :password
+  )
 
   scope :active, default: true
   scope :customers
@@ -27,15 +29,15 @@ ActiveAdmin.register User do
   filter :last_name
   filter :email
 
-  index do
+  index do |user|
     selectable_column
     id_column
     column :first_name
     column :last_name
-    column :email do |user|
+    column :email do
       mail_to user.email, user.email
     end
-    column :roles do |user|
+    column :roles do
       user.roles_presented
     end
     column :updated_at
@@ -61,10 +63,10 @@ ActiveAdmin.register User do
       row :id
       row :first_name
       row :last_name
-      row :roles do |user|
+      row :roles do
         user.roles_presented
       end
-      row :email do |user|
+      row :email do
         mail_to user.email, user.email
       end
       row :admin_notes

@@ -52,23 +52,19 @@ class User < ActiveRecord::Base
   end
 
   def active_admin_access?
-    roles.any? { |role| Roles.system_roles.include?(role) }
+    roles.any? { |role| UserRoles.active_admin_roles.include?(role) }
   end
 
   def active_for_authentication?
-    super && !self.archived?
+    super && !archived?
   end
 
   def user_role?
     roles.any? { |role| Roles.user_roles.include?(role) }
   end
 
-  def is?(role)
+  def role?(role)
     roles.include? role
-  end
-
-  def is_not?(role)
-    !roles.include? role
   end
 
   def roles_contain_one_of?(allowed_roles)
@@ -82,39 +78,31 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    is? UserRoles::ADMIN
+    role? UserRoles::ADMIN
   end
 
   def consumer?
-    is? UserRoles::CONSUMER
+    role? UserRoles::CONSUMER
   end
 
   def client?
-    is? UserRoles::CLIENT
+    role? UserRoles::CLIENT
   end
 
-  def status_is?(role)
-    statuses.include? role
-  end
-
-  def status_is_not?(role)
-    !statuses.include? role
+  def status?(status)
+    statuses.include? status
   end
 
   def basic?
-    status_is?(UserStatuses::BASIC) || status_is?(UserStatuses::PRO) || status_is?(UserStatuses::PREMIUM)
+    status?(UserStatuses::BASIC) || status?(UserStatuses::PRO) || status?(UserStatuses::PREMIUM)
   end
 
   def pro?
-    status_is?(UserStatuses::PRO) || status_is?(UserStatuses::PREMIUM)
+    status?(UserStatuses::PRO) || status?(UserStatuses::PREMIUM)
   end
 
   def premium?
-    status_is?(UserStatuses::PREMIUM)
-  end
-
-  def active_admin_access?
-    roles.any? { |role| UserRoles.active_admin_roles.include?(role) }
+    status?(UserStatuses::PREMIUM)
   end
 
   def archive

@@ -141,6 +141,30 @@ describe User, type: :model do
       end
     end
 
+    describe "#role?" do
+      it "returns true if user has matching user role" do
+        user = FactoryGirl.create :user, :client_basic
+        expect(user.role?(UserRoles::CLIENT)).to be_truthy
+      end
+
+      it "returns false if user does not have matching user role" do
+        user = FactoryGirl.create :user, :client_basic
+        expect(user.role?(UserRoles::ADMIN)).to be_falsey
+      end
+    end
+
+    describe "#status?" do
+      it "returns true if user has matching user status" do
+        user = FactoryGirl.create :user, :client_basic
+        expect(user.status?(UserStatuses::BASIC)).to be_truthy
+      end
+
+      it "returns false if user does not have matching user status" do
+        user = FactoryGirl.create :user, :client_basic
+        expect(user.status?(UserStatuses::PRO)).to be_falsey
+      end
+    end
+
     describe "#pro?" do
       it "returns false if user has status of basic" do
         user = FactoryGirl.create :user, :client_basic
