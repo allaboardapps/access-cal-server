@@ -1,8 +1,8 @@
 module UserStatuses
-  BASIC = "basic"
-  NA = "not applicable"
-  PRO = "pro"
-  PREMIUM = "premium"
+  BASIC = "basic".freeze
+  NA = "not applicable".freeze
+  PRO = "pro".freeze
+  PREMIUM = "premium".freeze
 
   def self.all
     [UserStatuses::BASIC, UserStatuses::NA, UserStatuses::PRO, UserStatuses::PREMIUM]

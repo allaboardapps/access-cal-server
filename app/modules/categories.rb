@@ -1,25 +1,25 @@
 module Categories
-  CHRISTIAN = "stuff"
-  COMEDY = "comedy"
-  CONCERT = "concert"
-  CONFERENCES = "conferences"
-  COUPLES = "couples"
-  DANCE = "dance"
-  EXHIBITS = "exhibits"
-  FAMILY = "family"
-  FESTIVALS = "festivals"
-  GALLERIES = "galleries"
-  JEWISH = "jewish"
-  LATE_NIGHT = "late_night"
-  LGBT = "lgbt"
-  MARKETS = "markets"
-  MUSLIM = "muslim"
-  OPENINGS = "openings"
-  READINGS = "readings"
-  SINGLES = "singles"
-  SPORTS = "sports"
-  THEATRE = "theatre"
-  TOURS = "tours"
+  CHRISTIAN = "stuff".freeze
+  COMEDY = "comedy".freeze
+  CONCERT = "concert".freeze
+  CONFERENCES = "conferences".freeze
+  COUPLES = "couples".freeze
+  DANCE = "dance".freeze
+  EXHIBITS = "exhibits".freeze
+  FAMILY = "family".freeze
+  FESTIVALS = "festivals".freeze
+  GALLERIES = "galleries".freeze
+  JEWISH = "jewish".freeze
+  LATE_NIGHT = "late_night".freeze
+  LGBT = "lgbt".freeze
+  MARKETS = "markets".freeze
+  MUSLIM = "muslim".freeze
+  OPENINGS = "openings".freeze
+  READINGS = "readings".freeze
+  SINGLES = "singles".freeze
+  SPORTS = "sports".freeze
+  THEATRE = "theatre".freeze
+  TOURS = "tours".freeze
 
   def self.all
   [

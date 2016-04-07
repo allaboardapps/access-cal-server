@@ -1,7 +1,7 @@
 module TagCategories
-  ACCESSIBILITY = "accessibility"
-  ASSEMBLY = "assembly"
-  CONTENT = "content"
+  ACCESSIBILITY = "accessibility".freeze
+  ASSEMBLY = "assembly".freeze
+  CONTENT = "content".freeze
 
   def self.all
     [

@@ -1,9 +1,9 @@
 module ActivityActionTypes
-  CREATE = "create"
-  UPDATE = "update"
-  DELETE = "delete"
-  ARCHIVE = "archive"
-  UNARCHIVE = "unarchive"
+  CREATE = "create".freeze
+  UPDATE = "update".freeze
+  DELETE = "delete".freeze
+  ARCHIVE = "archive".freeze
+  UNARCHIVE = "unarchive".freeze
 
   def self.all
     [

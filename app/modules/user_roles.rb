@@ -1,8 +1,8 @@
 module UserRoles
-  ADMIN = "admin"
-  STAFF = "staff"
-  CLIENT = "client"
-  CONSUMER = "consumer"
+  ADMIN = "admin".freeze
+  STAFF = "staff".freeze
+  CLIENT = "client".freeze
+  CONSUMER = "consumer".freeze
 
   def self.system_roles
     [UserRoles::ADMIN, UserRoles::STAFF]

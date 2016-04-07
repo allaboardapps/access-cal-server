@@ -1,9 +1,9 @@
 module GroupTypes
-  BILLING = "billing"
-  EDITORS = "editors"
-  MANAGERS = "managers"
-  OWNERS = "owners"
-  VIEWERS = "viewers"
+  BILLING = "billing".freeze
+  EDITORS = "editors".freeze
+  MANAGERS = "managers".freeze
+  OWNERS = "owners".freeze
+  VIEWERS = "viewers".freeze
 
   def self.all
     [

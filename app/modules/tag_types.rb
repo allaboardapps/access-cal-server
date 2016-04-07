@@ -1,7 +1,7 @@
 module TagTypes
-  DEFAULT = "default"
-  CLIENT = "client"
-  CONSUMER = "consumer"
+  DEFAULT = "default".freeze
+  CLIENT = "client".freeze
+  CONSUMER = "consumer".freeze
 
   def self.system
     [TagTypes::DEFAULT]

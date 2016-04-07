@@ -1,9 +1,9 @@
 module OrganizationRoles
-  BILLING = "billing"
-  EDITOR = "editor"
-  MANAGER = "manager"
-  OWNER = "owner"
-  VIEWER = "viewer"
+  BILLING = "billing".freeze
+  EDITOR = "editor".freeze
+  MANAGER = "manager".freeze
+  OWNER = "owner".freeze
+  VIEWER = "viewer".freeze
 
   def self.all
     [
