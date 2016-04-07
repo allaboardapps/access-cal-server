@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Api::V1::SessionsController, type: :controller do
-  describe "handling AccessDenied exceptions" do
+  describe "handling requests" do
     let(:user) { FactoryGirl.create :user }
 
     context "invalid credentials" do
@@ -41,7 +41,7 @@ describe Api::V1::SessionsController, type: :controller do
         user.update_attribute(:token, nil)
         post :create, email: user.email, password: user.password
         expect_json_types("data", attributes: { token: :string })
-        expect_json_types("data", { id: :string })
+        expect_json_types("data", id: :string)
         expect_json_types("data", attributes: { first_name: :string })
         expect_json_types("data", attributes: { last_name: :string })
         expect_json_types("data", attributes: { email: :string })

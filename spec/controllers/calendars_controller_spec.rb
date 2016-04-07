@@ -19,7 +19,7 @@ describe CalendarsController, type: :controller do
     it "renders a list of objects" do
       calendar.save
       get :index
-      expect(response.body).to match /#{calendar.name}/
+      expect(response.body).to match(/#{calendar.name}/)
     end
   end
 
@@ -38,7 +38,7 @@ describe CalendarsController, type: :controller do
 
     it "renders a single object page" do
       get :show, id: calendar.id
-      expect(response.body).to match /#{calendar.name}/
+      expect(response.body).to match(/#{calendar.name}/)
     end
   end
 
@@ -57,7 +57,7 @@ describe CalendarsController, type: :controller do
 
     it "renders the selected object form" do
       get :new
-      expect(response.body).to match /Calendar Name/
+      expect(response.body).to match(/Calendar Name/)
     end
   end
 
@@ -97,7 +97,7 @@ describe CalendarsController, type: :controller do
 
     it "renders the selected object form" do
       get :edit, id: calendar.id
-      expect(response.body).to match /#{calendar.name}/
+      expect(response.body).to match(/#{calendar.name}/)
     end
   end
 
