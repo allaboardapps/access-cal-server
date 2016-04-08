@@ -1,7 +1,7 @@
 class CreateActivityLogJob < ActiveJob::Base
   queue_as :default
 
-  rescue_from(ActiveRecord::RecordNotFound) do |exception|
+  rescue_from(ActiveRecord::RecordNotFound) do
     retry_job wait: 1.minute, queue: :default
   end
 

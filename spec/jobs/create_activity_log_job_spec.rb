@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe CreateActivityLogJob, type: :job do
   include ActiveJob::TestHelper
@@ -14,9 +14,7 @@ RSpec.describe CreateActivityLogJob, type: :job do
   end
 
   it "matches with enqueued job" do
-    expect {
-      described_class.perform_later
-    }.to have_enqueued_job(described_class)
+    expect { described_class.perform_later }.to have_enqueued_job(described_class)
   end
 
   it "is in default queue" do
