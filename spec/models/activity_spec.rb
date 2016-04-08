@@ -30,10 +30,10 @@ describe Activity, type: :model do
       expect(described_class.first.loggable).to eq loggable
     end
 
-    it "updates description to 'none' if description left blank" do
+    it "updates description to 'N/A' if description left blank" do
       loggable = FactoryGirl.create :event
       described_class.log creator, loggable, action
-      expect(described_class.first.description).to be_nil
+      expect(described_class.first.description).to eq "N/A"
     end
 
     it "updates description if provided" do

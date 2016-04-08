@@ -12,13 +12,13 @@ class Activity < ActiveRecord::Base
   scope :deletes, -> { where(activity_action_type: ActivityActionTypes::DELETE) }
 
   def self.log(creator, loggable, action, description = nil)
-    notes = description || "no note"
+    details = description || "N/A"
 
     create(
       creator: creator,
       loggable: loggable,
       activity_action_type: action,
-      description: notes
+      description: details
     )
   end
 
