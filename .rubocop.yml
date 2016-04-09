@@ -8,9 +8,13 @@ AllCops:
     - "**/*.gemspec"
     - "**/Rakefile"
   Exclude:
-    - "db/**/*"
+    - "bin/**/*"
     - "config/**/*"
+    - "db/**/*"
+    - "log/**/*"
     - "script/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
 
 StringLiterals:
   EnforcedStyle: double_quotes
@@ -21,15 +25,6 @@ PerlBackrefs:
 SymbolProc:
   Exclude:
     - "app/admin/**/*"
-
-AssignmentInCondition:
-  Exclude:
-    - "bin/spring"
-
-HandleExceptions:
-  Exclude:
-    - "bin/rails"
-    - "bin/rake"
 
 LineLength:
   Max: 200
