@@ -8,8 +8,8 @@ test:
         parallel: true
         files:
           - spec/**/*_spec.rb
-    post:
-      - bundle exec rubocop
+  post:
+    - bundle exec rubocop
 deployment:
   staging:
     branch: master
