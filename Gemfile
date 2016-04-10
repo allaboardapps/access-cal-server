@@ -5,13 +5,13 @@ gem "rails", "4.2.6"
 
 gem "active_model_serializers", "0.10.0.rc4"
 gem "activeadmin", "1.0.0.pre2"
-gem "aws-sdk", "2.2.32"
+gem "aws-sdk", "2.2.33"
 gem "browser", "2.0.3"
 gem "devise", "3.5.6"
 gem "devise-async", "0.10.1"
 gem "elasticsearch-model", "0.1.8"
 gem "elasticsearch-rails", "0.1.8"
-gem "factory_girl_rails", "4.6.0"
+gem "factory_girl_rails", "4.7.0"
 gem "faker", "1.6.3"
 gem "figaro", "1.1.1"
 gem "haml-rails", "0.9.0"
@@ -25,7 +25,7 @@ gem "rack-cors", "0.4.0", require: "rack/cors"
 gem "raygun4ruby", "1.1.9"
 gem "redcarpet", "3.3.4"
 gem "redis-rails", "4.0.0"
-gem "rollbar", "2.8.3"
+gem "rollbar", "2.9.1"
 gem "sass-rails", "5.0.4"
 gem "settingslogic", "2.0.9"
 gem "sidekiq", "4.1.1"
@@ -35,7 +35,7 @@ gem "uglifier", "3.0.0"
 
 group :production, :staging do
   gem "rails_12factor", "0.0.3"
-  gem "puma", "3.3.0"
+  gem "puma", "3.4.0"
 end
 
 group :development do
@@ -55,7 +55,7 @@ end
 
 group :development, :test do
   gem "airborne", "0.2.3"
-  gem "byebug", "8.2.3"
+  gem "byebug", "8.2.4"
   gem "capybara", "2.7.0"
   gem "database_cleaner", "1.5.1"
   gem "pry-rails", "0.3.4"
