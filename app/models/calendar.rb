@@ -5,10 +5,10 @@ class Calendar < ActiveRecord::Base
   has_many :calendar_users
   has_many :users, through: :calendar_users
 
-  scope :active, -> { where(archived: false, test: false) }
-  scope :archived, -> { where(archived: true) }
-  scope :test, -> { where(test: true) }
-  scope :dummy, -> { where(dummy: true) }
+  scope :actives, -> { where(archived: false, test: false) }
+  scope :archives, -> { where(archived: true) }
+  scope :tests, -> { where(test: true) }
+  scope :dummies, -> { where(dummy: true) }
 
   def archive
     update(archived: true)

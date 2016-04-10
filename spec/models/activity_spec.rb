@@ -55,44 +55,44 @@ describe Activity, type: :model do
     end
   end
 
-  describe ".active" do
+  describe ".actives" do
     it "only selects instances where archived and test is false" do
       FactoryGirl.create(described_class, :archived, :test)
       FactoryGirl.create(described_class, :archived)
       FactoryGirl.create(described_class, :test)
       FactoryGirl.create(described_class, test: false, archived: false)
       expect(described_class.count).to eq 4
-      expect(described_class.active.count).to eq 1
+      expect(described_class.actives.count).to eq 1
     end
   end
 
-  describe ".archived" do
+  describe ".archives" do
     it "only selects instances where archived is false" do
       FactoryGirl.create(described_class, :archived)
       FactoryGirl.create(described_class, :archived)
       FactoryGirl.create(described_class, archived: false)
       expect(described_class.count).to eq 3
-      expect(described_class.archived.count).to eq 2
+      expect(described_class.archives.count).to eq 2
     end
   end
 
-  describe ".test" do
+  describe ".tests" do
     it "only selects instances where test is false" do
       FactoryGirl.create(described_class, :test)
       FactoryGirl.create(described_class, :test)
       FactoryGirl.create(described_class, test: false)
       expect(described_class.count).to eq 3
-      expect(described_class.test.count).to eq 2
+      expect(described_class.tests.count).to eq 2
     end
   end
 
-  describe ".dummy" do
+  describe ".dummies" do
     it "only selects instances where dummy is true" do
       FactoryGirl.create(described_class, :dummy)
       FactoryGirl.create(described_class, :dummy)
       FactoryGirl.create(described_class, dummy: false)
       expect(described_class.count).to eq 3
-      expect(described_class.dummy.count).to eq 2
+      expect(described_class.dummies.count).to eq 2
     end
   end
 

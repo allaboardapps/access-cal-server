@@ -20,10 +20,10 @@ class Event < ActiveRecord::Base
   has_many :users, through: :favorites
   has_one :region, through: :location
 
-  scope :active, -> { where(archived: false, test: false) }
-  scope :archived, -> { where(archived: true) }
-  scope :test, -> { where(test: true) }
-  scope :dummy, -> { where(dummy: true) }
+  scope :actives, -> { where(archived: false, test: false) }
+  scope :archives, -> { where(archived: true) }
+  scope :tests, -> { where(test: true) }
+  scope :dummies, -> { where(dummy: true) }
   scope :autocomplete, -> (query) { active.where("name ilike ? or abbreviation ilike ?", "#{query}%", "#{query}%").order(name: :asc, abbreviation: :asc) }
 
   mappings dynamic: "false" do

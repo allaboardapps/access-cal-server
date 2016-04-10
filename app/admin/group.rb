@@ -5,10 +5,10 @@ ActiveAdmin.register Group do
 
   permit_params :name, :archived, :test, :dummy
 
-  scope :active, default: true
-  scope :archived
-  scope :test
-  scope :dummy
+  scope :actives, default: true
+  scope :archives
+  scope :tests
+  scope :dummies
 
   config.sort_order = "name asc"
 

@@ -144,5 +144,13 @@ class InitialSetup < ActiveRecord::Migration
       t.boolean    :dummy, default: false
       t.timestamps null: false
     end
+
+    create_table :reports, id: :uuid, force: true do |t|
+      t.string     :name
+      t.boolean    :archived, default: false
+      t.boolean    :test, default: false
+      t.boolean    :dummy, default: false
+      t.timestamps null: false
+    end
   end
 end

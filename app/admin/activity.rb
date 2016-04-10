@@ -3,13 +3,13 @@ ActiveAdmin.register Activity do
 
   actions :all, except: [:edit, :destroy]
 
-  scope :active, default: true
-  scope :archived
-  scope :test
-  scope :dummy
+  scope :actives, default: true
+  scope :archives
+  scope :tests
+  scope :dummies
   scope :creates
   scope :updates
-  scope :archives
+  scope :archivals
   scope :unarchives
   scope :deletes
 

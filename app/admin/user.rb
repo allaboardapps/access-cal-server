@@ -17,10 +17,10 @@ ActiveAdmin.register User do
     :dummy
   )
 
-  scope :active, default: true
-  scope :archived
-  scope :test
-  scope :dummy
+  scope :actives, default: true
+  scope :archives
+  scope :tests
+  scope :dummies
   scope :clients
   scope :consumers
   scope :admins

@@ -1,4 +1,9 @@
 class Report < ActiveRecord::Base
+  scope :actives, -> { where(archived: false, test: false) }
+  scope :archives, -> { where(archived: true) }
+  scope :tests, -> { where(test: true) }
+  scope :dummies, -> { where(dummy: true) }
+
   # belongs_to :user
 
   # after_create :update_name

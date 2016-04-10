@@ -5,8 +5,8 @@ class Group < ActiveRecord::Base
   has_many :users, through: :group_users
   belongs_to :organization
 
-  scope :active, -> { where(archived: false, test: false) }
-  scope :archived, -> { where(archived: true) }
-  scope :test, -> { where(test: true) }
-  scope :dummy, -> { where(dummy: true) }
+  scope :actives, -> { where(archived: false, test: false) }
+  scope :archives, -> { where(archived: true) }
+  scope :tests, -> { where(test: true) }
+  scope :dummies, -> { where(dummy: true) }
 end

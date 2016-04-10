@@ -47,7 +47,7 @@ describe Event, type: :model do
     context "using elasticsearch", elasticsearch: true, commit: true do
       before do
         event.touch
-        sleep 3
+        sleep 4
       end
 
       it "will complete a search by event name" do
@@ -76,6 +76,47 @@ describe Event, type: :model do
         response = described_class.search_for(tag.name)
         expect(response.results.total).to eq 0
       end
+    end
+  end
+
+  describe ".actives" do
+    it "only selects instances where archived and test is false" do
+      FactoryGirl.create(described_class, :archived, :test)
+      FactoryGirl.create(described_class, :archived)
+      FactoryGirl.create(described_class, :test)
+      FactoryGirl.create(described_class, test: false, archived: false)
+      expect(described_class.count).to eq 4
+      expect(described_class.actives.count).to eq 1
+    end
+  end
+
+  describe ".archives" do
+    it "only selects instances where archived is false" do
+      FactoryGirl.create(described_class, :archived)
+      FactoryGirl.create(described_class, :archived)
+      FactoryGirl.create(described_class, archived: false)
+      expect(described_class.count).to eq 3
+      expect(described_class.archives.count).to eq 2
+    end
+  end
+
+  describe ".tests" do
+    it "only selects instances where test is false" do
+      FactoryGirl.create(described_class, :test)
+      FactoryGirl.create(described_class, :test)
+      FactoryGirl.create(described_class, test: false)
+      expect(described_class.count).to eq 3
+      expect(described_class.tests.count).to eq 2
+    end
+  end
+
+  describe ".dummies" do
+    it "only selects instances where dummy is true" do
+      FactoryGirl.create(described_class, :dummy)
+      FactoryGirl.create(described_class, :dummy)
+      FactoryGirl.create(described_class, dummy: false)
+      expect(described_class.count).to eq 3
+      expect(described_class.dummies.count).to eq 2
     end
   end
 

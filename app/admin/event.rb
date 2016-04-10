@@ -26,10 +26,10 @@ ActiveAdmin.register Event do
     :dummy
   )
 
-  scope :active, default: true
-  scope :archived
-  scope :test
-  scope :dummy
+  scope :actives, default: true
+  scope :archives
+  scope :tests
+  scope :dummies
 
   config.sort_order = "lower(name) asc"
 

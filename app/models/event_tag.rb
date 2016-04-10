@@ -8,10 +8,10 @@ class EventTag < ActiveRecord::Base
   after_save :index_event
   after_destroy :index_event
 
-  scope :active, -> { where(archived: false, test: false) }
-  scope :archived, -> { where(archived: true) }
-  scope :test, -> { where(test: true) }
-  scope :dummy, -> { where(dummy: true) }
+  scope :actives, -> { where(archived: false, test: false) }
+  scope :archives, -> { where(archived: true) }
+  scope :tests, -> { where(test: true) }
+  scope :dummies, -> { where(dummy: true) }
 
   private
 
