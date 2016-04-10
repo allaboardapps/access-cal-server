@@ -1,20 +1,20 @@
 puts "BEGIN: Adding Staff and Admin Users"
 User.destroy_all
 
-admin_1 = FactoryGirl.create :user, :admin, first_name:"Randy",last_name:"Burgess",email:"rb@gmail.com",password:"EyJDUFqE96UbjesiNKiKm73Lw9mzEa4ja6WF3Xjg9Z7GMPVGvq",password_confirmation:"EyJDUFqE96UbjesiNKiKm73Lw9mzEa4ja6WF3Xjg9Z7GMPVGvq"
+admin_1 = FactoryGirl.create :user, :admin, first_name: "Randy", last_name: "Burgess", email: "wrburgess@gmail.com", password: "EyJDUFqE96UbjesiNKiKm73Lw9mzEa4ja6WF3Xjg9Z7GMPVGvq", password_confirmation: "EyJDUFqE96UbjesiNKiKm73Lw9mzEa4ja6WF3Xjg9Z7GMPVGvq"
 admin_2 = FactoryGirl.create :user, :admin
 admin_3 = FactoryGirl.create :user, :admin
 staff_1 = FactoryGirl.create :user, :staff
 staff_2 = FactoryGirl.create :user, :staff
-client_basic_1 = FactoryGirl.create :user, :client_basic
-client_basic_2 = FactoryGirl.create :user, :client_basic
-client_basic_3 = FactoryGirl.create :user, :client_basic
-client_pro_1 = FactoryGirl.create :user, :client_pro
-client_pro_2 = FactoryGirl.create :user, :client_pro
-client_pro_3 = FactoryGirl.create :user, :client_pro
-client_premium_1 = FactoryGirl.create :user, :client_premium
-client_premium_2 = FactoryGirl.create :user, :client_premium
-client_premium_3 = FactoryGirl.create :user, :client_premium
+client_basic_1 = FactoryGirl.create :user, :client, :basic
+client_basic_2 = FactoryGirl.create :user, :client, :basic
+client_basic_3 = FactoryGirl.create :user, :client, :basic
+client_pro_1 = FactoryGirl.create :user, :client, :pro
+client_pro_2 = FactoryGirl.create :user, :client, :pro
+client_pro_3 = FactoryGirl.create :user, :client, :pro
+client_premium_1 = FactoryGirl.create :user, :client, :premium
+client_premium_2 = FactoryGirl.create :user, :client, :premium
+client_premium_3 = FactoryGirl.create :user, :client, :premium
 consumer_1 = FactoryGirl.create :user, :consumer
 consumer_2 = FactoryGirl.create :user, :consumer
 consumer_3 = FactoryGirl.create :user, :consumer

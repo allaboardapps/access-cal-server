@@ -6,5 +6,17 @@ FactoryGirl.define do
     admin_notes { Faker::Lorem.sentences(1) }
     archived { false }
     test { false }
+
+    trait :archived do
+      archived { true }
+    end
+
+    trait :test do
+      test { true }
+    end
+
+    trait :dummy do
+      dummy { true }
+    end
   end
 end

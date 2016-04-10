@@ -12,6 +12,7 @@ class UserSerializer < ActiveModel::Serializer
     :statuses,
     :archived,
     :test,
+    :dummy,
     :updated_at,
     :created_at
   )

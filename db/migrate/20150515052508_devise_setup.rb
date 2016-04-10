@@ -31,17 +31,18 @@ class DeviseSetup < ActiveRecord::Migration
       t.datetime :locked_at
 
       ## Profile
-      t.string "first_name"
-      t.string "last_name"
-      t.string "zip_code"
-      t.string "time_zone", default: AllowedTimeZones::CENTRAL
-      t.string "admin_notes"
-      t.uuid "location_id"
-      t.boolean "archived", default: false
-      t.boolean "test", default: false
-      t.text  "roles", array: true, default: []
-      t.text  "statuses", array: true, default: []
-      t.string "token"
+      t.string  :first_name
+      t.string  :last_name
+      t.string  :zip_code
+      t.string  :time_zone,  default: AllowedTimeZones::CENTRAL
+      t.string  :admin_notes
+      t.uuid    :location_id
+      t.boolean :archived,   default: false
+      t.boolean :test,       default: false
+      t.boolean :dummy,      default: false
+      t.text    :roles,      array: true, default: []
+      t.text    :statuses,   array: true, default: []
+      t.string  :token
       t.timestamps
     end
 

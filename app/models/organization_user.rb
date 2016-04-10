@@ -9,4 +9,5 @@ class OrganizationUser < ActiveRecord::Base
   scope :active, -> { where(archived: false, test: false) }
   scope :archived, -> { where(archived: true) }
   scope :test, -> { where(test: true) }
+  scope :dummy, -> { where(dummy: true) }
 end

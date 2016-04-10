@@ -6,6 +6,7 @@ class RegionSerializer < ActiveModel::Serializer
     :time_zone,
     :archived,
     :test,
+    :dummy,
     :created_at,
     :updated_at
   )

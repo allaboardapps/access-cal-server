@@ -3,11 +3,12 @@ ActiveAdmin.register Location do
 
   actions :all
 
-  permit_params :region_id, :name, :abbreviation, :time_zone, :archived, :test, :time_zone
+  permit_params :region_id, :name, :abbreviation, :time_zone, :archived, :test, :dummy
 
   scope :active, default: true
   scope :archived
   scope :test
+  scope :dummy
 
   config.sort_order = "lower(name) asc"
 
@@ -33,6 +34,7 @@ ActiveAdmin.register Location do
       f.input :region
       f.input :archived
       f.input :test
+      f.input :dummy
     end
     f.actions
   end
@@ -47,6 +49,7 @@ ActiveAdmin.register Location do
       end
       row :archived
       row :test
+      row :dummy
       row :created_at
       row :updated_at
     end

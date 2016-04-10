@@ -3,6 +3,16 @@ ActiveAdmin.register Activity do
 
   actions :all, except: [:edit, :destroy]
 
+  scope :active, default: true
+  scope :archived
+  scope :test
+  scope :dummy
+  scope :creates
+  scope :updates
+  scope :archives
+  scope :unarchives
+  scope :deletes
+
   config.sort_order = "created_at_desc"
 
   filter :loggable_type
@@ -38,6 +48,9 @@ ActiveAdmin.register Activity do
       row "Explanation" do
         activity_log.explanation if activity_log.loggable.present?
       end
+      row :archived
+      row :test
+      row :dummy
       row :updated_at
       row :created_at
     end

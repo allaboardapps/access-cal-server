@@ -27,7 +27,7 @@ describe Api::V1::EventsController, type: :controller do
           post(
             :create,
             author_id: event.author_id, location_id: event.location_id, name: event.name,
-            abbreviation: event.abbreviation, primary_category: event.primary_category, categories: event.categories,
+            abbreviation: event.abbreviation,
             starts_at: event.starts_at, ends_at: event.ends_at, description: event.description,
             street_address: event.street_address, secondary_address: event.secondary_address,
             city: event.city, state: event.state, country: event.country, zip_code: event.zip_code,
@@ -41,7 +41,7 @@ describe Api::V1::EventsController, type: :controller do
           post(
             :create,
             author_id: event.author_id, location_id: event.location_id, name: event.name,
-            abbreviation: event.abbreviation, primary_category: event.primary_category, categories: event.categories,
+            abbreviation: event.abbreviation,
             starts_at: event.starts_at, ends_at: event.ends_at, description: event.description,
             street_address: event.street_address, secondary_address: event.secondary_address,
             city: event.city, state: event.state, country: event.country, zip_code: event.zip_code,
@@ -74,7 +74,7 @@ describe Api::V1::EventsController, type: :controller do
           post(
             :create,
             author_id: event.author_id, location_id: event.location_id, name: event.name,
-            abbreviation: event.abbreviation, primary_category: event.primary_category, categories: event.categories,
+            abbreviation: event.abbreviation,
             starts_at: event.starts_at, ends_at: event.ends_at, description: event.description,
             street_address: event.street_address, secondary_address: event.secondary_address,
             city: event.city, state: event.state, country: event.country, zip_code: event.zip_code,
@@ -90,7 +90,7 @@ describe Api::V1::EventsController, type: :controller do
             post(
               :create,
               author_id: event.author_id, location_id: event.location_id, name: event.name,
-              abbreviation: event.abbreviation, primary_category: event.primary_category, categories: event.categories,
+              abbreviation: event.abbreviation,
               starts_at: event.starts_at, ends_at: event.ends_at, description: event.description,
               street_address: event.street_address, secondary_address: event.secondary_address,
               city: event.city, state: event.state, country: event.country, zip_code: event.zip_code,

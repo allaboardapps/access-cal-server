@@ -3,11 +3,12 @@ ActiveAdmin.register Favorite do
 
   actions :all
 
-  permit_params :user_id, :event_id, :archived, :test
+  permit_params :user_id, :event_id, :archived, :test, :dummy
 
   scope :active, default: true
   scope :archived
   scope :test
+  scope :dummy
 
   config.sort_order = "created_at asc"
 
@@ -30,6 +31,7 @@ ActiveAdmin.register Favorite do
       f.input :event
       f.input :archived
       f.input :test
+      f.input :dummy
     end
     f.actions
   end
@@ -41,6 +43,7 @@ ActiveAdmin.register Favorite do
       row :event
       row :archived
       row :test
+      row :dummy
       row :created_at
       row :updated_at
     end

@@ -1,16 +1,16 @@
-ActiveAdmin.register Region do
-  menu parent: "Locales", priority: 100
+ActiveAdmin.register Organization do
+  menu parent: "Users", priority: 299
 
   actions :all
 
-  permit_params :name, :abbreviation, :time_zone, :archived, :test, :dummy
+  permit_params :name, :archived, :test, :dummy
 
   scope :active, default: true
   scope :archived
   scope :test
   scope :dummy
 
-  config.sort_order = "lower(name) asc"
+  config.sort_order = "name asc"
 
   filter :name
 
@@ -18,16 +18,14 @@ ActiveAdmin.register Region do
     selectable_column
     id_column
     column :name
-    column :abbreviation
     column :updated_at
     column :created_at
     actions
   end
 
   form do |f|
-    f.inputs "User" do
+    f.inputs "Organization" do
       f.input :name
-      f.input :abbreviation
       f.input :archived
       f.input :test
       f.input :dummy
@@ -39,7 +37,6 @@ ActiveAdmin.register Region do
     attributes_table do
       row :id
       row :name
-      row :abbreviation
       row :archived
       row :test
       row :dummy
@@ -47,13 +44,16 @@ ActiveAdmin.register Region do
       row :updated_at
     end
 
-    panel "Locations" do
-      table_for region.locations do |t|
-        t.column "ID" do |location|
-          location.id
+    panel "Users" do
+      table_for organization.organization_users.includes(:user) do |t|
+        t.column "ID" do |entity|
+          entity.user.id
         end
-        t.column "Name" do |location|
-          link_to location.name, admin_location_path(id: location.id)
+        t.column "Name" do |entity|
+          link_to entity.user.full_name, admin_user_path(id: user.id)
+        end
+        t.column "role" do |entity|
+          entity.role
         end
       end
     end

@@ -131,70 +131,70 @@ describe User, type: :model do
 
     describe "#basic?" do
       it "returns true if user has status of basic" do
-        user = FactoryGirl.create :user, :client_basic
+        user = FactoryGirl.create :user, :client, :basic
         expect(user.basic?).to be_truthy
       end
 
       it "returns true if user has status of premium" do
-        user = FactoryGirl.create :user, :client_premium
+        user = FactoryGirl.create :user, :client, :premium
         expect(user.basic?).to be_truthy
       end
     end
 
     describe "#role?" do
       it "returns true if user has matching user role" do
-        user = FactoryGirl.create :user, :client_basic
+        user = FactoryGirl.create :user, :client, :basic
         expect(user.role?(UserRoles::CLIENT)).to be_truthy
       end
 
       it "returns false if user does not have matching user role" do
-        user = FactoryGirl.create :user, :client_basic
+        user = FactoryGirl.create :user, :client, :basic
         expect(user.role?(UserRoles::ADMIN)).to be_falsey
       end
     end
 
     describe "#status?" do
       it "returns true if user has matching user status" do
-        user = FactoryGirl.create :user, :client_basic
+        user = FactoryGirl.create :user, :client, :basic
         expect(user.status?(UserStatuses::BASIC)).to be_truthy
       end
 
       it "returns false if user does not have matching user status" do
-        user = FactoryGirl.create :user, :client_basic
+        user = FactoryGirl.create :user, :client, :basic
         expect(user.status?(UserStatuses::PRO)).to be_falsey
       end
     end
 
     describe "#pro?" do
       it "returns false if user has status of basic" do
-        user = FactoryGirl.create :user, :client_basic
+        user = FactoryGirl.create :user, :client, :basic
         expect(user.pro?).to be_falsey
       end
 
       it "returns true if user has status of premium" do
-        user = FactoryGirl.create :user, :client_premium
+        user = FactoryGirl.create :user, :client, :premium
         expect(user.pro?).to be_truthy
       end
 
       it "returns true if user has status of pro" do
-        user = FactoryGirl.create :user, :client_pro
+        user = FactoryGirl.create :user, :client, :pro
         expect(user.pro?).to be_truthy
       end
     end
 
     describe "#premium?" do
       it "returns false if user has status of basic" do
-        user = FactoryGirl.create :user, :client_basic
+        user = FactoryGirl.create :user, :client, :basic
         expect(user.premium?).to be_falsey
       end
 
       it "returns false if user has status of pro" do
-        user = FactoryGirl.create :user, :client_pro
+        user = FactoryGirl.create :user, :client, :pro
         expect(user.premium?).to be_falsey
       end
 
       it "returns true if user has status of premium" do
-        user = FactoryGirl.create :user, :client_premium
+        user = FactoryGirl.create :user, :client, :premium
         expect(user.premium?).to be_truthy
       end
     end

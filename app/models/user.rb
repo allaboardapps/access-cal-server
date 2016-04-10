@@ -8,12 +8,13 @@ class User < ActiveRecord::Base
          :trackable, :validatable, :async, :confirmable, :lockable
 
   scope :active, -> { where(archived: false, test: false) }
-  scope :admins, -> { where("'#{UserRoles::ADMIN}' = ANY (roles)").order(last_name: :asc) }
   scope :archived, -> { where(archived: true) }
-  scope :authors, -> { where("'#{UserRoles::AUTHOR}' = ANY (roles)").order(last_name: :asc) }
+  scope :test, -> { where(test: true) }
+  scope :dummy, -> { where(dummy: true) }
+
+  scope :admins, -> { where("'#{UserRoles::ADMIN}' = ANY (roles)").order(last_name: :asc) }
   scope :autocomplete, -> (user_query) { active.where("first_name ilike ? or last_name ilike ?", "#{user_query}%", "#{user_query}%").order(last_name: :asc, first_name: :asc) }
   scope :customers, -> { where("'#{UserRoles::CUSTOMER}' = ANY (roles)").order(last_name: :asc) }
-  scope :test, -> { where(test: true) }
   scope :with_one_of_roles, ->(*roles) { where.overlap(roles: roles) }
 
   belongs_to :location

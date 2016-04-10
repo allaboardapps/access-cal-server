@@ -3,7 +3,12 @@ ActiveAdmin.register Tag do
 
   actions :all
 
-  permit_params :name, :tag_type, :tag_category
+  permit_params :name, :tag_type, :tag_category, :archived, :test, :dummy
+
+  scope :active, default: true
+  scope :archived
+  scope :test
+  scope :dummy
 
   config.sort_order = "lower(name) asc"
 
@@ -18,5 +23,17 @@ ActiveAdmin.register Tag do
     column :updated_at
     column :created_at
     actions
+  end
+
+  form do |f|
+    f.inputs "Tag" do
+      f.input :name
+      f.input :tag_type
+      f.input :tag_category
+      f.input :archived
+      f.input :test
+      f.input :dummy
+    end
+    f.actions
   end
 end

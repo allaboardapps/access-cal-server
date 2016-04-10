@@ -5,6 +5,7 @@ class FavoriteSerializer < ActiveModel::Serializer
     :event_id,
     :archived,
     :test,
+    :dummy,
     :created_at,
     :updated_at
   )

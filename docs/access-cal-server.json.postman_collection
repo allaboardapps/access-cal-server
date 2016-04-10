@@ -27,7 +27,8 @@
 		"1dd8e847-40b7-1889-12ac-14a8d5536158",
 		"17d32e53-a038-34ce-3098-7fd7c5c09bab",
 		"8f3d7733-5152-7e07-2761-945a65810c3e",
-		"c94c60fd-1217-2a91-f548-20a5686168a9"
+		"c94c60fd-1217-2a91-f548-20a5686168a9",
+		"bdcc737e-485b-18e0-0428-c008b494446c"
 	],
 	"folders": [],
 	"timestamp": 1459115528597,
@@ -37,21 +38,21 @@
 	"requests": [
 		{
 			"id": "0722a19a-8e22-8b11-8e68-c6f2cf297059",
-			"name": "location",
-			"dataMode": "raw",
-			"data": [],
-			"rawModeData": "",
-			"descriptionFormat": null,
-			"description": "`api/:version/locations/:id`",
-			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: application/json\n",
-			"method": "DELETE",
-			"pathVariables": {},
+			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: {{content-type}}\n",
 			"url": "{{url}}/api/{{version}}/locations/31",
 			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
 			"tests": "",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"collectionId": "3398cad8-4701-003c-9551-4edec0789942"
+			"helperAttributes": {},
+			"time": 1460237761375,
+			"name": "location",
+			"description": "`api/:version/locations/:id`",
+			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
+			"rawModeData": ""
 		},
 		{
 			"id": "17d32e53-a038-34ce-3098-7fd7c5c09bab",
@@ -73,21 +74,21 @@
 		},
 		{
 			"id": "1b4f801c-bb8b-baf8-5a28-e0a05d8dfe62",
-			"name": "event",
-			"dataMode": "raw",
-			"data": [],
-			"rawModeData": "",
-			"descriptionFormat": null,
-			"description": "`api/:version/events/:id`",
-			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: application/json\n",
-			"method": "DELETE",
-			"pathVariables": {},
+			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: {{content-type}}\n",
 			"url": "{{url}}/api/{{version}}/events/25",
 			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
 			"tests": "",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"collectionId": "3398cad8-4701-003c-9551-4edec0789942"
+			"helperAttributes": {},
+			"time": 1460237753716,
+			"name": "event",
+			"description": "`api/:version/events/:id`",
+			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
+			"rawModeData": ""
 		},
 		{
 			"id": "1dd8e847-40b7-1889-12ac-14a8d5536158",
@@ -109,80 +110,26 @@
 		},
 		{
 			"id": "1e8035c8-d454-42e3-09f4-113fa5cfddb0",
-			"name": "user",
-			"dataMode": "raw",
-			"data": [],
-			"rawModeData": "",
-			"descriptionFormat": null,
-			"description": "`api/:version/users/:id`",
-			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: application/json\n",
-			"method": "DELETE",
-			"pathVariables": {},
+			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: {{content-type}}\n",
 			"url": "{{url}}/api/{{version}}/users/2",
 			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
 			"tests": "",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"collectionId": "3398cad8-4701-003c-9551-4edec0789942"
+			"helperAttributes": {},
+			"time": 1460237769398,
+			"name": "user",
+			"description": "`api/:version/users/:id`",
+			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
+			"rawModeData": ""
 		},
 		{
 			"id": "249af4c4-ce49-dcb4-4618-eb0840b85fb9",
-			"name": "regions",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "`/api/:version/regions`",
-			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: application/json\n",
-			"method": "GET",
-			"pathVariables": {},
+			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: {{content-type}}\n",
 			"url": "{{url}}/api/{{version}}/regions",
-			"preRequestScript": "",
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"collectionId": "3398cad8-4701-003c-9551-4edec0789942"
-		},
-		{
-			"id": "2b746f74-a7cc-0051-76f8-eea6100efbac",
-			"name": "region",
-			"dataMode": "raw",
-			"data": [],
-			"rawModeData": "",
-			"descriptionFormat": null,
-			"description": "`api/:version/regions/:id`",
-			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: application/json\n",
-			"method": "DELETE",
-			"pathVariables": {},
-			"url": "{{url}}/api/{{version}}/regions/25",
-			"preRequestScript": "",
-			"tests": "",
-			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"collectionId": "3398cad8-4701-003c-9551-4edec0789942"
-		},
-		{
-			"id": "30527479-2f49-6769-3220-6633e9b4bf75",
-			"name": "favorite",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "`/api/:version/favorites/:id`",
-			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: application/json\n",
-			"method": "GET",
-			"pathVariables": {},
-			"url": "{{url}}/api/{{version}}/favorites/1",
-			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Response time is less than 200ms\"] = responseTime < 200;\ntests[\"Body matches string id\"] = responseBody.has(\"id\");\n",
-			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"collectionId": "3398cad8-4701-003c-9551-4edec0789942"
-		},
-		{
-			"id": "33d89ccc-35eb-981d-594b-0a139ebb591f",
-			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: application/vnd.api+json\n",
-			"url": "{{url}}/api/{{version}}/users/38ef2c85-203a-4f3a-b6c9-1841c7eeeca2",
 			"preRequestScript": "",
 			"pathVariables": {},
 			"method": "GET",
@@ -191,154 +138,1440 @@
 			"tests": "",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1459124345621,
+			"time": 1460237382835,
+			"name": "regions",
+			"description": "`/api/:version/regions`",
+			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 53,
+					"headers": [
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.api+json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"f82d98f1a65de6007457cec063c9f4a5\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Origin",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "X-Rack-CORS",
+							"key": "X-Rack-CORS",
+							"value": "preflight-hit; no-origin",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Request-Id",
+							"key": "X-Request-Id",
+							"value": "ecb1c301-be18-4719-bf9b-2eddd8fdb15d",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Runtime",
+							"key": "X-Runtime",
+							"value": "0.047338",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"data\":[{\"id\":\"e20fd948-822a-4841-bd7c-71cd43a726b6\",\"type\":\"regions\",\"attributes\":{\"name\":\"Chicago\",\"abbreviation\":\"CHI\",\"time_zone\":\"Central Time (US \\u0026 Canada)\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.014Z\",\"updated_at\":\"2016-04-08T04:47:06.014Z\"}},{\"id\":\"91b632c2-04b2-424e-8f95-e68d25e9dfbf\",\"type\":\"regions\",\"attributes\":{\"name\":\"Millsfort\",\"abbreviation\":\"Mavishaven\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.026Z\",\"updated_at\":\"2016-04-08T04:47:06.026Z\"}}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "c763f0ea-b766-f41b-780e-ad2c91ef3e56",
+					"name": "get_regions",
+					"request": {
+						"url": "{{url}}/api/{{version}}/regions",
+						"headers": [
+							{
+								"key": "Authorization",
+								"value": "Token token=\"{{token}}\", email=\"{{email}}\"",
+								"enabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "{{content-type}}",
+								"enabled": true,
+								"description": "The mime type of this content"
+							}
+						],
+						"data": [],
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			]
+		},
+		{
+			"id": "2b746f74-a7cc-0051-76f8-eea6100efbac",
+			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: {{content-type}}\n",
+			"url": "{{url}}/api/{{version}}/regions/25",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460237765623,
+			"name": "region",
+			"description": "`api/:version/regions/:id`",
+			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
+			"rawModeData": ""
+		},
+		{
+			"id": "30527479-2f49-6769-3220-6633e9b4bf75",
+			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: {{content-type}}\n",
+			"url": "{{url}}/api/{{version}}/favorites/058a3d13-27d1-4747-9abe-72f78f2731bc",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Response time is less than 200ms\"] = responseTime < 200;\ntests[\"Body matches string id\"] = responseBody.has(\"id\");\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460237565547,
+			"name": "favorite",
+			"description": "`/api/:version/favorites/:id`",
+			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 51,
+					"headers": [
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.api+json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"55ff698de6418c87e6ea5bfb12660b2e\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Origin",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "X-Rack-CORS",
+							"key": "X-Rack-CORS",
+							"value": "preflight-hit; no-origin",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Request-Id",
+							"key": "X-Request-Id",
+							"value": "8da905aa-c6a3-48fa-82a4-5b069b35f4c6",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Runtime",
+							"key": "X-Runtime",
+							"value": "0.043339",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"data\":{\"id\":\"058a3d13-27d1-4747-9abe-72f78f2731bc\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"b7141ca8-0385-44d3-847f-4075fa1f8893\",\"event_id\":\"dcf23d09-d50a-4ba7-9b3a-ea9ca3cf249a\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.092Z\",\"updated_at\":\"2016-04-08T04:47:07.092Z\"}}}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "e1095808-4159-8276-64ae-faa8bfe28411",
+					"name": "get_favorite",
+					"request": {
+						"url": "{{url}}/api/{{version}}/favorites/058a3d13-27d1-4747-9abe-72f78f2731bc",
+						"headers": [
+							{
+								"key": "Authorization",
+								"value": "Token token=\"{{token}}\", email=\"{{email}}\"",
+								"enabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "{{content-type}}",
+								"enabled": true,
+								"description": "The mime type of this content"
+							}
+						],
+						"data": [],
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			]
+		},
+		{
+			"id": "33d89ccc-35eb-981d-594b-0a139ebb591f",
+			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: {{content-type}}\n",
+			"url": "{{url}}/api/{{version}}/users/074c28b8-f387-4edc-85e2-7519e8535b22",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460237425352,
 			"name": "user",
 			"description": "`/api/:version/users/:id`",
-			"collectionId": "3398cad8-4701-003c-9551-4edec0789942"
+			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 48,
+					"headers": [
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.api+json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"1f5a84a7b137238f9efaa8e3708cc4eb\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Origin",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "X-Rack-CORS",
+							"key": "X-Rack-CORS",
+							"value": "preflight-hit; no-origin",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Request-Id",
+							"key": "X-Request-Id",
+							"value": "cef1dacd-5862-423a-9458-dc38898ed217",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Runtime",
+							"key": "X-Runtime",
+							"value": "0.040598",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"data\":{\"id\":\"074c28b8-f387-4edc-85e2-7519e8535b22\",\"type\":\"users\",\"attributes\":{\"token\":null,\"first_name\":\"Harold\",\"last_name\":\"Lind\",\"email\":\"darien@mcdermottolson.name\",\"zip_code\":\"11319\",\"time_zone\":\"Hawaii\",\"location_id\":\"53ba4de3-f235-49ce-92ed-95b999b778df\",\"roles\":[\"staff\"],\"statuses\":[\"not applicable\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-08T04:47:04.878Z\",\"created_at\":\"2016-04-08T04:47:04.878Z\"}}}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "7640731c-3e90-618b-fcf0-69f5cadc6fae",
+					"name": "get_user",
+					"request": {
+						"url": "{{url}}/api/{{version}}/users/074c28b8-f387-4edc-85e2-7519e8535b22",
+						"headers": [
+							{
+								"key": "Authorization",
+								"value": "Token token=\"{{token}}\", email=\"{{email}}\"",
+								"enabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "{{content-type}}",
+								"enabled": true,
+								"description": "The mime type of this content"
+							}
+						],
+						"data": [],
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			]
 		},
 		{
 			"id": "37b3e609-5d30-69e9-51c1-04117bccfac6",
-			"name": "favorite",
-			"dataMode": "raw",
-			"data": [],
-			"descriptionFormat": null,
-			"description": "`/api/:version/favorites`",
-			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: application/json\n",
-			"method": "POST",
-			"pathVariables": {},
+			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: {{content-type}}\n",
 			"url": "{{url}}/api/{{version}}/favorites",
 			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
 			"tests": "",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
+			"helperAttributes": {},
+			"time": 1460237899870,
+			"name": "favorite",
+			"description": "`/api/:version/favorites`",
 			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
-			"rawModeData": "{\n    \"user_id\": 1,\n    \"event_id\": 1\n}"
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 201,
+						"name": "Created",
+						"detail": "The request has been fulfilled and resulted in a new resource being created."
+					},
+					"time": 102,
+					"headers": [
+						{
+							"name": "Access-Control-Allow-Credentials",
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true",
+							"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+						},
+						{
+							"name": "Access-Control-Allow-Methods",
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, PUT, OPTIONS, HEAD",
+							"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"key": "Access-Control-Allow-Origin",
+							"value": "file://",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "Access-Control-Max-Age",
+							"key": "Access-Control-Max-Age",
+							"value": "0",
+							"description": "Indicates how long the results of a preflight request can be cached in seconds."
+						},
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.api+json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"206c1e613dc1d01c666b5248049a10aa\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Origin",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "X-Rack-CORS",
+							"key": "X-Rack-CORS",
+							"value": "hit",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Request-Id",
+							"key": "X-Request-Id",
+							"value": "c087e7b9-283f-4178-9bec-824b87916db4",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Runtime",
+							"key": "X-Runtime",
+							"value": "0.093947",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"data\":{\"id\":\"f7f8d509-346b-4e38-a15a-4dfb61edccb2\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"074c28b8-f387-4edc-85e2-7519e8535b22\",\"event_id\":\"0476f198-1913-4e4c-83a8-5f993859eb4a\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-09T21:38:13.099Z\",\"updated_at\":\"2016-04-09T21:38:13.099Z\"}}}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "199ce98f-7c7d-ebf7-1061-d0997c3fd675",
+					"name": "post_favorite",
+					"request": {
+						"url": "{{url}}/api/{{version}}/favorites",
+						"headers": [
+							{
+								"key": "Authorization",
+								"value": "Token token=\"{{token}}\", email=\"{{email}}\"",
+								"enabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "{{content-type}}",
+								"enabled": true,
+								"description": "The mime type of this content"
+							}
+						],
+						"data": "{\n    \"user_id\": \"074c28b8-f387-4edc-85e2-7519e8535b22\",\n    \"event_id\": \"0476f198-1913-4e4c-83a8-5f993859eb4a\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				}
+			],
+			"rawModeData": "{\n    \"user_id\": \"074c28b8-f387-4edc-85e2-7519e8535b22\",\n    \"event_id\": \"0476f198-1913-4e4c-83a8-5f993859eb4a\"\n}"
 		},
 		{
 			"id": "3a9389d7-147f-ae7e-73c7-59836824b018",
-			"name": "favorite",
-			"dataMode": "raw",
-			"data": [],
-			"rawModeData": "",
-			"descriptionFormat": null,
-			"description": "`api/:version/favorites/:id`",
-			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: application/json\n",
-			"method": "DELETE",
-			"pathVariables": {},
+			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: {{content-type}}\n",
 			"url": "{{url}}/api/{{version}}/favorites/2",
 			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
 			"tests": "",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"collectionId": "3398cad8-4701-003c-9551-4edec0789942"
+			"helperAttributes": {},
+			"time": 1460237757845,
+			"name": "favorite",
+			"description": "`api/:version/favorites/:id`",
+			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
+			"rawModeData": ""
 		},
 		{
 			"id": "4b55b951-db87-70fd-f71b-aeaf2d2de765",
-			"name": "location",
-			"dataMode": "raw",
-			"data": [],
-			"descriptionFormat": null,
-			"description": "`/api/:version/locations`",
-			"headers": "Authorization: Token token=\"{{token}}\", email={{email}}\"\nContent-Type: application/json\n",
-			"method": "POST",
-			"pathVariables": {},
+			"headers": "Authorization: Token token=\"{{token}}\", email={{email}}\"\nContent-Type: {{content-type}}\n",
 			"url": "{{url}}/api/{{version}}/locations",
 			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
 			"tests": "",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
+			"helperAttributes": {},
+			"time": 1460237783575,
+			"name": "location",
+			"description": "`/api/:version/locations`",
 			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 201,
+						"name": "Created",
+						"detail": "The request has been fulfilled and resulted in a new resource being created."
+					},
+					"time": 58,
+					"headers": [
+						{
+							"name": "Access-Control-Allow-Credentials",
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true",
+							"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+						},
+						{
+							"name": "Access-Control-Allow-Methods",
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, PUT, OPTIONS, HEAD",
+							"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"key": "Access-Control-Allow-Origin",
+							"value": "file://",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "Access-Control-Max-Age",
+							"key": "Access-Control-Max-Age",
+							"value": "0",
+							"description": "Indicates how long the results of a preflight request can be cached in seconds."
+						},
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.api+json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"eb1b13736ed073ea02cbaf93b45bdcbe\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Origin",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "X-Rack-CORS",
+							"key": "X-Rack-CORS",
+							"value": "hit",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Request-Id",
+							"key": "X-Request-Id",
+							"value": "f411552f-46b5-47d6-bcb9-54d37bd5b7f2",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Runtime",
+							"key": "X-Runtime",
+							"value": "0.052379",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"data\":{\"id\":\"\",\"type\":\"locations\",\"attributes\":{\"region_id\":null,\"name\":\"Streeterville\",\"abbreviation\":\"St-ville\",\"time_zone\":null,\"archived\":false,\"test\":false,\"created_at\":null,\"updated_at\":null}}}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "8a839068-a2cb-9cf4-55a1-fc5caf1684e1",
+					"name": "post_location",
+					"request": {
+						"url": "{{url}}/api/{{version}}/locations",
+						"headers": [
+							{
+								"key": "Authorization",
+								"value": "Token token=\"{{token}}\", email={{email}}\"",
+								"enabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "{{content-type}}",
+								"enabled": true,
+								"description": "The mime type of this content"
+							}
+						],
+						"data": "{\n    \"region_id\": 22,\n    \"name\": \"Streeterville\",\n    \"abbreviation\": \"St-ville\",\n    \"time_zone\": null\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				}
+			],
 			"rawModeData": "{\n    \"region_id\": 22,\n    \"name\": \"Streeterville\",\n    \"abbreviation\": \"St-ville\",\n    \"time_zone\": null\n}"
 		},
 		{
 			"id": "4dc97050-37c6-39fa-54c4-142b83cc6f34",
-			"name": "users",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "`/api/:version/users`",
-			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: application/json\n",
-			"method": "GET",
-			"pathVariables": {},
+			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: {{content-type}}\n",
 			"url": "{{url}}/api/{{version}}/users",
 			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"tests": "",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"collectionId": "3398cad8-4701-003c-9551-4edec0789942"
+			"helperAttributes": {},
+			"time": 1460237448972,
+			"name": "users",
+			"description": "`/api/:version/users`",
+			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 91,
+					"headers": [
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.api+json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"9654d5e3d4d2f3b93443fa2fb36c9c0c\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Origin",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "X-Rack-CORS",
+							"key": "X-Rack-CORS",
+							"value": "preflight-hit; no-origin",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Request-Id",
+							"key": "X-Request-Id",
+							"value": "a3b5f366-1c7d-4829-8731-9af8c2c707a0",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Runtime",
+							"key": "X-Runtime",
+							"value": "0.082474",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"data\":[{\"id\":\"b3ab7936-22d0-4ba1-900a-f61994b2edc3\",\"type\":\"users\",\"attributes\":{\"token\":null,\"first_name\":\"Earlene\",\"last_name\":\"Sanford\",\"email\":\"tobin@dickinsonconn.net\",\"zip_code\":\"38638\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"location_id\":\"6dff63aa-0f02-4277-98be-f3fc416821fd\",\"roles\":[\"admin\"],\"statuses\":[\"not applicable\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-08T04:47:04.735Z\",\"created_at\":\"2016-04-08T04:47:04.735Z\"}},{\"id\":\"a71e5691-cd8d-4f02-8e7e-ca2224b1374e\",\"type\":\"users\",\"attributes\":{\"token\":null,\"first_name\":\"Johnnie\",\"last_name\":\"Friesen\",\"email\":\"shawn_bins@pricestark.io\",\"zip_code\":\"21725-3469\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"location_id\":\"eb07137a-6bdb-4f0f-9358-d3c3e9b6e016\",\"roles\":[\"admin\"],\"statuses\":[\"not applicable\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-08T04:47:04.805Z\",\"created_at\":\"2016-04-08T04:47:04.805Z\"}},{\"id\":\"074c28b8-f387-4edc-85e2-7519e8535b22\",\"type\":\"users\",\"attributes\":{\"token\":null,\"first_name\":\"Harold\",\"last_name\":\"Lind\",\"email\":\"darien@mcdermottolson.name\",\"zip_code\":\"11319\",\"time_zone\":\"Hawaii\",\"location_id\":\"53ba4de3-f235-49ce-92ed-95b999b778df\",\"roles\":[\"staff\"],\"statuses\":[\"not applicable\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-08T04:47:04.878Z\",\"created_at\":\"2016-04-08T04:47:04.878Z\"}},{\"id\":\"3ce17b25-99d6-41f9-8007-fcc84bc225c8\",\"type\":\"users\",\"attributes\":{\"token\":null,\"first_name\":\"Wayne\",\"last_name\":\"Stroman\",\"email\":\"zachariah@brakusluettgen.com\",\"zip_code\":\"64061\",\"time_zone\":\"Pacific Time (US \\u0026 Canada)\",\"location_id\":\"b01c5e97-a1e7-41c2-b1b9-9db448185ec8\",\"roles\":[\"staff\"],\"statuses\":[\"not applicable\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-08T04:47:04.954Z\",\"created_at\":\"2016-04-08T04:47:04.954Z\"}},{\"id\":\"845c1e66-8f20-4d6d-b78b-37508d45418e\",\"type\":\"users\",\"attributes\":{\"token\":null,\"first_name\":\"Neil\",\"last_name\":\"Rutherford\",\"email\":\"emilio@feesthintz.co\",\"zip_code\":\"15879-0781\",\"time_zone\":\"Hawaii\",\"location_id\":\"969ae2eb-e5bb-47f1-b334-718db5486a94\",\"roles\":[\"client\"],\"statuses\":[\"basic\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-08T04:47:05.029Z\",\"created_at\":\"2016-04-08T04:47:05.029Z\"}},{\"id\":\"8a81daff-c641-4b94-af64-da3c2336dab5\",\"type\":\"users\",\"attributes\":{\"token\":null,\"first_name\":\"Harmony\",\"last_name\":\"Kuhlman\",\"email\":\"terrence_bogan@schoenmonahan.net\",\"zip_code\":\"55997\",\"time_zone\":\"Pacific Time (US \\u0026 Canada)\",\"location_id\":\"220ef628-022f-44d5-9376-c9972feac350\",\"roles\":[\"client\"],\"statuses\":[\"basic\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-08T04:47:05.099Z\",\"created_at\":\"2016-04-08T04:47:05.099Z\"}},{\"id\":\"bcebe116-a684-4317-9caf-81754d0ad02d\",\"type\":\"users\",\"attributes\":{\"token\":null,\"first_name\":\"Brennon\",\"last_name\":\"Kovacek\",\"email\":\"jedidiah_runte@glover.info\",\"zip_code\":\"93755-5529\",\"time_zone\":\"Pacific Time (US \\u0026 Canada)\",\"location_id\":\"9baffd46-97cb-4698-9f39-03629a051f0f\",\"roles\":[\"client\"],\"statuses\":[\"basic\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-08T04:47:05.172Z\",\"created_at\":\"2016-04-08T04:47:05.172Z\"}},{\"id\":\"bf19e73e-274e-404e-88db-42dad50328ee\",\"type\":\"users\",\"attributes\":{\"token\":null,\"first_name\":\"Dolly\",\"last_name\":\"Frami\",\"email\":\"elbert_senger@rogahn.info\",\"zip_code\":\"38921\",\"time_zone\":\"Central Time (US \\u0026 Canada)\",\"location_id\":\"4738c131-48a1-4800-a1c8-b6cddbcce921\",\"roles\":[\"client\"],\"statuses\":[\"pro\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-08T04:47:05.246Z\",\"created_at\":\"2016-04-08T04:47:05.246Z\"}},{\"id\":\"87714427-29f7-4c98-84fc-32e57ce3b527\",\"type\":\"users\",\"attributes\":{\"token\":null,\"first_name\":\"Ward\",\"last_name\":\"Senger\",\"email\":\"warren.ratke@schmeler.biz\",\"zip_code\":\"11452\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"location_id\":\"ffeae828-281c-4d14-9c8d-e6b75aec5cbf\",\"roles\":[\"client\"],\"statuses\":[\"pro\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-08T04:47:05.316Z\",\"created_at\":\"2016-04-08T04:47:05.316Z\"}},{\"id\":\"977f4916-e39c-42df-82dc-11ae67f34478\",\"type\":\"users\",\"attributes\":{\"token\":null,\"first_name\":\"Micheal\",\"last_name\":\"Durgan\",\"email\":\"skye.damore@weber.biz\",\"zip_code\":\"24006\",\"time_zone\":\"Hawaii\",\"location_id\":\"6890b6a7-1e22-4da3-b7eb-4d06776d2a86\",\"roles\":[\"client\"],\"statuses\":[\"pro\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-08T04:47:05.390Z\",\"created_at\":\"2016-04-08T04:47:05.390Z\"}},{\"id\":\"e9d87889-816f-4f74-afc6-5f430783135b\",\"type\":\"users\",\"attributes\":{\"token\":null,\"first_name\":\"Dion\",\"last_name\":\"Bosco\",\"email\":\"bernie@witting.biz\",\"zip_code\":\"57589\",\"time_zone\":\"Alaska\",\"location_id\":\"cd103f38-e47f-47f5-9c66-6c6c13b459e3\",\"roles\":[\"client\"],\"statuses\":[\"premium\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-08T04:47:05.462Z\",\"created_at\":\"2016-04-08T04:47:05.462Z\"}},{\"id\":\"7069e39d-a4f8-424c-8c15-8572ccdfb829\",\"type\":\"users\",\"attributes\":{\"token\":null,\"first_name\":\"Erin\",\"last_name\":\"Hansen\",\"email\":\"evalyn.kshlerin@pfannerstill.info\",\"zip_code\":\"83777\",\"time_zone\":\"Alaska\",\"location_id\":\"fbb8da3c-e5d9-47de-9a3f-3d439c7dcbfa\",\"roles\":[\"client\"],\"statuses\":[\"premium\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-08T04:47:05.533Z\",\"created_at\":\"2016-04-08T04:47:05.533Z\"}},{\"id\":\"6341818e-65bf-4b4a-8683-5ec601cbbf0c\",\"type\":\"users\",\"attributes\":{\"token\":null,\"first_name\":\"Darwin\",\"last_name\":\"Ankunding\",\"email\":\"skyla@walsh.co\",\"zip_code\":\"67508\",\"time_zone\":\"Alaska\",\"location_id\":\"d75c8265-6317-4d67-92fc-f34af44d0c05\",\"roles\":[\"client\"],\"statuses\":[\"premium\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-08T04:47:05.606Z\",\"created_at\":\"2016-04-08T04:47:05.606Z\"}},{\"id\":\"b7141ca8-0385-44d3-847f-4075fa1f8893\",\"type\":\"users\",\"attributes\":{\"token\":null,\"first_name\":\"Maeve\",\"last_name\":\"Ortiz\",\"email\":\"bradford.koepp@feest.name\",\"zip_code\":\"28706\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"location_id\":\"0b313300-ba66-45b9-bbb8-0bd6f59a30bd\",\"roles\":[\"consumer\"],\"statuses\":[\"basic\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-08T04:47:05.680Z\",\"created_at\":\"2016-04-08T04:47:05.680Z\"}},{\"id\":\"93f96742-4935-4795-84bc-8db9acae769a\",\"type\":\"users\",\"attributes\":{\"token\":null,\"first_name\":\"Art\",\"last_name\":\"Rippin\",\"email\":\"oleta@millszieme.info\",\"zip_code\":\"50465-0078\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"location_id\":\"7d32cc0e-1711-4fd8-8531-a0c3a23d5777\",\"roles\":[\"consumer\"],\"statuses\":[\"basic\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-08T04:47:05.751Z\",\"created_at\":\"2016-04-08T04:47:05.751Z\"}},{\"id\":\"8b00b852-5870-4aa0-b7c3-1d76e6f1a5b4\",\"type\":\"users\",\"attributes\":{\"token\":null,\"first_name\":\"Delmer\",\"last_name\":\"Hammes\",\"email\":\"cathryn_kilback@mueller.com\",\"zip_code\":\"52328\",\"time_zone\":\"Alaska\",\"location_id\":\"015eca9f-5c1c-469a-a6fc-883cb51ca828\",\"roles\":[\"consumer\"],\"statuses\":[\"basic\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-08T04:47:05.822Z\",\"created_at\":\"2016-04-08T04:47:05.822Z\"}},{\"id\":\"08016ac4-c07c-48cc-b841-cb0a5de4e447\",\"type\":\"users\",\"attributes\":{\"token\":null,\"first_name\":\"Nasir\",\"last_name\":\"Wiza\",\"email\":\"natasha_braun@brekke.name\",\"zip_code\":\"65760\",\"time_zone\":\"Pacific Time (US \\u0026 Canada)\",\"location_id\":\"493754f3-49d5-414a-b241-108c5a583223\",\"roles\":[\"consumer\"],\"statuses\":[\"basic\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-08T04:47:05.892Z\",\"created_at\":\"2016-04-08T04:47:05.892Z\"}},{\"id\":\"3f557116-fc9e-49c5-b782-59dad6787701\",\"type\":\"users\",\"attributes\":{\"token\":null,\"first_name\":\"Dallas\",\"last_name\":\"DuBuque\",\"email\":\"salvatore@parkerschmitt.org\",\"zip_code\":\"74015-8486\",\"time_zone\":\"Hawaii\",\"location_id\":\"4525b8fd-f16f-434a-a14f-b6ca026b5c20\",\"roles\":[\"consumer\"],\"statuses\":[\"basic\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-08T04:47:05.964Z\",\"created_at\":\"2016-04-08T04:47:05.964Z\"}},{\"id\":\"2c977cdc-c89a-4c61-b1b6-82cc8b047d21\",\"type\":\"users\",\"attributes\":{\"token\":\"003fea37b1a7d20b73094c880291dc4e\",\"first_name\":\"Randy\",\"last_name\":\"Burgess\",\"email\":\"rb@gmail.com\",\"zip_code\":\"80330-0978\",\"time_zone\":\"Central Time (US \\u0026 Canada)\",\"location_id\":\"ea74575b-99b4-4440-b7f1-a34d0aff03bc\",\"roles\":[\"admin\"],\"statuses\":[\"not applicable\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-09T21:30:50.758Z\",\"created_at\":\"2016-04-08T04:47:04.658Z\"}}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "0c1d68d4-066d-adad-f01a-76f3d0788449",
+					"name": "get_users",
+					"request": {
+						"url": "{{url}}/api/{{version}}/users",
+						"headers": [
+							{
+								"key": "Authorization",
+								"value": "Token token=\"{{token}}\", email=\"{{email}}\"",
+								"enabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "{{content-type}}",
+								"enabled": true,
+								"description": "The mime type of this content"
+							}
+						],
+						"data": [],
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			]
 		},
 		{
 			"id": "529123ac-729f-c422-b224-996debd89105",
-			"name": "sign_in",
-			"dataMode": "raw",
-			"data": [],
-			"rawModeData": "",
-			"descriptionFormat": null,
-			"description": "`/api/:version/sign_in`",
-			"headers": "Content-Type: application/json\n",
-			"method": "POST",
-			"pathVariables": {},
+			"headers": "Content-Type: {{content-type}}\n",
 			"url": "{{url}}/api/{{version}}/sign_in?email={{email}}&password={{password}}",
 			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
 			"tests": "",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"collectionId": "3398cad8-4701-003c-9551-4edec0789942"
+			"helperAttributes": {},
+			"time": 1460237796473,
+			"name": "sign_in",
+			"description": "`/api/:version/sign_in`",
+			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 269,
+					"headers": [
+						{
+							"name": "Access-Control-Allow-Credentials",
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true",
+							"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+						},
+						{
+							"name": "Access-Control-Allow-Methods",
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, PUT, OPTIONS, HEAD",
+							"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"key": "Access-Control-Allow-Origin",
+							"value": "file://",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "Access-Control-Max-Age",
+							"key": "Access-Control-Max-Age",
+							"value": "0",
+							"description": "Indicates how long the results of a preflight request can be cached in seconds."
+						},
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.api+json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"0e56a05422b48d32400887a472ed4900\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Origin",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "X-Rack-CORS",
+							"key": "X-Rack-CORS",
+							"value": "hit",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Request-Id",
+							"key": "X-Request-Id",
+							"value": "87d6a0de-c305-4488-ae91-66dc69715618",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Runtime",
+							"key": "X-Runtime",
+							"value": "0.261602",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"data\":{\"id\":\"2c977cdc-c89a-4c61-b1b6-82cc8b047d21\",\"type\":\"users\",\"attributes\":{\"token\":\"003fea37b1a7d20b73094c880291dc4e\",\"first_name\":\"Randy\",\"last_name\":\"Burgess\",\"email\":\"rb@gmail.com\",\"zip_code\":\"80330-0978\",\"time_zone\":\"Central Time (US \\u0026 Canada)\",\"location_id\":\"ea74575b-99b4-4440-b7f1-a34d0aff03bc\",\"roles\":[\"admin\"],\"statuses\":[\"not applicable\"],\"archived\":false,\"test\":false,\"updated_at\":\"2016-04-09T21:34:53.866Z\",\"created_at\":\"2016-04-08T04:47:04.658Z\"}}}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "3d6c1e56-9dda-7804-d525-d4eab32f12c5",
+					"name": "post_sign_in",
+					"request": {
+						"url": "{{url}}/api/{{version}}/sign_in?email={{email}}&password={{password}}",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"value": "{{content-type}}",
+								"enabled": true,
+								"description": "The mime type of this content"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"enabled": true
+							}
+						],
+						"data": [],
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				}
+			],
+			"rawModeData": ""
 		},
 		{
 			"id": "56f6d226-c840-c550-df77-c56a0d0672e4",
-			"name": "event",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "`/api/:version/events/:id`",
-			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: application/json\n",
-			"method": "GET",
-			"pathVariables": {},
-			"url": "{{url}}/api/{{version}}/events/1",
+			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: {{content-type}}\n",
+			"url": "{{url}}/api/{{version}}/events/0476f198-1913-4e4c-83a8-5f993859eb4a",
 			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Response time is less than 200ms\"] = responseTime < 200;\ntests[\"Body matches string id\"] = responseBody.has(\"id\");\n\nvar data = JSON.parse(responseBody);\ntests[\"id match\"] = data[\"event\"].id === 1;",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string id\"] = responseBody.has(\"id\");\nvar data = JSON.parse(responseBody);\ntests[\"id match\"] = data[\"event\"].id === \"0476f198-1913-4e4c-83a8-5f993859eb4a\";",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"collectionId": "3398cad8-4701-003c-9551-4edec0789942"
+			"helperAttributes": {},
+			"time": 1460237738617,
+			"name": "event",
+			"description": "`/api/:version/events/:id`",
+			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 47,
+					"headers": [
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.api+json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"4e9a76bc100127fb26338be7503b1b2f\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Origin",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "X-Rack-CORS",
+							"key": "X-Rack-CORS",
+							"value": "preflight-hit; no-origin",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Request-Id",
+							"key": "X-Request-Id",
+							"value": "2fd4a73d-7916-49cf-8994-7ac833b72a4a",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Runtime",
+							"key": "X-Runtime",
+							"value": "0.041086",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"data\":{\"id\":\"0476f198-1913-4e4c-83a8-5f993859eb4a\",\"type\":\"events\",\"attributes\":{\"location_id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"name\":\"Enhanced multimedia utilisation\",\"abbreviation\":\"Hauck and Sons\",\"description\":\"Aut expedita id.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"2601 Tremblay Streets\",\"secondary_address\":\"Apt. 677\",\"city\":\"Port Linwoodshire\",\"state\":\"NH\",\"country\":\"USA\",\"zip_code\":\"34459\",\"time_zone\":\"Pacific Time (US \\u0026 Canada)\",\"latitude\":-70.0928299959857,\"longitude\":-173.084612538475,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.401Z\",\"updated_at\":\"2016-04-08T04:47:06.401Z\"}}}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "a3e4d2db-a930-0ca2-e828-b4a9167cc2fc",
+					"name": "get_event",
+					"request": {
+						"url": "{{url}}/api/{{version}}/events/0476f198-1913-4e4c-83a8-5f993859eb4a",
+						"headers": [
+							{
+								"key": "Authorization",
+								"value": "Token token=\"{{token}}\", email=\"{{email}}\"",
+								"enabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": "The mime type of this content"
+							}
+						],
+						"data": [],
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			]
 		},
 		{
 			"id": "6eebfc74-505b-ae8e-eb1f-b1573e118218",
-			"name": "region",
-			"dataMode": "raw",
-			"data": [],
-			"descriptionFormat": null,
-			"description": "`/api/:version/regions`",
-			"headers": "Authorization: Token token=\"{{token}}\", email={{email}}\"\nContent-Type: application/json\n",
-			"method": "POST",
-			"pathVariables": {},
+			"headers": "Authorization: Token token=\"{{token}}\", email={{email}}\"\nContent-Type: {{content-type}}\n",
 			"url": "{{url}}/api/{{version}}/regions",
 			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
 			"tests": "",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
+			"helperAttributes": {},
+			"time": 1460237787210,
+			"name": "region",
+			"description": "`/api/:version/regions`",
 			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 201,
+						"name": "Created",
+						"detail": "The request has been fulfilled and resulted in a new resource being created."
+					},
+					"time": 81,
+					"headers": [
+						{
+							"name": "Access-Control-Allow-Credentials",
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true",
+							"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+						},
+						{
+							"name": "Access-Control-Allow-Methods",
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, PUT, OPTIONS, HEAD",
+							"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"key": "Access-Control-Allow-Origin",
+							"value": "file://",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "Access-Control-Max-Age",
+							"key": "Access-Control-Max-Age",
+							"value": "0",
+							"description": "Indicates how long the results of a preflight request can be cached in seconds."
+						},
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.api+json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"bc494aefbf70674bfbf1ec8f46d3a8c3\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Origin",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "X-Rack-CORS",
+							"key": "X-Rack-CORS",
+							"value": "hit",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Request-Id",
+							"key": "X-Request-Id",
+							"value": "303c787a-1008-4487-88c6-b82d0c52f9e6",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Runtime",
+							"key": "X-Runtime",
+							"value": "0.072093",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"data\":{\"id\":\"f7f17eb1-5397-4792-aeeb-5e477c8ca207\",\"type\":\"regions\",\"attributes\":{\"name\":\"St. Louis\",\"abbreviation\":\"STL\",\"time_zone\":\"Chicago/Central Standard\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-09T21:36:51.543Z\",\"updated_at\":\"2016-04-09T21:36:51.543Z\"}}}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "e9ac8332-4bc5-90be-3a7c-311a4543224c",
+					"name": "post_region",
+					"request": {
+						"url": "{{url}}/api/{{version}}/regions",
+						"headers": [
+							{
+								"key": "Authorization",
+								"value": "Token token=\"{{token}}\", email={{email}}\"",
+								"enabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "{{content-type}}",
+								"enabled": true,
+								"description": "The mime type of this content"
+							}
+						],
+						"data": "{\n    \"name\": \"St. Louis\",\n    \"abbreviation\": \"STL\",\n    \"time_zone\": \"Chicago/Central Standard\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				}
+			],
 			"rawModeData": "{\n    \"name\": \"St. Louis\",\n    \"abbreviation\": \"STL\",\n    \"time_zone\": \"Chicago/Central Standard\"\n}"
 		},
 		{
 			"id": "87636254-5d57-006f-a360-735e735632b1",
-			"name": "favorites",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "`/api/:version/favorites`",
-			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: application/json\n",
-			"method": "GET",
-			"pathVariables": {},
+			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: {{content-type}}\n",
 			"url": "{{url}}/api/{{version}}/favorites",
 			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Response time is less than 200ms\"] = responseTime < 200;\ntests[\"Body matches string id\"] = responseBody.has(\"id\");\n",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"collectionId": "3398cad8-4701-003c-9551-4edec0789942"
+			"helperAttributes": {},
+			"time": 1460237546137,
+			"name": "favorites",
+			"description": "`/api/:version/favorites`",
+			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 69,
+					"headers": [
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.api+json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"3258676ac6fec29ce182c0f8e8ef4d1c\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Origin",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "X-Rack-CORS",
+							"key": "X-Rack-CORS",
+							"value": "preflight-hit; no-origin",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Request-Id",
+							"key": "X-Request-Id",
+							"value": "5bd83928-3bb8-414d-b50b-c624450631f5",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Runtime",
+							"key": "X-Runtime",
+							"value": "0.060860",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"data\":[{\"id\":\"c0d21bad-479b-44ac-9191-eb85c051afc6\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"b7141ca8-0385-44d3-847f-4075fa1f8893\",\"event_id\":\"a223e4cb-002e-4c00-8e91-96aca2732f77\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.077Z\",\"updated_at\":\"2016-04-08T04:47:07.077Z\"}},{\"id\":\"823d7ca3-071d-459e-b041-41085d5308b5\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"b7141ca8-0385-44d3-847f-4075fa1f8893\",\"event_id\":\"cd285023-a9aa-41d7-974c-383215db9879\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.082Z\",\"updated_at\":\"2016-04-08T04:47:07.082Z\"}},{\"id\":\"60ea1719-b3a7-42fa-bf12-80da89544fc5\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"b7141ca8-0385-44d3-847f-4075fa1f8893\",\"event_id\":\"dcf23d09-d50a-4ba7-9b3a-ea9ca3cf249a\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.086Z\",\"updated_at\":\"2016-04-08T04:47:07.086Z\"}},{\"id\":\"354d2398-4656-4a2b-b458-9fb382640947\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"b7141ca8-0385-44d3-847f-4075fa1f8893\",\"event_id\":\"0ab54b80-0751-46eb-aa4d-dab0435e1f9d\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.089Z\",\"updated_at\":\"2016-04-08T04:47:07.089Z\"}},{\"id\":\"058a3d13-27d1-4747-9abe-72f78f2731bc\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"b7141ca8-0385-44d3-847f-4075fa1f8893\",\"event_id\":\"dcf23d09-d50a-4ba7-9b3a-ea9ca3cf249a\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.092Z\",\"updated_at\":\"2016-04-08T04:47:07.092Z\"}},{\"id\":\"2b91fb6b-6d9a-4f73-ae8d-d8cb19bccd95\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"93f96742-4935-4795-84bc-8db9acae769a\",\"event_id\":\"c417b1f2-84e0-42f9-b052-a108195d08d8\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.096Z\",\"updated_at\":\"2016-04-08T04:47:07.096Z\"}},{\"id\":\"9e87ea92-66ac-4be8-8a98-8c6de4a7ed64\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"93f96742-4935-4795-84bc-8db9acae769a\",\"event_id\":\"af40a85d-a8c1-4880-9fe4-c1a09c9bd96c\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.099Z\",\"updated_at\":\"2016-04-08T04:47:07.099Z\"}},{\"id\":\"80251987-796a-466e-bf9f-1198e192c071\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"93f96742-4935-4795-84bc-8db9acae769a\",\"event_id\":\"89a31992-f727-4f7d-bef3-5665b6c998ce\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.104Z\",\"updated_at\":\"2016-04-08T04:47:07.104Z\"}},{\"id\":\"35b268a9-743a-4b08-baf4-e23a94c56312\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"93f96742-4935-4795-84bc-8db9acae769a\",\"event_id\":\"f85d2abf-80c6-4093-98dd-e941cc9ecf5c\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.108Z\",\"updated_at\":\"2016-04-08T04:47:07.108Z\"}},{\"id\":\"0f39123d-b46e-4708-a750-f777ac205805\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"93f96742-4935-4795-84bc-8db9acae769a\",\"event_id\":\"17e0ae63-f25a-4324-abf1-ee5c05a09b8d\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.111Z\",\"updated_at\":\"2016-04-08T04:47:07.111Z\"}},{\"id\":\"c10caa52-98da-427b-90d3-e2b978f6335e\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"8b00b852-5870-4aa0-b7c3-1d76e6f1a5b4\",\"event_id\":\"5cb044d3-4ce0-4efa-8dc1-29dd3c929953\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.115Z\",\"updated_at\":\"2016-04-08T04:47:07.115Z\"}},{\"id\":\"979eca12-b5d6-47ca-bf11-a45f0e323581\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"8b00b852-5870-4aa0-b7c3-1d76e6f1a5b4\",\"event_id\":\"74b0749b-ff94-4081-955a-a9f02f62ec8e\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.119Z\",\"updated_at\":\"2016-04-08T04:47:07.119Z\"}},{\"id\":\"5ccd76e9-845c-43b8-bc23-bf79c1df130b\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"8b00b852-5870-4aa0-b7c3-1d76e6f1a5b4\",\"event_id\":\"8ca7ccf7-b786-4d6a-9f10-21251e7b3a61\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.122Z\",\"updated_at\":\"2016-04-08T04:47:07.122Z\"}},{\"id\":\"aa2e1fc6-5aef-41c4-b31b-0be07a1b45b8\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"8b00b852-5870-4aa0-b7c3-1d76e6f1a5b4\",\"event_id\":\"a0c0196f-a3ea-42ee-a438-90210fc4ceec\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.125Z\",\"updated_at\":\"2016-04-08T04:47:07.125Z\"}},{\"id\":\"cd3f340b-ddf3-4eef-956f-bde1334c8f60\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"8b00b852-5870-4aa0-b7c3-1d76e6f1a5b4\",\"event_id\":\"72b6883b-1fd8-417f-bc10-bb87264aee6d\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.128Z\",\"updated_at\":\"2016-04-08T04:47:07.128Z\"}},{\"id\":\"80acfafd-f03f-46c8-97d4-78a9bc6691d2\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"08016ac4-c07c-48cc-b841-cb0a5de4e447\",\"event_id\":\"6674cf6b-96c9-4b35-9566-c63349063201\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.132Z\",\"updated_at\":\"2016-04-08T04:47:07.132Z\"}},{\"id\":\"64614393-6a38-4f61-b247-25f207cc4d63\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"08016ac4-c07c-48cc-b841-cb0a5de4e447\",\"event_id\":\"c05d3a6c-81ec-4fa6-9e08-916fb51ccd2d\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.135Z\",\"updated_at\":\"2016-04-08T04:47:07.135Z\"}},{\"id\":\"ef2648ff-ec09-4b52-9aeb-db352ca01aee\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"08016ac4-c07c-48cc-b841-cb0a5de4e447\",\"event_id\":\"0a389fc1-8ac3-4b35-b2ed-67d8abe6cd17\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.138Z\",\"updated_at\":\"2016-04-08T04:47:07.138Z\"}},{\"id\":\"0bc7f3a7-5ada-430b-ae91-ca47107a4e34\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"08016ac4-c07c-48cc-b841-cb0a5de4e447\",\"event_id\":\"76a1554f-f371-44c7-8ac4-cb230e4ef212\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.142Z\",\"updated_at\":\"2016-04-08T04:47:07.142Z\"}},{\"id\":\"e89f7f22-f6be-4c57-b024-2d5a7e829f46\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"08016ac4-c07c-48cc-b841-cb0a5de4e447\",\"event_id\":\"89a31992-f727-4f7d-bef3-5665b6c998ce\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.145Z\",\"updated_at\":\"2016-04-08T04:47:07.145Z\"}},{\"id\":\"5b663fe3-ecf9-4314-8d5b-0ef05bae7dbe\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"3f557116-fc9e-49c5-b782-59dad6787701\",\"event_id\":\"0ab54b80-0751-46eb-aa4d-dab0435e1f9d\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.148Z\",\"updated_at\":\"2016-04-08T04:47:07.148Z\"}},{\"id\":\"0cb4d816-ee26-49d5-b1cc-804e9cdcd2ed\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"3f557116-fc9e-49c5-b782-59dad6787701\",\"event_id\":\"72b6883b-1fd8-417f-bc10-bb87264aee6d\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.151Z\",\"updated_at\":\"2016-04-08T04:47:07.151Z\"}},{\"id\":\"b22065a8-1811-4bcc-b53e-65c6c7a00d55\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"3f557116-fc9e-49c5-b782-59dad6787701\",\"event_id\":\"a223e4cb-002e-4c00-8e91-96aca2732f77\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.155Z\",\"updated_at\":\"2016-04-08T04:47:07.155Z\"}},{\"id\":\"73590c9e-c867-4c28-862e-dafefc448da3\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"3f557116-fc9e-49c5-b782-59dad6787701\",\"event_id\":\"74b0749b-ff94-4081-955a-a9f02f62ec8e\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.158Z\",\"updated_at\":\"2016-04-08T04:47:07.158Z\"}},{\"id\":\"daf061e9-b3d1-4743-9733-d8779730eded\",\"type\":\"favorites\",\"attributes\":{\"user_id\":\"3f557116-fc9e-49c5-b782-59dad6787701\",\"event_id\":\"0476f198-1913-4e4c-83a8-5f993859eb4a\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.161Z\",\"updated_at\":\"2016-04-08T04:47:07.161Z\"}}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "eb598a46-ced3-b6b4-f23e-3ce797e78003",
+					"name": "get_favorites",
+					"request": {
+						"url": "{{url}}/api/{{version}}/favorites",
+						"headers": [
+							{
+								"key": "Authorization",
+								"value": "Token token=\"{{token}}\", email=\"{{email}}\"",
+								"enabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "{{content-type}}",
+								"enabled": true,
+								"description": "The mime type of this content"
+							}
+						],
+						"data": [],
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			]
 		},
 		{
 			"id": "8f3d7733-5152-7e07-2761-945a65810c3e",
@@ -360,20 +1593,19 @@
 		},
 		{
 			"id": "b98d6831-5e1a-a7d6-bbd7-ae8e08b15214",
-			"name": "events",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "`/api/:version/events/:id`",
-			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: application/json\n",
-			"method": "GET",
-			"pathVariables": {},
+			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: {{content-type}}\n",
 			"url": "{{url}}/api/{{version}}/events",
 			"preRequestScript": "",
-			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Response time is less than 200ms\"] = responseTime < 200;\ntests[\"Body matches string id\"] = responseBody.has(\"id\");",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Body matches string id\"] = responseBody.has(\"id\");",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
+			"helperAttributes": {},
+			"time": 1460237652878,
+			"name": "events",
+			"description": "`/api/:version/events/:id`",
 			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
 			"responses": [
 				{
@@ -487,26 +1719,271 @@
 						"method": "GET",
 						"dataMode": "params"
 					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 147,
+					"headers": [
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.api+json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"29e4a8ea274912a825bb2275af121c72\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Origin",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "X-Rack-CORS",
+							"key": "X-Rack-CORS",
+							"value": "preflight-hit; no-origin",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Request-Id",
+							"key": "X-Request-Id",
+							"value": "efc0ea40-18a2-4ac7-b468-0df9829de0c6",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Runtime",
+							"key": "X-Runtime",
+							"value": "0.142317",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"data\":[{\"id\":\"ddc30235-5c34-45b3-aaa5-d8fa35ad4138\",\"type\":\"events\",\"attributes\":{\"location_id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"name\":\"Virtual high-level functionalities\",\"abbreviation\":\"MacGyver-Upton\",\"description\":\"Veniam debitis modi consectetur quod enim dolorem sed.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"5196 Willms Fall\",\"secondary_address\":\"Apt. 298\",\"city\":\"Laurineview\",\"state\":\"MN\",\"country\":\"USA\",\"zip_code\":\"80560-7272\",\"time_zone\":\"Pacific Time (US \\u0026 Canada)\",\"latitude\":30.1437082418356,\"longitude\":158.373369406186,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.061Z\",\"updated_at\":\"2016-04-08T04:47:06.061Z\"}},{\"id\":\"8418c030-3001-4b89-b387-4aafab49759d\",\"type\":\"events\",\"attributes\":{\"location_id\":\"eed6bca3-e912-4b53-bc85-bb8c337ed670\",\"name\":\"Re-engineered foreground definition\",\"abbreviation\":\"Herzog, Thiel and Bogan\",\"description\":\"Voluptates alias quidem similique vel totam.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"313 Caterina Hills\",\"secondary_address\":\"Suite 698\",\"city\":\"Hellershire\",\"state\":\"NV\",\"country\":\"USA\",\"zip_code\":\"89752\",\"time_zone\":\"Hawaii\",\"latitude\":79.2172423259054,\"longitude\":65.394000853777,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.103Z\",\"updated_at\":\"2016-04-08T04:47:06.103Z\"}},{\"id\":\"0a59d4f4-24ed-4ac6-8f19-ca8a16e2887c\",\"type\":\"events\",\"attributes\":{\"location_id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"name\":\"Advanced secondary forecast\",\"abbreviation\":\"Cole-Schroeder\",\"description\":\"Aut provident harum commodi mollitia ipsum numquam quidem.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"592 McLaughlin Way\",\"secondary_address\":\"Apt. 484\",\"city\":\"New Octavia\",\"state\":\"IA\",\"country\":\"USA\",\"zip_code\":\"42811-1417\",\"time_zone\":\"Pacific Time (US \\u0026 Canada)\",\"latitude\":64.2715502655221,\"longitude\":35.006409911883,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.119Z\",\"updated_at\":\"2016-04-08T04:47:06.119Z\"}},{\"id\":\"69df124d-af9e-4dd2-8dc4-b0578cefe3b9\",\"type\":\"events\",\"attributes\":{\"location_id\":\"22540268-087f-4fdf-a064-a4e1bcd899e5\",\"name\":\"De-engineered mobile neural-net\",\"abbreviation\":\"Jacobson-Miller\",\"description\":\"Hic sunt natus.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"50635 Elenor Highway\",\"secondary_address\":\"Apt. 165\",\"city\":\"North Alexannestad\",\"state\":\"IN\",\"country\":\"USA\",\"zip_code\":\"27402-7297\",\"time_zone\":\"Pacific Time (US \\u0026 Canada)\",\"latitude\":-81.220862066838,\"longitude\":-51.4086552965396,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.132Z\",\"updated_at\":\"2016-04-08T04:47:06.132Z\"}},{\"id\":\"add57356-fc21-4f3a-81a4-bdd3015c0985\",\"type\":\"events\",\"attributes\":{\"location_id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"name\":\"Multi-tiered radical circuit\",\"abbreviation\":\"Flatley, Kautzer and Friesen\",\"description\":\"Nihil dolores possimus sed pariatur a corrupti dignissimos.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"5283 Klocko Knolls\",\"secondary_address\":\"Suite 425\",\"city\":\"New Myles\",\"state\":\"PA\",\"country\":\"USA\",\"zip_code\":\"22753-6313\",\"time_zone\":\"Alaska\",\"latitude\":9.08780392515668,\"longitude\":-83.4560961909252,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.145Z\",\"updated_at\":\"2016-04-08T04:47:06.145Z\"}},{\"id\":\"d72f8158-6924-4f3f-bd75-313d7aabdd6c\",\"type\":\"events\",\"attributes\":{\"location_id\":\"eed6bca3-e912-4b53-bc85-bb8c337ed670\",\"name\":\"Up-sized zero defect groupware\",\"abbreviation\":\"West, Lockman and Glover\",\"description\":\"Et occaecati sit sunt voluptatem sit ut.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"12160 Rogahn Glens\",\"secondary_address\":\"Suite 469\",\"city\":\"Nikolausmouth\",\"state\":\"CT\",\"country\":\"USA\",\"zip_code\":\"73551\",\"time_zone\":\"Pacific Time (US \\u0026 Canada)\",\"latitude\":-88.7783079875219,\"longitude\":-101.972700199341,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.160Z\",\"updated_at\":\"2016-04-08T04:47:06.160Z\"}},{\"id\":\"b6e3158a-8da0-4832-993f-ca2fcf6ba2a1\",\"type\":\"events\",\"attributes\":{\"location_id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"name\":\"Synergistic solution-oriented projection\",\"abbreviation\":\"Ferry LLC\",\"description\":\"Quisquam ad et.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"384 Adele Highway\",\"secondary_address\":\"Suite 230\",\"city\":\"Terryfort\",\"state\":\"UT\",\"country\":\"USA\",\"zip_code\":\"85726\",\"time_zone\":\"Central Time (US \\u0026 Canada)\",\"latitude\":-3.32184840987645,\"longitude\":7.47682351319082,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.174Z\",\"updated_at\":\"2016-04-08T04:47:06.174Z\"}},{\"id\":\"e8df6289-a91e-4760-8751-ea4caf340d37\",\"type\":\"events\",\"attributes\":{\"location_id\":\"22540268-087f-4fdf-a064-a4e1bcd899e5\",\"name\":\"Multi-lateral disintermediate project\",\"abbreviation\":\"Schneider, Boehm and Satterfield\",\"description\":\"Ut tempore totam inventore.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"105 Bogan Crossing\",\"secondary_address\":\"Suite 100\",\"city\":\"South Clotilde\",\"state\":\"AK\",\"country\":\"USA\",\"zip_code\":\"47833-9501\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":64.7320524365612,\"longitude\":38.8493444202986,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.186Z\",\"updated_at\":\"2016-04-08T04:47:06.186Z\"}},{\"id\":\"2d2cf423-c7b6-4116-b27b-873ed101432e\",\"type\":\"events\",\"attributes\":{\"location_id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"name\":\"Inverse scalable structure\",\"abbreviation\":\"Lubowitz, Douglas and Sawayn\",\"description\":\"Quasi rerum est quo officiis id hic.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"539 Haag Knoll\",\"secondary_address\":\"Suite 960\",\"city\":\"Tianaville\",\"state\":\"UT\",\"country\":\"USA\",\"zip_code\":\"69645-9253\",\"time_zone\":\"Hawaii\",\"latitude\":-79.5676613536831,\"longitude\":154.971736475364,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.200Z\",\"updated_at\":\"2016-04-08T04:47:06.200Z\"}},{\"id\":\"05006896-8549-4a69-8f57-beca2f5870d7\",\"type\":\"events\",\"attributes\":{\"location_id\":\"eed6bca3-e912-4b53-bc85-bb8c337ed670\",\"name\":\"Focused impactful project\",\"abbreviation\":\"Bradtke-Ankunding\",\"description\":\"Eum iste suscipit ratione distinctio sunt modi quam.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"92544 Zulauf Summit\",\"secondary_address\":\"Apt. 691\",\"city\":\"West Keltonhaven\",\"state\":\"TN\",\"country\":\"USA\",\"zip_code\":\"53624-0802\",\"time_zone\":\"Hawaii\",\"latitude\":-56.6120843021115,\"longitude\":28.172984172326,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.212Z\",\"updated_at\":\"2016-04-08T04:47:06.212Z\"}},{\"id\":\"76a1554f-f371-44c7-8ac4-cb230e4ef212\",\"type\":\"events\",\"attributes\":{\"location_id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"name\":\"Fundamental modular alliance\",\"abbreviation\":\"Hauck-Gerlach\",\"description\":\"Quo esse mollitia omnis voluptatibus at debitis.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"710 Corbin Walks\",\"secondary_address\":\"Suite 404\",\"city\":\"Judgeborough\",\"state\":\"AK\",\"country\":\"USA\",\"zip_code\":\"88567-9223\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":2.46935292352244,\"longitude\":-74.9917756526874,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.225Z\",\"updated_at\":\"2016-04-08T04:47:06.225Z\"}},{\"id\":\"5aeef3d4-1499-46c6-a261-94024c240dc9\",\"type\":\"events\",\"attributes\":{\"location_id\":\"22540268-087f-4fdf-a064-a4e1bcd899e5\",\"name\":\"Fundamental reciprocal open architecture\",\"abbreviation\":\"Huels-Mann\",\"description\":\"Dolor nesciunt eos.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"9240 Hunter Burg\",\"secondary_address\":\"Apt. 840\",\"city\":\"East Scarletthaven\",\"state\":\"IA\",\"country\":\"USA\",\"zip_code\":\"67911-7186\",\"time_zone\":\"Central Time (US \\u0026 Canada)\",\"latitude\":-1.8941968331235,\"longitude\":-165.709953599952,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T00:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.237Z\",\"updated_at\":\"2016-04-08T04:47:06.237Z\"}},{\"id\":\"3d5c0fdb-4c82-40e7-a987-9cec6336221f\",\"type\":\"events\",\"attributes\":{\"location_id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"name\":\"Total local matrices\",\"abbreviation\":\"Braun and Sons\",\"description\":\"Maxime et suscipit doloribus esse et deserunt.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"52217 Cielo Streets\",\"secondary_address\":\"Suite 259\",\"city\":\"Howardland\",\"state\":\"WA\",\"country\":\"USA\",\"zip_code\":\"63440\",\"time_zone\":\"Alaska\",\"latitude\":-79.9369261269003,\"longitude\":-63.1715762310538,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.249Z\",\"updated_at\":\"2016-04-08T04:47:06.249Z\"}},{\"id\":\"17e0ae63-f25a-4324-abf1-ee5c05a09b8d\",\"type\":\"events\",\"attributes\":{\"location_id\":\"eed6bca3-e912-4b53-bc85-bb8c337ed670\",\"name\":\"Customizable stable utilisation\",\"abbreviation\":\"Huels LLC\",\"description\":\"Numquam qui doloribus.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"205 Eveline Isle\",\"secondary_address\":\"Suite 297\",\"city\":\"West Elissa\",\"state\":\"CA\",\"country\":\"USA\",\"zip_code\":\"25368\",\"time_zone\":\"Alaska\",\"latitude\":43.9571276977533,\"longitude\":29.9707535764067,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.261Z\",\"updated_at\":\"2016-04-08T04:47:06.261Z\"}},{\"id\":\"24c06c0b-378f-44da-89c6-2ce20dbb39b2\",\"type\":\"events\",\"attributes\":{\"location_id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"name\":\"Quality-focused reciprocal conglomeration\",\"abbreviation\":\"Bins, Jacobson and Waelchi\",\"description\":\"Et numquam aperiam qui dicta qui expedita.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"40718 Rippin Lane\",\"secondary_address\":\"Apt. 627\",\"city\":\"Cassandretown\",\"state\":\"NJ\",\"country\":\"USA\",\"zip_code\":\"55049-3644\",\"time_zone\":\"Hawaii\",\"latitude\":26.7736570667923,\"longitude\":-94.639521807363,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.273Z\",\"updated_at\":\"2016-04-08T04:47:06.273Z\"}},{\"id\":\"a0c0196f-a3ea-42ee-a438-90210fc4ceec\",\"type\":\"events\",\"attributes\":{\"location_id\":\"22540268-087f-4fdf-a064-a4e1bcd899e5\",\"name\":\"Seamless context-sensitive system engine\",\"abbreviation\":\"Davis Group\",\"description\":\"Dolorem est cumque.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"36153 Jeromy Lake\",\"secondary_address\":\"Suite 753\",\"city\":\"McLaughlintown\",\"state\":\"SD\",\"country\":\"USA\",\"zip_code\":\"80298-5909\",\"time_zone\":\"Central Time (US \\u0026 Canada)\",\"latitude\":-68.8932713989763,\"longitude\":-172.559487047204,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.284Z\",\"updated_at\":\"2016-04-08T04:47:06.284Z\"}},{\"id\":\"5cb044d3-4ce0-4efa-8dc1-29dd3c929953\",\"type\":\"events\",\"attributes\":{\"location_id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"name\":\"Pre-emptive coherent process improvement\",\"abbreviation\":\"Considine Group\",\"description\":\"Odit id at provident omnis dignissimos.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"8383 Tessie Well\",\"secondary_address\":\"Apt. 850\",\"city\":\"Scotchester\",\"state\":\"IA\",\"country\":\"USA\",\"zip_code\":\"95694-5868\",\"time_zone\":\"Central Time (US \\u0026 Canada)\",\"latitude\":-40.8307156226713,\"longitude\":161.456618321719,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T00:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.295Z\",\"updated_at\":\"2016-04-08T04:47:06.295Z\"}},{\"id\":\"39a5bc99-2f7a-4dee-9cbb-b906e3e75865\",\"type\":\"events\",\"attributes\":{\"location_id\":\"eed6bca3-e912-4b53-bc85-bb8c337ed670\",\"name\":\"Down-sized client-driven attitude\",\"abbreviation\":\"Rath, Shields and Conroy\",\"description\":\"Perferendis dolorum earum exercitationem dolore vel sit.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"27779 Danielle Drive\",\"secondary_address\":\"Apt. 912\",\"city\":\"Lake Krystelland\",\"state\":\"AZ\",\"country\":\"USA\",\"zip_code\":\"24897-5287\",\"time_zone\":\"Hawaii\",\"latitude\":38.9667956835142,\"longitude\":-101.981911737537,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.308Z\",\"updated_at\":\"2016-04-08T04:47:06.308Z\"}},{\"id\":\"be423202-7c13-4ac5-8b8f-8b408f35ee22\",\"type\":\"events\",\"attributes\":{\"location_id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"name\":\"Function-based client-driven emulation\",\"abbreviation\":\"Hessel Inc\",\"description\":\"Non odio molestiae consectetur.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"216 Jaquan Hills\",\"secondary_address\":\"Apt. 297\",\"city\":\"Cristopherview\",\"state\":\"NH\",\"country\":\"USA\",\"zip_code\":\"34481\",\"time_zone\":\"Pacific Time (US \\u0026 Canada)\",\"latitude\":-33.303030305984,\"longitude\":3.56442236230026,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T00:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.326Z\",\"updated_at\":\"2016-04-08T04:47:06.326Z\"}},{\"id\":\"c417b1f2-84e0-42f9-b052-a108195d08d8\",\"type\":\"events\",\"attributes\":{\"location_id\":\"22540268-087f-4fdf-a064-a4e1bcd899e5\",\"name\":\"Sharable tangible leverage\",\"abbreviation\":\"Will LLC\",\"description\":\"Accusamus aut numquam sed.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"88125 Nia Islands\",\"secondary_address\":\"Apt. 776\",\"city\":\"Runteberg\",\"state\":\"OR\",\"country\":\"USA\",\"zip_code\":\"74257\",\"time_zone\":\"Central Time (US \\u0026 Canada)\",\"latitude\":-5.17313882324396,\"longitude\":-122.065979411088,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T00:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.340Z\",\"updated_at\":\"2016-04-08T04:47:06.340Z\"}},{\"id\":\"0ab54b80-0751-46eb-aa4d-dab0435e1f9d\",\"type\":\"events\",\"attributes\":{\"location_id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"name\":\"Face to face exuding frame\",\"abbreviation\":\"Jakubowski-Gibson\",\"description\":\"Alias error accusamus nihil ipsum esse consequatur eum.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"36567 Orpha Unions\",\"secondary_address\":\"Apt. 656\",\"city\":\"Tanyahaven\",\"state\":\"IA\",\"country\":\"USA\",\"zip_code\":\"49775-4560\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":-75.8195525855911,\"longitude\":98.819721449055,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.354Z\",\"updated_at\":\"2016-04-08T04:47:06.354Z\"}},{\"id\":\"f5e47c44-dfff-4156-ac38-6e668a4c3204\",\"type\":\"events\",\"attributes\":{\"location_id\":\"eed6bca3-e912-4b53-bc85-bb8c337ed670\",\"name\":\"Compatible fault-tolerant attitude\",\"abbreviation\":\"Ondricka, Zulauf and Jacobi\",\"description\":\"Distinctio voluptatibus hic exercitationem eveniet.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"62727 Bode Islands\",\"secondary_address\":\"Suite 928\",\"city\":\"Port Kaliborough\",\"state\":\"KY\",\"country\":\"USA\",\"zip_code\":\"58514-7487\",\"time_zone\":\"Pacific Time (US \\u0026 Canada)\",\"latitude\":67.5024514840453,\"longitude\":0.927463429163282,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T00:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.365Z\",\"updated_at\":\"2016-04-08T04:47:06.365Z\"}},{\"id\":\"f95c7012-6e41-443c-8112-850a200ff7fa\",\"type\":\"events\",\"attributes\":{\"location_id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"name\":\"Open-architected upward-trending parallelism\",\"abbreviation\":\"Gibson-Jast\",\"description\":\"Amet velit quo exercitationem nostrum pariatur.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"60784 Chanel Common\",\"secondary_address\":\"Apt. 132\",\"city\":\"Hagenesville\",\"state\":\"HI\",\"country\":\"USA\",\"zip_code\":\"84350-3249\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":-49.4262703180263,\"longitude\":-60.9428021845907,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T00:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.377Z\",\"updated_at\":\"2016-04-08T04:47:06.377Z\"}},{\"id\":\"0a389fc1-8ac3-4b35-b2ed-67d8abe6cd17\",\"type\":\"events\",\"attributes\":{\"location_id\":\"22540268-087f-4fdf-a064-a4e1bcd899e5\",\"name\":\"Digitized radical superstructure\",\"abbreviation\":\"Lehner Inc\",\"description\":\"Voluptatem perspiciatis a et non aliquid saepe in.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"745 MacGyver Gateway\",\"secondary_address\":\"Suite 343\",\"city\":\"Leoraland\",\"state\":\"MS\",\"country\":\"USA\",\"zip_code\":\"81080-5497\",\"time_zone\":\"Alaska\",\"latitude\":2.93019151735498,\"longitude\":118.966453576044,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T00:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.389Z\",\"updated_at\":\"2016-04-08T04:47:06.389Z\"}},{\"id\":\"0476f198-1913-4e4c-83a8-5f993859eb4a\",\"type\":\"events\",\"attributes\":{\"location_id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"name\":\"Enhanced multimedia utilisation\",\"abbreviation\":\"Hauck and Sons\",\"description\":\"Aut expedita id.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"2601 Tremblay Streets\",\"secondary_address\":\"Apt. 677\",\"city\":\"Port Linwoodshire\",\"state\":\"NH\",\"country\":\"USA\",\"zip_code\":\"34459\",\"time_zone\":\"Pacific Time (US \\u0026 Canada)\",\"latitude\":-70.0928299959857,\"longitude\":-173.084612538475,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.401Z\",\"updated_at\":\"2016-04-08T04:47:06.401Z\"}},{\"id\":\"cd285023-a9aa-41d7-974c-383215db9879\",\"type\":\"events\",\"attributes\":{\"location_id\":\"eed6bca3-e912-4b53-bc85-bb8c337ed670\",\"name\":\"Organic dedicated encryption\",\"abbreviation\":\"Miller-Lesch\",\"description\":\"Ducimus omnis dicta harum architecto et ratione.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"29179 Stehr Spring\",\"secondary_address\":\"Apt. 962\",\"city\":\"Lake Cletaside\",\"state\":\"UT\",\"country\":\"USA\",\"zip_code\":\"99584\",\"time_zone\":\"Alaska\",\"latitude\":35.9519587432705,\"longitude\":125.727171852986,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.411Z\",\"updated_at\":\"2016-04-08T04:47:06.411Z\"}},{\"id\":\"0c14952c-4d25-4097-b80a-e7ac2997ea6a\",\"type\":\"events\",\"attributes\":{\"location_id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"name\":\"Compatible disintermediate encryption\",\"abbreviation\":\"Gerhold-Gerlach\",\"description\":\"Consectetur aut numquam similique.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"9656 Wilhelmine Keys\",\"secondary_address\":\"Apt. 362\",\"city\":\"North Juliuston\",\"state\":\"MN\",\"country\":\"USA\",\"zip_code\":\"94281-1098\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":-21.8538692445449,\"longitude\":143.787504164486,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.422Z\",\"updated_at\":\"2016-04-08T04:47:06.422Z\"}},{\"id\":\"a9397a9f-de84-4f0d-8496-0d3a545f4b9b\",\"type\":\"events\",\"attributes\":{\"location_id\":\"22540268-087f-4fdf-a064-a4e1bcd899e5\",\"name\":\"Synergized secondary collaboration\",\"abbreviation\":\"Olson, Bechtelar and Kilback\",\"description\":\"Quo dolorem sit.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"9629 Grimes Road\",\"secondary_address\":\"Suite 910\",\"city\":\"Lake Ivorybury\",\"state\":\"OH\",\"country\":\"USA\",\"zip_code\":\"15783-1025\",\"time_zone\":\"Pacific Time (US \\u0026 Canada)\",\"latitude\":17.9808324200692,\"longitude\":-103.579830433015,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.433Z\",\"updated_at\":\"2016-04-08T04:47:06.433Z\"}},{\"id\":\"361eb8ce-6bd2-4e5f-80c8-42b10bb73fde\",\"type\":\"events\",\"attributes\":{\"location_id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"name\":\"Phased client-driven encoding\",\"abbreviation\":\"Rutherford Inc\",\"description\":\"Tempora porro saepe iure ipsum et et et.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"58281 Boyle Stravenue\",\"secondary_address\":\"Apt. 855\",\"city\":\"West Princess\",\"state\":\"GA\",\"country\":\"USA\",\"zip_code\":\"17967\",\"time_zone\":\"Mountain Time (US \\u0026 Canada)\",\"latitude\":-70.9638545191129,\"longitude\":101.432902848221,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T00:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.444Z\",\"updated_at\":\"2016-04-08T04:47:06.444Z\"}},{\"id\":\"87003cb0-1f0d-4358-920d-61c576c9a882\",\"type\":\"events\",\"attributes\":{\"location_id\":\"eed6bca3-e912-4b53-bc85-bb8c337ed670\",\"name\":\"Organic exuding installation\",\"abbreviation\":\"Pouros-Gaylord\",\"description\":\"Quas voluptas autem amet iure.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"3132 Mueller Field\",\"secondary_address\":\"Suite 500\",\"city\":\"Welchbury\",\"state\":\"HI\",\"country\":\"USA\",\"zip_code\":\"25690\",\"time_zone\":\"Central Time (US \\u0026 Canada)\",\"latitude\":79.394971908611,\"longitude\":12.7054166464434,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.455Z\",\"updated_at\":\"2016-04-08T04:47:06.455Z\"}},{\"id\":\"c7efe390-53ba-4ac7-a8b6-49cbd0229c10\",\"type\":\"events\",\"attributes\":{\"location_id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"name\":\"Quality-focused national encoding\",\"abbreviation\":\"Stiedemann, Wisozk and Franecki\",\"description\":\"Autem iure et.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"525 Stanton Trace\",\"secondary_address\":\"Apt. 933\",\"city\":\"Brandtport\",\"state\":\"PA\",\"country\":\"USA\",\"zip_code\":\"33133-3164\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":24.3226828409802,\"longitude\":54.4933820724011,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T00:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.467Z\",\"updated_at\":\"2016-04-08T04:47:06.467Z\"}},{\"id\":\"2ecf2734-7268-41df-93ec-abcec3e23edf\",\"type\":\"events\",\"attributes\":{\"location_id\":\"22540268-087f-4fdf-a064-a4e1bcd899e5\",\"name\":\"Mandatory well-modulated application\",\"abbreviation\":\"McDermott LLC\",\"description\":\"Voluptates iusto et sit tempora.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"719 Stracke Shoals\",\"secondary_address\":\"Suite 498\",\"city\":\"Courtneyview\",\"state\":\"SC\",\"country\":\"USA\",\"zip_code\":\"36752-9009\",\"time_zone\":\"Alaska\",\"latitude\":71.5584930198494,\"longitude\":-117.941638510824,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.481Z\",\"updated_at\":\"2016-04-08T04:47:06.481Z\"}},{\"id\":\"9858d988-1671-4d29-bab6-ff33551acb39\",\"type\":\"events\",\"attributes\":{\"location_id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"name\":\"Realigned logistical parallelism\",\"abbreviation\":\"Feeney-McClure\",\"description\":\"Aperiam ea sint itaque saepe doloremque.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"881 Hermiston Pike\",\"secondary_address\":\"Suite 349\",\"city\":\"Billieland\",\"state\":\"VA\",\"country\":\"USA\",\"zip_code\":\"61549-4664\",\"time_zone\":\"Hawaii\",\"latitude\":-13.621682750511,\"longitude\":-11.8262803668212,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T00:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.514Z\",\"updated_at\":\"2016-04-08T04:47:06.514Z\"}},{\"id\":\"89a31992-f727-4f7d-bef3-5665b6c998ce\",\"type\":\"events\",\"attributes\":{\"location_id\":\"eed6bca3-e912-4b53-bc85-bb8c337ed670\",\"name\":\"Monitored bandwidth-monitored task-force\",\"abbreviation\":\"Terry-Feeney\",\"description\":\"Maxime est porro fuga dolorum distinctio aliquid nemo.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"16741 Kamryn Vista\",\"secondary_address\":\"Suite 287\",\"city\":\"Torranceborough\",\"state\":\"VA\",\"country\":\"USA\",\"zip_code\":\"96006\",\"time_zone\":\"Alaska\",\"latitude\":64.7294326470521,\"longitude\":-66.0429466547549,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.558Z\",\"updated_at\":\"2016-04-08T04:47:06.558Z\"}},{\"id\":\"72b6883b-1fd8-417f-bc10-bb87264aee6d\",\"type\":\"events\",\"attributes\":{\"location_id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"name\":\"Customer-focused actuating system engine\",\"abbreviation\":\"Jaskolski LLC\",\"description\":\"Provident voluptas incidunt dolores temporibus veniam eaque omnis.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"2877 Windler Mission\",\"secondary_address\":\"Suite 807\",\"city\":\"Lake Demarcoside\",\"state\":\"OK\",\"country\":\"USA\",\"zip_code\":\"11583\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":-88.5779500949012,\"longitude\":151.692160610749,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.576Z\",\"updated_at\":\"2016-04-08T04:47:06.576Z\"}},{\"id\":\"39a598b3-2a93-4280-bd5f-3e0034378a5a\",\"type\":\"events\",\"attributes\":{\"location_id\":\"22540268-087f-4fdf-a064-a4e1bcd899e5\",\"name\":\"Optional coherent moderator\",\"abbreviation\":\"Lubowitz-Kuhic\",\"description\":\"Quidem sunt distinctio quod quo nihil adipisci tempore.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"84043 Meggie Views\",\"secondary_address\":\"Suite 900\",\"city\":\"Port Eleanoremouth\",\"state\":\"PA\",\"country\":\"USA\",\"zip_code\":\"78497\",\"time_zone\":\"Hawaii\",\"latitude\":65.1612030603408,\"longitude\":29.8657590970232,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.591Z\",\"updated_at\":\"2016-04-08T04:47:06.591Z\"}},{\"id\":\"87517075-04ed-49d2-8775-226f5987f33f\",\"type\":\"events\",\"attributes\":{\"location_id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"name\":\"Devolved maximized capability\",\"abbreviation\":\"Fadel Inc\",\"description\":\"Molestias aut beatae.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"438 Regan Crest\",\"secondary_address\":\"Suite 796\",\"city\":\"Nolaburgh\",\"state\":\"MT\",\"country\":\"USA\",\"zip_code\":\"20710\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":-28.4641985017768,\"longitude\":-24.6292649157641,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.602Z\",\"updated_at\":\"2016-04-08T04:47:06.602Z\"}},{\"id\":\"dcf23d09-d50a-4ba7-9b3a-ea9ca3cf249a\",\"type\":\"events\",\"attributes\":{\"location_id\":\"eed6bca3-e912-4b53-bc85-bb8c337ed670\",\"name\":\"Proactive intermediate interface\",\"abbreviation\":\"Cronin-Hermann\",\"description\":\"Officiis sunt ut natus.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"193 Parisian Ville\",\"secondary_address\":\"Apt. 794\",\"city\":\"West Amberview\",\"state\":\"PA\",\"country\":\"USA\",\"zip_code\":\"50347\",\"time_zone\":\"Central Time (US \\u0026 Canada)\",\"latitude\":35.5975037542981,\"longitude\":83.4816889226889,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T00:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.614Z\",\"updated_at\":\"2016-04-08T04:47:06.614Z\"}},{\"id\":\"62cdd2c9-35f3-40bb-ae13-6491a9d9f24a\",\"type\":\"events\",\"attributes\":{\"location_id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"name\":\"Public-key 4th generation core\",\"abbreviation\":\"Gerhold and Sons\",\"description\":\"Dolorum aperiam hic est libero id omnis.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"5425 Huel Track\",\"secondary_address\":\"Suite 342\",\"city\":\"Norbertohaven\",\"state\":\"WI\",\"country\":\"USA\",\"zip_code\":\"32486-5797\",\"time_zone\":\"Mountain Time (US \\u0026 Canada)\",\"latitude\":-79.9410543333679,\"longitude\":-6.58296800866921,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.626Z\",\"updated_at\":\"2016-04-08T04:47:06.626Z\"}},{\"id\":\"9a964574-fc78-482e-b6dc-5901a7a40c20\",\"type\":\"events\",\"attributes\":{\"location_id\":\"22540268-087f-4fdf-a064-a4e1bcd899e5\",\"name\":\"Automated encompassing product\",\"abbreviation\":\"Stracke Inc\",\"description\":\"Unde labore iste minus et similique.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"9035 Sanford Station\",\"secondary_address\":\"Suite 416\",\"city\":\"Mariontown\",\"state\":\"OH\",\"country\":\"USA\",\"zip_code\":\"59622-6772\",\"time_zone\":\"Mountain Time (US \\u0026 Canada)\",\"latitude\":77.3449730141936,\"longitude\":-135.453810112735,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T00:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.636Z\",\"updated_at\":\"2016-04-08T04:47:06.636Z\"}},{\"id\":\"ac0feff6-b6fe-4894-82c1-80d2f277b400\",\"type\":\"events\",\"attributes\":{\"location_id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"name\":\"Organic user-facing emulation\",\"abbreviation\":\"Quitzon-McCullough\",\"description\":\"Ut est dolor eum eligendi officia perferendis.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"53898 Sipes Oval\",\"secondary_address\":\"Suite 693\",\"city\":\"Lake Richardville\",\"state\":\"RI\",\"country\":\"USA\",\"zip_code\":\"19186\",\"time_zone\":\"Hawaii\",\"latitude\":36.0545662774625,\"longitude\":-132.608246741564,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T00:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.646Z\",\"updated_at\":\"2016-04-08T04:47:06.646Z\"}},{\"id\":\"6674cf6b-96c9-4b35-9566-c63349063201\",\"type\":\"events\",\"attributes\":{\"location_id\":\"eed6bca3-e912-4b53-bc85-bb8c337ed670\",\"name\":\"Implemented logistical project\",\"abbreviation\":\"Rosenbaum-Nader\",\"description\":\"Nisi quas provident in ut repellendus.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"7498 Raven Motorway\",\"secondary_address\":\"Apt. 541\",\"city\":\"North Brandi\",\"state\":\"RI\",\"country\":\"USA\",\"zip_code\":\"59672\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":-42.0703870393266,\"longitude\":-82.028732409806,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.657Z\",\"updated_at\":\"2016-04-08T04:47:06.657Z\"}},{\"id\":\"2a3c3c92-3d7f-4a98-ba16-02779a6a2733\",\"type\":\"events\",\"attributes\":{\"location_id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"name\":\"Streamlined modular methodology\",\"abbreviation\":\"Herman Group\",\"description\":\"Aliquam tempora ad sunt autem quidem voluptatum consequatur.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"225 Bednar Prairie\",\"secondary_address\":\"Apt. 435\",\"city\":\"Port Leann\",\"state\":\"OH\",\"country\":\"USA\",\"zip_code\":\"63135\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":79.3636452890277,\"longitude\":87.1125306572846,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.667Z\",\"updated_at\":\"2016-04-08T04:47:06.667Z\"}},{\"id\":\"435eac3c-1a24-486a-8cc2-0a29aebba2c6\",\"type\":\"events\",\"attributes\":{\"location_id\":\"22540268-087f-4fdf-a064-a4e1bcd899e5\",\"name\":\"Open-architected 6th generation toolset\",\"abbreviation\":\"Weissnat-Jacobs\",\"description\":\"Enim qui fugit.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"42514 Shields Mission\",\"secondary_address\":\"Suite 479\",\"city\":\"Garretview\",\"state\":\"IN\",\"country\":\"USA\",\"zip_code\":\"74719-1041\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":63.9116175767633,\"longitude\":132.141765179502,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.677Z\",\"updated_at\":\"2016-04-08T04:47:06.677Z\"}},{\"id\":\"90cf13e3-44f6-4e33-a9fb-cc1ffadda8d3\",\"type\":\"events\",\"attributes\":{\"location_id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"name\":\"Balanced zero administration utilisation\",\"abbreviation\":\"Leannon-Bogan\",\"description\":\"Ut alias quis qui nostrum sed.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"23635 Greenholt Fall\",\"secondary_address\":\"Suite 182\",\"city\":\"Lake Elwynton\",\"state\":\"TN\",\"country\":\"USA\",\"zip_code\":\"66857\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":57.8744403296817,\"longitude\":-126.190849921321,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.687Z\",\"updated_at\":\"2016-04-08T04:47:06.687Z\"}},{\"id\":\"21573fc4-aa05-4b5d-a3d4-0a301322ddc9\",\"type\":\"events\",\"attributes\":{\"location_id\":\"eed6bca3-e912-4b53-bc85-bb8c337ed670\",\"name\":\"Programmable incremental open architecture\",\"abbreviation\":\"Marquardt, Kertzmann and Grady\",\"description\":\"Provident et soluta quis itaque adipisci aliquam.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"7950 Esteban Hills\",\"secondary_address\":\"Apt. 348\",\"city\":\"Rodriguezport\",\"state\":\"CT\",\"country\":\"USA\",\"zip_code\":\"50725\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":18.1037532671202,\"longitude\":-47.7205785111945,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T00:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.697Z\",\"updated_at\":\"2016-04-08T04:47:06.697Z\"}},{\"id\":\"24c2f9c3-a763-407a-805e-d3f150b11a3a\",\"type\":\"events\",\"attributes\":{\"location_id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"name\":\"Organized impactful knowledge base\",\"abbreviation\":\"Metz, Zulauf and Leuschke\",\"description\":\"Amet et debitis corrupti beatae tenetur.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"8807 Keeling Island\",\"secondary_address\":\"Suite 285\",\"city\":\"East Jalen\",\"state\":\"NE\",\"country\":\"USA\",\"zip_code\":\"29386\",\"time_zone\":\"Mountain Time (US \\u0026 Canada)\",\"latitude\":29.1979090884798,\"longitude\":4.31349744938404,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.708Z\",\"updated_at\":\"2016-04-08T04:47:06.708Z\"}},{\"id\":\"dd5f7ece-78eb-403a-aed8-be0db73bc40c\",\"type\":\"events\",\"attributes\":{\"location_id\":\"22540268-087f-4fdf-a064-a4e1bcd899e5\",\"name\":\"Function-based uniform implementation\",\"abbreviation\":\"Cremin and Sons\",\"description\":\"Necessitatibus minima sequi magnam.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"18464 Abel Crossing\",\"secondary_address\":\"Suite 769\",\"city\":\"Melissaland\",\"state\":\"DE\",\"country\":\"USA\",\"zip_code\":\"67279\",\"time_zone\":\"Mountain Time (US \\u0026 Canada)\",\"latitude\":13.428734645736,\"longitude\":157.164512973041,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.719Z\",\"updated_at\":\"2016-04-08T04:47:06.719Z\"}},{\"id\":\"f85d2abf-80c6-4093-98dd-e941cc9ecf5c\",\"type\":\"events\",\"attributes\":{\"location_id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"name\":\"Versatile composite hub\",\"abbreviation\":\"Murray-Homenick\",\"description\":\"Dolor alias accusantium cupiditate dolores velit repudiandae.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"51752 Conroy Mission\",\"secondary_address\":\"Apt. 407\",\"city\":\"New Manueltown\",\"state\":\"LA\",\"country\":\"USA\",\"zip_code\":\"27660-0633\",\"time_zone\":\"Hawaii\",\"latitude\":48.0719615682414,\"longitude\":167.410598858659,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.740Z\",\"updated_at\":\"2016-04-08T04:47:06.740Z\"}},{\"id\":\"c9818916-4342-4a7d-8549-4aef48238b9d\",\"type\":\"events\",\"attributes\":{\"location_id\":\"eed6bca3-e912-4b53-bc85-bb8c337ed670\",\"name\":\"Centralized radical contingency\",\"abbreviation\":\"Reichert Group\",\"description\":\"Eos velit sit.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"713 Bosco Pines\",\"secondary_address\":\"Apt. 153\",\"city\":\"Lake Eugeneland\",\"state\":\"RI\",\"country\":\"USA\",\"zip_code\":\"21909\",\"time_zone\":\"Pacific Time (US \\u0026 Canada)\",\"latitude\":-87.1620460563977,\"longitude\":152.577991977745,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.751Z\",\"updated_at\":\"2016-04-08T04:47:06.751Z\"}},{\"id\":\"e0de5c7a-9e4d-4db4-9b6a-4481c0ec95ec\",\"type\":\"events\",\"attributes\":{\"location_id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"name\":\"Open-source incremental neural-net\",\"abbreviation\":\"Greenfelder, Bauch and Grady\",\"description\":\"Adipisci exercitationem tempora vitae sapiente ipsum sint assumenda.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"436 Madyson Extensions\",\"secondary_address\":\"Apt. 676\",\"city\":\"South Brisa\",\"state\":\"FL\",\"country\":\"USA\",\"zip_code\":\"77132-3038\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":-89.7831750310675,\"longitude\":-175.739678000256,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.763Z\",\"updated_at\":\"2016-04-08T04:47:06.763Z\"}},{\"id\":\"c05d3a6c-81ec-4fa6-9e08-916fb51ccd2d\",\"type\":\"events\",\"attributes\":{\"location_id\":\"22540268-087f-4fdf-a064-a4e1bcd899e5\",\"name\":\"Multi-tiered object-oriented standardization\",\"abbreviation\":\"Wisoky and Sons\",\"description\":\"Quidem harum voluptatem esse impedit rerum quaerat ullam.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"21113 Elisha Coves\",\"secondary_address\":\"Suite 658\",\"city\":\"Dudleyborough\",\"state\":\"CT\",\"country\":\"USA\",\"zip_code\":\"14529-0262\",\"time_zone\":\"Mountain Time (US \\u0026 Canada)\",\"latitude\":-33.1086921144254,\"longitude\":71.4091106437767,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.774Z\",\"updated_at\":\"2016-04-08T04:47:06.774Z\"}},{\"id\":\"d7cc06c0-cd70-494e-94e3-d414918ee731\",\"type\":\"events\",\"attributes\":{\"location_id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"name\":\"Focused executive Graphic Interface\",\"abbreviation\":\"Beahan Group\",\"description\":\"Qui et ut dolorum.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"2039 Stroman Square\",\"secondary_address\":\"Suite 372\",\"city\":\"North Leannport\",\"state\":\"DE\",\"country\":\"USA\",\"zip_code\":\"62391\",\"time_zone\":\"Mountain Time (US \\u0026 Canada)\",\"latitude\":17.4669069157721,\"longitude\":93.2833869588994,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T00:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.784Z\",\"updated_at\":\"2016-04-08T04:47:06.784Z\"}},{\"id\":\"84f4174b-d06a-4971-a5a0-1756cc9570e9\",\"type\":\"events\",\"attributes\":{\"location_id\":\"eed6bca3-e912-4b53-bc85-bb8c337ed670\",\"name\":\"Multi-layered secondary capacity\",\"abbreviation\":\"McDermott, Lesch and Hilpert\",\"description\":\"Animi est voluptatibus voluptas quo rem.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"133 Ariane Walks\",\"secondary_address\":\"Apt. 773\",\"city\":\"East Boris\",\"state\":\"WI\",\"country\":\"USA\",\"zip_code\":\"24055\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":-79.8465282946952,\"longitude\":-31.4932634652984,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.795Z\",\"updated_at\":\"2016-04-08T04:47:06.795Z\"}},{\"id\":\"f30db409-5104-4adc-ad8f-429c615e35a5\",\"type\":\"events\",\"attributes\":{\"location_id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"name\":\"User-friendly secondary complexity\",\"abbreviation\":\"Koch and Sons\",\"description\":\"Praesentium harum accusamus et vel neque a ratione.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"53208 Bartholome Station\",\"secondary_address\":\"Suite 764\",\"city\":\"Hyattmouth\",\"state\":\"AK\",\"country\":\"USA\",\"zip_code\":\"77045-6683\",\"time_zone\":\"Mountain Time (US \\u0026 Canada)\",\"latitude\":-54.8847837440588,\"longitude\":6.02238046952576,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T00:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.805Z\",\"updated_at\":\"2016-04-08T04:47:06.805Z\"}},{\"id\":\"b7b4ebd9-29e6-403c-a45e-b311d0f885c8\",\"type\":\"events\",\"attributes\":{\"location_id\":\"22540268-087f-4fdf-a064-a4e1bcd899e5\",\"name\":\"Decentralized zero tolerance architecture\",\"abbreviation\":\"Lindgren, Rau and Crist\",\"description\":\"Et quod itaque est rerum minus nostrum.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"49786 Kling Harbors\",\"secondary_address\":\"Apt. 587\",\"city\":\"Kochland\",\"state\":\"KY\",\"country\":\"USA\",\"zip_code\":\"14842\",\"time_zone\":\"Alaska\",\"latitude\":59.6791843282261,\"longitude\":-117.041604981572,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.815Z\",\"updated_at\":\"2016-04-08T04:47:06.815Z\"}},{\"id\":\"cef4e3c1-c3e0-4432-9106-63f40b90e817\",\"type\":\"events\",\"attributes\":{\"location_id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"name\":\"Sharable dynamic portal\",\"abbreviation\":\"Baumbach Group\",\"description\":\"Minima sed veniam voluptas illo eum dicta.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"5136 Piper Parks\",\"secondary_address\":\"Suite 346\",\"city\":\"South Otto\",\"state\":\"CA\",\"country\":\"USA\",\"zip_code\":\"58489\",\"time_zone\":\"Pacific Time (US \\u0026 Canada)\",\"latitude\":-9.41368360134692,\"longitude\":20.4374949651608,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.827Z\",\"updated_at\":\"2016-04-08T04:47:06.827Z\"}},{\"id\":\"74b0749b-ff94-4081-955a-a9f02f62ec8e\",\"type\":\"events\",\"attributes\":{\"location_id\":\"eed6bca3-e912-4b53-bc85-bb8c337ed670\",\"name\":\"Fundamental neutral knowledge base\",\"abbreviation\":\"Paucek, Collins and Fahey\",\"description\":\"Eos aliquid mollitia natus laborum iusto.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"2465 Eve Shores\",\"secondary_address\":\"Suite 444\",\"city\":\"Kalebshire\",\"state\":\"AL\",\"country\":\"USA\",\"zip_code\":\"50881-9590\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":89.8082246037897,\"longitude\":-93.8037046218124,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.840Z\",\"updated_at\":\"2016-04-08T04:47:06.840Z\"}},{\"id\":\"20c775dd-79a1-49cc-8e0e-0dadcd60da4c\",\"type\":\"events\",\"attributes\":{\"location_id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"name\":\"Innovative grid-enabled leverage\",\"abbreviation\":\"Tremblay Group\",\"description\":\"Nihil velit autem.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"7009 Gottlieb Underpass\",\"secondary_address\":\"Apt. 979\",\"city\":\"South Tannerberg\",\"state\":\"IA\",\"country\":\"USA\",\"zip_code\":\"10177\",\"time_zone\":\"Pacific Time (US \\u0026 Canada)\",\"latitude\":18.4932107727469,\"longitude\":-65.0703428091322,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.858Z\",\"updated_at\":\"2016-04-08T04:47:06.858Z\"}},{\"id\":\"6f2de4f3-69dc-44bc-993b-63d95ff29b31\",\"type\":\"events\",\"attributes\":{\"location_id\":\"22540268-087f-4fdf-a064-a4e1bcd899e5\",\"name\":\"Upgradable didactic standardization\",\"abbreviation\":\"Quitzon Group\",\"description\":\"Sit dolorum ipsam quam officia aut rerum.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"25346 Amalia Port\",\"secondary_address\":\"Apt. 727\",\"city\":\"East Alysa\",\"state\":\"MN\",\"country\":\"USA\",\"zip_code\":\"80383\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":6.05614939687723,\"longitude\":12.0002245196606,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.870Z\",\"updated_at\":\"2016-04-08T04:47:06.870Z\"}},{\"id\":\"af40a85d-a8c1-4880-9fe4-c1a09c9bd96c\",\"type\":\"events\",\"attributes\":{\"location_id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"name\":\"Multi-layered dynamic hierarchy\",\"abbreviation\":\"Bechtelar-Cassin\",\"description\":\"Laudantium quos velit omnis eius et officiis.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"25976 Hessel Crest\",\"secondary_address\":\"Apt. 175\",\"city\":\"Hueltown\",\"state\":\"NM\",\"country\":\"USA\",\"zip_code\":\"95873\",\"time_zone\":\"Alaska\",\"latitude\":-13.3453376164519,\"longitude\":-26.4055526928478,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.883Z\",\"updated_at\":\"2016-04-08T04:47:06.883Z\"}},{\"id\":\"9b0d90e8-6abc-45b4-92b4-f7809dad7094\",\"type\":\"events\",\"attributes\":{\"location_id\":\"eed6bca3-e912-4b53-bc85-bb8c337ed670\",\"name\":\"Up-sized bottom-line website\",\"abbreviation\":\"Kuhn, Rogahn and Walker\",\"description\":\"Eveniet facere harum.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"656 Hudson Burgs\",\"secondary_address\":\"Apt. 580\",\"city\":\"Trompburgh\",\"state\":\"KS\",\"country\":\"USA\",\"zip_code\":\"74883\",\"time_zone\":\"Hawaii\",\"latitude\":-59.2732100952809,\"longitude\":-86.2625047807962,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T00:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.898Z\",\"updated_at\":\"2016-04-08T04:47:06.898Z\"}},{\"id\":\"047a9f28-6201-483c-9fd3-5bb4e6b8a8a6\",\"type\":\"events\",\"attributes\":{\"location_id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"name\":\"Synchronised 3rd generation firmware\",\"abbreviation\":\"Wuckert-Stiedemann\",\"description\":\"In omnis quia fugit laborum tempora.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"934 Harber Common\",\"secondary_address\":\"Suite 365\",\"city\":\"Lake Reaganmouth\",\"state\":\"SC\",\"country\":\"USA\",\"zip_code\":\"71448-0850\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":69.5314003472215,\"longitude\":92.3219688175672,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.914Z\",\"updated_at\":\"2016-04-08T04:47:06.914Z\"}},{\"id\":\"34c16da8-f854-44d8-85c6-c18ff4f78970\",\"type\":\"events\",\"attributes\":{\"location_id\":\"22540268-087f-4fdf-a064-a4e1bcd899e5\",\"name\":\"Implemented incremental projection\",\"abbreviation\":\"Boyer-Harvey\",\"description\":\"Quis et accusantium neque distinctio beatae dolores animi.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"57999 Bailey Avenue\",\"secondary_address\":\"Apt. 909\",\"city\":\"Kolestad\",\"state\":\"RI\",\"country\":\"USA\",\"zip_code\":\"32814\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":10.0639284987647,\"longitude\":-18.1139323521697,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T00:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.932Z\",\"updated_at\":\"2016-04-08T04:47:06.932Z\"}},{\"id\":\"8ca7ccf7-b786-4d6a-9f10-21251e7b3a61\",\"type\":\"events\",\"attributes\":{\"location_id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"name\":\"Sharable national superstructure\",\"abbreviation\":\"Hilll-Treutel\",\"description\":\"Debitis aliquid quia ad nam rerum.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"7801 Kamron Points\",\"secondary_address\":\"Suite 153\",\"city\":\"Hintzburgh\",\"state\":\"AL\",\"country\":\"USA\",\"zip_code\":\"95802-1829\",\"time_zone\":\"Mountain Time (US \\u0026 Canada)\",\"latitude\":-54.9057179764189,\"longitude\":168.742071202287,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.949Z\",\"updated_at\":\"2016-04-08T04:47:06.949Z\"}},{\"id\":\"b30b2289-01d5-405c-a679-f300c3831c8c\",\"type\":\"events\",\"attributes\":{\"location_id\":\"eed6bca3-e912-4b53-bc85-bb8c337ed670\",\"name\":\"Multi-lateral mobile model\",\"abbreviation\":\"Cartwright-Grimes\",\"description\":\"Asperiores magnam adipisci exercitationem.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"7532 Alysa Centers\",\"secondary_address\":\"Suite 494\",\"city\":\"Martinehaven\",\"state\":\"NH\",\"country\":\"USA\",\"zip_code\":\"91136-3321\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":-78.446854844748,\"longitude\":-41.9830909806881,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.968Z\",\"updated_at\":\"2016-04-08T04:47:06.968Z\"}},{\"id\":\"0aacdd2b-b375-4c38-bc2b-87c50b3adafb\",\"type\":\"events\",\"attributes\":{\"location_id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"name\":\"Face to face systemic frame\",\"abbreviation\":\"Carroll-McDermott\",\"description\":\"Sit ut at.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"13756 Cartwright Road\",\"secondary_address\":\"Apt. 595\",\"city\":\"New Terrellshire\",\"state\":\"SD\",\"country\":\"USA\",\"zip_code\":\"17335\",\"time_zone\":\"Central Time (US \\u0026 Canada)\",\"latitude\":-42.3927463990557,\"longitude\":-83.2647764631521,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.990Z\",\"updated_at\":\"2016-04-08T04:47:06.990Z\"}},{\"id\":\"2a72b995-bec6-4281-8da4-031f7d00c31f\",\"type\":\"events\",\"attributes\":{\"location_id\":\"22540268-087f-4fdf-a064-a4e1bcd899e5\",\"name\":\"Universal even-keeled system engine\",\"abbreviation\":\"Gutkowski-Carroll\",\"description\":\"Consectetur suscipit dolorem.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"6244 Bernard Shoals\",\"secondary_address\":\"Suite 422\",\"city\":\"Port Cordeliatown\",\"state\":\"SC\",\"country\":\"USA\",\"zip_code\":\"73294\",\"time_zone\":\"Central Time (US \\u0026 Canada)\",\"latitude\":49.8651280306851,\"longitude\":40.0887845840789,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-12T23:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.008Z\",\"updated_at\":\"2016-04-08T04:47:07.008Z\"}},{\"id\":\"f789ebd3-5242-4a0a-8fc2-54623d1f3d80\",\"type\":\"events\",\"attributes\":{\"location_id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"name\":\"Fundamental 5th generation model\",\"abbreviation\":\"Feest-Hessel\",\"description\":\"Quod illo reprehenderit vitae a.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"28753 Johns Islands\",\"secondary_address\":\"Suite 701\",\"city\":\"Kuphalchester\",\"state\":\"VA\",\"country\":\"USA\",\"zip_code\":\"39555\",\"time_zone\":\"Hawaii\",\"latitude\":3.32737604320756,\"longitude\":20.3599148341435,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.026Z\",\"updated_at\":\"2016-04-08T04:47:07.026Z\"}},{\"id\":\"6c11aa55-0abc-4a8e-bdf2-f24dc16ca97b\",\"type\":\"events\",\"attributes\":{\"location_id\":\"eed6bca3-e912-4b53-bc85-bb8c337ed670\",\"name\":\"Future-proofed foreground capability\",\"abbreviation\":\"Schumm-Renner\",\"description\":\"Sed quia pariatur.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"23335 Lavonne Fords\",\"secondary_address\":\"Apt. 599\",\"city\":\"Port Elaina\",\"state\":\"TN\",\"country\":\"USA\",\"zip_code\":\"46789-6103\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"latitude\":72.6175792966461,\"longitude\":35.9465000823344,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.038Z\",\"updated_at\":\"2016-04-08T04:47:07.038Z\"}},{\"id\":\"5fe9a53e-e168-4011-a3ca-3ddddba604d6\",\"type\":\"events\",\"attributes\":{\"location_id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"name\":\"Re-engineered cohesive artificial intelligence\",\"abbreviation\":\"Ebert, Tillman and McKenzie\",\"description\":\"Non dolores in est omnis aut.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"44835 Everette Island\",\"secondary_address\":\"Apt. 481\",\"city\":\"Rauburgh\",\"state\":\"WI\",\"country\":\"USA\",\"zip_code\":\"10119-2389\",\"time_zone\":\"Hawaii\",\"latitude\":48.8990259465621,\"longitude\":138.624369437718,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T00:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.048Z\",\"updated_at\":\"2016-04-08T04:47:07.048Z\"}},{\"id\":\"a223e4cb-002e-4c00-8e91-96aca2732f77\",\"type\":\"events\",\"attributes\":{\"location_id\":\"22540268-087f-4fdf-a064-a4e1bcd899e5\",\"name\":\"Optional encompassing projection\",\"abbreviation\":\"Pfannerstill LLC\",\"description\":\"Beatae officiis consequatur.\",\"primary_category\":null,\"categories\":[],\"street_address\":\"87513 Wilfred Forge\",\"secondary_address\":\"Apt. 309\",\"city\":\"Kirlinborough\",\"state\":\"SD\",\"country\":\"USA\",\"zip_code\":\"26066\",\"time_zone\":\"Alaska\",\"latitude\":-69.0582174621154,\"longitude\":60.31488762272,\"starts_at\":\"2016-04-12T22:57:41.000Z\",\"ends_at\":\"2016-04-13T01:57:41.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:07.058Z\",\"updated_at\":\"2016-04-08T04:47:07.058Z\"}}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "fd7cd94f-3fae-2c8d-c41b-b1db840d7c84",
+					"name": "get_events",
+					"request": {
+						"url": "{{url}}/api/{{version}}/events",
+						"headers": [
+							{
+								"key": "Authorization",
+								"value": "Token token=\"{{token}}\", email=\"{{email}}\"",
+								"enabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "{{content-type}}",
+								"enabled": true,
+								"description": "The mime type of this content"
+							}
+						],
+						"data": [],
+						"method": "GET",
+						"dataMode": "params"
+					}
 				}
 			]
 		},
 		{
-			"id": "befc0edc-bf13-5040-3011-63628d5513dd",
-			"name": "locations",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "`/api/:version/locations`",
+			"id": "bdcc737e-485b-18e0-0428-c008b494446c",
 			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: application/json\n",
-			"method": "GET",
+			"url": "{{url}}/api/{{version}}/events/0476f198-1913-4e4c-83a8-5f993859eb4a",
 			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
+			"data": [],
+			"dataMode": "params",
+			"name": "get_event",
+			"description": "`/api/:version/events/:id`",
+			"descriptionFormat": "html",
+			"time": 1460237205620,
+			"version": 2,
+			"responses": [],
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\ntests[\"Response time is less than 200ms\"] = responseTime < 200;\ntests[\"Body matches string id\"] = responseBody.has(\"id\");\n\nvar data = JSON.parse(responseBody);\ntests[\"id match\"] = data[\"event\"].id === 1;",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "befc0edc-bf13-5040-3011-63628d5513dd",
+			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: {{content-type}}\n",
 			"url": "{{url}}/api/{{version}}/locations",
 			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"tests": "",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"collectionId": "3398cad8-4701-003c-9551-4edec0789942"
+			"helperAttributes": {},
+			"time": 1460237513876,
+			"name": "locations",
+			"description": "`/api/:version/locations`",
+			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 81,
+					"headers": [
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.api+json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"05ed92c54c022f967461508647031663\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Origin",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "X-Rack-CORS",
+							"key": "X-Rack-CORS",
+							"value": "preflight-hit; no-origin",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Request-Id",
+							"key": "X-Request-Id",
+							"value": "e7328098-4e67-4079-91fd-8281f3250913",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Runtime",
+							"key": "X-Runtime",
+							"value": "0.073994",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"data\":[{\"id\":\"b202944d-9cf7-4d83-b2be-765cd37a213c\",\"type\":\"locations\",\"attributes\":{\"region_id\":\"e20fd948-822a-4841-bd7c-71cd43a726b6\",\"name\":\"Andersonville\",\"abbreviation\":\"A-ville\",\"time_zone\":\"Central Time (US \\u0026 Canada)\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.017Z\",\"updated_at\":\"2016-04-08T04:47:06.017Z\"}},{\"id\":\"eed6bca3-e912-4b53-bc85-bb8c337ed670\",\"type\":\"locations\",\"attributes\":{\"region_id\":\"e20fd948-822a-4841-bd7c-71cd43a726b6\",\"name\":\"Bucktown\",\"abbreviation\":\"B-town\",\"time_zone\":\"Central Time (US \\u0026 Canada)\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.020Z\",\"updated_at\":\"2016-04-08T04:47:06.020Z\"}},{\"id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"type\":\"locations\",\"attributes\":{\"region_id\":\"e20fd948-822a-4841-bd7c-71cd43a726b6\",\"name\":\"Lakeview\",\"abbreviation\":\"L-view\",\"time_zone\":\"Central Time (US \\u0026 Canada)\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.021Z\",\"updated_at\":\"2016-04-08T04:47:06.021Z\"}},{\"id\":\"22540268-087f-4fdf-a064-a4e1bcd899e5\",\"type\":\"locations\",\"attributes\":{\"region_id\":\"e20fd948-822a-4841-bd7c-71cd43a726b6\",\"name\":\"Lincoln Park\",\"abbreviation\":\"L-Park\",\"time_zone\":\"Central Time (US \\u0026 Canada)\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.023Z\",\"updated_at\":\"2016-04-08T04:47:06.023Z\"}},{\"id\":\"62780b1c-f495-4540-b464-ae34df55c7a7\",\"type\":\"locations\",\"attributes\":{\"region_id\":\"91b632c2-04b2-424e-8f95-e68d25e9dfbf\",\"name\":\"New Laverna\",\"abbreviation\":\"West Vern\",\"time_zone\":\"Mountain Time (US \\u0026 Canada)\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.028Z\",\"updated_at\":\"2016-04-08T04:47:06.028Z\"}},{\"id\":\"5d9e52e0-55bb-4c18-bc66-cd569da2fbff\",\"type\":\"locations\",\"attributes\":{\"region_id\":\"91b632c2-04b2-424e-8f95-e68d25e9dfbf\",\"name\":\"East Luther\",\"abbreviation\":\"Port Scottyfurt\",\"time_zone\":\"Mountain Time (US \\u0026 Canada)\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.031Z\",\"updated_at\":\"2016-04-08T04:47:06.031Z\"}},{\"id\":\"1f14fa6d-71c2-4978-bf5b-57eff3397b5d\",\"type\":\"locations\",\"attributes\":{\"region_id\":\"91b632c2-04b2-424e-8f95-e68d25e9dfbf\",\"name\":\"South Selmerton\",\"abbreviation\":\"Millermouth\",\"time_zone\":\"Central Time (US \\u0026 Canada)\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.034Z\",\"updated_at\":\"2016-04-08T04:47:06.034Z\"}},{\"id\":\"a065018e-6c96-43b7-b3fb-881d4f5e260c\",\"type\":\"locations\",\"attributes\":{\"region_id\":\"91b632c2-04b2-424e-8f95-e68d25e9dfbf\",\"name\":\"New Samson\",\"abbreviation\":\"Kingfurt\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.037Z\",\"updated_at\":\"2016-04-08T04:47:06.037Z\"}},{\"id\":\"bddd0251-1fb9-4595-9925-994fc360df3d\",\"type\":\"locations\",\"attributes\":{\"region_id\":\"91b632c2-04b2-424e-8f95-e68d25e9dfbf\",\"name\":\"Rubyton\",\"abbreviation\":\"Lake Leilaton\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.039Z\",\"updated_at\":\"2016-04-08T04:47:06.039Z\"}},{\"id\":\"cadadc0b-ebb7-4cea-ac96-e96e44dc9d3a\",\"type\":\"locations\",\"attributes\":{\"region_id\":\"91b632c2-04b2-424e-8f95-e68d25e9dfbf\",\"name\":\"Hegmannbury\",\"abbreviation\":\"Port Adelleberg\",\"time_zone\":\"Mountain Time (US \\u0026 Canada)\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.041Z\",\"updated_at\":\"2016-04-08T04:47:06.041Z\"}}]}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "2b7a2896-806a-34b6-8d88-0ef03210e6fc",
+					"name": "get_locations",
+					"request": {
+						"url": "{{url}}/api/{{version}}/locations",
+						"headers": [
+							{
+								"key": "Authorization",
+								"value": "Token token=\"{{token}}\", email=\"{{email}}\"",
+								"enabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "{{content-type}}",
+								"enabled": true,
+								"description": "The mime type of this content"
+							}
+						],
+						"data": [],
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			]
 		},
 		{
 			"id": "c94c60fd-1217-2a91-f548-20a5686168a9",
@@ -528,20 +2005,158 @@
 		},
 		{
 			"id": "d53c26b0-fa4a-d270-50fb-a7bf6459a264",
-			"name": "event",
-			"dataMode": "raw",
-			"data": [],
-			"descriptionFormat": null,
-			"description": "`/api/:version/events`",
-			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: application/json\n",
-			"method": "POST",
-			"pathVariables": {},
+			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: {{content-type}}\n",
 			"url": "{{url}}/api/{{version}}/events",
 			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
 			"tests": "",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
+			"helperAttributes": {},
+			"time": 1460237778608,
+			"name": "event",
+			"description": "`/api/:version/events`",
 			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 201,
+						"name": "Created",
+						"detail": "The request has been fulfilled and resulted in a new resource being created."
+					},
+					"time": 168,
+					"headers": [
+						{
+							"name": "Access-Control-Allow-Credentials",
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true",
+							"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+						},
+						{
+							"name": "Access-Control-Allow-Methods",
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, DELETE, PUT, OPTIONS, HEAD",
+							"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"key": "Access-Control-Allow-Origin",
+							"value": "file://",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "Access-Control-Max-Age",
+							"key": "Access-Control-Max-Age",
+							"value": "0",
+							"description": "Indicates how long the results of a preflight request can be cached in seconds."
+						},
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.api+json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"dda08afa38b53bb6a5535189d25f5de7\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Origin",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "X-Rack-CORS",
+							"key": "X-Rack-CORS",
+							"value": "hit",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Request-Id",
+							"key": "X-Request-Id",
+							"value": "bd5bb2f1-4b30-434c-84ff-21daccb8e36f",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Runtime",
+							"key": "X-Runtime",
+							"value": "0.152881",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"data\":{\"id\":\"462bbfa2-4fec-4a1d-9580-e91af74c9147\",\"type\":\"events\",\"attributes\":{\"location_id\":null,\"name\":\"Party in the U.S.A\",\"abbreviation\":\"PARTY USA\",\"description\":\"Party it up, fuzzball\",\"primary_category\":null,\"categories\":[],\"street_address\":\"123 Main Street\",\"secondary_address\":\"Suite 123\",\"city\":\"Chicago\",\"state\":\"IL\",\"country\":\"USA\",\"zip_code\":\"606057\",\"time_zone\":\"Africa/Cairo\",\"latitude\":51.0627550915136,\"longitude\":169.493000948825,\"starts_at\":\"2015-06-02T23:38:20.000Z\",\"ends_at\":\"2015-06-03T01:38:20.000Z\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-09T21:37:12.658Z\",\"updated_at\":\"2016-04-09T21:37:12.658Z\"}}}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "a8d1dde3-97fb-2ce5-1236-a38e20069393",
+					"name": "post_event",
+					"request": {
+						"url": "{{url}}/api/{{version}}/events",
+						"headers": [
+							{
+								"key": "Authorization",
+								"value": "Token token=\"{{token}}\", email=\"{{email}}\"",
+								"enabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "{{content-type}}",
+								"enabled": true,
+								"description": "The mime type of this content"
+							}
+						],
+						"data": "{\n    \"location_id\": 22,\n    \"name\": \"Party in the U.S.A\",\n    \"abbreviation\": \"PARTY USA\",\n    \"description\": \"Party it up, fuzzball\",\n    \"street_address\": \"123 Main Street\",\n    \"secondary_address\": \"Suite 123\",\n    \"city\": \"Chicago\",\n    \"state\": \"IL\",\n    \"country\": \"USA\",\n    \"zip_code\": \"606057\",\n    \"time_zone\": \"Africa/Cairo\",\n    \"primary_category\": \"dance\",\n    \"categories\": [\"festival\",\"theatre\"],\n    \"latitude\": 51.0627550915136,\n    \"longitude\": 169.493000948825,\n    \"starts_at\": \"2015-06-02T23:38:20.000Z\",\n    \"ends_at\": \"2015-06-03T01:38:20.000Z\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				}
+			],
 			"rawModeData": "{\n    \"location_id\": 22,\n    \"name\": \"Party in the U.S.A\",\n    \"abbreviation\": \"PARTY USA\",\n    \"description\": \"Party it up, fuzzball\",\n    \"street_address\": \"123 Main Street\",\n    \"secondary_address\": \"Suite 123\",\n    \"city\": \"Chicago\",\n    \"state\": \"IL\",\n    \"country\": \"USA\",\n    \"zip_code\": \"606057\",\n    \"time_zone\": \"Africa/Cairo\",\n    \"primary_category\": \"dance\",\n    \"categories\": [\"festival\",\"theatre\"],\n    \"latitude\": 51.0627550915136,\n    \"longitude\": 169.493000948825,\n    \"starts_at\": \"2015-06-02T23:38:20.000Z\",\n    \"ends_at\": \"2015-06-03T01:38:20.000Z\"\n}"
 		},
 		{
@@ -564,39 +2179,265 @@
 		},
 		{
 			"id": "ef080d55-3a49-0509-afe7-c0a4cedc3f87",
-			"name": "location",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "`/api/:version/locations/:id`",
-			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: application/json\n",
-			"method": "GET",
-			"pathVariables": {},
-			"url": "{{url}}/api/{{version}}/locations/22",
+			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: {{content-type}}\n",
+			"url": "{{url}}/api/{{version}}/locations/004f5a3d-b53d-4333-8091-849add182ef1",
 			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"tests": "",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"collectionId": "3398cad8-4701-003c-9551-4edec0789942"
+			"helperAttributes": {},
+			"time": 1460237529823,
+			"name": "location",
+			"description": "`/api/:version/locations/:id`",
+			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 49,
+					"headers": [
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.api+json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"989be9abd0d107c2f0d8b0c02d9727f4\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Origin",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "X-Rack-CORS",
+							"key": "X-Rack-CORS",
+							"value": "preflight-hit; no-origin",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Request-Id",
+							"key": "X-Request-Id",
+							"value": "6f51d6ab-adb0-44a0-b747-dcc6e61445df",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Runtime",
+							"key": "X-Runtime",
+							"value": "0.041706",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"data\":{\"id\":\"004f5a3d-b53d-4333-8091-849add182ef1\",\"type\":\"locations\",\"attributes\":{\"region_id\":\"e20fd948-822a-4841-bd7c-71cd43a726b6\",\"name\":\"Lakeview\",\"abbreviation\":\"L-view\",\"time_zone\":\"Central Time (US \\u0026 Canada)\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.021Z\",\"updated_at\":\"2016-04-08T04:47:06.021Z\"}}}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "ec021338-d2fe-226d-d2e2-7294ed9ce08d",
+					"name": "get_location",
+					"request": {
+						"url": "{{url}}/api/{{version}}/locations/004f5a3d-b53d-4333-8091-849add182ef1",
+						"headers": [
+							{
+								"key": "Authorization",
+								"value": "Token token=\"{{token}}\", email=\"{{email}}\"",
+								"enabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "{{content-type}}",
+								"enabled": true,
+								"description": "The mime type of this content"
+							}
+						],
+						"data": [],
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			]
 		},
 		{
 			"id": "f0fdd33a-e138-502c-b8de-39720dd8129e",
-			"name": "region",
-			"dataMode": "params",
-			"data": [],
-			"rawModeData": null,
-			"descriptionFormat": null,
-			"description": "`/api/:version/regions/:id`",
-			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: application/json\n",
-			"method": "GET",
-			"pathVariables": {},
-			"url": "{{url}}/api/{{version}}/regions/22",
+			"headers": "Authorization: Token token=\"{{token}}\", email=\"{{email}}\"\nContent-Type: {{content-type}}\n",
+			"url": "{{url}}/api/{{version}}/regions/91b632c2-04b2-424e-8f95-e68d25e9dfbf",
 			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
 			"tests": "",
 			"currentHelper": "normal",
-			"helperAttributes": "{}",
-			"collectionId": "3398cad8-4701-003c-9551-4edec0789942"
+			"helperAttributes": {},
+			"time": 1460237498729,
+			"name": "region",
+			"description": "`/api/:version/regions/:id`",
+			"collectionId": "3398cad8-4701-003c-9551-4edec0789942",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 57,
+					"headers": [
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/vnd.api+json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "ETag",
+							"key": "ETag",
+							"value": "W/\"b130c9ee24a4d36406a28b0b2ee9fd48\"",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "Vary",
+							"key": "Vary",
+							"value": "Origin",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "X-Content-Type-Options",
+							"key": "X-Content-Type-Options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "X-Frame-Options",
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "X-Rack-CORS",
+							"key": "X-Rack-CORS",
+							"value": "preflight-hit; no-origin",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Request-Id",
+							"key": "X-Request-Id",
+							"value": "bcf92974-baf7-4677-aac0-20cb9bd321ef",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-Runtime",
+							"key": "X-Runtime",
+							"value": "0.050116",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-XSS-Protection",
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"data\":{\"id\":\"91b632c2-04b2-424e-8f95-e68d25e9dfbf\",\"type\":\"regions\",\"attributes\":{\"name\":\"Millsfort\",\"abbreviation\":\"Mavishaven\",\"time_zone\":\"Eastern Time (US \\u0026 Canada)\",\"archived\":false,\"test\":false,\"created_at\":\"2016-04-08T04:47:06.026Z\",\"updated_at\":\"2016-04-08T04:47:06.026Z\"}}}",
+					"language": "javascript",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "2df34703-61ee-3bcd-db07-17754e88f4e4",
+					"name": "get_region",
+					"request": {
+						"url": "{{url}}/api/{{version}}/regions/91b632c2-04b2-424e-8f95-e68d25e9dfbf",
+						"headers": [
+							{
+								"key": "Authorization",
+								"value": "Token token=\"{{token}}\", email=\"{{email}}\"",
+								"enabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "{{content-type}}",
+								"enabled": true,
+								"description": "The mime type of this content"
+							}
+						],
+						"data": [],
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			]
 		}
 	]
 }

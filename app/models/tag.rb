@@ -8,6 +8,11 @@ class Tag < ActiveRecord::Base
 
   before_save :downcase_name
 
+  scope :active, -> { where(archived: false, test: false) }
+  scope :archived, -> { where(archived: true) }
+  scope :test, -> { where(test: true) }
+  scope :dummy, -> { where(dummy: true) }
+
   private
 
   def downcase_name

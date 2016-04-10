@@ -23,8 +23,11 @@ ActiveRecord::Schema.define(version: 20160327201109) do
     t.string   "loggable_type"
     t.string   "activity_action_type"
     t.string   "description"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.boolean  "archived",             default: false
+    t.boolean  "test",                 default: false
+    t.boolean  "dummy",                default: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   create_table "calendar_users", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
@@ -33,6 +36,7 @@ ActiveRecord::Schema.define(version: 20160327201109) do
     t.string   "role"
     t.boolean  "archived",    default: false
     t.boolean  "test",        default: false
+    t.boolean  "dummy",       default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
@@ -42,6 +46,7 @@ ActiveRecord::Schema.define(version: 20160327201109) do
     t.string   "time_zone",  default: "Central Time (US & Canada)"
     t.boolean  "archived",   default: false
     t.boolean  "test",       default: false
+    t.boolean  "dummy",      default: false
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
   end
@@ -49,8 +54,11 @@ ActiveRecord::Schema.define(version: 20160327201109) do
   create_table "event_tags", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.uuid     "event_id"
     t.uuid     "tag_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "archived",   default: false
+    t.boolean  "test",       default: false
+    t.boolean  "dummy",      default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "events", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
@@ -58,8 +66,6 @@ ActiveRecord::Schema.define(version: 20160327201109) do
     t.uuid     "location_id"
     t.string   "name"
     t.string   "abbreviation"
-    t.string   "primary_category"
-    t.text     "categories",        default: [],                                        array: true
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.string   "description"
@@ -75,6 +81,7 @@ ActiveRecord::Schema.define(version: 20160327201109) do
     t.string   "admin_notes"
     t.boolean  "archived",          default: false
     t.boolean  "test",              default: false
+    t.boolean  "dummy",             default: false
     t.datetime "created_at",                                               null: false
     t.datetime "updated_at",                                               null: false
   end
@@ -84,6 +91,7 @@ ActiveRecord::Schema.define(version: 20160327201109) do
     t.uuid     "event_id"
     t.boolean  "archived",   default: false
     t.boolean  "test",       default: false
+    t.boolean  "dummy",      default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
@@ -94,6 +102,7 @@ ActiveRecord::Schema.define(version: 20160327201109) do
     t.string   "role"
     t.boolean  "archived",   default: false
     t.boolean  "test",       default: false
+    t.boolean  "dummy",      default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
@@ -104,6 +113,7 @@ ActiveRecord::Schema.define(version: 20160327201109) do
     t.string   "group_type"
     t.boolean  "archived",        default: false
     t.boolean  "test",            default: false
+    t.boolean  "dummy",           default: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
   end
@@ -116,6 +126,7 @@ ActiveRecord::Schema.define(version: 20160327201109) do
     t.string   "admin_notes"
     t.boolean  "archived",     default: false
     t.boolean  "test",         default: false
+    t.boolean  "dummy",        default: false
     t.datetime "created_at",                                          null: false
     t.datetime "updated_at",                                          null: false
   end
@@ -126,6 +137,7 @@ ActiveRecord::Schema.define(version: 20160327201109) do
     t.string   "role"
     t.boolean  "archived",        default: false
     t.boolean  "test",            default: false
+    t.boolean  "dummy",           default: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
   end
@@ -134,6 +146,7 @@ ActiveRecord::Schema.define(version: 20160327201109) do
     t.string   "name"
     t.boolean  "archived",   default: false
     t.boolean  "test",       default: false
+    t.boolean  "dummy",      default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
@@ -145,6 +158,7 @@ ActiveRecord::Schema.define(version: 20160327201109) do
     t.string   "admin_notes"
     t.boolean  "archived",     default: false
     t.boolean  "test",         default: false
+    t.boolean  "dummy",        default: false
     t.datetime "created_at",                                          null: false
     t.datetime "updated_at",                                          null: false
   end
@@ -154,8 +168,11 @@ ActiveRecord::Schema.define(version: 20160327201109) do
     t.string   "description"
     t.string   "tag_type"
     t.string   "tag_category"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.boolean  "archived",     default: false
+    t.boolean  "test",         default: false
+    t.boolean  "dummy",        default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "users", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
@@ -184,6 +201,7 @@ ActiveRecord::Schema.define(version: 20160327201109) do
     t.uuid     "location_id"
     t.boolean  "archived",               default: false
     t.boolean  "test",                   default: false
+    t.boolean  "dummy",                  default: false
     t.text     "roles",                  default: [],                                        array: true
     t.text     "statuses",               default: [],                                        array: true
     t.string   "token"

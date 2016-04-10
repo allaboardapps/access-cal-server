@@ -12,16 +12,18 @@ ActiveAdmin.register User do
     :roles,
     :zip_code,
     :time_zone,
+    :archived,
     :test,
-    :password
+    :dummy
   )
 
   scope :active, default: true
-  scope :customers
-  scope :clients
-  scope :admins
   scope :archived
   scope :test
+  scope :dummy
+  scope :clients
+  scope :consumers
+  scope :admins
 
   config.sort_order = "lower(last_name) asc, lower(first_name) asc"
 
@@ -53,6 +55,7 @@ ActiveAdmin.register User do
       f.input :zip_code
       f.input :archived
       f.input :test
+      f.input :dummy
       # f.input :password, hint: "8 alphanumeric characters required"
     end
     f.actions
@@ -72,21 +75,37 @@ ActiveAdmin.register User do
       row :admin_notes
       row :archived
       row :test
+      row :dummy
       row :created_at
       row :updated_at
     end
 
-    panel "Favorites" do
-      # if user.is?(UserRoles::TUTOR)
-      #   table_for user.favorites.includes(:events) do |t|
-      #     t.column "ID" do |tutor_assignment|
-      #       tutor_assignment.id
-      #     end
-      #     t.column "Classroom ID" do |tutor_assignment|
-      #       link_to tutor_assignment.classroom.id, admin_classroom_path(id: tutor_assignment.classroom.id)
-      #     end
-      #   end
-      # end
+    panel "Calendars" do
+      table_for user.calendars do |t|
+        t.column "ID" do |calendar|
+          calendar.id
+        end
+        t.column "Name" do |calendar|
+          link_to calendar.name, admin_calendar_path(id: calendar.id)
+        end
+        t.column "Time Zone" do |calendar|
+          calendar.time_zone
+        end
+      end
+    end
+
+    panel "Events" do
+      table_for user.events do |t|
+        t.column "ID" do |event|
+          event.id
+        end
+        t.column "Name" do |event|
+          link_to event.name, admin_event_path(id: event.id)
+        end
+        t.column "Time Zone" do |event|
+          event.time_zone
+        end
+      end
     end
   end
 end
