@@ -36,4 +36,28 @@ ActiveAdmin.register Tag do
     end
     f.actions
   end
+
+  show do
+    attributes_table do
+      row :name
+      row :tag_type
+      row :tag_category
+      row :archived
+      row :test
+      row :dummy
+      row :created_at
+      row :updated_at
+    end
+
+    panel "Events" do
+      table_for tag.events do |t|
+        t.column "Name" do |entity|
+          link_to entity.name, admin_event_path(id: entity.id)
+        end
+        t.column "Start Date" do |entity|
+          entity.starts_at
+        end
+      end
+    end
+  end
 end

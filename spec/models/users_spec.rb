@@ -305,13 +305,16 @@ describe User, type: :model do
     end
   end
 
-  it { is_expected.to have_many :activities }
-  it { is_expected.to have_many :calendars }
-  it { is_expected.to have_many :calendar_users }
-  it { is_expected.to have_many :organizations }
-  it { is_expected.to have_many :organization_users }
-  it { is_expected.to have_many :favorited_events }
-  it { is_expected.to have_many :authored_events }
   it { is_expected.to belong_to :location }
+  it { is_expected.to have_many :activities }
+  it { is_expected.to have_many :authored_events }
+  it { is_expected.to have_many :calendar_users }
+  it { is_expected.to have_many :calendars }
+  it { is_expected.to have_many :event_users }
+  it { is_expected.to have_many :events }
+  it { is_expected.to have_many :favorited_events }
+  it { is_expected.to have_many :favorites }
+  it { is_expected.to have_many :organization_users }
+  it { is_expected.to have_many :organizations }
   it { is_expected.to have_one :region }
 end

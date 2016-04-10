@@ -16,6 +16,12 @@ ActiveAdmin.register Group do
   filter :organization_name_contains, as: :string
   filter :organization, collection: Organization.order(name: :asc)
 
+  controller do
+    def scoped_collection
+      super.includes(:organization)
+    end
+  end
+
   index do
     column :name
     column :organization

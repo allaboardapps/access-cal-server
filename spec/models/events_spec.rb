@@ -47,6 +47,7 @@ describe Event, type: :model do
     context "using elasticsearch", elasticsearch: true, commit: true do
       before do
         event.touch
+        sleep 2
         described_class.__elasticsearch__.refresh_index!
       end
 

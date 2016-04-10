@@ -6,7 +6,7 @@ FactoryGirl.define do
     location
     calendar
     name { Faker::Company.catch_phrase }
-    abbreviation { Faker::Hipster.words(2) }
+    abbreviation { Faker::Hipster.words(1)[0] }
     description { Faker::Lorem.sentences(1)[0] }
     admin_notes { Faker::Lorem.sentences(1)[0] }
     archived { false }

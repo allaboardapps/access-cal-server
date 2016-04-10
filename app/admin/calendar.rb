@@ -47,15 +47,15 @@ ActiveAdmin.register Calendar do
     end
 
     panel "Events" do
-      table_for calendar.events do |t|
-        t.column "ID" do |entity|
-          entity.event.id
-        end
+      table_for calendar.events.order("events.starts_at ASC") do |t|
         t.column "Name" do |entity|
-          link_to entity.event.name, admin_event_path(id: entity.event.id)
+          link_to entity.name, admin_event_path(id: entity.id)
+        end
+        t.column "Start Date" do |entity|
+          entity.starts_at
         end
         t.column "Time Zone" do |entity|
-          entity.event.time_zone
+          entity.time_zone
         end
       end
     end

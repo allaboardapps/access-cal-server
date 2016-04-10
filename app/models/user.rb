@@ -23,7 +23,10 @@ class User < ActiveRecord::Base
   has_many :authored_events, class_name: "Event", foreign_key: :author_id
   has_many :calendar_users
   has_many :calendars, through: :calendar_users
-  has_many :favorited_events, class_name: "Favorite"
+  has_many :event_users
+  has_many :events, through: :event_users
+  has_many :favorites
+  has_many :favorited_events, through: :favorites, source: :event
   has_many :group_users
   has_many :groups, through: :group_users
   has_many :organization_users

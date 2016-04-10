@@ -31,11 +31,17 @@ ActiveAdmin.register Event do
   scope :tests
   scope :dummies
 
-  config.sort_order = "lower(name) asc"
+  config.sort_order = "name_asc"
 
   filter :name
   filter :location
   filter :region
+
+  controller do
+    def scoped_collection
+      super.includes(:author, :calendar)
+    end
+  end
 
   index do
     column :name
@@ -114,7 +120,7 @@ ActiveAdmin.register Event do
     panel "Users" do
       table_for event.event_users.includes(:user) do |t|
         t.column "Name" do |entity|
-          link_to entity.user.full_name, admin_user_path(id: user.id)
+          link_to entity.user.full_name, admin_user_path(id: entity.user.id)
         end
         t.column "role" do |entity|
           entity.role
@@ -123,9 +129,9 @@ ActiveAdmin.register Event do
     end
 
     panel "Favorite Users" do
-      table_for event.favorite_users.includes(:user) do |t|
-        t.column "Name" do |entity|
-          link_to entity.user.full_name, admin_user_path(id: user.id)
+      table_for event.favorite_users do |t|
+        t.column "Name" do |user|
+          link_to user.full_name, admin_user_path(id: user.id)
         end
       end
     end

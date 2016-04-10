@@ -80,14 +80,25 @@ ActiveAdmin.register User do
 
     panel "Calendars" do
       table_for user.calendars do |t|
-        t.column "ID" do |calendar|
-          calendar.id
-        end
         t.column "Name" do |calendar|
           link_to calendar.name, admin_calendar_path(id: calendar.id)
         end
         t.column "Time Zone" do |calendar|
           calendar.time_zone
+        end
+      end
+    end
+
+    panel "Events" do
+      table_for user.events do |t|
+        t.column "Name" do |event|
+          link_to event.name, admin_event_path(id: event.id)
+        end
+        t.column "Start Date" do |event|
+          event.starts_at
+        end
+        t.column "Time Zone" do |event|
+          event.time_zone
         end
       end
     end
@@ -114,18 +125,18 @@ ActiveAdmin.register User do
       end
     end
 
-    # panel "Events" do
-    #   table_for user.events do |t|
-    #     t.column "ID" do |event|
-    #       event.id
-    #     end
-    #     t.column "Name" do |event|
-    #       link_to event.name, admin_event_path(id: event.id)
-    #     end
-    #     t.column "Time Zone" do |event|
-    #       event.time_zone
-    #     end
-    #   end
-    # end
+    panel "Favorites" do
+      table_for user.favorites do |t|
+        t.column "Event" do |favorite|
+          link_to favorite.event.name, admin_event_path(id: favorite.event.id)
+        end
+        t.column "Start Date" do |favorite|
+          favorite.event.starts_at
+        end
+        t.column "Time Zone" do |favorite|
+          favorite.event.time_zone
+        end
+      end
+    end
   end
 end

@@ -15,6 +15,12 @@ ActiveAdmin.register Favorite do
   filter :user
   filter :event
 
+  controller do
+    def scoped_collection
+      super.includes(:event, :user)
+    end
+  end
+
   index do
     column :user
     column :event
