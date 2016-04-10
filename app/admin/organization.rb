@@ -15,8 +15,6 @@ ActiveAdmin.register Organization do
   filter :name
 
   index do
-    selectable_column
-    id_column
     column :name
     column :updated_at
     column :created_at
@@ -44,13 +42,18 @@ ActiveAdmin.register Organization do
       row :updated_at
     end
 
+    panel "Groups" do
+      table_for organization.groups do |t|
+        t.column "Name" do |entity|
+          link_to entity.name, admin_group_path(id: entity)
+        end
+      end
+    end
+
     panel "Users" do
       table_for organization.organization_users.includes(:user) do |t|
-        t.column "ID" do |entity|
-          entity.user.id
-        end
         t.column "Name" do |entity|
-          link_to entity.user.full_name, admin_user_path(id: user.id)
+          link_to entity.user.full_name, admin_user_path(id: entity.user.id)
         end
         t.column "role" do |entity|
           entity.role

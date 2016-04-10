@@ -31,15 +31,13 @@ ActiveAdmin.register User do
   filter :last_name
   filter :email
 
-  index do |user|
-    selectable_column
-    id_column
+  index do
     column :first_name
     column :last_name
-    column :email do
+    column :email do |user|
       mail_to user.email, user.email
     end
-    column :roles do
+    column :roles do |user|
       user.roles_presented
     end
     column :updated_at
@@ -94,18 +92,40 @@ ActiveAdmin.register User do
       end
     end
 
-    panel "Events" do
-      table_for user.events do |t|
-        t.column "ID" do |event|
-          event.id
+    panel "Organizations" do
+      table_for user.organization_users.includes(:organization) do |t|
+        t.column "Name" do |entity|
+          link_to entity.organization.name, admin_organization_path(id: entity.organization)
         end
-        t.column "Name" do |event|
-          link_to event.name, admin_event_path(id: event.id)
-        end
-        t.column "Time Zone" do |event|
-          event.time_zone
+        t.column "Role" do |entity|
+          entity.role
         end
       end
     end
+
+    panel "Groups" do
+      table_for user.group_users.includes(:group) do |t|
+        t.column "Name" do |entity|
+          link_to entity.group.name, admin_group_path(id: entity.group)
+        end
+        t.column "Role" do |entity|
+          entity.role
+        end
+      end
+    end
+
+    # panel "Events" do
+    #   table_for user.events do |t|
+    #     t.column "ID" do |event|
+    #       event.id
+    #     end
+    #     t.column "Name" do |event|
+    #       link_to event.name, admin_event_path(id: event.id)
+    #     end
+    #     t.column "Time Zone" do |event|
+    #       event.time_zone
+    #     end
+    #   end
+    # end
   end
 end

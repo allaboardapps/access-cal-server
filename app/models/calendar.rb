@@ -3,6 +3,7 @@ class Calendar < ActiveRecord::Base
   validates :time_zone, presence: true
 
   has_many :calendar_users
+  has_many :events
   has_many :users, through: :calendar_users
 
   scope :actives, -> { where(archived: false, test: false) }

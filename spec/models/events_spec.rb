@@ -121,6 +121,7 @@ describe Event, type: :model do
   end
 
   it { is_expected.to belong_to :author }
+  it { is_expected.to belong_to :calendar }
   it { is_expected.to belong_to :location }
   it { is_expected.to have_many :activities }
   it { is_expected.to have_many :event_tags }

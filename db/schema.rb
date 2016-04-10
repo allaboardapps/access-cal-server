@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20160327201109) do
   create_table "events", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.uuid     "author_id"
     t.uuid     "location_id"
+    t.uuid     "calendar_id"
     t.string   "name"
     t.string   "abbreviation"
     t.datetime "starts_at"

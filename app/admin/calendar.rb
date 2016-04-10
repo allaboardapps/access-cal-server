@@ -37,11 +37,8 @@ ActiveAdmin.register Calendar do
 
     panel "Users" do
       table_for calendar.calendar_users.includes(:user) do |t|
-        t.column "ID" do |entity|
-          entity.user.id
-        end
         t.column "Name" do |entity|
-          link_to entity.user.full_name, admin_user_path(id: user.id)
+          link_to entity.user.full_name, admin_user_path(id: entity.user.id)
         end
         t.column "role" do |entity|
           entity.role

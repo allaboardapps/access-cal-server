@@ -85,5 +85,6 @@ describe Calendar, type: :model do
   end
 
   it { is_expected.to have_many :calendar_users }
+  it { is_expected.to have_many :events }
   it { is_expected.to have_many :users }
 end

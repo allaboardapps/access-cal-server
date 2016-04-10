@@ -4,6 +4,7 @@ FactoryGirl.define do
   factory :event do
     author
     location
+    calendar
     name { Faker::Company.catch_phrase }
     abbreviation { Faker::Company.name }
     description { Faker::Lorem.sentences(1)[0] }

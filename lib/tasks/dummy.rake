@@ -1,12 +1,12 @@
 namespace :dummy do
 
   desc "delete all dummy data"
-  task delete_all: :environment do
+  task purge: :environment do
     Rails.application.eager_load!
 
     ActiveRecord::Base.descendants.each do |model|
       begin
-        model.dummy.destroy_all
+        model.dummies.destroy_all
         puts "Deleted all #{model} dummy data"
       rescue
         puts "[Error] #{model} not available"
@@ -15,11 +15,11 @@ namespace :dummy do
   end
 
   desc "read the counts of all dummy data"
-  task read_all: :environment do
+  task count: :environment do
     Rails.application.eager_load!
     ActiveRecord::Base.descendants.each do |model|
       begin
-        count = model.dummy.count
+        count = model.dummies.count
         puts "Count of #{model} dummy data stands at #{count}"
       rescue
         puts "[Error] #{model} not available"
@@ -28,7 +28,7 @@ namespace :dummy do
   end
 
   desc "create all dummy data"
-  task create_all: :environment do
+  task load: :environment do
     puts "BEGIN: Creating dummy users"
     FactoryGirl.create :user, :admin, :dummy, email: "admin@test.com", password: "password-for-admin", password_confirmation: "password-for-admin"
     FactoryGirl.create :user, :staff, :dummy, email: "staff@test.com", password: "password-for-staff", password_confirmation: "password-for-staff"
@@ -38,19 +38,19 @@ namespace :dummy do
     (1..5).each do |i|
       FactoryGirl.create :user, :client, :dummy
     end
-    consumers = User.consumers.dummy
+    consumers = User.consumers.dummies
 
     (1..15).each do
       FactoryGirl.create :user, :consumer, :dummy
     end
-    clients = User.clients.dummy
+    clients = User.clients.dummies
     puts "END:   Creating dummy users"
 
     puts "BEGIN: Creating organizations and groups"
     (1..5).each do
       FactoryGirl.create :organization, :dummy
     end
-    organizations = Organization.dummy
+    organizations = Organization.dummies
 
     organizations.each do |organization|
       FactoryGirl.create :organization_user, :dummy, user: clients.limit(1).order("RANDOM()").first, organization: organization, role: OrganizationRoles.all.sample
@@ -63,18 +63,18 @@ namespace :dummy do
     end
     puts "END:   Creating organizations and groups"
 
-    # puts "BEGIN: Creating calendars"
-    # (1..10).each do
-    #   FactoryGirl.create :calendar, :dummy, author: clients.limit(1).order("RANDOM()").first
-    # end
+    puts "BEGIN: Creating calendars"
+    (1..10).each do
+      FactoryGirl.create :calendar, :dummy
+    end
 
-    # calendars = Calendar.dummy
-    # calendars.each do |calendar|
-    #   (1..5).each do
-    #     FactoryGirl.create :calendar_user, :dummy, calendar: calendar, user: clients.limit(1).order("RANDOM()").first, role: CalendarRoles.all.sample
-    #   end
-    # end
-    # puts "END:   Creating organizations and groups"
+    calendars = Calendar.dummies
+    calendars.each do |calendar|
+      (1..5).each do
+        FactoryGirl.create :calendar_user, :dummy, calendar: calendar, user: clients.limit(1).order("RANDOM()").first, role: CalendarRoles.all.sample
+      end
+    end
+    puts "END:   Creating calendars"
 
     # puts "BEGIN: Creating events and favorites"
     # calendars.each do |calendar|
@@ -83,7 +83,7 @@ namespace :dummy do
 
     # consumers.each do |consumer|
     #   [1..10].each do
-    #     FactoryGirl.create :favorite, user: consumer, event: Event.dummy.limit(1).order("RANDOM()").first
+    #     FactoryGirl.create :favorite, user: consumer, event: Event.dummies.limit(1).order("RANDOM()").first
     #   end
     # end
     # puts "END:   Creating events and favorites"

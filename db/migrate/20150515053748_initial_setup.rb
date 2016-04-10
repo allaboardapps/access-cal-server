@@ -72,6 +72,7 @@ class InitialSetup < ActiveRecord::Migration
     create_table :events, id: :uuid, force: true do |t|
       t.uuid       :author_id
       t.uuid       :location_id
+      t.uuid       :calendar_id
       t.string     :name
       t.string     :abbreviation
       t.datetime   :starts_at

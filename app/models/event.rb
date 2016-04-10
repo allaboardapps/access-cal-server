@@ -13,6 +13,7 @@ class Event < ActiveRecord::Base
 
   belongs_to :author, class_name: "User", foreign_key: :author_id
   belongs_to :location
+  belongs_to :calendar
   has_many :activities, as: :loggable
   has_many :event_tags
   has_many :favorites
