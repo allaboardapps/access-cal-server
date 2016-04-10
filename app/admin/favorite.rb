@@ -16,8 +16,6 @@ ActiveAdmin.register Favorite do
   filter :event
 
   index do
-    selectable_column
-    id_column
     column :user
     column :event
     column :updated_at

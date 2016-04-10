@@ -61,6 +61,17 @@ ActiveRecord::Schema.define(version: 20160327201109) do
     t.datetime "updated_at",                 null: false
   end
 
+  create_table "event_users", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "event_id"
+    t.uuid     "user_id"
+    t.string   "role"
+    t.boolean  "archived",   default: false
+    t.boolean  "test",       default: false
+    t.boolean  "dummy",      default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
   create_table "events", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.uuid     "author_id"
     t.uuid     "location_id"

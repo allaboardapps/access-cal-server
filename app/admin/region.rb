@@ -15,12 +15,8 @@ ActiveAdmin.register Region do
   filter :name
 
   index do
-    selectable_column
-    id_column
     column :name
     column :abbreviation
-    column :updated_at
-    column :created_at
     actions
   end
 
@@ -49,9 +45,6 @@ ActiveAdmin.register Region do
 
     panel "Locations" do
       table_for region.locations do |t|
-        t.column "ID" do |location|
-          location.id
-        end
         t.column "Name" do |location|
           link_to location.name, admin_location_path(id: location.id)
         end

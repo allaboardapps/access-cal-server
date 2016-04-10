@@ -47,7 +47,7 @@ describe Event, type: :model do
     context "using elasticsearch", elasticsearch: true, commit: true do
       before do
         event.touch
-        sleep 4
+        described_class.__elasticsearch__.refresh_index!
       end
 
       it "will complete a search by event name" do
@@ -63,7 +63,7 @@ describe Event, type: :model do
       it "will complete a search by tag name after an event tag association is created" do
         tag = FactoryGirl.create :tag
         FactoryGirl.create :event_tag, tag: tag, event: event
-        sleep 3
+        described_class.__elasticsearch__.refresh_index!
         response = described_class.search_for(tag.name)
         expect(response.results.total).to eq 1
       end
@@ -72,7 +72,7 @@ describe Event, type: :model do
         tag = FactoryGirl.create :tag
         event_tag = FactoryGirl.create :event_tag, tag: tag, event: event
         event_tag.destroy
-        sleep 3
+        described_class.__elasticsearch__.refresh_index!
         response = described_class.search_for(tag.name)
         expect(response.results.total).to eq 0
       end
@@ -125,6 +125,8 @@ describe Event, type: :model do
   it { is_expected.to belong_to :location }
   it { is_expected.to have_many :activities }
   it { is_expected.to have_many :event_tags }
+  it { is_expected.to have_many :event_users }
+  it { is_expected.to have_many :favorite_users }
   it { is_expected.to have_many :favorites }
   it { is_expected.to have_many :tags }
   it { is_expected.to have_many :users }

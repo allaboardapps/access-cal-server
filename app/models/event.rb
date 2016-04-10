@@ -17,8 +17,10 @@ class Event < ActiveRecord::Base
   has_many :activities, as: :loggable
   has_many :event_tags
   has_many :favorites
-  has_many :tags, through: :event_tags, after_add: :index_tags, after_remove: :index_tags
-  has_many :users, through: :favorites
+  has_many :tags, through: :event_tags
+  has_many :favorite_users, through: :favorites, source: :user
+  has_many :event_users
+  has_many :users, through: :event_users
   has_one :region, through: :location
 
   scope :actives, -> { where(archived: false, test: false) }

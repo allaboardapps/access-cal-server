@@ -94,6 +94,16 @@ class InitialSetup < ActiveRecord::Migration
       t.timestamps null: false
     end
 
+    create_table :event_users, id: :uuid, force: true do |t|
+      t.uuid       :event_id
+      t.uuid       :user_id
+      t.string     :role
+      t.boolean    :archived, default: false
+      t.boolean    :test, default: false
+      t.boolean    :dummy, default: false
+      t.timestamps null: false
+    end
+
     create_table :event_tags, id: :uuid, force: true do |t|
       t.uuid       :event_id
       t.uuid       :tag_id

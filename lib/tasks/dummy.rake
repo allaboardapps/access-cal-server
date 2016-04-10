@@ -64,29 +64,31 @@ namespace :dummy do
     puts "END:   Creating organizations and groups"
 
     puts "BEGIN: Creating calendars"
-    (1..10).each do
+    (1..rand(8..18)).each do
       FactoryGirl.create :calendar, :dummy
     end
 
     calendars = Calendar.dummies
     calendars.each do |calendar|
-      (1..5).each do
+      (1..rand(5..8)).each do
         FactoryGirl.create :calendar_user, :dummy, calendar: calendar, user: clients.limit(1).order("RANDOM()").first, role: CalendarRoles.all.sample
       end
     end
     puts "END:   Creating calendars"
 
-    # puts "BEGIN: Creating events and favorites"
-    # calendars.each do |calendar|
-    #   FactoryGirl.create :event, author: client_1
-    # end
+    puts "BEGIN: Creating events and favorites"
+    calendars.each do |calendar|
+      (1..rand(15..40)).each do
+        FactoryGirl.create :event, :dummy, calendar: calendar, author: calendar.users.limit(1).order("RANDOM()").first
+      end
+    end
 
-    # consumers.each do |consumer|
-    #   [1..10].each do
-    #     FactoryGirl.create :favorite, user: consumer, event: Event.dummies.limit(1).order("RANDOM()").first
-    #   end
-    # end
-    # puts "END:   Creating events and favorites"
+    consumers.each do |consumer|
+      (1..rand(5..15)).each do
+        FactoryGirl.create :favorite, :dummy, user: consumer, event: Event.dummies.limit(1).order("RANDOM()").first
+      end
+    end
+    puts "END:   Creating events and favorites"
 
     # FactoryGirl.create :activity, :dummy
     # FactoryGirl.create :tag, :dummy

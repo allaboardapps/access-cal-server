@@ -17,10 +17,8 @@ ActiveAdmin.register Group do
   filter :organization, collection: Organization.order(name: :asc)
 
   index do
-    selectable_column
-    id_column
-    column :user
-    column :event
+    column :name
+    column :organization
     column :updated_at
     column :created_at
     actions
@@ -28,9 +26,8 @@ ActiveAdmin.register Group do
 
   form do |f|
     f.inputs "Group" do
-      f.input :user
+      f.input :name
       f.input :organization
-      f.input :event
       f.input :archived
       f.input :test
       f.input :dummy

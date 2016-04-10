@@ -38,16 +38,9 @@ ActiveAdmin.register Event do
   filter :region
 
   index do
-    selectable_column
-    id_column
     column :name
     column :abbreviation
-    column "Location" do |event|
-      link_to event.location.name, admin_location_path(event.location)
-    end
-    column "Region" do |event|
-      link_to event.region.name, admin_region_path(event.region)
-    end
+    column :calendar
     column "Author" do |event|
       link_to event.author.full_name, admin_user_path(event.author)
     end
@@ -55,7 +48,6 @@ ActiveAdmin.register Event do
     column :ends_at
     column :time_zone
     column :updated_at
-    column :created_at
     actions
   end
 
@@ -121,14 +113,19 @@ ActiveAdmin.register Event do
 
     panel "Users" do
       table_for event.event_users.includes(:user) do |t|
-        t.column "ID" do |entity|
-          entity.user.id
-        end
         t.column "Name" do |entity|
           link_to entity.user.full_name, admin_user_path(id: user.id)
         end
         t.column "role" do |entity|
           entity.role
+        end
+      end
+    end
+
+    panel "Favorite Users" do
+      table_for event.favorite_users.includes(:user) do |t|
+        t.column "Name" do |entity|
+          link_to entity.user.full_name, admin_user_path(id: user.id)
         end
       end
     end
