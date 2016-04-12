@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       post "sign_in" => "sessions#create"
       resources :events
-      resources :favorites
+      resources :event_users
       resources :locations
       resources :regions
       resources :users

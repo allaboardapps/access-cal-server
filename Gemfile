@@ -5,7 +5,7 @@ gem "rails", "4.2.6"
 
 gem "active_model_serializers", "0.10.0.rc4"
 gem "activeadmin", "1.0.0.pre2"
-gem "aws-sdk", "2.2.33"
+gem "aws-sdk", "2.2.34"
 gem "browser", "2.0.3"
 gem "devise", "3.5.6"
 gem "devise-async", "0.10.1"
@@ -48,7 +48,7 @@ group :development do
   gem "hakiri", "0.7.2", require: false
   gem "rails_db", "1.1.1"
   gem "rb-fsevent", "0.9.7", require: false
-  gem "spring", "1.6.4"
+  gem "spring", "1.7.1"
   gem "spring-commands-rspec", "1.0.4"
   gem "web-console", "3.1.1"
 end
