@@ -43,12 +43,13 @@ ActiveRecord::Schema.define(version: 20160327201109) do
 
   create_table "calendars", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.string   "name"
-    t.string   "time_zone",  default: "Central Time (US & Canada)"
-    t.boolean  "archived",   default: false
-    t.boolean  "test",       default: false
-    t.boolean  "dummy",      default: false
-    t.datetime "created_at",                                        null: false
-    t.datetime "updated_at",                                        null: false
+    t.string   "abbreviation"
+    t.string   "time_zone",    default: "Central Time (US & Canada)"
+    t.boolean  "archived",     default: false
+    t.boolean  "test",         default: false
+    t.boolean  "dummy",        default: false
+    t.datetime "created_at",                                          null: false
+    t.datetime "updated_at",                                          null: false
   end
 
   create_table "event_tags", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|

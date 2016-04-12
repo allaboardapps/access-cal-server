@@ -29,10 +29,16 @@ class Api::V1::LocationsController < Api::V1::ApiController
   private
 
   def update_params
-    params.permit(:region_id, :name, :abbreviation, :time_zone, :admin_notes, :archived, :test)
+    params.permit(
+      :region_id, :name, :abbreviation, :time_zone, :admin_notes,
+      :archived, :test, :dummy
+    )
   end
 
   def create_params
-    params.permit(:region_id, :name, :abbreviation, :time_zone, :admin_notes, :archived, :test)
+    params.permit(
+      :region_id, :name, :abbreviation, :time_zone, :admin_notes,
+      :archived, :test, :dummy
+    )
   end
 end

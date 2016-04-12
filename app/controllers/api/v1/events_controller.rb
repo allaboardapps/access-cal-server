@@ -33,7 +33,7 @@ class Api::V1::EventsController < Api::V1::ApiController
       :author_id, :location_id, :name, :abbreviation,
       :starts_at, :ends_at, :description, :street_address, :secondary_address,
       :city, :state, :country, :zip_code, :time_zone, :latitude, :longitude, :admin_notes,
-      :archived, :test
+      :archived, :test, :dummy
     )
   end
 
@@ -42,7 +42,7 @@ class Api::V1::EventsController < Api::V1::ApiController
       :author_id, :location_id, :name, :abbreviation,
       :starts_at, :ends_at, :description, :street_address, :secondary_address,
       :city, :state, :country, :zip_code, :time_zone, :latitude, :longitude, :admin_notes,
-      :archived, :test
+      :archived, :test, :dummy
     )
   end
 end

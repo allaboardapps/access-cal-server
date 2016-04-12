@@ -14,6 +14,7 @@ class InitialSetup < ActiveRecord::Migration
 
     create_table :calendars, id: :uuid, force: true do |t|
       t.string     :name
+      t.string     :abbreviation
       t.string     :time_zone, default: AllowedTimeZones::CENTRAL
       t.boolean    :archived, default: false
       t.boolean    :test, default: false

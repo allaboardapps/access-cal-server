@@ -30,10 +30,18 @@ class Api::V1::UsersController < Api::V1::ApiController
   private
 
   def update_params
-    params.permit(:first_name, :last_name, :email, :zip_code, :time_zone, :location_id, :roles, :statuses, :archived, :test, :admin_notes, :password, :password_confirmation)
+    params.permit(
+      :first_name, :last_name, :email, :zip_code, :time_zone, :location_id,
+      :roles, :statuses, :admin_notes, :password, :password_confirmation,
+      :archived, :test, :dummy
+    )
   end
 
   def create_params
-    params.permit(:first_name, :last_name, :email, :zip_code, :time_zone, :location_id, :roles, :statuses, :archived, :test, :admin_notes, :password, :password_confirmation)
+    params.permit(
+      :first_name, :last_name, :email, :zip_code, :time_zone,
+      :location_id, :roles, :statuses, :admin_notes, :password, :password_confirmation,
+      :archived, :test, :dummy
+    )
   end
 end

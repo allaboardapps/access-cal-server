@@ -29,10 +29,16 @@ class Api::V1::FavoritesController < Api::V1::ApiController
   private
 
   def update_params
-    params.permit(:user_id, :event_id, :archived, :test)
+    params.permit(
+      :user_id, :event_id,
+      :archived, :test, :dummy
+    )
   end
 
   def create_params
-    params.permit(:user_id, :event_id)
+    params.permit(
+      :user_id, :event_id,
+      :archived, :test, :dummy
+    )
   end
 end

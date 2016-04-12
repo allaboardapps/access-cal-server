@@ -16,8 +16,11 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: "json" } do
     namespace :v1 do
       post "sign_in" => "sessions#create"
+      resources :calendars
+      resources :calendar_users
       resources :events
       resources :event_users
+      resources :favorites
       resources :locations
       resources :regions
       resources :users

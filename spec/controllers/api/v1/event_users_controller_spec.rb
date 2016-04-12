@@ -47,10 +47,13 @@ describe Api::V1::EventUsersController, type: :controller do
 
         it "creates a new instance for a different user" do
           event_user.touch
-          expect { post :create, user_id: user.id, event_id: event_user.event_id, role: event_user.role }.to change(EventUser, :count).by(1)
+          expect do
+            post :create, user_id: user.id, event_id: event_user.event_id, role: event_user.role
+          end.to change(EventUser, :count).by(1)
         end
 
         it "does not create a duplicate instance, but does return the matching instance" do
+          event_user.touch
           post :create, user_id: event_user.user_id, event_id: event_user.event_id, role: event_user.role
           expect_json("data", id: event_user.id, attributes: { user_id: event_user.user_id, event_id: event_user.event_id, role: event_user.role })
         end

@@ -14,7 +14,8 @@ class Api::V1::EventUsersController < Api::V1::ApiController
 
   def create_params
     params.permit(
-      :event_id, :user_id, :role, :archived, :test, :dummy
+      :event_id, :user_id, :role,
+      :archived, :test, :dummy
     )
   end
 
