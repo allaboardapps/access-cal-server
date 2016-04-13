@@ -17,9 +17,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       post "sign_in" => "sessions#create"
       resources :calendars
-      resources :calendar_users
+      resources :calendar_users, only: [:create, :destroy]
       resources :events
-      resources :event_users
+      resources :event_users, only: [:create, :destroy]
       resources :favorites
       resources :locations
       resources :regions
