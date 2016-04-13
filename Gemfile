@@ -54,21 +54,22 @@ group :development do
 end
 
 group :development, :test do
-  gem "airborne", "0.2.3"
-  gem "byebug", "8.2.4"
-  gem "capybara", "2.7.0"
-  gem "database_cleaner", "1.5.1"
   gem "pry-rails", "0.3.4"
   gem "pry-remote", "0.1.8"
+end
+
+group :test do
+  gem "airborne", "0.2.5"
+  gem "database_cleaner", "1.5.1"
+  gem "byebug", "8.2.4"
+  gem "capybara", "2.7.0"
   gem "rspec-json_expectations", "1.3.0"
   gem "rspec-rails", "3.4.2"
   gem "rubocop", "0.39.0"
   gem "rubocop-rspec", "1.4.1"
   gem "shoulda-matchers", "3.1.1"
-end
-
-group :test do
   gem "elasticsearch-extensions", "0.0.20"
+  gem "rspec-instafail", "0.4.0"
   gem "rspec_junit_formatter", "0.2.3"
   gem "rspec-sidekiq", "2.2.0"
   gem "test_after_commit", "1.0.0"

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
       resources :event_users, only: [:create, :destroy]
       resources :favorites
       resources :locations
+      resources :organizations
       resources :regions
       resources :users
     end
