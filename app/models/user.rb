@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include Activatable
+
   validates :email, presence: true
   validates :time_zone, presence: true
 
@@ -7,10 +9,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :recoverable, :rememberable, :registerable,
          :trackable, :validatable, :async, :confirmable, :lockable
 
-  scope :actives, -> { where(archived: false, test: false) }
-  scope :archives, -> { where(archived: true) }
-  scope :tests, -> { where(test: true) }
-  scope :dummies, -> { where(dummy: true) }
   scope :autocomplete, -> (user_query) { active.where("first_name ilike ? or last_name ilike ?", "#{user_query}%", "#{user_query}%").order(last_name: :asc, first_name: :asc) }
   scope :admins, -> { where("'#{UserRoles::ADMIN}' = ANY (roles)") }
   scope :staff, -> { where("'#{UserRoles::STAFF}' = ANY (roles)") }

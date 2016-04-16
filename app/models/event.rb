@@ -1,6 +1,7 @@
 require "elasticsearch/model"
 
 class Event < ActiveRecord::Base
+  include Activatable
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
@@ -23,10 +24,6 @@ class Event < ActiveRecord::Base
   has_many :users, through: :event_users
   has_one :region, through: :location
 
-  scope :actives, -> { where(archived: false, test: false) }
-  scope :archives, -> { where(archived: true) }
-  scope :tests, -> { where(test: true) }
-  scope :dummies, -> { where(dummy: true) }
   scope :autocomplete, -> (query) { active.where("name ilike ? or abbreviation ilike ?", "#{query}%", "#{query}%").order(name: :asc, abbreviation: :asc) }
 
   mappings dynamic: "false" do

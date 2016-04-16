@@ -1,14 +1,12 @@
 class Activity < ActiveRecord::Base
+  include Activatable
+
   validates :creator_id, presence: true
   validates :loggable, presence: true
 
   belongs_to :creator, class_name: "User", foreign_key: :creator_id
   belongs_to :loggable, polymorphic: true
 
-  scope :actives, -> { where(archived: false, test: false) }
-  scope :archives, -> { where(archived: true) }
-  scope :tests, -> { where(test: true) }
-  scope :dummies, -> { where(dummy: true) }
   scope :creates, -> { where(activity_action_type: ActivityActionTypes::CREATE) }
   scope :updates, -> { where(activity_action_type: ActivityActionTypes::UPDATE) }
   scope :archivals, -> { where(activity_action_type: ActivityActionTypes::ARCHIVE) }

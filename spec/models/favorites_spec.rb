@@ -1,6 +1,9 @@
 require "rails_helper"
+require "concerns/activatable_spec"
 
 describe Favorite, type: :model do
+  it_behaves_like "activatable"
+
   it "has a valid factory" do
     expect(FactoryGirl.create(:favorite)).to be_valid
   end
