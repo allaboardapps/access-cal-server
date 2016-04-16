@@ -1,8 +1,5 @@
 class Report < ActiveRecord::Base
-  scope :actives, -> { where(archived: false, test: false) }
-  scope :archives, -> { where(archived: true) }
-  scope :tests, -> { where(test: true) }
-  scope :dummies, -> { where(dummy: true) }
+  include Activatable
 
   # belongs_to :user
 

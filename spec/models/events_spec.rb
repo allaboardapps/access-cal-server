@@ -1,6 +1,9 @@
 require "rails_helper"
+require "concerns/activatable_spec"
 
 describe Event, type: :model do
+  it_behaves_like "activatable"
+
   let(:event) { FactoryGirl.create :event }
 
   it "has a valid factory" do
@@ -70,11 +73,12 @@ describe Event, type: :model do
       end
 
       it "will not complete a search by tag name after an event tag association is deleted" do
-        tag = FactoryGirl.create :tag
+        tag_name = "closed-captioned"
+        tag = FactoryGirl.create :tag, name: tag_name
         event_tag = FactoryGirl.create :event_tag, tag: tag, event: event
         event_tag.destroy
         described_class.__elasticsearch__.refresh_index!
-        response = described_class.search_for(tag.name)
+        response = described_class.search_for(tag_name)
         expect(response.results.total).to eq 0
       end
     end
