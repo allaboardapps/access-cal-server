@@ -4,7 +4,3 @@
 require File.expand_path("../config/application", __FILE__)
 
 Rails.application.load_tasks
-
-GitHubChangelogGenerator::RakeTask.new :changelog do |config|
-  config.since_tag = "0.0.0"
-end
