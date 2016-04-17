@@ -1,9 +1,6 @@
 # Change Log
 
 ## [v0.0.1-alpha](https://github.com/allaboardapps/access-cal-server/tree/v0.0.1-alpha) (2016-04-17)
-[Full Changelog](https://github.com/allaboardapps/access-cal-server/compare/v0.1...v0.0.1-alpha)
-
-## [v0.1](https://github.com/allaboardapps/access-cal-server/tree/v0.1) (2016-04-17)
 **Implemented enhancements:**
 
 - Create concern to manage dummy data system [\#6](https://github.com/allaboardapps/access-cal-server/issues/6)
