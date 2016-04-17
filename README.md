@@ -22,6 +22,8 @@
 
 ## Documentation
 
+* The `CHANGELOG.md` file is maintained by the [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator) gem
+* To update the changelog, create a new version tag with `git tag -d v[semver]` and `git push --tags origin`, then run `github_changelog_generator`
 * Yard
 * Inch
 

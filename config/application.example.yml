@@ -1,0 +1,23 @@
+APP_SECRET_KEY_BASE: "token"
+AWS_ACCESS_KEY_ID: "x"
+AWS_REGION: "us-east-1"
+AWS_SECRET_ACCESS_KEY: "x"
+DB_POOL: "5"
+DEVISE_SECRET_KEY: "token"
+MAX_THREADS: "5"
+MIN_THREADS: "2"
+POSTMARK_API_KEY: "xxxxxxx"
+POSTMARK_API_TOKEN: "xxxxxx"
+POSTMARK_INBOUND_ADDRESS: "xxxxx@inbound.postmarkapp.com"
+POSTMARK_SERVER: "smtp.postmarkapp.com"
+REDIS_URL: "redis://localhost:6379"
+ROLLBAR_ACCESS_TOKEN: "token"
+SECRET_TOKEN: "token"
+WEB_CONCURRENCY: "4"
+CHANGELOG_GITHUB_TOKEN: "token"
+
+test:
+  REDIS_URL: "redis://localhost:6379"
+
+development:
+  REDIS_URL: "redis://localhost:6379"
