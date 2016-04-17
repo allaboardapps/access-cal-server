@@ -14,7 +14,6 @@ REDIS_URL: "redis://localhost:6379"
 ROLLBAR_ACCESS_TOKEN: "token"
 SECRET_TOKEN: "token"
 WEB_CONCURRENCY: "4"
-CHANGELOG_GITHUB_TOKEN: "token"
 
 test:
   REDIS_URL: "redis://localhost:6379"
