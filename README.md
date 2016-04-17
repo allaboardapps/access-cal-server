@@ -2,39 +2,40 @@
 
 * An accessible calendar system focused on inclusive events
 
+## System Dependencies
+
+* Elastic Search
+* Redis
+* Puma
+* CircleCi
+* Heroku
+
 ## Deployment
 
-1. GitHub
-1. CircleCi
-1. Application is hosted on a Heroku Pipeline named [access-cal-server](https://dashboard.heroku.com/pipelines/a3d041fe-dcf6-41b1-9cb4-7849b6f09202)
-1. Promotion via access-cal-server-staging >> access-cal-server-production via `heroku pipelines:promote -r staging`
-1. Post-deploy scripts are in `Procfile` after the `release:` instruction
+1. Push your branch to GitHub with `git push origin [branch-name]`
+1. CircleCi will build the app, run `rspec`, and scan style with `rubocop`.
+1. When the `master` branch passes on the CircleCi build, the app will be deployed to the staging server on Heroku
+1. The application is hosted on a Heroku Pipeline named [access-cal-server](https://dashboard.heroku.com/pipelines/a3d041fe-dcf6-41b1-9cb4-7849b6f09202)
+1. You can promote the staging app to production (`access-cal-server-staging` to `access-cal-server-production`) via `heroku pipelines:promote -r staging`
+1. Post-deploy tasks are referenced in the `Procfile` after the `release:` instruction
+1. The deploy tasks are located in the `/lib/tasks/app.rake` file
 
-## User Roles
+## Documentation
 
-* admin (Matt, Randy)
-* staff
-* client
-* consumer
+* Yard
+* Inch
 
-## Models
+## Testing
 
-* User
-* Organization
-* OrganizationUser
-* OrganizationGroup
-* Group
-* GroupUser
-* Calendar
-* CalendarUser
-* Event
-* EventUser
-* Favorite
-* Location
-* Tag
-* Transaction
-* Notification
-* Reservation
+* rspec
+
+## Continuous Integration
+
+* CirleCi
+
+## Code Style
+
+* RuboCop
 
 ## Security Checks
 
