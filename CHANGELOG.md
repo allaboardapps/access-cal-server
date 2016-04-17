@@ -1,5 +1,8 @@
 # Change Log
 
+## [v0.0.3-alpha](https://github.com/allaboardapps/access-cal-server/tree/v0.0.3-alpha) (2016-04-17)
+[Full Changelog](https://github.com/allaboardapps/access-cal-server/compare/v0.0.2-alpha...v0.0.3-alpha)
+
 ## [v0.0.2-alpha](https://github.com/allaboardapps/access-cal-server/tree/v0.0.2-alpha) (2016-04-17)
 [Full Changelog](https://github.com/allaboardapps/access-cal-server/compare/v0.0.1-alpha...v0.0.2-alpha)
 
