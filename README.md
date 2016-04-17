@@ -19,11 +19,10 @@
 1. You can promote the staging app to production (`access-cal-server-staging` to `access-cal-server-production`) via `heroku pipelines:promote -r staging`
 1. Post-deploy tasks are referenced in the `Procfile` after the `release:` instruction
 1. The deploy tasks are located in the `/lib/tasks/app.rake` file
+2. To create a new version tag the last commit with `git tag -d v[semver]` and `git push --tags origin`
 
 ## Documentation
 
-* The `CHANGELOG.md` file is maintained by the [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator) gem
-* To update the changelog, create a new version tag with `git tag -d v[semver]` and `git push --tags origin`, then run `github_changelog_generator`
 * Yard
 * Inch
 
