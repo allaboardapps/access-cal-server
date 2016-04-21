@@ -164,5 +164,18 @@ class InitialSetup < ActiveRecord::Migration
       t.boolean    :dummy, default: false
       t.timestamps null: false
     end
+
+    create_table :venues, id: :uuid, force: true do |t|
+      t.uuid       :location_id
+      t.string     :name
+      t.string     :abbreviation
+      t.string     :time_zone, default: AllowedTimeZones::CENTRAL
+      t.string     :venue_type, default: VenueTypes::ROOM
+      t.string     :admin_notes
+      t.boolean    :archived, default: false
+      t.boolean    :test, default: false
+      t.boolean    :dummy, default: false
+      t.timestamps null: false
+    end
   end
 end
