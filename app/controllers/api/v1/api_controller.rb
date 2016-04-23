@@ -16,7 +16,7 @@ class Api::V1::ApiController < ApplicationController
         status: 404,
         title: "Record Not Found",
         detail: "Record not found based on provided arguments",
-        params: "#{params.to_json}"
+        request_params: params
       }
     }, status: :not_found
   end
@@ -28,7 +28,7 @@ class Api::V1::ApiController < ApplicationController
         status: 400,
         title: "Bad Request",
         detail: "Parameter missing",
-        params: "#{params.to_json}"
+        request_params: params
       }
     }, status: :bad_request
   end
@@ -40,7 +40,7 @@ class Api::V1::ApiController < ApplicationController
         status: 400,
         title: "Bad Request",
         detail: "Record invalid",
-        params: "#{params.to_json}"
+        request_params: params
       }
     }, status: :bad_request
   end

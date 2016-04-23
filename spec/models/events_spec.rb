@@ -87,7 +87,7 @@ describe Event, type: :model do
   describe "versioning" do
     before do
       event.touch
-      event.update(name: "New Event Name_1", zip_code: 31522)
+      event.update(name: "New Event Name_1", zip_code: "31522")
       event.update(name: "New Event Name_2")
       event.update(name: "New Event Name_3")
     end
