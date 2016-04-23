@@ -84,44 +84,39 @@ describe Event, type: :model do
     end
   end
 
-  describe ".actives" do
-    it "only selects instances where archived and test is false" do
-      FactoryGirl.create(described_class.name.underscore.to_sym, :archived, :test)
-      FactoryGirl.create(described_class.name.underscore.to_sym, :archived)
-      FactoryGirl.create(described_class.name.underscore.to_sym, :test)
-      FactoryGirl.create(described_class.name.underscore.to_sym, test: false, archived: false)
-      expect(described_class.count).to eq 4
-      expect(described_class.actives.count).to eq 1
+  describe "versioning" do
+    before do
+      event.touch
+      event.update(name: "New Event Name_1", zip_code: 31522)
+      event.update(name: "New Event Name_2")
+      event.update(name: "New Event Name_3")
     end
-  end
 
-  describe ".archives" do
-    it "only selects instances where archived is false" do
-      FactoryGirl.create(described_class.name.underscore.to_sym, :archived)
-      FactoryGirl.create(described_class.name.underscore.to_sym, :archived)
-      FactoryGirl.create(described_class.name.underscore.to_sym, archived: false)
-      expect(described_class.count).to eq 3
-      expect(described_class.archives.count).to eq 2
+    it "versions changes to the model", versioning: true do
+      expect(event.versions.count).to eq(4)
     end
-  end
 
-  describe ".tests" do
-    it "only selects instances where test is false" do
-      FactoryGirl.create(described_class.name.underscore.to_sym, :test)
-      FactoryGirl.create(described_class.name.underscore.to_sym, :test)
-      FactoryGirl.create(described_class.name.underscore.to_sym, test: false)
-      expect(described_class.count).to eq 3
-      expect(described_class.tests.count).to eq 2
+    it "versions changes to the model", versioning: true do
+      expect(event.versions.last.reify.name).to eq("New Event Name_2")
     end
-  end
 
-  describe ".dummies" do
-    it "only selects instances where dummy is true" do
-      FactoryGirl.create(described_class.name.underscore.to_sym, :dummy)
-      FactoryGirl.create(described_class.name.underscore.to_sym, :dummy)
-      FactoryGirl.create(described_class.name.underscore.to_sym, dummy: false)
-      expect(described_class.count).to eq 3
-      expect(described_class.dummies.count).to eq 2
+    it "tracks the last version action on the model", versioning: true do
+      expect(event.versions.last.event).to eq("update")
+    end
+
+    it "verifies the live version of the model", versioning: true do
+      expect(event.live?).to be_truthy
+    end
+
+    it "verifies a non-live version of the model", versioning: true do
+      prev_version = event.previous_version
+      expect(prev_version.live?).to be_falsey
+    end
+
+    it "returns the changeset of the model", versioning: true do
+      expect(event.versions.last.changeset["name"].count).to eq 2
+      expect(event.versions.last.changeset["name"]).to include "New Event Name_2", "New Event Name_3"
+      expect(event.versions.last.changeset["updated_at"].count).to eq 2
     end
   end
 

@@ -45,5 +45,5 @@ Rails.application.configure do
   config.active_record.raise_in_transactional_callbacks = true
 
   # turn off paper_trail versioning for tests
-  config.paper_trail.enabled = false
+  # config.paper_trail.enabled = false
 end

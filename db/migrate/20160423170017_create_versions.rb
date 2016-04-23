@@ -12,7 +12,8 @@ class CreateVersions < ActiveRecord::Migration
       t.integer  :item_id,   null: false
       t.string   :event,     null: false
       t.string   :whodunnit
-      t.text     :object,    limit: TEXT_BYTES
+      t.jsonb    :object          # Full object changes
+      t.jsonb    :object_changes  # Optional column-level changes
       t.datetime :created_at
     end
     add_index :versions, [:item_type, :item_id]
