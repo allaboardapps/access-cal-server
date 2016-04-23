@@ -61,7 +61,7 @@ group :test do
   gem "airborne", "0.2.5"
   gem "byebug", "8.2.4"
   gem "capybara", "2.7.0"
-  gem "database_cleaner", "1.5.2"
+  gem "database_cleaner", "1.5.3"
   gem "elasticsearch-extensions", "0.0.20"
   gem "rspec-instafail", "0.4.0"
   gem "rspec-json_expectations", "1.3.0"
