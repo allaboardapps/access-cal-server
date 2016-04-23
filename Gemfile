@@ -49,6 +49,7 @@ group :development do
   gem "letter_opener", "1.4.1"
   gem "rails_db", "1.1.1"
   gem "rb-fsevent", "0.9.7", require: false
+  gem "reek", "4.0.1"
   gem "spring", "1.7.1"
   gem "web-console", "3.1.1"
 end
