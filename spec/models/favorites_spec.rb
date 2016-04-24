@@ -1,5 +1,5 @@
 require "rails_helper"
-require "concerns/activatable_spec"
+require "concerns/activatable_shared"
 
 describe Favorite, type: :model do
   it_behaves_like "activatable"

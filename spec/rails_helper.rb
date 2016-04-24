@@ -6,6 +6,7 @@ require "rspec/json_expectations"
 require "sidekiq/testing"
 require "airborne"
 require "elasticsearch/extensions/test/cluster/tasks"
+require "paper_trail/frameworks/rspec"
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

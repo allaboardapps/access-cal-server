@@ -43,4 +43,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: "http://localhost:3000" }
 
   config.active_record.raise_in_transactional_callbacks = true
+
+  # turn off paper_trail versioning for tests
+  # config.paper_trail.enabled = false
 end

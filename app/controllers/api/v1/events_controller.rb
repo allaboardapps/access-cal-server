@@ -1,4 +1,6 @@
 class Api::V1::EventsController < Api::V1::ApiController
+  before_action :set_paper_trail_whodunnit
+
   def create
     event = Event.create(create_params)
     render json: event, each_serializer: EventSerializer, status: :created

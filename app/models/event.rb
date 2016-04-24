@@ -1,6 +1,8 @@
 require "elasticsearch/model"
 
 class Event < ActiveRecord::Base
+  has_paper_trail
+
   include Activatable
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks

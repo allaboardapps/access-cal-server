@@ -32,11 +32,12 @@
 
 ## Continuous Integration
 
-* CirleCi
+* CircleCi
 
-## Code Style
+## Code Style/Scans
 
 * RuboCop
+* [Reek](https://github.com/troessner/reek)
 
 ## Security Checks
 
