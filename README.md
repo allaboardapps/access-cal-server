@@ -26,6 +26,11 @@
 * Yard
 * Inch
 
+## Internationalization
+
+* [Available locales](https://github.com/svenfuchs/rails-i18n#available-locales)
+
+
 ## Testing
 
 * rspec

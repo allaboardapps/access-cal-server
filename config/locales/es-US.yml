@@ -19,5 +19,24 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+es-US:
+  activerecord:
+    attributes:
+      event:
+        name: "Name"
+        abbreviation: "Abbreviation"
+  forms:
+    messages:
+      success: "Operation succeeded!"
+    buttons:
+      edit: "Edit"
+      submit: "Submit"
+  menu:
+    new_article: "Add an article"
+  articles:
+    index:
+      title: "List of articles"
+    edit:
+      title: "Add article"
+    new:
+      title: "New article"
