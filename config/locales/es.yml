@@ -1,0 +1,12 @@
+es:
+  activerecord:
+    attributes:
+      event:
+        name: "El Nombre"
+        abbreviation: "La Abreviatura"
+  forms:
+    messages:
+      success: "Operation succeeded!"
+    buttons:
+      edit: "Edit"
+      submit: "Submit"

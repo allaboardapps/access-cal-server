@@ -26,10 +26,17 @@
 * Yard
 * Inch
 
-## Internationalization
+## Internationalization/Localization
 
-* [Available locales](https://github.com/svenfuchs/rails-i18n#available-locales)
-
+* Article: [Using i18n](http://www.sitepoint.com/go-global-rails-i18n/)
+* Article: [Foolproof I18n Setup in Rails](https://robots.thoughtbot.com/foolproof-i18n-setup-in-rails)
+* Article: [Guide to localizing a Rails application](http://makandracards.com/makandra/8723-guide-to-localizing-a-rails-application)
+* Gem: [Devise i18n](https://github.com/tigrish/devise-i18n)
+* Gem: [rspec i18n](https://github.com/tigrish/i18n-spec)
+* Gem: [i18n-tasks](https://github.com/glebm/i18n-tasks)
+* Process: Use `i18n-tasks` commands to check translation health
+* Consider: [Tolk Engine](https://github.com/tolk/tolk)
+* Consider: [Locale App](https://www.localeapp.com/)
 
 ## Testing
 

@@ -19,7 +19,7 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-es-US:
+en:
   activerecord:
     attributes:
       event:
@@ -31,12 +31,4 @@ es-US:
     buttons:
       edit: "Edit"
       submit: "Submit"
-  menu:
-    new_article: "Add an article"
-  articles:
-    index:
-      title: "List of articles"
-    edit:
-      title: "Add article"
-    new:
-      title: "New article"
+  hello: "English Hello!"

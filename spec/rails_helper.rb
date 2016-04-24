@@ -74,4 +74,6 @@ RSpec.configure do |config|
       model.__elasticsearch__.client.indices.delete index: Event.index_name
     end
   end
+
+  config.include AbstractController::Translation
 end
