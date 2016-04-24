@@ -6,7 +6,7 @@ describe "visiting sidekiq dashboard", type: :feature do
     visit new_user_session_path
     fill_in :user_email, with: user.email
     fill_in :user_password, with: user.password
-    click_on "Log in"
+    click_on "Sign in"
     expect { visit sidekiq_web_path }.to raise_error(ActionController::RoutingError)
   end
 
@@ -15,7 +15,7 @@ describe "visiting sidekiq dashboard", type: :feature do
     visit new_user_session_path
     fill_in :user_email, with: user.email
     fill_in :user_password, with: user.password
-    click_on "Log in"
+    click_on "Sign in"
     expect { visit sidekiq_web_path }.not_to raise_error
   end
 end
