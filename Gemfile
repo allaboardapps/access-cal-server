@@ -52,6 +52,7 @@ group :development do
   gem "bundler-audit", "0.5.0", require: false
   gem "hakiri", "0.7.2", require: false
   gem "letter_opener", "1.4.1"
+  gem "lol_dba", "2.0.3"
   gem "rails_db", "1.1.1"
   gem "rb-fsevent", "0.9.7", require: false
   gem "reek", "4.0.2"

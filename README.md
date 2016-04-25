@@ -51,6 +51,7 @@
 
 * RuboCop
 * [Reek](https://github.com/troessner/reek)
+* Suggested db indexes with `rake db:find_indexes`
 
 ## Security Checks
 
