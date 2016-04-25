@@ -31,6 +31,7 @@ ActiveAdmin.register_page "Dashboard" do
       ul do
         li link_to "Sidekiq Dashboard", sidekiq_web_path
         li link_to "Database Viewer", "/rails/db" if Rails.env.development?
+        li link_to "PG Hero", "/pghero"
         # li link_to "Test Form Submission Email", staff_view_form_submission_mailer_path
       end
     end
