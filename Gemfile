@@ -5,9 +5,9 @@ gem "rails", "4.2.6"
 
 gem "active_model_serializers", "0.10.0.rc4"
 gem "activeadmin", "1.0.0.pre2"
-gem "aws-sdk", "2.2.36"
+gem "aws-sdk", "2.2.37"
 gem "browser", "2.0.3"
-gem "devise", "4.0.0"
+gem "devise", "4.0.1"
 gem "devise-async", git: "https://github.com/allaboardapps/devise-async.git"
 gem "devise-i18n", "1.0.1"
 gem "elasticsearch-model", "0.1.8"
@@ -67,7 +67,7 @@ end
 
 group :test do
   gem "airborne", "0.2.5"
-  gem "byebug", "8.2.4"
+  gem "byebug", "8.2.5"
   gem "capybara", "2.7.0"
   gem "database_cleaner", "1.5.3"
   gem "elasticsearch-extensions", "0.0.20"
