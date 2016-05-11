@@ -72,3 +72,7 @@
 * [CVE Details](https://www.cvedetails.com/)
 * [Hakiri service (fee-based)](https://hakiri.io/)
 * [AppCanary service (fee-based)](https://appcanary.com/)
+
+## Translatable Concern
+
+* How does it work?
