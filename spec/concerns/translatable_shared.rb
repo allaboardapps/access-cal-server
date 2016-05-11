@@ -16,7 +16,10 @@ shared_examples "translatable" do
       expect(instance_of_class.retrieve(:title, :cn)).to eq english_title
     end
 
-    xit "raises an error if method call is conducted on a datatype that is not jsonb" do
+    it "raises an error if method call is conducted on a datatype that is not jsonb" do
+      english_title = Faker::Hipster.sentence
+      instance_of_class = FactoryGirl.create(model.to_s.underscore.to_sym, title: { en: english_title })
+      expect { instance_of_class.retrieve(:name, :en) }.to raise_error(ArgumentError)
     end
   end
 
@@ -95,10 +98,14 @@ shared_examples "translatable" do
   end
 
   describe ".uniq_keys" do
-    xit "lists all keys that exist for jsonb attribute" do
+    it "lists all keys that exist for jsonb attribute" do
+      instance_of_class = FactoryGirl.create(model.to_s.underscore.to_sym, title: { en: Faker::Hipster.sentence, cn: "这是中国" })
+      expect(instance_of_class.uniq_keys(:title)).to eq [:en, :cn]
     end
 
-    xit "raises an error if submitted attribute is not jsonb datatype" do
+    it "raises an error if method call is conducted on a datatype that is not jsonb" do
+      instance_of_class = FactoryGirl.create(model.to_s.underscore.to_sym, title: { en: Faker::Hipster.sentence, cn: "这是中国" })
+      expect { instance_of_class.uniq_keys(:name) }.to raise_error(ArgumentError)
     end
   end
 end

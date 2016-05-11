@@ -21,7 +21,7 @@ module Translatable
   end
 
   def uniq_keys(attribute)
-    return "nope" unless column_for_attribute(attribute).type == :jsonb
+    raise(ArgumentError, "Attribute must be of type :jsonb. Attribute `#{attribute}` is of type #{column_for_attribute(attribute).type}.") unless column_for_attribute(attribute).type == :jsonb
 
     send(attribute.to_s).map { |k, _v| k.to_sym }.flatten
   end
