@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20160425005744) do
 
   create_table "events", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.uuid     "author_id"
+    t.jsonb    "title",             default: {},                           null: false
     t.uuid     "location_id"
     t.uuid     "calendar_id"
     t.string   "name"
@@ -98,6 +99,8 @@ ActiveRecord::Schema.define(version: 20160425005744) do
     t.datetime "created_at",                                               null: false
     t.datetime "updated_at",                                               null: false
   end
+
+  add_index "events", ["title"], name: "index_events_on_title", using: :gin
 
   create_table "favorites", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
     t.uuid     "user_id"
@@ -229,6 +232,7 @@ ActiveRecord::Schema.define(version: 20160425005744) do
     t.string   "last_name"
     t.string   "zip_code"
     t.string   "time_zone",              default: "Central Time (US & Canada)"
+    t.string   "locale",                 default: "en"
     t.string   "admin_notes"
     t.uuid     "location_id"
     t.boolean  "archived",               default: false

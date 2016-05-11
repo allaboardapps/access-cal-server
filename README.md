@@ -42,6 +42,7 @@
 ## Testing
 
 * rspec
+* run specs in shared example files: `ber spec/models/events_spec.rb --example "translatable"`
 
 ## Continuous Integration
 

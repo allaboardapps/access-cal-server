@@ -1,8 +1,10 @@
 require "rails_helper"
 require "concerns/activatable_shared"
+require "concerns/translatable_shared"
 
 describe Event, type: :model do
   it_behaves_like "activatable"
+  it_behaves_like "translatable"
 
   let(:event) { FactoryGirl.create :event }
 

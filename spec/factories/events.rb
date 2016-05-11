@@ -6,6 +6,7 @@ FactoryGirl.define do
     location
     calendar
     name { Faker::Company.catch_phrase }
+    title { { en: "Pizza Party", es: "Fiesta de pizza", jp: "ピザパーティー", ar: "حزب البيتزا" } }
     abbreviation { Faker::Hipster.words(1)[0] }
     description { Faker::Lorem.sentences(1)[0] }
     admin_notes { Faker::Lorem.sentences(1)[0] }

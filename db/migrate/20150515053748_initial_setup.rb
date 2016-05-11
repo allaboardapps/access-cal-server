@@ -72,6 +72,7 @@ class InitialSetup < ActiveRecord::Migration
 
     create_table :events, id: :uuid, force: true do |t|
       t.uuid       :author_id
+      t.jsonb      :title, null: false, default: "{}"
       t.uuid       :location_id
       t.uuid       :calendar_id
       t.string     :name
@@ -94,6 +95,8 @@ class InitialSetup < ActiveRecord::Migration
       t.boolean    :dummy, default: false
       t.timestamps null: false
     end
+
+    add_index :events, :title, using: :gin
 
     create_table :event_users, id: :uuid, force: true do |t|
       t.uuid       :event_id

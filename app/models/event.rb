@@ -4,6 +4,7 @@ class Event < ActiveRecord::Base
   has_paper_trail
 
   include Activatable
+  include Translatable
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
@@ -25,6 +26,8 @@ class Event < ActiveRecord::Base
   has_many :event_users
   has_many :users, through: :event_users
   has_one :region, through: :location
+
+  # translates :title, :name
 
   scope :autocomplete, -> (query) { active.where("name ilike ? or abbreviation ilike ?", "#{query}%", "#{query}%").order(name: :asc, abbreviation: :asc) }
 
