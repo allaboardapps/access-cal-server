@@ -4,6 +4,7 @@ Rails:
   Enabled: true
 
 AllCops:
+  TargetRubyVersion: 2.3
   Include:
     - "**/*.gemspec"
     - "**/Rakefile"
@@ -30,4 +31,10 @@ LineLength:
   Max: 200
 
 Documentation:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
   Enabled: false
