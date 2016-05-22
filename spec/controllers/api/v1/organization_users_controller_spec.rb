@@ -29,14 +29,14 @@ describe Api::V1::OrganizationUsersController, type: :controller do
       describe "#create" do
         it "creates and returns an organization_user instance" do
           post :create, user_id: user.id, organization_id: organization.id, role: role
-          expect_json("data", attributes: { user_id: user.id, organization_id: organization.id, role: role })
+          expect_json("data", attributes: { 'user-id': user.id, 'organization-id': organization.id, role: role })
         end
 
         it "validates json attribute types" do
           post :create, user_id: user.id, organization_id: organization.id, role: role
           expect_json_types("data", id: :string)
-          expect_json_types("data", attributes: { user_id: :string })
-          expect_json_types("data", attributes: { organization_id: :string })
+          expect_json_types("data", attributes: { 'user-id': :string })
+          expect_json_types("data", attributes: { 'organization-id': :string })
           expect_json_types("data", attributes: { role: :string })
         end
 
@@ -55,7 +55,7 @@ describe Api::V1::OrganizationUsersController, type: :controller do
         it "does not create a duplicate instance, but does return the matching instance" do
           organization_user.touch
           post :create, user_id: organization_user.user_id, organization_id: organization_user.organization_id, role: organization_user.role
-          expect_json("data", id: organization_user.id, attributes: { user_id: organization_user.user_id, organization_id: organization_user.organization_id, role: organization_user.role })
+          expect_json("data", id: organization_user.id, attributes: { 'user-id': organization_user.user_id, 'organization-id': organization_user.organization_id, role: organization_user.role })
         end
 
         it "does not create duplicates" do

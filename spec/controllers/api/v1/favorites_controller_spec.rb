@@ -25,14 +25,14 @@ describe Api::V1::FavoritesController, type: :controller do
       describe "#create" do
         it "creates and returns a favorite instance" do
           post :create, user_id: favorite.user_id, event_id: favorite.event_id
-          expect_json("data", attributes: { user_id: favorite.user_id, event_id: favorite.event_id })
+          expect_json("data", attributes: { 'user-id': favorite.user_id, 'event-id': favorite.event_id })
         end
 
         it "validates json attribute types" do
           post :create, user_id: favorite.user_id, event_id: favorite.event_id
           expect_json_types("data", id: :string)
-          expect_json_types("data", attributes: { user_id: :string })
-          expect_json_types("data", attributes: { event_id: :string })
+          expect_json_types("data", attributes: { 'user-id': :string })
+          expect_json_types("data", attributes: { 'event-id': :string })
           expect_json_types("data", attributes: { archived: :boolean })
           expect_json_types("data", attributes: { test: :boolean })
         end
@@ -49,7 +49,7 @@ describe Api::V1::FavoritesController, type: :controller do
 
         it "does not create a duplicate instance, but does return the matching instance" do
           post :create, user_id: favorite.user_id, event_id: favorite.event_id
-          expect_json("data", id: favorite.id, attributes: { event_id: favorite.event_id })
+          expect_json("data", id: favorite.id, attributes: { 'event-id': favorite.event_id })
         end
 
         it "does not create duplicates" do
@@ -61,14 +61,14 @@ describe Api::V1::FavoritesController, type: :controller do
       describe "#show" do
         it "returns a favorite instance" do
           get :show, id: favorite.id
-          expect_json("data", attributes: { user_id: favorite.user_id, event_id: favorite.event_id })
+          expect_json("data", attributes: { 'user-id': favorite.user_id, 'event-id': favorite.event_id })
         end
 
         it "validates json attribute types" do
           get :show, id: favorite.id
           expect_json_types("data", id: :string)
-          expect_json_types("data", attributes: { user_id: :string })
-          expect_json_types("data", attributes: { event_id: :string })
+          expect_json_types("data", attributes: { 'user-id': :string })
+          expect_json_types("data", attributes: { 'event-id': :string })
           expect_json_types("data", attributes: { archived: :boolean })
           expect_json_types("data", attributes: { test: :boolean })
         end
@@ -90,7 +90,7 @@ describe Api::V1::FavoritesController, type: :controller do
         it "includes at least one of the instances" do
           favorite_2 = FactoryGirl.create :favorite
           get :index
-          expect_json("data.?", attributes: { user_id: favorite_2.user_id, event_id: favorite_2.event_id })
+          expect_json("data.?", attributes: { 'user-id': favorite_2.user_id, 'event-id': favorite_2.event_id })
         end
 
         it "returns a status of 200" do
@@ -110,8 +110,8 @@ describe Api::V1::FavoritesController, type: :controller do
         it "validates the json attribute types" do
           put :update, id: favorite.id, archived: true
           expect_json_types("data", id: :string)
-          expect_json_types("data", attributes: { user_id: :string })
-          expect_json_types("data", attributes: { event_id: :string })
+          expect_json_types("data", attributes: { 'user-id': :string })
+          expect_json_types("data", attributes: { 'event-id': :string })
           expect_json_types("data", attributes: { archived: :boolean })
           expect_json_types("data", attributes: { test: :boolean })
         end

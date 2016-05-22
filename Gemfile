@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby "2.3.1"
 gem "rails", "4.2.6"
 
-gem "active_model_serializers", "0.10.0.rc4"
+gem "active_model_serializers", "0.10.0"
 gem "activeadmin", "1.0.0.pre2"
 gem "aws-sdk", "2.3.4"
 gem "browser", "2.1.0"

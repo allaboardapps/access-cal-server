@@ -56,25 +56,25 @@ describe Api::V1::UsersController, type: :controller do
       describe "#show" do
         it "returns an user instance" do
           get :show, id: user.id
-          expect_json("data", attributes: { first_name: user.first_name, email: user.email })
+          expect_json("data", attributes: { 'first-name': user.first_name, email: user.email })
         end
 
         it "validates json attribute types" do
           get :show, id: user.id
           expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { token: :string_or_null })
-          expect_json_types("data", attributes: { first_name: :string })
-          expect_json_types("data", attributes: { last_name: :string })
+          expect_json_types("data", attributes: { 'first-name': :string })
+          expect_json_types("data", attributes: { 'last-name': :string })
           expect_json_types("data", attributes: { email: :string })
-          expect_json_types("data", attributes: { zip_code: :string })
-          expect_json_types("data", attributes: { time_zone: :string })
-          expect_json_types("data", attributes: { location_id: :string })
+          expect_json_types("data", attributes: { 'zip-code': :string })
+          expect_json_types("data", attributes: { 'time-zone': :string })
+          expect_json_types("data", attributes: { 'location-id': :string })
           expect_json_types("data", attributes: { roles: :array })
           expect_json_types("data", attributes: { statuses: :array })
           expect_json_types("data", attributes: { archived: :boolean })
           expect_json_types("data", attributes: { test: :boolean })
-          expect_json_types("data", attributes: { updated_at: :date })
-          expect_json_types("data", attributes: { created_at: :date })
+          expect_json_types("data", attributes: { 'updated-at': :date })
+          expect_json_types("data", attributes: { 'created-at': :date })
         end
 
         it "returns a status of 200" do
@@ -95,7 +95,7 @@ describe Api::V1::UsersController, type: :controller do
         it "includes at least one of the instances" do
           user_2 = FactoryGirl.create :user
           get :index
-          expect_json("data.?", attributes: { first_name: user_2.first_name, email: user_2.email })
+          expect_json("data.?", attributes: { 'first-name': user_2.first_name, email: user_2.email })
         end
 
         it "returns a status of 200" do
@@ -109,25 +109,25 @@ describe Api::V1::UsersController, type: :controller do
       describe "#update" do
         it "updates the user" do
           put :update, id: user.id, last_name: "New name"
-          expect_json("data", attributes: { last_name: "New name", email: user.email })
+          expect_json("data", attributes: { 'last-name': "New name", email: user.email })
         end
 
         it "validates the json attribute types" do
           put :update, id: user.id, last_name: "New name"
           expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { token: :string_or_null })
-          expect_json_types("data", attributes: { first_name: :string })
-          expect_json_types("data", attributes: { last_name: :string })
+          expect_json_types("data", attributes: { 'first-name': :string })
+          expect_json_types("data", attributes: { 'last-name': :string })
           expect_json_types("data", attributes: { email: :string })
-          expect_json_types("data", attributes: { zip_code: :string })
-          expect_json_types("data", attributes: { time_zone: :string })
-          expect_json_types("data", attributes: { location_id: :string })
+          expect_json_types("data", attributes: { 'zip-code': :string })
+          expect_json_types("data", attributes: { 'time-zone': :string })
+          expect_json_types("data", attributes: { 'location-id': :string })
           expect_json_types("data", attributes: { roles: :array })
           expect_json_types("data", attributes: { statuses: :array })
           expect_json_types("data", attributes: { archived: :boolean })
           expect_json_types("data", attributes: { test: :boolean })
-          expect_json_types("data", attributes: { updated_at: :date })
-          expect_json_types("data", attributes: { created_at: :date })
+          expect_json_types("data", attributes: { 'updated-at': :date })
+          expect_json_types("data", attributes: { 'created-at': :date })
         end
 
         it "returns a status of accepted (202)" do

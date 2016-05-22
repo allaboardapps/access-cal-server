@@ -29,14 +29,14 @@ describe Api::V1::CalendarUsersController, type: :controller do
       describe "#create" do
         it "creates and returns an calendar_user instance" do
           post :create, user_id: user.id, calendar_id: calendar.id, role: role
-          expect_json("data", attributes: { user_id: user.id, calendar_id: calendar.id, role: role })
+          expect_json("data", attributes: { 'user-id': user.id, 'calendar-id': calendar.id, role: role })
         end
 
         it "validates json attribute types" do
           post :create, user_id: user.id, calendar_id: calendar.id, role: role
           expect_json_types("data", id: :string)
-          expect_json_types("data", attributes: { user_id: :string })
-          expect_json_types("data", attributes: { calendar_id: :string })
+          expect_json_types("data", attributes: { 'user-id': :string })
+          expect_json_types("data", attributes: { 'calendar-id': :string })
           expect_json_types("data", attributes: { role: :string })
         end
 
@@ -55,7 +55,7 @@ describe Api::V1::CalendarUsersController, type: :controller do
         it "does not create a duplicate instance, but does return the matching instance" do
           calendar_user.touch
           post :create, user_id: calendar_user.user_id, calendar_id: calendar_user.calendar_id, role: calendar_user.role
-          expect_json("data", id: calendar_user.id, attributes: { user_id: calendar_user.user_id, calendar_id: calendar_user.calendar_id, role: calendar_user.role })
+          expect_json("data", id: calendar_user.id, attributes: { 'user-id': calendar_user.user_id, 'calendar-id': calendar_user.calendar_id, role: calendar_user.role })
         end
 
         it "does not create duplicates" do

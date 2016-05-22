@@ -40,10 +40,10 @@ describe Api::V1::LocationsController, type: :controller do
             admin_notes: location.admin_notes
           )
           expect_json_types("data", id: :string)
-          expect_json_types("data", attributes: { region_id: :string })
+          expect_json_types("data", attributes: { 'region-id': :string })
           expect_json_types("data", attributes: { name: :string })
           expect_json_types("data", attributes: { abbreviation: :string })
-          expect_json_types("data", attributes: { time_zone: :string })
+          expect_json_types("data", attributes: { 'time-zone': :string })
           expect_json_types("data", attributes: { archived: :boolean })
           expect_json_types("data", attributes: { test: :boolean })
         end
@@ -79,10 +79,10 @@ describe Api::V1::LocationsController, type: :controller do
         it "validates json attribute types" do
           get :show, id: location.id
           expect_json_types("data", id: :string)
-          expect_json_types("data", attributes: { region_id: :string })
+          expect_json_types("data", attributes: { 'region-id': :string })
           expect_json_types("data", attributes: { name: :string })
           expect_json_types("data", attributes: { abbreviation: :string })
-          expect_json_types("data", attributes: { time_zone: :string })
+          expect_json_types("data", attributes: { 'time-zone': :string })
           expect_json_types("data", attributes: { archived: :boolean })
           expect_json_types("data", attributes: { test: :boolean })
         end
@@ -124,10 +124,10 @@ describe Api::V1::LocationsController, type: :controller do
         it "validates the json attribute types" do
           put :update, id: location.id, name: "New name"
           expect_json_types("data", id: :string)
-          expect_json_types("data", attributes: { region_id: :string })
+          expect_json_types("data", attributes: { 'region-id': :string })
           expect_json_types("data", attributes: { name: :string })
           expect_json_types("data", attributes: { abbreviation: :string })
-          expect_json_types("data", attributes: { time_zone: :string })
+          expect_json_types("data", attributes: { 'time-zone': :string })
           expect_json_types("data", attributes: { archived: :boolean })
           expect_json_types("data", attributes: { test: :boolean })
         end

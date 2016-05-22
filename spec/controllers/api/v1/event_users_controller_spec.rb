@@ -29,14 +29,14 @@ describe Api::V1::EventUsersController, type: :controller do
       describe "#create" do
         it "creates and returns an event_user instance" do
           post :create, user_id: user.id, event_id: event.id, role: role
-          expect_json("data", attributes: { user_id: user.id, event_id: event.id, role: role })
+          expect_json("data", attributes: { 'user-id': user.id, 'event-id': event.id, role: role })
         end
 
         it "validates json attribute types" do
           post :create, user_id: user.id, event_id: event.id, role: role
           expect_json_types("data", id: :string)
-          expect_json_types("data", attributes: { user_id: :string })
-          expect_json_types("data", attributes: { event_id: :string })
+          expect_json_types("data", attributes: { 'user-id': :string })
+          expect_json_types("data", attributes: { 'event-id': :string })
           expect_json_types("data", attributes: { role: :string })
         end
 
@@ -55,7 +55,7 @@ describe Api::V1::EventUsersController, type: :controller do
         it "does not create a duplicate instance, but does return the matching instance" do
           event_user.touch
           post :create, user_id: event_user.user_id, event_id: event_user.event_id, role: event_user.role
-          expect_json("data", id: event_user.id, attributes: { user_id: event_user.user_id, event_id: event_user.event_id, role: event_user.role })
+          expect_json("data", id: event_user.id, attributes: { 'user-id': event_user.user_id, 'event-id': event_user.event_id, role: event_user.role })
         end
 
         it "does not create duplicates" do

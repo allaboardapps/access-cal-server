@@ -34,8 +34,8 @@ describe Api::V1::GroupsController, type: :controller do
           post :create, name: new_name, group_type: GroupTypes.all.sample, organization_id: organization.id
           expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { name: :string })
-          expect_json_types("data", attributes: { organization_id: :string })
-          expect_json_types("data", attributes: { group_type: :string })
+          expect_json_types("data", attributes: { 'organization-id': :string })
+          expect_json_types("data", attributes: { 'group-type': :string })
           expect_json_types("data", attributes: { archived: :boolean })
           expect_json_types("data", attributes: { test: :boolean })
           expect_json_types("data", attributes: { dummy: :boolean })
@@ -65,8 +65,8 @@ describe Api::V1::GroupsController, type: :controller do
           get :show, id: group.id
           expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { name: :string })
-          expect_json_types("data", attributes: { organization_id: :string })
-          expect_json_types("data", attributes: { group_type: :string })
+          expect_json_types("data", attributes: { 'organization-id': :string })
+          expect_json_types("data", attributes: { 'group-type': :string })
           expect_json_types("data", attributes: { archived: :boolean })
           expect_json_types("data", attributes: { test: :boolean })
           expect_json_types("data", attributes: { dummy: :boolean })
@@ -114,8 +114,8 @@ describe Api::V1::GroupsController, type: :controller do
           put :update, id: group.id, name: Faker::Company.name
           expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { name: :string })
-          expect_json_types("data", attributes: { organization_id: :string })
-          expect_json_types("data", attributes: { group_type: :string })
+          expect_json_types("data", attributes: { 'organization-id': :string })
+          expect_json_types("data", attributes: { 'group-type': :string })
           expect_json_types("data", attributes: { archived: :boolean })
           expect_json_types("data", attributes: { test: :boolean })
           expect_json_types("data", attributes: { dummy: :boolean })

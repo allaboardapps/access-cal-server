@@ -33,7 +33,7 @@ describe Api::V1::RegionsController, type: :controller do
           expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { name: :string })
           expect_json_types("data", attributes: { abbreviation: :string })
-          expect_json_types("data", attributes: { time_zone: :string })
+          expect_json_types("data", attributes: { 'time-zone': :string })
           expect_json_types("data", attributes: { archived: :boolean })
           expect_json_types("data", attributes: { test: :boolean })
         end
@@ -61,7 +61,7 @@ describe Api::V1::RegionsController, type: :controller do
           expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { name: :string })
           expect_json_types("data", attributes: { abbreviation: :string })
-          expect_json_types("data", attributes: { time_zone: :string })
+          expect_json_types("data", attributes: { 'time-zone': :string })
           expect_json_types("data", attributes: { archived: :boolean })
           expect_json_types("data", attributes: { test: :boolean })
         end
@@ -106,7 +106,7 @@ describe Api::V1::RegionsController, type: :controller do
           expect_json_types("data", id: :string)
           expect_json_types("data", attributes: { name: :string })
           expect_json_types("data", attributes: { abbreviation: :string })
-          expect_json_types("data", attributes: { time_zone: :string })
+          expect_json_types("data", attributes: { 'time-zone': :string })
           expect_json_types("data", attributes: { archived: :boolean })
           expect_json_types("data", attributes: { test: :boolean })
         end

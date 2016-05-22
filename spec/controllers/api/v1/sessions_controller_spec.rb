@@ -42,18 +42,18 @@ describe Api::V1::SessionsController, type: :controller do
         post :create, email: user.email, password: user.password
         expect_json_types("data", attributes: { token: :string })
         expect_json_types("data", id: :string)
-        expect_json_types("data", attributes: { first_name: :string })
-        expect_json_types("data", attributes: { last_name: :string })
+        expect_json_types("data", attributes: { 'first-name': :string })
+        expect_json_types("data", attributes: { 'last-name': :string })
         expect_json_types("data", attributes: { email: :string })
-        expect_json_types("data", attributes: { zip_code: :string })
-        expect_json_types("data", attributes: { time_zone: :string })
-        expect_json_types("data", attributes: { location_id: :string })
+        expect_json_types("data", attributes: { 'zip-code': :string })
+        expect_json_types("data", attributes: { 'time-zone': :string })
+        expect_json_types("data", attributes: { 'location-id': :string })
         expect_json_types("data", attributes: { roles: :array })
         expect_json_types("data", attributes: { statuses: :array })
         expect_json_types("data", attributes: { archived: :boolean })
         expect_json_types("data", attributes: { test: :boolean })
-        expect_json_types("data", attributes: { updated_at: :date })
-        expect_json_types("data", attributes: { created_at: :date })
+        expect_json_types("data", attributes: { 'updated-at': :date })
+        expect_json_types("data", attributes: { 'created-at': :date })
       end
 
       it "returns a status of 200" do

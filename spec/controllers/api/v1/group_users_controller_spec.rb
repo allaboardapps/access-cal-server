@@ -29,14 +29,14 @@ describe Api::V1::GroupUsersController, type: :controller do
       describe "#create" do
         it "creates and returns an group_user instance" do
           post :create, user_id: user.id, group_id: group.id, role: role
-          expect_json("data", attributes: { user_id: user.id, group_id: group.id, role: role })
+          expect_json("data", attributes: { 'user-id': user.id, 'group-id': group.id, role: role })
         end
 
         it "validates json attribute types" do
           post :create, user_id: user.id, group_id: group.id, role: role
           expect_json_types("data", id: :string)
-          expect_json_types("data", attributes: { user_id: :string })
-          expect_json_types("data", attributes: { group_id: :string })
+          expect_json_types("data", attributes: { 'user-id': :string })
+          expect_json_types("data", attributes: { 'group-id': :string })
           expect_json_types("data", attributes: { role: :string })
         end
 
@@ -55,7 +55,7 @@ describe Api::V1::GroupUsersController, type: :controller do
         it "does not create a duplicate instance, but does return the matching instance" do
           group_user.touch
           post :create, user_id: group_user.user_id, group_id: group_user.group_id, role: group_user.role
-          expect_json("data", id: group_user.id, attributes: { user_id: group_user.user_id, group_id: group_user.group_id, role: group_user.role })
+          expect_json("data", id: group_user.id, attributes: { 'user-id': group_user.user_id, 'group-id': group_user.group_id, role: group_user.role })
         end
 
         it "does not create duplicates" do
