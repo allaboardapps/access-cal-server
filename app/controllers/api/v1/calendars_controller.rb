@@ -1,5 +1,5 @@
-class Api
-  class V1
+module Api
+  module V1
     class CalendarsController < Api::V1::ApiController
       def create
         calendar = Calendar.create(create_params)

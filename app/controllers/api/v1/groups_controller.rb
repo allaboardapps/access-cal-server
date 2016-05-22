@@ -1,5 +1,5 @@
-class Api
-  class V1
+module Api
+  module V1
     class GroupsController < Api::V1::ApiController
       def create
         group = Group.create(create_params)

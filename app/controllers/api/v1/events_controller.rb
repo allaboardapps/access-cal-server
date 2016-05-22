@@ -1,5 +1,5 @@
-class Api
-  class V1
+module Api
+  module V1
     class EventsController < Api::V1::ApiController
       before_action :set_paper_trail_whodunnit
 

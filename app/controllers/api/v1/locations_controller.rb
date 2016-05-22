@@ -1,5 +1,5 @@
-class Api
-  class V1
+module Api
+  module V1
     class LocationsController < Api::V1::ApiController
       def create
         location = Location.create(create_params)

@@ -1,5 +1,5 @@
-class Api
-  class V1
+module Api
+  module V1
     class SessionsController < Api::V1::ApiController
       skip_before_action :authenticate_user_from_token!, only: [:create]
       skip_before_action :authenticate_user!, only: [:create]

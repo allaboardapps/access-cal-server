@@ -1,5 +1,5 @@
-class Api
-  class V1
+module Api
+  module V1
     class GroupUsersController < Api::V1::ApiController
       def create
         group_user = GroupUser.find_or_create_by(create_params)

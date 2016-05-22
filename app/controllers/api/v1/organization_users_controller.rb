@@ -1,5 +1,5 @@
-class Api
-  class V1
+module Api
+  module V1
     class OrganizationUsersController < Api::V1::ApiController
       def create
         organization_user = OrganizationUser.find_or_create_by(create_params)

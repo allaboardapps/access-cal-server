@@ -1,5 +1,5 @@
-class Api
-  class V1
+module Api
+  module V1
     class CalendarUsersController < Api::V1::ApiController
       def create
         calendar_user = CalendarUser.find_or_create_by(create_params)

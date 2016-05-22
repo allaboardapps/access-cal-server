@@ -1,5 +1,5 @@
-class Api
-  class V1
+module Api
+  module V1
     class FavoritesController < Api::V1::ApiController
       def create
         favorite = Favorite.create_with(create_params).find_or_create_by(user_id: params[:user_id], event_id: params[:event_id])

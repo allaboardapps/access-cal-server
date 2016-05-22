@@ -1,5 +1,5 @@
-class Api
-  class V1
+module Api
+  module V1
     class EventUsersController < Api::V1::ApiController
       def create
         event_user = EventUser.find_or_create_by(create_params)

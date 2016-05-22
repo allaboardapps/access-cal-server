@@ -1,5 +1,5 @@
-class Api
-  class V1
+module Api
+  module V1
     class UsersController < Api::V1::ApiController
       def create
         user = User.create(create_params)

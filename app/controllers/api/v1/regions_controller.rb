@@ -1,5 +1,5 @@
-class Api
-  class V1
+module Api
+  module V1
     class RegionsController < Api::V1::ApiController
       def create
         region = Region.create(create_params)

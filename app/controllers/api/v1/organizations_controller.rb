@@ -1,5 +1,5 @@
-class Api
-  class V1
+module Api
+  module V1
     class OrganizationsController < Api::V1::ApiController
       def create
         organization = Organization.create(create_params)
