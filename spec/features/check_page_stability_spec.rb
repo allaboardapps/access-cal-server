@@ -16,7 +16,7 @@ describe "checking basic stability of resources", type: :feature do
       expect(page.source).to have_css "body"
     end
 
-    it "visits the home page as an" do
+    it "visits the home page as a consumer" do
       log_in_with consumer.email, consumer.password
       visit root_path
       expect(page.source).to have_css "body.static.home"

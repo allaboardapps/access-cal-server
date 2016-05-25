@@ -5,7 +5,7 @@ gem "rails", "4.2.6"
 
 gem "active_model_serializers", "0.10.0"
 gem "activeadmin", "1.0.0.pre2"
-gem "aws-sdk", "2.3.7"
+gem "aws-sdk", "2.3.8"
 gem "browser", "2.1.0"
 gem "devise", "4.1.1"
 gem "devise-async", git: "https://github.com/allaboardapps/devise-async.git"
