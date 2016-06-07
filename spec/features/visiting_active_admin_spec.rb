@@ -7,7 +7,6 @@ describe "visiting active admin dashboard", type: :feature do
     fill_in :user_email, with: user.email
     fill_in :user_password, with: user.password
     click_on "Sign in"
-    binding.pry
     visit admin_dashboard_path
     # expect { visit admin_dashboard_path }.to raise_error ActiveAdmin::AccessDenied
     # expect(page.status_code).to eq 200
