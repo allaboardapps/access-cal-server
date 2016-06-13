@@ -5,7 +5,7 @@ gem "rails", "4.2.6"
 
 gem "active_model_serializers", "0.10.0"
 gem "activeadmin", "1.0.0.pre2"
-gem "aws-sdk", "2.3.11"
+gem "aws-sdk", "2.3.13"
 gem "browser", "2.1.0"
 gem "devise", "4.1.1"
 gem "devise-async", git: "https://github.com/allaboardapps/devise-async.git"
@@ -47,7 +47,7 @@ end
 group :development do
   gem "better_errors", "2.1.1"
   gem "binding_of_caller", "0.7.2"
-  gem "brakeman", "3.3.1", require: false
+  gem "brakeman", "3.3.2", require: false
   gem "bullet", "5.1.0"
   gem "bundler-audit", "0.5.0", require: false
   gem "hakiri", "0.7.2", require: false
@@ -55,7 +55,7 @@ group :development do
   gem "lol_dba", "2.0.3"
   gem "rails_db", "1.1.1"
   gem "rb-fsevent", "0.9.7", require: false
-  gem "reek", "4.0.3"
+  gem "reek", "4.0.4"
   gem "spring", "1.7.1"
   gem "web-console", "3.2.0"
 end

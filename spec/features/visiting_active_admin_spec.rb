@@ -8,8 +8,9 @@ describe "visiting active admin dashboard", type: :feature do
     fill_in :user_password, with: user.password
     click_on "Sign in"
     visit admin_dashboard_path
-    # expect { visit admin_dashboard_path }.to raise_error ActiveAdmin::AccessDenied
-    # expect(page.status_code).to eq 200
+    binding.pry
+    # expect { visit admin_dashboard_path }.to raise_error :access_denied
+    expect(page.status_code).to eq :access_denied
   end
 
   it "does not receive a routing error if user is an admin" do
