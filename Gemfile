@@ -56,7 +56,7 @@ group :development do
   gem "rails_db", "1.1.1"
   gem "rb-fsevent", "0.9.7", require: false
   gem "reek", "4.0.4"
-  gem "spring", "1.7.1"
+  # gem "spring", "1.7.1"
   gem "web-console", "3.2.0"
 end
 
@@ -79,6 +79,6 @@ group :test do
   gem "rspec_junit_formatter", "0.2.3"
   gem "rubocop-rspec", "1.5.0"
   gem "shoulda-matchers", "3.1.1"
-  gem "spring-commands-rspec", "1.0.4"
+  # gem "spring-commands-rspec", "1.0.4"
   gem "test_after_commit", "1.0.0"
 end

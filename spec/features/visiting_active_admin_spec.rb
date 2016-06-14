@@ -8,7 +8,6 @@ describe "visiting active admin dashboard", type: :feature do
     fill_in :user_password, with: user.password
     click_on "Sign in"
     visit admin_dashboard_path
-    binding.pry
     # expect { visit admin_dashboard_path }.to raise_error :access_denied
     expect(page.status_code).to eq :access_denied
   end
