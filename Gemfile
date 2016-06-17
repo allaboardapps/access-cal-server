@@ -3,13 +3,13 @@ source "https://rubygems.org"
 ruby "2.3.1"
 gem "rails", "4.2.6"
 
-gem "active_model_serializers", "0.10.0"
+gem "active_model_serializers", "0.10.1"
 gem "activeadmin", "1.0.0.pre2"
-gem "aws-sdk", "2.3.13"
+gem "aws-sdk", "2.3.14"
 gem "browser", "2.1.0"
 gem "devise", "4.1.1"
 gem "devise-async", git: "https://github.com/allaboardapps/devise-async.git"
-gem "devise-i18n", "1.0.1"
+gem "devise-i18n", "1.1.0"
 gem "elasticsearch-model", "0.1.9"
 gem "elasticsearch-rails", "0.1.9"
 gem "factory_girl_rails", "4.7.0"
@@ -55,9 +55,8 @@ group :development do
   gem "lol_dba", "2.0.3"
   gem "rails_db", "1.1.1"
   gem "rb-fsevent", "0.9.7", require: false
-  gem "reek", "4.0.4"
-  # gem "spring", "1.7.1"
-  gem "web-console", "3.2.0"
+  gem "reek", "4.0.5"
+  gem "web-console", "3.3.0"
 end
 
 group :development, :test do
@@ -79,6 +78,5 @@ group :test do
   gem "rspec_junit_formatter", "0.2.3"
   gem "rubocop-rspec", "1.5.0"
   gem "shoulda-matchers", "3.1.1"
-  # gem "spring-commands-rspec", "1.0.4"
   gem "test_after_commit", "1.0.0"
 end

@@ -1,3 +1,7 @@
 AccessCalServer::Application.configure do
-  config.lograge.enabled = true
+  if Rails.env.test? || Rails.env.development?
+    config.lograge.enabled = false
+  else
+    config.lograge.enabled = true
+  end
 end
