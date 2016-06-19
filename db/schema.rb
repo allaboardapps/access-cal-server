@@ -79,8 +79,6 @@ ActiveRecord::Schema.define(version: 20160425005744) do
     t.uuid     "calendar_id"
     t.string   "name"
     t.string   "abbreviation"
-    t.datetime "starts_at"
-    t.datetime "ends_at"
     t.string   "description"
     t.string   "street_address"
     t.string   "secondary_address"
@@ -88,15 +86,14 @@ ActiveRecord::Schema.define(version: 20160425005744) do
     t.string   "state"
     t.string   "country"
     t.string   "zip_code"
-    t.string   "time_zone",         default: "Central Time (US & Canada)"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "admin_notes"
     t.boolean  "archived",          default: false
     t.boolean  "test",              default: false
     t.boolean  "dummy",             default: false
-    t.datetime "created_at",                                               null: false
-    t.datetime "updated_at",                                               null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   create_table "favorites", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
@@ -142,6 +139,18 @@ ActiveRecord::Schema.define(version: 20160425005744) do
     t.boolean  "dummy",        default: false
     t.datetime "created_at",                                          null: false
     t.datetime "updated_at",                                          null: false
+  end
+
+  create_table "occurrences", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
+    t.uuid     "event_id"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.string   "time_zone",  default: "Central Time (US & Canada)"
+    t.boolean  "archived",   default: false
+    t.boolean  "test",       default: false
+    t.boolean  "dummy",      default: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
   end
 
   create_table "organization_users", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
@@ -229,6 +238,7 @@ ActiveRecord::Schema.define(version: 20160425005744) do
     t.string   "last_name"
     t.string   "zip_code"
     t.string   "time_zone",              default: "Central Time (US & Canada)"
+    t.string   "locale",                 default: "en"
     t.string   "admin_notes"
     t.uuid     "location_id"
     t.boolean  "archived",               default: false

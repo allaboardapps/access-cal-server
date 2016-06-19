@@ -24,6 +24,7 @@ class Event < ActiveRecord::Base
   has_many :favorite_users, through: :favorites, source: :user
   has_many :event_users
   has_many :users, through: :event_users
+  has_many :occurrences
   has_one :region, through: :location
 
   scope :autocomplete, -> (query) { active.where("name ilike ? or abbreviation ilike ?", "#{query}%", "#{query}%").order(name: :asc, abbreviation: :asc) }

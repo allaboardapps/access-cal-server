@@ -117,6 +117,17 @@ ActiveAdmin.register Event do
       row :updated_at
     end
 
+    panel "Occurrences" do
+      table_for event.occurrences do |t|
+        t.column "Name" do |entity|
+          link_to entity.id, admin_occurrence_path(entity)
+        end
+        t.column "starts_at"
+        t.column "ends_at"
+        t.column "time_zone"
+      end
+    end
+
     panel "Users" do
       table_for event.event_users.includes(:user) do |t|
         t.column "Name" do |entity|

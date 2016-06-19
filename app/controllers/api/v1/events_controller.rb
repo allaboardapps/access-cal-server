@@ -34,18 +34,16 @@ module Api
 
       def update_params
         params.permit(
-          :author_id, :location_id, :name, :abbreviation,
-          :starts_at, :ends_at, :description, :street_address, :secondary_address,
-          :city, :state, :country, :zip_code, :time_zone, :latitude, :longitude, :admin_notes,
+          :author_id, :location_id, :name, :abbreviation, :description, :street_address, :secondary_address,
+          :city, :state, :country, :zip_code, :latitude, :longitude, :admin_notes,
           :archived, :test, :dummy
         )
       end
 
       def create_params
         params.permit(
-          :author_id, :location_id, :name, :abbreviation,
-          :starts_at, :ends_at, :description, :street_address, :secondary_address,
-          :city, :state, :country, :zip_code, :time_zone, :latitude, :longitude, :admin_notes,
+          :author_id, :location_id, :name, :abbreviation, :description, :street_address, :secondary_address,
+          :city, :state, :country, :zip_code, :latitude, :longitude, :admin_notes,
           :archived, :test, :dummy
         )
       end

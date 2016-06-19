@@ -52,6 +52,17 @@ class InitialSetup < ActiveRecord::Migration
       t.timestamps null: false
     end
 
+    create_table :occurrences, id: :uuid, force: true do |t|
+      t.uuid     :event_id
+      t.datetime   :starts_at
+      t.datetime   :ends_at
+      t.string     :time_zone, default: AllowedTimeZones::CENTRAL
+      t.boolean    :archived, default: false
+      t.boolean    :test, default: false
+      t.boolean    :dummy, default: false
+      t.timestamps null: false
+    end
+
     create_table :organizations, id: :uuid, force: true do |t|
       t.string     :name
       t.boolean    :archived, default: false
@@ -76,8 +87,6 @@ class InitialSetup < ActiveRecord::Migration
       t.uuid       :calendar_id
       t.string     :name
       t.string     :abbreviation
-      t.datetime   :starts_at
-      t.datetime   :ends_at
       t.string     :description
       t.string     :street_address
       t.string     :secondary_address
@@ -85,7 +94,6 @@ class InitialSetup < ActiveRecord::Migration
       t.string     :state
       t.string     :country
       t.string     :zip_code
-      t.string     :time_zone, default: AllowedTimeZones::CENTRAL
       t.float      :latitude
       t.float      :longitude
       t.string     :admin_notes

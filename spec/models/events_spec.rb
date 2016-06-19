@@ -14,10 +14,6 @@ describe Event, type: :model do
     expect(FactoryGirl.build(:event, name: nil)).not_to be_valid
   end
 
-  it "is invalid without a time_zone" do
-    expect(FactoryGirl.build(:event, time_zone: nil)).not_to be_valid
-  end
-
   describe "#archive" do
     it "updates the archived attribute to true" do
       event.update(archived: false)
@@ -128,6 +124,7 @@ describe Event, type: :model do
   it { is_expected.to have_many :event_users }
   it { is_expected.to have_many :favorite_users }
   it { is_expected.to have_many :favorites }
+  it { is_expected.to have_many :occurrences }
   it { is_expected.to have_many :tags }
   it { is_expected.to have_many :users }
   it { is_expected.to have_one :region }
